@@ -90,14 +90,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Taraon Global — Potassium Humate Shiny Flakes | Ahmedabad" },
+      { title: "TARAON GLOBAL — Potassium Humate Shiny Flakes | Ahmedabad" },
       {
         name: "description",
         content:
-          "Taraon Global manufactures potassium humate shiny flakes for farmers, dealers and fertilizer companies. Based in Ahmedabad, ships across India.",
+          "TARAON GLOBAL manufactures potassium humate shiny flakes for farmers, dealers and fertilizer companies. Based in Ahmedabad, ships across India.",
       },
-      { name: "author", content: "Taraon Global" },
-      { property: "og:site_name", content: "Taraon Global" },
+      { name: "author", content: "TARAON GLOBAL" },
+      { property: "og:site_name", content: "TARAON GLOBAL" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0F3D2E" },
@@ -118,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Taraon Global",
+          name: "TARAON GLOBAL",
           url: "/",
           telephone: "+91-6359193666",
           founder: "Rajesh Kumar Trivedi",
@@ -165,14 +165,14 @@ function Header() {
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <img
             src={logoGreen.url}
-            alt="Taraon Global"
+            alt="TARAON GLOBAL"
             width={44}
             height={44}
             className="h-11 w-11 rounded-sm object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
-              Taraon Global
+              TARAON GLOBAL
             </span>
             <span className="text-[10px] uppercase tracking-[0.18em] text-gold">
               Potassium Humate
@@ -273,15 +273,15 @@ function Footer() {
           <div className="flex items-center gap-2.5">
             <img
               src={logoGreen.url}
-              alt="Taraon Global"
+              alt="TARAON GLOBAL"
               width={44}
               height={44}
               className="h-11 w-11 rounded-sm object-contain"
             />
-            <span className="font-display text-lg text-cream">Taraon Global</span>
+            <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/70">
-            Taraon Global makes potassium humate shiny flakes for agriculture. Based in
+            TARAON GLOBAL makes potassium humate shiny flakes for agriculture. Based in
             Ahmedabad, sold across Gujarat and India.
           </p>
         </div>
@@ -309,7 +309,7 @@ function Footer() {
         <div>
           <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-gold">About Taraon Global</Link></li>
+            <li><Link to="/about" className="hover:text-gold">About TARAON GLOBAL</Link></li>
             <li><Link to="/applications" className="hover:text-gold">Applications</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
           </ul>
@@ -332,7 +332,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-cream/10 py-5 text-center text-xs text-cream/60">
-        © {new Date().getFullYear()} Taraon Global. All rights reserved.
+        © {new Date().getFullYear()} TARAON GLOBAL. All rights reserved.
       </div>
     </footer>
   );

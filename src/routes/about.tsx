@@ -7,15 +7,15 @@ import { CTABand } from "@/components/site/CTABand";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Taraon Global | Potassium Humate Supplier, Ahmedabad" },
+      { title: "About TARAON GLOBAL | Potassium Humate Supplier, Ahmedabad" },
       {
         name: "description",
         content:
-          "Taraon Global is an Ahmedabad based supplier of potassium humate shiny flakes for farmers, dealers, and distributors across Gujarat and India.",
+          "TARAON GLOBAL is an Ahmedabad based supplier of potassium humate shiny flakes for farmers, dealers, and distributors across Gujarat and India.",
       },
       {
         property: "og:title",
-        content: "About Taraon Global | Potassium Humate Supplier, Ahmedabad",
+        content: "About TARAON GLOBAL | Potassium Humate Supplier, Ahmedabad",
       },
       {
         property: "og:description",
@@ -39,11 +39,11 @@ function About() {
             <span className="h-px w-8 bg-gold" /> About
           </div>
           <h1 className="font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
-            About Taraon Global
+            About TARAON GLOBAL
           </h1>
           <div className="mt-6 space-y-4 text-ink/80">
             <p>
-              Taraon Global started with one product done properly, not ten products done
+              TARAON GLOBAL started with one product done properly, not ten products done
               halfway.
             </p>
             <p>
@@ -64,7 +64,7 @@ function About() {
         </div>
         <img
           src={warehouseImg}
-          alt="Neatly stacked bags of Taraon Global potassium humate in the Ahmedabad warehouse"
+          alt="Neatly stacked bags of TARAON GLOBAL potassium humate in the Ahmedabad warehouse"
           width={1400}
           height={1000}
           loading="lazy"
@@ -77,7 +77,7 @@ function About() {
           <div>
             <SectionHeading eyebrow="Leadership" title="Led by Rajesh Kumar Trivedi" />
             <p className="mt-5 text-ink/75">
-              Rajesh runs Taraon Global out of Ahmedabad. For product questions, dealer
+              Rajesh runs TARAON GLOBAL out of Ahmedabad. For product questions, dealer
               pricing, or bulk orders, call him directly.
             </p>
             <a
@@ -93,7 +93,7 @@ function About() {
               <MapPin className="h-3.5 w-3.5" /> Address
             </div>
             <div className="font-display text-xl leading-relaxed text-forest-deep">
-              Taraon Global<br />
+              TARAON GLOBAL<br />
               A-210, Signature-2<br />
               Sarkhej Sanand Cross Road<br />
               Ahmedabad-382210<br />

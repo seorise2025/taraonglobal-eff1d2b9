@@ -19,7 +19,7 @@ const SPECS = [
 
 const QUICK = [
   { label: "Product Name", value: "Super Potassium Shiny Flakes 98%" },
-  { label: "Brand", value: "Taraon Global" },
+  { label: "Brand", value: "TARAON GLOBAL" },
   { label: "Form", value: "Black shiny flakes" },
   { label: "Packaging", value: "1 kg, 5 kg, 10 kg, 25 kg, 50 kg" },
   { label: "Source", value: "Natural leonardite" },
@@ -49,15 +49,15 @@ const FAQS = [
 export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98")({
   head: () => ({
     meta: [
-      { title: "Potassium Humate 98 Shiny Flakes | Taraon Global" },
+      { title: "Potassium Humate 98 Shiny Flakes | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Super Potassium Shiny Flakes 98% by Taraon Global. 60-65% humic acid, up to 100% water soluble. Packs from 1 kg to 50 kg.",
+          "Super Potassium Shiny Flakes 98% by TARAON GLOBAL. 60-65% humic acid, up to 100% water soluble. Packs from 1 kg to 50 kg.",
       },
       {
         property: "og:title",
-        content: "Super Potassium Shiny Flakes 98% | Taraon Global",
+        content: "Super Potassium Shiny Flakes 98% | TARAON GLOBAL",
       },
       {
         property: "og:description",
@@ -80,11 +80,11 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           "@context": "https://schema.org",
           "@type": "Product",
           name: "Super Potassium Shiny Flakes 98%",
-          brand: { "@type": "Brand", name: "Taraon Global" },
+          brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
             "Black shiny potassium humate flakes made from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Available in 1 kg, 5 kg, 10 kg, 25 kg, 50 kg packs.",
-          manufacturer: { "@type": "Organization", name: "Taraon Global" },
+          manufacturer: { "@type": "Organization", name: "TARAON GLOBAL" },
         }),
       },
       {
