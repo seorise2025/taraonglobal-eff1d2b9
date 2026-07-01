@@ -3,6 +3,7 @@ import fieldImg from "@/assets/applications-field.jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { SpecTable } from "@/components/site/SpecTable";
+import { IndiaCoverage } from "@/components/site/IndiaCoverage";
 
 export const Route = createFileRoute("/applications")({
   head: () => ({
@@ -129,9 +130,11 @@ function Applications() {
         </div>
       </section>
 
+      <IndiaCoverage />
+
       <CTABand
         title="Not sure which product suits your crop and system?"
-        subtitle="Tell us the crop, system, and area. We'll point you to the right pack size and dose."
+        subtitle="Tell us the crop, system, and area. We'll point you to the right dose for your 25 Kgs bag order."
         primaryLabel="Talk to TARAON GLOBAL"
       />
     </>
