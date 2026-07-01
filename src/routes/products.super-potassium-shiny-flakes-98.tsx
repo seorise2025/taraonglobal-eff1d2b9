@@ -83,8 +83,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
-            "Black shiny potassium humate flakes made from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Available in 1 kg, 5 kg, 10 kg, 25 kg, 50 kg packs.",
-          manufacturer: { "@type": "Organization", name: "TARAON GLOBAL" },
+            "Black shiny potassium humate flakes from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Available in 1 kg, 5 kg, 10 kg, 25 kg, 50 kg packs.",
         }),
       },
       {

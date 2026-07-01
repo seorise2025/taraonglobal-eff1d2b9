@@ -43,18 +43,19 @@ function About() {
           </h1>
           <div className="mt-6 space-y-4 text-ink/80">
             <p>
-              TARAON GLOBAL started with one product done properly, not ten products done
-              halfway.
+              TARAON GLOBAL is a trading company built around one product line done
+              properly, not ten done halfway. We source and supply just two grades of
+              potassium humate shiny flakes for agriculture.
             </p>
             <p>
-              We're based at Sarkhej Sanand Cross Road in Ahmedabad. We make potassium
-              humate shiny flakes for agriculture. Not fertilizer in general. Not a wide
-              catalogue. This one category, done well.
+              We're based at Sarkhej Sanand Cross Road in Ahmedabad. Our focus is a
+              single category, handled well — from sourcing and quality checks to
+              packing, dispatch, and after-sale support.
             </p>
             <p>
-              The bags carry batch numbers because we want you to know exactly what
-              you're buying, and when. Pack sizes go from 1 kg for a small farm trial to
-              50 kg for a dealer stocking up. Both buyers get the same product quality.
+              Every bag carries a batch number so you know exactly what you're buying,
+              and when. Pack sizes go from 1 kg for a small farm trial to 50 kg for a
+              dealer stocking up. Both buyers get the same product quality.
             </p>
             <p>
               We answer our own phone. If you call, you'll speak with Rajesh, not a call
@@ -77,7 +78,10 @@ function About() {
           <div>
             <SectionHeading eyebrow="Leadership" title="Led by Rajesh Kumar Trivedi" />
             <p className="mt-5 text-ink/75">
-              Rajesh runs TARAON GLOBAL out of Ahmedabad. For product questions, dealer
+              Rajesh Kumar Trivedi runs TARAON GLOBAL out of Ahmedabad and brings over
+              20 years of hands-on experience in the humate and agri-inputs industry.
+              That experience shows up in the way we pick suppliers, check every
+              consignment, and stand behind what we ship. For product questions, dealer
               pricing, or bulk orders, call him directly.
             </p>
             <a
