@@ -7,22 +7,29 @@ import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
 
 const SPECS = [
+  { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
+  { label: "Purity", value: "98%" },
   { label: "Appearance", value: "Big black shiny flakes" },
-  { label: "Humic Acid", value: "60% to 65%" },
-  { label: "Fulvic Acid", value: "5% to 15%" },
-  { label: "Potassium (K₂O)", value: "10% to 12%" },
-  { label: "Water Solubility", value: "Up to 100%" },
-  { label: "pH", value: "9 to 10" },
-  { label: "Moisture", value: "Max 15%" },
-  { label: "Packaging", value: "1 kg, 5 kg, 10 kg, 25 kg, 50 kg bags" },
+  { label: "Odour", value: "Mild earthy smell" },
+  { label: "Humic Acid", value: "55% to 60%" },
+  { label: "Fulvic Acid", value: "1% to 3%" },
+  { label: "Potassium as K₂O", value: "9% to 11%" },
+  { label: "Moisture", value: "10% to 15%" },
+  { label: "Water Solubility", value: "98%" },
+  { label: "Packing", value: "25 Kgs" },
+  {
+    label: "Source Material",
+    value: "Natural humic substances — leonardite, lignite, or oxidised brown coal",
+  },
 ];
 
 const QUICK = [
   { label: "Product Name", value: "Super F Humate Big Shiny Flakes" },
   { label: "Brand", value: "TARAON GLOBAL" },
+  { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
   { label: "Form", value: "Big black shiny flakes" },
-  { label: "Packaging", value: "1 kg, 5 kg, 10 kg, 25 kg, 50 kg" },
-  { label: "Source", value: "Natural leonardite" },
+  { label: "Packing", value: "25 Kgs" },
+  { label: "Source", value: "Leonardite / lignite / oxidised brown coal" },
   {
     label: "Buyer Type",
     value: "Dealers, distributors, fertilizer companies, farmers",
