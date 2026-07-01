@@ -15,6 +15,31 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
+import { FAQ } from "@/components/site/FAQ";
+import { SectionHeading as SectionHeadingSEO } from "@/components/site/SectionHeading";
+
+const HOME_FAQS = [
+  {
+    q: "What is potassium humate and what is it used for?",
+    a: "Potassium humate is a soil conditioner and plant growth support input made from natural humic substances (leonardite, lignite or oxidised brown coal) reacted with potassium hydroxide. Farmers, dealers and fertilizer companies use it to improve soil structure, root growth, nutrient uptake and fertiliser efficiency across field crops, vegetables, fruit and plantation crops.",
+  },
+  {
+    q: "What is the price of potassium humate shiny flakes in India?",
+    a: "TARAON GLOBAL supplies potassium humate shiny flakes in a standard 25 Kgs pack with bulk and dealer pricing on request. Rates depend on quantity, destination and current stock. Call Rajesh Kumar Trivedi on +91 63591 93666 or send your quantity through the contact page for a same-day quote.",
+  },
+  {
+    q: "What is the 25 kg price and pack details?",
+    a: "Everything ships in the same 25 Kgs kraft bag - the standard pack for farmers, dealers and distributors. Batch numbers are printed on every bag and a current-batch COA is available on request. Quotations for 25 kg, half-tonne, tonne and container quantities are available.",
+  },
+  {
+    q: "What are the main humic acid fertilizer uses?",
+    a: "Humic acid fertilizer is used in soil application, drip irrigation, fertigation, foliar spray and NPK blending. It helps soil hold water and nutrients so the plant can actually use what you are feeding it, and supports microbial activity around the root zone.",
+  },
+  {
+    q: "Do you supply potassium humate across India?",
+    a: "Yes. We dispatch from our Ahmedabad warehouse to buyers across Gujarat and every Indian state and union territory. Dealer, distributor and fertilizer-company orders are handled from the same location.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
