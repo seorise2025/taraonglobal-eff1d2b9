@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import heroImg from "@/assets/potassium-humate-flakes.jpg.asset.json";
+import heroImg from "@/assets/super-potassium-98-product.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
