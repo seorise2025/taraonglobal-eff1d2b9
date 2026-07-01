@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 const SPECS = [
   { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
@@ -307,6 +308,27 @@ function ProductPage() {
           <FAQ items={FAQS} />
         </div>
       </section>
+
+
+      <RelatedLinks
+        items={[
+          {
+            to: "/products/super-potassium-shiny-flakes-98",
+            title: "Super Potassium Shiny Flakes 98%",
+            desc: "Standard flake grade - drip friendly, farmer and dealer pack.",
+          },
+          {
+            to: "/applications",
+            title: "Where potassium humate fits",
+            desc: "Fertilizer blending, fertigation, foliar and soil use in the field.",
+          },
+          {
+            to: "/contact",
+            title: "Request dealer & bulk pricing",
+            desc: "Send quantity and destination for a same-day 25 Kgs quote.",
+          },
+        ]}
+      />
 
       <CTABand
         title="Looking for bulk stock?"

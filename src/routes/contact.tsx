@@ -5,6 +5,7 @@ import { Phone, MapPin, MessageCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -267,6 +268,28 @@ function Contact() {
           />
         </div>
       </section>
+
+      <RelatedLinks
+        eyebrow="While you're here"
+        title="Explore the range"
+        items={[
+          {
+            to: "/products/super-potassium-shiny-flakes-98",
+            title: "Super Potassium Shiny Flakes 98%",
+            desc: "Flagship potassium humate - drip, fertigation and foliar ready.",
+          },
+          {
+            to: "/products/super-f-humate-big-shiny-flakes",
+            title: "Super F Humate Big Shiny Flakes",
+            desc: "Big flake grade for dealers, distributors and blenders.",
+          },
+          {
+            to: "/applications",
+            title: "Potassium humate uses in agriculture",
+            desc: "How the flakes fit soil, drip, fertigation and NPK blends.",
+          },
+        ]}
+      />
     </>
   );
 }

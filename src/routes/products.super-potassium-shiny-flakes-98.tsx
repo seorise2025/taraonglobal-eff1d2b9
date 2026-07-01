@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 const SPECS = [
   { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
@@ -317,6 +318,27 @@ function ProductPage() {
           <FAQ items={FAQS} />
         </div>
       </section>
+
+
+      <RelatedLinks
+        items={[
+          {
+            to: "/products/super-f-humate-big-shiny-flakes",
+            title: "Super F Humate Big Shiny Flakes",
+            desc: "Same potassium humate, bigger flake, dealer and blender pack.",
+          },
+          {
+            to: "/applications",
+            title: "Potassium humate uses in agriculture",
+            desc: "Soil, drip irrigation, fertigation, foliar spray and NPK blending.",
+          },
+          {
+            to: "/about",
+            title: "About TARAON GLOBAL",
+            desc: "Ahmedabad based supplier led by Rajesh Kumar Trivedi.",
+          },
+        ]}
+      />
 
       <CTABand
         title="Want a quote for your quantity?"

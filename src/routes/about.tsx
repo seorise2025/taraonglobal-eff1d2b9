@@ -3,6 +3,7 @@ import { Phone, MapPin } from "lucide-react";
 import warehouseImg from "@/assets/about-warehouse.jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -137,6 +138,29 @@ function About() {
           </div>
         </div>
       </section>
+
+
+      <RelatedLinks
+        eyebrow="Our products"
+        title="What TARAON GLOBAL supplies"
+        items={[
+          {
+            to: "/products/super-potassium-shiny-flakes-98",
+            title: "Super Potassium Shiny Flakes 98%",
+            desc: "Flagship potassium humate flakes for farmers and dealers.",
+          },
+          {
+            to: "/products/super-f-humate-big-shiny-flakes",
+            title: "Super F Humate Big Shiny Flakes",
+            desc: "Big flake grade built for bulk buyers and blenders.",
+          },
+          {
+            to: "/applications",
+            title: "How the products are used",
+            desc: "Soil, drip, fertigation, foliar and NPK blending in the field.",
+          },
+        ]}
+      />
 
       <CTABand
         title="Have a question you'd rather ask a person?"

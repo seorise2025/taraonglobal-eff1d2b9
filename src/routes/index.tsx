@@ -59,13 +59,20 @@ function Home() {
               Potassium Humate That Actually Dissolves the Way It Should
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-              TARAON GLOBAL is an Ahmedabad based trading company supplying 98%
-              potassium humate shiny flakes derived from natural leonardite, lignite
-              or oxidised brown coal. Rich in humic acid, fulvic acid and potassium.
-              Built for soil that needs to work harder.
+              TARAON GLOBAL is an{" "}
+              <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
+                Ahmedabad based trading company
+              </Link>{" "}
+              supplying 98% potassium humate shiny flakes derived from natural
+              leonardite, lignite or oxidised brown coal. Rich in humic acid,
+              fulvic acid and potassium. Built for soil that needs to work harder.
             </p>
             <p className="mt-3 text-ink/60">
-              Farmers use it. Dealers stock it. Distributors move it in bulk.
+              Farmers use it in{" "}
+              <Link to="/applications" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
+                drip irrigation and fertigation
+              </Link>
+              . Dealers stock it. Distributors move it in bulk across India.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
