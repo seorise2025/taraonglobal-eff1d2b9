@@ -4,6 +4,26 @@ import warehouseImg from "@/assets/about-warehouse.jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { FAQ } from "@/components/site/FAQ";
+
+const ABOUT_FAQS = [
+  {
+    q: "Where is TARAON GLOBAL located?",
+    a: "TARAON GLOBAL operates from A-210, Signature-2, Sarkhej Sanand Cross Road, Ahmedabad 382210, Gujarat, India. Warehousing, packing and dispatch of all potassium humate shiny flakes happen from this location.",
+  },
+  {
+    q: "Is TARAON GLOBAL a manufacturer or a supplier?",
+    a: "TARAON GLOBAL is a trading and supplier company. We source potassium humate shiny flakes from a trusted producer, verify every batch, and handle warehousing, packing and dispatch to farmers, dealers, distributors and fertilizer companies.",
+  },
+  {
+    q: "Who runs TARAON GLOBAL?",
+    a: "The business is led by Rajesh Kumar Trivedi, who brings over 20 years of hands-on experience in the humate and agri-inputs industry. He personally oversees supplier selection, batch verification and dealer relationships.",
+  },
+  {
+    q: "What is the standard 25 kg pack and how do I request pricing?",
+    a: "All grades ship in a standard 25 Kgs kraft bag with a printed batch number. For 25 kg price, bulk pricing, dealer terms or a current-batch COA, call Rajesh Kumar Trivedi on +91 63591 93666 or send an enquiry from the contact page.",
+  },
+];
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -23,10 +43,10 @@ export const Route = createFileRoute("/about")({
         content:
           "One product done properly. Led by Rajesh Kumar Trivedi from Sarkhej Sanand Cross Road, Ahmedabad.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://taraonglobal.lovable.app/about" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://taraonglobal.lovable.app/about" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -34,8 +54,8 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "About", item: "/about" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://taraonglobal.lovable.app/about" },
           ],
         }),
       },
@@ -45,9 +65,21 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "AboutPage",
           name: "About TARAON GLOBAL",
-          url: "/about",
-          mainEntity: { "@id": "/#organization" },
-          about: { "@id": "/#rajesh-kumar-trivedi" },
+          url: "https://taraonglobal.lovable.app/about",
+          mainEntity: { "@id": "https://taraonglobal.lovable.app/#organization" },
+          about: { "@id": "https://taraonglobal.lovable.app/#rajesh-kumar-trivedi" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: ABOUT_FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }),
       },
     ],
