@@ -143,11 +143,11 @@ function ProductPage() {
         <div className="relative">
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
-            src={productBigImg}
-            alt="Big black shiny humate flakes on cream background"
+            src={productBigImg.url}
+            alt="Super F Humate Big Shiny Flakes — 25 kg kraft bag by TARAON GLOBAL"
             width={1400}
             height={1200}
-            className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
+            className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
           />
         </div>
       </section>
