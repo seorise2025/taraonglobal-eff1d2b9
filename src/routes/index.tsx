@@ -14,6 +14,7 @@ import fieldImg from "@/assets/applications-field.jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
+import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -233,47 +234,8 @@ function Home() {
         </div>
       </section>
 
-      {/* GUJARAT FIRST */}
-      <section className="border-y border-border bg-card">
-        <div className="container-page grid gap-10 py-16 md:grid-cols-[1fr_1fr] md:items-center">
-          <div>
-            <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-              <span className="h-px w-8 bg-gold" /> Gujarat first
-            </div>
-            <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
-              Built in Ahmedabad, Sold Across Gujarat
-            </h2>
-            <p className="mt-4 text-ink/75">
-              We are based at Sarkhej Sanand Cross Road, Ahmedabad. Most of our dealer
-              relationships started right here in Gujarat, in Rajkot, Vadodara, Surat,
-              Mehsana, and Gandhinagar.
-            </p>
-            <p className="mt-3 text-ink/60">
-              If you are a dealer in these markets, we already understand your buyers.
-            </p>
-            <a
-              href="https://wa.me/916359193666"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-forest-deep px-5 py-3 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
-            >
-              Talk to us in Gujarati or English
-            </a>
-          </div>
-          <div className="grid grid-cols-2 gap-4 text-center">
-            {["Rajkot", "Vadodara", "Surat", "Mehsana", "Gandhinagar", "Ahmedabad"].map(
-              (c) => (
-                <div
-                  key={c}
-                  className="rounded-sm border border-border bg-cream px-4 py-6 font-display text-lg text-forest-deep"
-                >
-                  {c}
-                </div>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
+      {/* INDIA COVERAGE MAP */}
+      <IndiaMapCoverage />
 
       {/* WHY BUYERS STAY */}
       <section className="container-page py-20">
