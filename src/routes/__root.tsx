@@ -271,10 +271,14 @@ function Footer() {
     <footer className="mt-24 border-t border-border bg-forest-deep text-cream/85">
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-sm bg-gold font-display text-lg text-forest-deep">
-              T
-            </span>
+          <div className="flex items-center gap-2.5">
+            <img
+              src={logoDark.url}
+              alt="Taraon Global"
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-sm object-contain"
+            />
             <span className="font-display text-lg text-cream">Taraon Global</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/70">
