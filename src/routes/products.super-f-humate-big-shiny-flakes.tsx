@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 const SPECS = [
   { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
