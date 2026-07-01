@@ -272,6 +272,33 @@ function ProductPage() {
         </div>
       </section>
 
+      <section className="container-page py-12">
+        <div className="rounded-lg border border-gold/40 bg-card p-6 sm:p-8">
+          <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-8 bg-gold" /> Verified by
+          </div>
+          <div className="grid gap-4 md:grid-cols-[auto_1fr] md:items-center">
+            <div className="grid h-14 w-14 place-items-center rounded-full bg-forest-deep font-display text-xl text-cream">
+              RT
+            </div>
+            <div>
+              <div className="font-display text-lg text-forest-deep">
+                Rajesh Kumar Trivedi — Founder, TARAON GLOBAL
+              </div>
+              <p className="mt-1 text-sm text-ink/75">
+                20+ years of hands-on experience in the humate and agri-inputs
+                industry. Every consignment is personally batch-checked before dispatch
+                from our Ahmedabad warehouse. Batch numbers on every bag; current
+                batch COA available on request.
+              </p>
+              <p className="mt-2 text-xs text-ink/50">
+                Page reviewed {new Date().toLocaleDateString("en-IN", { year: "numeric", month: "long" })}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="container-page py-16">
         <SectionHeading eyebrow="FAQ" title="Common questions" />
         <div className="mt-6">
