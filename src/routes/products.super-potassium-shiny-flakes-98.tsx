@@ -160,10 +160,10 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={heroImg.url}
-            alt="Super Potassium Shiny Flakes 98% — glossy black potassium humate flakes"
-            width={1600}
+            alt="Super Potassium Shiny Flakes 98% — 25 kg kraft bag by TARAON GLOBAL"
+            width={1400}
             height={1200}
-            className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
+            className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
           />
         </div>
       </section>
