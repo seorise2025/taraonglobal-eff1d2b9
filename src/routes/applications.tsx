@@ -133,6 +133,29 @@ function Applications() {
 
       <IndiaMapCoverage />
 
+
+      <RelatedLinks
+        eyebrow="See the products in use"
+        title="Products for these applications"
+        items={[
+          {
+            to: "/products/super-potassium-shiny-flakes-98",
+            title: "Super Potassium Shiny Flakes 98%",
+            desc: "98% water soluble potassium humate for drip, fertigation and foliar use.",
+          },
+          {
+            to: "/products/super-f-humate-big-shiny-flakes",
+            title: "Super F Humate Big Shiny Flakes",
+            desc: "Big flake grade for dealers, distributors and fertilizer blenders.",
+          },
+          {
+            to: "/about",
+            title: "Who supplies these products",
+            desc: "TARAON GLOBAL - Ahmedabad based humate trading company.",
+          },
+        ]}
+      />
+
       <CTABand
         title="Not sure which product suits your crop and system?"
         subtitle="Tell us the crop, system, and area. We'll point you to the right dose for your 25 Kgs bag order."
