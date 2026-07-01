@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import heroImg from "@/assets/super-potassium-98-product.jpg.asset.json";
+import heroImg from "@/assets/super-potassium-98-bag.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
@@ -28,21 +28,28 @@ const QUICK = [
 
 const FAQS = [
   {
-    q: "What is Super Potassium Shiny Flakes 98% used for?",
-    a: "Soil health, root growth, and getting more out of the fertilizer you're already applying.",
+    q: "Where is Super Potassium Shiny Flakes 98% sourced from?",
+    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL is the trading and supply arm — we import, quality check, batch number, and distribute across India.",
   },
   {
-    q: "Is it really water soluble?",
-    a: "Yes, up to 100%. That's the point of the flake form over powder.",
+    q: "Is TARAON GLOBAL the manufacturer?",
+    a: "No. TARAON GLOBAL is a trading and supplier company based in Ahmedabad. We source from a trusted producer, verify every batch, and handle warehousing, packing and dispatch to farmers, dealers and distributors.",
   },
-  { q: "What pack sizes do you sell?", a: "1 kg, 5 kg, 10 kg, 25 kg, and 50 kg." },
+  {
+    q: "What pack sizes do you supply?",
+    a: "1 kg, 5 kg, 10 kg, 25 kg, and 50 kg kraft bags. The 25 kg pack is the standard for dealer and distributor supply.",
+  },
+  {
+    q: "Do you offer dealer and distributor pricing?",
+    a: "Yes. Bulk pricing, credit terms and dealer support are available on request — call Rajesh Kumar Trivedi on +91 63591 93666.",
+  },
   {
     q: "Can I use it in a drip system?",
-    a: "Yes. It's built for that. Dissolve fully before running it through your line.",
+    a: "Yes. It's built for that — up to 100% water soluble. Dissolve fully before running it through your line.",
   },
   {
-    q: "Do you work with dealers?",
-    a: "Yes. Bulk pricing and dealer terms are available on request.",
+    q: "Do you ship across India?",
+    a: "Yes. We dispatch from Ahmedabad to buyers across Gujarat and the rest of India.",
   },
 ];
 
@@ -73,7 +80,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
     links: [
       { rel: "canonical", href: "/products/super-potassium-shiny-flakes-98" },
     ],
-    scripts: [
+        scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -84,6 +91,16 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           category: "Potassium Humate Fertilizer",
           description:
             "Black shiny potassium humate flakes from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Available in 1 kg, 5 kg, 10 kg, 25 kg, 50 kg packs.",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            seller: {
+              "@type": "Organization",
+              name: "TARAON GLOBAL",
+              url: "/",
+              description: "Ahmedabad based trading company and supplier of potassium humate shiny flakes.",
+            },
+          },
         }),
       },
       {
@@ -143,10 +160,10 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={heroImg.url}
-            alt="Super Potassium Shiny Flakes 98% — glossy black potassium humate flakes"
-            width={1600}
+            alt="Super Potassium Shiny Flakes 98% — 25 kg kraft bag by TARAON GLOBAL"
+            width={1400}
             height={1200}
-            className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
+            className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
           />
         </div>
       </section>

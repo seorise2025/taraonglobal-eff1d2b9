@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import productBigImg from "@/assets/super-f-humate-bag-25kg.jpg.asset.json";
+import productBigImg from "@/assets/super-f-humate-bag.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
@@ -31,17 +31,24 @@ const QUICK = [
 
 const FAQS = [
   {
-    q: "What is Super F Humate Big Shiny Flakes used for?",
-    a: "Soil conditioning and root support, same purpose as our 98% flakes, in a bulkier format.",
+    q: "Where is Super F Humate Big Shiny Flakes sourced from?",
+    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL imports the product, verifies each batch, and supplies it under our brand from Ahmedabad.",
   },
   {
-    q: "Is this a good fit for dealers?",
-    a: "Yes. It's built for that exact buyer.",
+    q: "Is TARAON GLOBAL the manufacturer?",
+    a: "No. TARAON GLOBAL is a trading and supplier company. We do not manufacture — we source from a trusted producer and handle quality control, packaging, and India-wide distribution.",
   },
-  { q: "What sizes are available?", a: "1 kg, 5 kg, 10 kg, 25 kg, and 50 kg." },
+  {
+    q: "What packaging is available?",
+    a: "1 kg, 5 kg, 10 kg, 25 kg, and 50 kg kraft bags. The 25 kg bag is the standard pack for dealers and distributors.",
+  },
+  {
+    q: "Do you supply dealers and distributors in bulk?",
+    a: "Yes. This grade is built for that buyer. Dealer terms, bulk pricing and repeat-order support are available on request.",
+  },
   {
     q: "Can it go into a fertilizer blend?",
-    a: "Yes, it's used that way often.",
+    a: "Yes. Fertilizer companies commonly blend it into NPK and organic input lines.",
   },
   {
     q: "Do you ship outside Gujarat?",
@@ -87,6 +94,16 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           category: "Potassium Humate Fertilizer",
           description:
             "Big black shiny potassium humate flakes from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Bulk-ready packs from 1 kg to 50 kg.",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            seller: {
+              "@type": "Organization",
+              name: "TARAON GLOBAL",
+              url: "/",
+              description: "Ahmedabad based trading company and supplier of potassium humate shiny flakes.",
+            },
+          },
         }),
       },
       {
