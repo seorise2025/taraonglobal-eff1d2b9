@@ -73,12 +73,12 @@ function About() {
             </p>
             <p>
               We're based at Sarkhej Sanand Cross Road in Ahmedabad. Our focus is a
-              single category, handled well — from sourcing and quality checks to
+              single category, handled well - from sourcing and quality checks to
               packing, dispatch, and after-sale support.
             </p>
             <p>
               Every bag carries a batch number so you know exactly what you're
-              buying, and when. Standard packing is 25 Kgs — the same pack for
+              buying, and when. Standard packing is 25 Kgs - the same pack for
               farmers, dealers and distributors, so every buyer gets the same
               product quality.
             </p>

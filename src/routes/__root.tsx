@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "TARAON GLOBAL — Potassium Humate Shiny Flakes | Ahmedabad" },
+      { title: "TARAON GLOBAL - Potassium Humate Shiny Flakes | Ahmedabad" },
       {
         name: "description",
         content:
@@ -101,8 +101,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0F3D2E" },
-      { property: "og:title", content: "TARAON GLOBAL — Potassium Humate Shiny Flakes | Ahmedabad" },
-      { name: "twitter:title", content: "TARAON GLOBAL — Potassium Humate Shiny Flakes | Ahmedabad" },
+      { property: "og:title", content: "TARAON GLOBAL - Potassium Humate Shiny Flakes | Ahmedabad" },
+      { name: "twitter:title", content: "TARAON GLOBAL - Potassium Humate Shiny Flakes | Ahmedabad" },
       { name: "description", content: "Taraon Global supplies potassium humate shiny flakes for agriculture, enhancing soil and crop health." },
       { property: "og:description", content: "Taraon Global supplies potassium humate shiny flakes for agriculture, enhancing soil and crop health." },
       { name: "twitter:description", content: "Taraon Global supplies potassium humate shiny flakes for agriculture, enhancing soil and crop health." },
@@ -127,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": ["Organization", "WholesaleStore"],
           "@id": "/#organization",
           name: "TARAON GLOBAL",
-          alternateName: "TARAON GLOBAL — Potassium Humate Supplier",
+          alternateName: "TARAON GLOBAL - Potassium Humate Supplier",
           url: "/",
           telephone: "+91-6359193666",
           foundingDate: "2020",
@@ -212,6 +212,8 @@ function Header() {
             alt="TARAON GLOBAL"
             width={44}
             height={44}
+            decoding="async"
+            fetchPriority="high"
             className="h-11 w-11 rounded-sm object-contain"
           />
           <span className="flex flex-col leading-none">
@@ -320,6 +322,8 @@ function Footer() {
               alt="TARAON GLOBAL"
               width={44}
               height={44}
+              loading="lazy"
+              decoding="async"
               className="h-11 w-11 rounded-sm object-contain"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>

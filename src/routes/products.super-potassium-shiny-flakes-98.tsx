@@ -20,7 +20,7 @@ const SPECS = [
   { label: "Packing", value: "25 Kgs" },
   {
     label: "Source Material",
-    value: "Natural humic substances — leonardite, lignite, or oxidised brown coal",
+    value: "Natural humic substances - leonardite, lignite, or oxidised brown coal",
   },
 ];
 
@@ -37,7 +37,7 @@ const QUICK = [
 const FAQS = [
   {
     q: "Where is Super Potassium Shiny Flakes 98% sourced from?",
-    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL is the trading and supply arm — we import, quality check, batch number, and distribute across India.",
+    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL is the trading and supply arm - we import, quality check, batch number, and distribute across India.",
   },
   {
     q: "Is TARAON GLOBAL the manufacturer?",
@@ -45,15 +45,15 @@ const FAQS = [
   },
   {
     q: "What pack size do you supply?",
-    a: "Standard packing is 25 Kgs kraft bags — the standard pack for farmers, dealers and distributors.",
+    a: "Standard packing is 25 Kgs kraft bags - the standard pack for farmers, dealers and distributors.",
   },
   {
     q: "Do you offer dealer and distributor pricing?",
-    a: "Yes. Bulk pricing, credit terms and dealer support are available on request — call Rajesh Kumar Trivedi on +91 63591 93666.",
+    a: "Yes. Bulk pricing, credit terms and dealer support are available on request - call Rajesh Kumar Trivedi on +91 63591 93666.",
   },
   {
     q: "Can I use it in a drip system?",
-    a: "Yes. It's 98% water soluble — built for drip irrigation, fertigation and foliar spray. Dissolve fully before running it through your line.",
+    a: "Yes. It's 98% water soluble - built for drip irrigation, fertigation and foliar spray. Dissolve fully before running it through your line.",
   },
   {
     q: "Do you ship across India?",
@@ -98,7 +98,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
-            "Water soluble potassium humate shiny flakes. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input — not a complete NPK fertiliser.",
+            "Water soluble potassium humate shiny flakes. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input - not a complete NPK fertiliser.",
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
@@ -167,7 +167,7 @@ function ProductPage() {
           <p className="mt-3 text-ink/70">
             Water soluble potassium humate shiny flakes derived from natural
             leonardite, lignite or oxidised brown coal. 98% purity, 55-60% humic
-            acid, 3-5% K₂O and pH 9-10. A soil conditioner and plant growth support input —
+            acid, 3-5% K₂O and pH 9-10. A soil conditioner and plant growth support input -
             not a complete NPK fertiliser.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -192,9 +192,11 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={heroImg.url}
-            alt="Super Potassium Shiny Flakes 98% — 25 kg kraft bag by TARAON GLOBAL"
+            alt="Super Potassium Shiny Flakes 98% - 25 kg kraft bag by TARAON GLOBAL"
             width={1400}
             height={1200}
+            fetchPriority="high"
+            decoding="async"
             className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
           />
         </div>
@@ -293,7 +295,7 @@ function ProductPage() {
             </div>
             <div>
               <div className="font-display text-lg text-forest-deep">
-                Rajesh Kumar Trivedi — Founder, TARAON GLOBAL
+                Rajesh Kumar Trivedi - Founder, TARAON GLOBAL
               </div>
               <p className="mt-1 text-sm text-ink/75">
                 20+ years of hands-on experience in the humate and agri-inputs

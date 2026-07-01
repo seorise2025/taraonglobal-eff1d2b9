@@ -22,7 +22,7 @@ function arcPath(x1: number, y1: number, x2: number, y2: number) {
   const dx = x2 - x1;
   const dy = y2 - y1;
   const dist = Math.sqrt(dx * dx + dy * dy);
-  // perpendicular offset — arc curves upward (toward -y)
+  // perpendicular offset - arc curves upward (toward -y)
   const nx = -dy / dist;
   const ny = dx / dist;
   const bulge = Math.min(120, dist * 0.35);
@@ -163,20 +163,14 @@ export function IndiaMapCoverage() {
                   ))}
                 </g>
 
-                {/* Ahmedabad origin — pulsing ring + solid dot */}
+                {/* Ahmedabad origin - pulsing ring + solid dot */}
                 <g>
-                  <motion.circle
+                  <circle
+                    className="svg-pulse"
                     cx={AHM.x}
                     cy={AHM.y}
                     r={8}
                     fill="oklch(0.72 0.14 75)"
-                    initial={reduce ? { opacity: 0.4, scale: 1 } : { opacity: 0.6, scale: 0.6 }}
-                    animate={
-                      reduce
-                        ? { opacity: 0.4 }
-                        : { opacity: [0.6, 0, 0.6], scale: [0.6, 2.4, 0.6] }
-                    }
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
                   />
                   <circle cx={AHM.x} cy={AHM.y} r={5} fill="oklch(0.2 0.03 155)" />
                   <circle cx={AHM.x} cy={AHM.y} r={2.2} fill="oklch(0.85 0.12 80)" />
@@ -195,7 +189,7 @@ export function IndiaMapCoverage() {
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-ink/60">
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rounded-full bg-gold" />
-                  Origin — Ahmedabad
+                  Origin - Ahmedabad
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-0.5 w-6 bg-gold" />
