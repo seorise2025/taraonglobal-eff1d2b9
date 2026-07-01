@@ -164,8 +164,10 @@ function ProductPage() {
             This is our main product, and it earns that spot.
           </p>
           <p className="mt-3 text-ink/70">
-            Made from natural leonardite. High in humic acid, fulvic acid, and potassium.
-            Dissolves fast, no residue left behind in your tank.
+            Water soluble potassium humate shiny flakes derived from natural
+            leonardite, lignite or oxidised brown coal. 98% purity, 55-60% humic
+            acid and 9-11% K₂O. A soil conditioner and plant growth support input —
+            not a complete NPK fertiliser.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
