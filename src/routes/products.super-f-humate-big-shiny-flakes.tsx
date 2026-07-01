@@ -71,7 +71,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
       {
         name: "description",
         content:
-          "Super F Humate Big Shiny Flakes for bulk buyers and dealers. 98% purity potassium humate, 55-60% humic acid, 9-11% K₂O. Supplied in 25 Kgs packs.",
+          "Super F Humate Big Shiny Flakes for bulk buyers and dealers. 98% purity potassium humate, 55-60% humic acid, 3-5% K₂O, pH 9-10. Supplied in 25 Kgs packs.",
       },
       {
         property: "og:title",
