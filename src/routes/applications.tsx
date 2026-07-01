@@ -26,6 +26,19 @@ export const Route = createFileRoute("/applications")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "/applications" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Applications", item: "/applications" },
+          ],
+        }),
+      },
+    ],
   }),
   component: Applications,
 });
