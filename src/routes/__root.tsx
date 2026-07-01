@@ -13,7 +13,6 @@ import { Menu, X, Phone } from "lucide-react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
-import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
@@ -273,7 +272,7 @@ function Footer() {
         <div>
           <div className="flex items-center gap-2.5">
             <img
-              src={logoDark.url}
+              src={logoGreen.url}
               alt="Taraon Global"
               width={44}
               height={44}
