@@ -95,6 +95,8 @@ function Home() {
               alt="Black shiny potassium humate flakes in warm golden light"
               width={1600}
               height={1200}
+              fetchPriority="high"
+              decoding="async"
               className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
             />
             <div className="absolute -bottom-6 -left-6 hidden rounded-sm border border-gold/40 bg-cream px-5 py-3 shadow-lg sm:block">
