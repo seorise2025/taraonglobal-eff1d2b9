@@ -309,6 +309,27 @@ function ProductPage() {
         </div>
       </section>
 
+
+      <RelatedLinks
+        items={[
+          {
+            to: "/products/super-potassium-shiny-flakes-98",
+            title: "Super Potassium Shiny Flakes 98%",
+            desc: "Standard flake grade - drip friendly, farmer and dealer pack.",
+          },
+          {
+            to: "/applications",
+            title: "Where potassium humate fits",
+            desc: "Fertilizer blending, fertigation, foliar and soil use in the field.",
+          },
+          {
+            to: "/contact",
+            title: "Request dealer & bulk pricing",
+            desc: "Send quantity and destination for a same-day 25 Kgs quote.",
+          },
+        ]}
+      />
+
       <CTABand
         title="Looking for bulk stock?"
         subtitle="Send your quantity and destination. Dealer terms available on request."
