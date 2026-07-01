@@ -25,10 +25,10 @@ export const Route = createFileRoute("/contact")({
         content:
           "Send your product and quantity. Real replies, same day. Call Rajesh direct: +91 63591 93666.",
       },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://taraonglobal.lovable.app/contact" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://taraonglobal.lovable.app/contact" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -36,8 +36,8 @@ export const Route = createFileRoute("/contact")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "https://taraonglobal.lovable.app/contact" },
           ],
         }),
       },
@@ -47,8 +47,8 @@ export const Route = createFileRoute("/contact")({
           "@context": "https://schema.org",
           "@type": "ContactPage",
           name: "Contact TARAON GLOBAL",
-          url: "/contact",
-          mainEntity: { "@id": "/#organization" },
+          url: "https://taraonglobal.lovable.app/contact",
+          mainEntity: { "@id": "https://taraonglobal.lovable.app/#organization" },
         }),
       },
     ],
