@@ -21,7 +21,7 @@ export const Route = createFileRoute("/applications")({
       {
         property: "og:description",
         content:
-          "Where potassium humate fits in real farming — soil, drip, fertigation, foliar, and NPK blending.",
+          "Where potassium humate fits in real farming - soil, drip, fertigation, foliar, and NPK blending.",
       },
       { property: "og:url", content: "/applications" },
       { property: "og:type", content: "website" },

@@ -22,7 +22,7 @@ function arcPath(x1: number, y1: number, x2: number, y2: number) {
   const dx = x2 - x1;
   const dy = y2 - y1;
   const dist = Math.sqrt(dx * dx + dy * dy);
-  // perpendicular offset — arc curves upward (toward -y)
+  // perpendicular offset - arc curves upward (toward -y)
   const nx = -dy / dist;
   const ny = dx / dist;
   const bulge = Math.min(120, dist * 0.35);
@@ -163,7 +163,7 @@ export function IndiaMapCoverage() {
                   ))}
                 </g>
 
-                {/* Ahmedabad origin — pulsing ring + solid dot */}
+                {/* Ahmedabad origin - pulsing ring + solid dot */}
                 <g>
                   <motion.circle
                     cx={AHM.x}
@@ -195,7 +195,7 @@ export function IndiaMapCoverage() {
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-ink/60">
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rounded-full bg-gold" />
-                  Origin — Ahmedabad
+                  Origin - Ahmedabad
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-0.5 w-6 bg-gold" />

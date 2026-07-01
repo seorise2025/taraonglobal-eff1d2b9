@@ -20,7 +20,7 @@ const SPECS = [
   { label: "Packing", value: "25 Kgs" },
   {
     label: "Source Material",
-    value: "Natural humic substances — leonardite, lignite, or oxidised brown coal",
+    value: "Natural humic substances - leonardite, lignite, or oxidised brown coal",
   },
 ];
 
@@ -44,11 +44,11 @@ const FAQS = [
   },
   {
     q: "Is TARAON GLOBAL the manufacturer?",
-    a: "No. TARAON GLOBAL is a trading and supplier company. We do not manufacture — we source from a trusted producer and handle quality control, packaging, and India-wide distribution.",
+    a: "No. TARAON GLOBAL is a trading and supplier company. We do not manufacture - we source from a trusted producer and handle quality control, packaging, and India-wide distribution.",
   },
   {
     q: "What packaging is available?",
-    a: "Standard packing is 25 Kgs kraft bags — the pack format used across dealer and distributor supply.",
+    a: "Standard packing is 25 Kgs kraft bags - the pack format used across dealer and distributor supply.",
   },
   {
     q: "Do you supply dealers and distributors in bulk?",
@@ -101,7 +101,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
-            "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input — not a complete NPK fertiliser.",
+            "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input - not a complete NPK fertiliser.",
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
@@ -190,7 +190,7 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={productBigImg.url}
-            alt="Super F Humate Big Shiny Flakes — 25 kg kraft bag by TARAON GLOBAL"
+            alt="Super F Humate Big Shiny Flakes - 25 kg kraft bag by TARAON GLOBAL"
             width={1400}
             height={1200}
             className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
@@ -283,7 +283,7 @@ function ProductPage() {
             </div>
             <div>
               <div className="font-display text-lg text-forest-deep">
-                Rajesh Kumar Trivedi — Founder, TARAON GLOBAL
+                Rajesh Kumar Trivedi - Founder, TARAON GLOBAL
               </div>
               <p className="mt-1 text-sm text-ink/75">
                 20+ years in the humate and agri-inputs industry. Sourcing, batch
