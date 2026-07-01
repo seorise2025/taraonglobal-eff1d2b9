@@ -77,9 +77,10 @@ function About() {
               packing, dispatch, and after-sale support.
             </p>
             <p>
-              Every bag carries a batch number so you know exactly what you're buying,
-              and when. Pack sizes go from 1 kg for a small farm trial to 50 kg for a
-              dealer stocking up. Both buyers get the same product quality.
+              Every bag carries a batch number so you know exactly what you're
+              buying, and when. Standard packing is 25 Kgs — the same pack for
+              farmers, dealers and distributors, so every buyer gets the same
+              product quality.
             </p>
             <p>
               We answer our own phone. If you call, you'll speak with Rajesh, not a call

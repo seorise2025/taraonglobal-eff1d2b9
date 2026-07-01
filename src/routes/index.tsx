@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "TARAON GLOBAL is an Ahmedabad based trading company supplying potassium humate shiny flakes to farmers, dealers and distributors. Packs from 1 kg to 50 kg, shipped across India.",
+          "TARAON GLOBAL is an Ahmedabad based trading company supplying 98% potassium humate shiny flakes to farmers, dealers and distributors. 25 Kgs packs, shipped across India.",
       },
       { property: "og:title", content: "Potassium Humate Fertilizer Supplier in India | TARAON GLOBAL" },
       {
@@ -55,9 +55,10 @@ function Home() {
               Potassium Humate That Actually Dissolves the Way It Should
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-              TARAON GLOBAL is an Ahmedabad based trading company supplying potassium
-              humate shiny flakes from natural leonardite. Rich in humic acid, fulvic
-              acid, and potassium. Built for soil that needs to work harder.
+              TARAON GLOBAL is an Ahmedabad based trading company supplying 98%
+              potassium humate shiny flakes derived from natural leonardite, lignite
+              or oxidised brown coal. Rich in humic acid, fulvic acid and potassium.
+              Built for soil that needs to work harder.
             </p>
             <p className="mt-3 text-ink/60">
               Farmers use it. Dealers stock it. Distributors move it in bulk.
@@ -98,7 +99,7 @@ function Home() {
             <div className="absolute -bottom-6 -left-6 hidden rounded-sm border border-gold/40 bg-cream px-5 py-3 shadow-lg sm:block">
               <div className="text-[10px] uppercase tracking-[0.2em] text-ink/50">Humic acid</div>
               <div className="font-display text-2xl text-forest-deep">
-                <CountUp to={65} suffix="%" />
+                <CountUp to={60} suffix="%" />
               </div>
             </div>
           </motion.div>
@@ -109,8 +110,8 @@ function Home() {
       <section className="border-y border-border bg-card">
         <div className="container-page grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Package, label: "Packs from 1 kg to 50 kg" },
-            { icon: Droplets, label: "Up to 100% water soluble" },
+            { icon: Package, label: "25 Kgs standard pack" },
+            { icon: Droplets, label: "98% water soluble" },
             { icon: BadgeCheck, label: "Batch tested, batch numbered" },
             { icon: MapPin, label: "Ahmedabad based, India wide supply" },
           ].map(({ icon: Icon, label }) => (
@@ -136,7 +137,7 @@ function Home() {
           <ProductCard
             image={heroImg}
             name="Super Potassium Shiny Flakes 98%"
-            desc="Black shiny flakes. 60 to 65% humic acid. Built for soil, drip, and spray."
+            desc="Black shiny flakes. 98% purity, 55 to 60% humic acid. Built for soil, drip, fertigation and foliar spray."
             to="/products/super-potassium-shiny-flakes-98"
           />
           <ProductCard
@@ -284,7 +285,7 @@ function Home() {
           {[
             "Real spec sheet, not a marketing sheet",
             "Batch numbers on every bag",
-            "Packs from 1 kg to 50 kg, so small buyers aren't stuck ordering a ton",
+            "25 Kgs standard pack, consistent batch to batch",
             "One person answers the phone. His name is Rajesh.",
           ].map((t, i) => (
             <div
