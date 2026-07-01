@@ -9,38 +9,150 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ApplicationsRouteImport } from './routes/applications'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsSuperPotassiumShinyFlakes98RouteImport } from './routes/products.super-potassium-shiny-flakes-98'
+import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes/products.super-f-humate-big-shiny-flakes'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationsRoute = ApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsSuperPotassiumShinyFlakes98Route =
+  ProductsSuperPotassiumShinyFlakes98RouteImport.update({
+    id: '/products/super-potassium-shiny-flakes-98',
+    path: '/products/super-potassium-shiny-flakes-98',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProductsSuperFHumateBigShinyFlakesRoute =
+  ProductsSuperFHumateBigShinyFlakesRouteImport.update({
+    id: '/products/super-f-humate-big-shiny-flakes',
+    path: '/products/super-f-humate-big-shiny-flakes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/applications': typeof ApplicationsRoute
+  '/contact': typeof ContactRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
+  '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/applications': typeof ApplicationsRoute
+  '/contact': typeof ContactRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
+  '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/applications': typeof ApplicationsRoute
+  '/contact': typeof ContactRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
+  '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/applications'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/products/super-f-humate-big-shiny-flakes'
+    | '/products/super-potassium-shiny-flakes-98'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/applications'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/products/super-f-humate-big-shiny-flakes'
+    | '/products/super-potassium-shiny-flakes-98'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/applications'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/products/super-f-humate-big-shiny-flakes'
+    | '/products/super-potassium-shiny-flakes-98'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ApplicationsRoute: typeof ApplicationsRoute
+  ContactRoute: typeof ContactRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ProductsSuperFHumateBigShinyFlakesRoute: typeof ProductsSuperFHumateBigShinyFlakesRoute
+  ProductsSuperPotassiumShinyFlakes98Route: typeof ProductsSuperPotassiumShinyFlakes98Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/applications': {
+      id: '/applications'
+      path: '/applications'
+      fullPath: '/applications'
+      preLoaderRoute: typeof ApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +160,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/super-potassium-shiny-flakes-98': {
+      id: '/products/super-potassium-shiny-flakes-98'
+      path: '/products/super-potassium-shiny-flakes-98'
+      fullPath: '/products/super-potassium-shiny-flakes-98'
+      preLoaderRoute: typeof ProductsSuperPotassiumShinyFlakes98RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/super-f-humate-big-shiny-flakes': {
+      id: '/products/super-f-humate-big-shiny-flakes'
+      path: '/products/super-f-humate-big-shiny-flakes'
+      fullPath: '/products/super-f-humate-big-shiny-flakes'
+      preLoaderRoute: typeof ProductsSuperFHumateBigShinyFlakesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ApplicationsRoute: ApplicationsRoute,
+  ContactRoute: ContactRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ProductsSuperFHumateBigShinyFlakesRoute:
+    ProductsSuperFHumateBigShinyFlakesRoute,
+  ProductsSuperPotassiumShinyFlakes98Route:
+    ProductsSuperPotassiumShinyFlakes98Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

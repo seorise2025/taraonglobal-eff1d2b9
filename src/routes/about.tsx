@@ -1,0 +1,118 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Phone, MapPin } from "lucide-react";
+import warehouseImg from "@/assets/about-warehouse.jpg";
+import { SectionHeading } from "@/components/site/SectionHeading";
+import { CTABand } from "@/components/site/CTABand";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About Taraon Global | Potassium Humate Supplier, Ahmedabad" },
+      {
+        name: "description",
+        content:
+          "Taraon Global is an Ahmedabad based supplier of potassium humate shiny flakes for farmers, dealers, and distributors across Gujarat and India.",
+      },
+      {
+        property: "og:title",
+        content: "About Taraon Global | Potassium Humate Supplier, Ahmedabad",
+      },
+      {
+        property: "og:description",
+        content:
+          "One product done properly. Led by Rajesh Kumar Trivedi from Sarkhej Sanand Cross Road, Ahmedabad.",
+      },
+      { property: "og:url", content: "/about" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "/about" }],
+  }),
+  component: About,
+});
+
+function About() {
+  return (
+    <>
+      <section className="container-page grid gap-12 py-16 md:grid-cols-[1.1fr_1fr] md:items-center md:py-24">
+        <div>
+          <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-8 bg-gold" /> About
+          </div>
+          <h1 className="font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
+            About Taraon Global
+          </h1>
+          <div className="mt-6 space-y-4 text-ink/80">
+            <p>
+              Taraon Global started with one product done properly, not ten products done
+              halfway.
+            </p>
+            <p>
+              We're based at Sarkhej Sanand Cross Road in Ahmedabad. We make potassium
+              humate shiny flakes for agriculture. Not fertilizer in general. Not a wide
+              catalogue. This one category, done well.
+            </p>
+            <p>
+              The bags carry batch numbers because we want you to know exactly what
+              you're buying, and when. Pack sizes go from 1 kg for a small farm trial to
+              50 kg for a dealer stocking up. Both buyers get the same product quality.
+            </p>
+            <p>
+              We answer our own phone. If you call, you'll speak with Rajesh, not a call
+              center.
+            </p>
+          </div>
+        </div>
+        <img
+          src={warehouseImg}
+          alt="Neatly stacked bags of Taraon Global potassium humate in the Ahmedabad warehouse"
+          width={1400}
+          height={1000}
+          loading="lazy"
+          className="aspect-[7/5] w-full rounded-lg object-cover shadow-xl"
+        />
+      </section>
+
+      <section className="border-y border-border bg-card">
+        <div className="container-page grid gap-10 py-16 md:grid-cols-[1fr_1.1fr] md:items-center">
+          <div>
+            <SectionHeading eyebrow="Leadership" title="Led by Rajesh Kumar Trivedi" />
+            <p className="mt-5 text-ink/75">
+              Rajesh runs Taraon Global out of Ahmedabad. For product questions, dealer
+              pricing, or bulk orders, call him directly.
+            </p>
+            <a
+              href="tel:+916359193666"
+              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-forest-deep px-5 py-3 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
+            >
+              <Phone className="h-4 w-4" /> +91 63591 93666
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-border bg-cream p-6 sm:p-8">
+            <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold">
+              <MapPin className="h-3.5 w-3.5" /> Address
+            </div>
+            <div className="font-display text-xl leading-relaxed text-forest-deep">
+              Taraon Global<br />
+              A-210, Signature-2<br />
+              Sarkhej Sanand Cross Road<br />
+              Ahmedabad-382210<br />
+              Gujarat, India
+            </div>
+            <Link
+              to="/contact"
+              className="mt-6 inline-flex text-sm font-medium text-forest hover:text-gold"
+            >
+              Contact us →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <CTABand
+        title="Have a question you'd rather ask a person?"
+        subtitle="Send us a note or call Rajesh direct. Same-day replies most days."
+      />
+    </>
+  );
+}
