@@ -212,6 +212,8 @@ function Header() {
             alt="TARAON GLOBAL"
             width={44}
             height={44}
+            decoding="async"
+            fetchPriority="high"
             className="h-11 w-11 rounded-sm object-contain"
           />
           <span className="flex flex-col leading-none">
