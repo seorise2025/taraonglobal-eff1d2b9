@@ -16,7 +16,7 @@ import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { FAQ } from "@/components/site/FAQ";
-import { SectionHeading as SectionHeadingSEO } from "@/components/site/SectionHeading";
+
 
 const HOME_FAQS = [
   {
