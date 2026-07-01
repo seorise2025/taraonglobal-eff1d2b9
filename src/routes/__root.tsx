@@ -272,7 +272,7 @@ function Footer() {
         <div>
           <div className="flex items-center gap-2.5">
             <img
-              src={logoDark.url}
+              src={logoGreen.url}
               alt="Taraon Global"
               width={44}
               height={44}
