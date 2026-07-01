@@ -13,7 +13,8 @@ const SPECS = [
   { label: "Odour", value: "Mild earthy smell" },
   { label: "Humic Acid", value: "55% to 60%" },
   { label: "Fulvic Acid", value: "1% to 3%" },
-  { label: "Potassium as K₂O", value: "9% to 11%" },
+  { label: "Potassium as K₂O", value: "3% to 5%" },
+  { label: "pH", value: "9 to 10" },
   { label: "Moisture", value: "10% to 15%" },
   { label: "Water Solubility", value: "98%" },
   { label: "Packing", value: "25 Kgs" },
@@ -70,7 +71,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
       {
         name: "description",
         content:
-          "Super F Humate Big Shiny Flakes for bulk buyers and dealers. 98% purity potassium humate, 55-60% humic acid, 9-11% K₂O. Supplied in 25 Kgs packs.",
+          "Super F Humate Big Shiny Flakes for bulk buyers and dealers. 98% purity potassium humate, 55-60% humic acid, 3-5% K₂O, pH 9-10. Supplied in 25 Kgs packs.",
       },
       {
         property: "og:title",
@@ -100,7 +101,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
-            "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 9-11% K2O, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input — not a complete NPK fertiliser.",
+            "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input — not a complete NPK fertiliser.",
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
