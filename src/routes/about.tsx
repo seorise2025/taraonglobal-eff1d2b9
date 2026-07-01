@@ -172,6 +172,13 @@ function About() {
       </section>
 
 
+      <section className="container-page py-16">
+        <SectionHeading eyebrow="FAQ" title="About TARAON GLOBAL - questions we get" />
+        <div className="mt-6 max-w-3xl">
+          <FAQ items={ABOUT_FAQS} />
+        </div>
+      </section>
+
       <RelatedLinks
         eyebrow="Our products"
         title="What TARAON GLOBAL supplies"
