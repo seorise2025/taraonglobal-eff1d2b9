@@ -314,6 +314,16 @@ function Home() {
         </div>
       </section>
 
+      <section className="container-page py-16">
+        <SectionHeadingSEO
+          eyebrow="FAQ"
+          title="Potassium humate price, pack and use questions"
+        />
+        <div className="mt-6 max-w-3xl">
+          <FAQ items={HOME_FAQS} />
+        </div>
+      </section>
+
       <CTABand
         title="Ready to Order or Just Have Questions?"
         subtitle="Send your product and quantity. You'll get a real answer, not a bot reply."
