@@ -195,6 +195,8 @@ function ProductPage() {
             alt="Super Potassium Shiny Flakes 98% - 25 kg kraft bag by TARAON GLOBAL"
             width={1400}
             height={1200}
+            fetchPriority="high"
+            decoding="async"
             className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
           />
         </div>
