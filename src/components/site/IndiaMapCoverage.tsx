@@ -165,18 +165,12 @@ export function IndiaMapCoverage() {
 
                 {/* Ahmedabad origin - pulsing ring + solid dot */}
                 <g>
-                  <motion.circle
+                  <circle
+                    className="svg-pulse"
                     cx={AHM.x}
                     cy={AHM.y}
                     r={8}
                     fill="oklch(0.72 0.14 75)"
-                    initial={reduce ? { opacity: 0.4, scale: 1 } : { opacity: 0.6, scale: 0.6 }}
-                    animate={
-                      reduce
-                        ? { opacity: 0.4 }
-                        : { opacity: [0.6, 0, 0.6], scale: [0.6, 2.4, 0.6] }
-                    }
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
                   />
                   <circle cx={AHM.x} cy={AHM.y} r={5} fill="oklch(0.2 0.03 155)" />
                   <circle cx={AHM.x} cy={AHM.y} r={2.2} fill="oklch(0.85 0.12 80)" />
