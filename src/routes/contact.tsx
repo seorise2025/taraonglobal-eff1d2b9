@@ -5,6 +5,7 @@ import { Phone, MapPin, MessageCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
