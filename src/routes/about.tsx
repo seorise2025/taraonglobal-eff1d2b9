@@ -3,6 +3,7 @@ import { Phone, MapPin } from "lucide-react";
 import warehouseImg from "@/assets/about-warehouse.jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
