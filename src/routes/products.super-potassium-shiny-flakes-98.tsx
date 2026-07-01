@@ -167,7 +167,7 @@ function ProductPage() {
           <p className="mt-3 text-ink/70">
             Water soluble potassium humate shiny flakes derived from natural
             leonardite, lignite or oxidised brown coal. 98% purity, 55-60% humic
-            acid and 9-11% K₂O. A soil conditioner and plant growth support input —
+            acid, 3-5% K₂O and pH 9-10. A soil conditioner and plant growth support input —
             not a complete NPK fertiliser.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
