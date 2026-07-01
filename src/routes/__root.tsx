@@ -117,11 +117,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": ["Organization", "WholesaleStore"],
           name: "TARAON GLOBAL",
           url: "/",
           telephone: "+91-6359193666",
           founder: "Rajesh Kumar Trivedi",
+          knowsAbout: [
+            "Potassium humate",
+            "Humic acid",
+            "Fulvic acid",
+            "Agricultural inputs",
+            "Fertilizer supply",
+          ],
           address: {
             "@type": "PostalAddress",
             streetAddress: "A-210, Signature-2, Sarkhej Sanand Cross Road",
@@ -132,7 +139,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           areaServed: "IN",
           description:
-            "Trading company supplying potassium humate shiny flakes for agriculture. Serving farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
+            "Trading and supplier company dealing in potassium humate shiny flakes for agriculture. Sources from a trusted producer and supplies farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
         }),
       },
     ],
@@ -281,8 +288,8 @@ function Footer() {
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/70">
-            TARAON GLOBAL makes potassium humate shiny flakes for agriculture. Based in
-            Ahmedabad, sold across Gujarat and India.
+            TARAON GLOBAL is an Ahmedabad based trading company supplying potassium
+            humate shiny flakes across Gujarat and India.
           </p>
         </div>
         <div>
