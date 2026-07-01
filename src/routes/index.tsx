@@ -315,7 +315,7 @@ function Home() {
       </section>
 
       <section className="container-page py-16">
-        <SectionHeadingSEO
+        <SectionHeading
           eyebrow="FAQ"
           title="Potassium humate price, pack and use questions"
         />
