@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { SpecTable } from "@/components/site/SpecTable";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 export const Route = createFileRoute("/applications")({
   head: () => ({
