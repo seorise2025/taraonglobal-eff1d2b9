@@ -184,3 +184,19 @@
 .pulse-wa {
   animation: pulse-ring 2.4s ease-out infinite;
 }
+
+@keyframes svg-pulse {
+  0%, 100% { transform: scale(0.6); opacity: 0.6; }
+  50% { transform: scale(2.4); opacity: 0; }
+}
+
+.svg-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: svg-pulse 2.4s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svg-pulse { animation: none; opacity: 0.4; }
+}
