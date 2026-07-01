@@ -118,10 +118,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["Organization", "WholesaleStore"],
+          "@id": "/#organization",
           name: "TARAON GLOBAL",
+          alternateName: "TARAON GLOBAL — Potassium Humate Supplier",
           url: "/",
           telephone: "+91-6359193666",
-          founder: "Rajesh Kumar Trivedi",
+          foundingDate: "2020",
+          founder: {
+            "@type": "Person",
+            "@id": "/#rajesh-kumar-trivedi",
+            name: "Rajesh Kumar Trivedi",
+            jobTitle: "Founder & Managing Partner",
+            worksFor: { "@id": "/#organization" },
+            knowsAbout: [
+              "Potassium humate",
+              "Humic acid",
+              "Fulvic acid",
+              "Leonardite based inputs",
+              "Fertilizer trading and distribution",
+            ],
+            description:
+              "Rajesh Kumar Trivedi has over 20 years of hands-on experience in the humate and agri-inputs industry, personally overseeing sourcing, batch verification and dealer relationships at TARAON GLOBAL.",
+          },
+          employee: { "@id": "/#rajesh-kumar-trivedi" },
           knowsAbout: [
             "Potassium humate",
             "Humic acid",
@@ -137,7 +156,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressRegion: "Gujarat",
             addressCountry: "IN",
           },
-          areaServed: "IN",
+          areaServed: [
+            { "@type": "Country", name: "India" },
+            { "@type": "State", name: "Gujarat" },
+          ],
+          sameAs: ["https://wa.me/916359193666"],
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "+91-6359193666",
+            contactType: "sales",
+            areaServed: "IN",
+            availableLanguage: ["en", "hi", "gu"],
+          },
           description:
             "Trading and supplier company dealing in potassium humate shiny flakes for agriculture. Sources from a trusted producer and supplies farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
         }),
