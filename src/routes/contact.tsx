@@ -28,6 +28,29 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact TARAON GLOBAL",
+          url: "/contact",
+          mainEntity: { "@id": "/#organization" },
+        }),
+      },
+    ],
   }),
   component: Contact,
 });

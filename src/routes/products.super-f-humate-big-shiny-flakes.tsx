@@ -118,6 +118,28 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           })),
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Products",
+              item: "/#products",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Super F Humate Big Shiny Flakes",
+              item: "/products/super-f-humate-big-shiny-flakes",
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: ProductPage,

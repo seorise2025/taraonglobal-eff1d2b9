@@ -26,6 +26,30 @@ export const Route = createFileRoute("/about")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "/about" },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About TARAON GLOBAL",
+          url: "/about",
+          mainEntity: { "@id": "/#organization" },
+          about: { "@id": "/#rajesh-kumar-trivedi" },
+        }),
+      },
+    ],
   }),
   component: About,
 });

@@ -115,6 +115,28 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           })),
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Products",
+              item: "/#products",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Super Potassium Shiny Flakes 98%",
+              item: "/products/super-potassium-shiny-flakes-98",
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: ProductPage,
