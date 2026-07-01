@@ -68,7 +68,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
       {
         name: "description",
         content:
-          "Super Potassium Shiny Flakes 98% by TARAON GLOBAL. 98% purity, 55-60% humic acid, 9-11% K2O, 98% water soluble. 25 Kgs pack.",
+          "Super Potassium Shiny Flakes 98% by TARAON GLOBAL. 98% purity, 55-60% humic acid, 3-5% K2O, pH 9-10, 98% water soluble. 25 Kgs pack.",
       },
       {
         property: "og:title",
