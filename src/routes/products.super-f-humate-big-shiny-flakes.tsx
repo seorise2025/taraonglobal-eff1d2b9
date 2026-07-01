@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import productBigImg from "@/assets/product-big-flakes.jpg";
+import productBigImg from "@/assets/super-f-humate-bag-25kg.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
@@ -19,7 +19,7 @@ const SPECS = [
 
 const QUICK = [
   { label: "Product Name", value: "Super F Humate Big Shiny Flakes" },
-  { label: "Brand", value: "Taraon Global" },
+  { label: "Brand", value: "TARAON GLOBAL" },
   { label: "Form", value: "Big black shiny flakes" },
   { label: "Packaging", value: "1 kg, 5 kg, 10 kg, 25 kg, 50 kg" },
   { label: "Source", value: "Natural leonardite" },
@@ -52,7 +52,7 @@ const FAQS = [
 export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes")({
   head: () => ({
     meta: [
-      { title: "Super F Humate Big Shiny Flakes | Taraon Global" },
+      { title: "Super F Humate Big Shiny Flakes | TARAON GLOBAL" },
       {
         name: "description",
         content:
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
       },
       {
         property: "og:title",
-        content: "Super F Humate Big Shiny Flakes | Taraon Global",
+        content: "Super F Humate Big Shiny Flakes | TARAON GLOBAL",
       },
       {
         property: "og:description",
@@ -83,11 +83,11 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           "@context": "https://schema.org",
           "@type": "Product",
           name: "Super F Humate Big Shiny Flakes",
-          brand: { "@type": "Brand", name: "Taraon Global" },
+          brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
             "Big black shiny potassium humate flakes from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Bulk-ready packs from 1 kg to 50 kg.",
-          manufacturer: { "@type": "Organization", name: "Taraon Global" },
+          manufacturer: { "@type": "Organization", name: "TARAON GLOBAL" },
         }),
       },
       {
@@ -143,11 +143,11 @@ function ProductPage() {
         <div className="relative">
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
-            src={productBigImg}
-            alt="Big black shiny humate flakes on cream background"
+            src={productBigImg.url}
+            alt="Super F Humate Big Shiny Flakes — 25 kg kraft bag by TARAON GLOBAL"
             width={1400}
             height={1200}
-            className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
+            className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
           />
         </div>
       </section>

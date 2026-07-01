@@ -9,15 +9,15 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Taraon Global | Potassium Humate Supplier, Ahmedabad" },
+      { title: "Contact TARAON GLOBAL | Potassium Humate Supplier, Ahmedabad" },
       {
         name: "description",
         content:
-          "Reach Taraon Global for potassium humate shiny flakes and bulk supply. Based in Ahmedabad, shipping across Gujarat and India.",
+          "Reach TARAON GLOBAL for potassium humate shiny flakes and bulk supply. Based in Ahmedabad, shipping across Gujarat and India.",
       },
       {
         property: "og:title",
-        content: "Contact Taraon Global | Potassium Humate Supplier",
+        content: "Contact TARAON GLOBAL | Potassium Humate Supplier",
       },
       {
         property: "og:description",
@@ -98,7 +98,7 @@ function Contact() {
               <span className="h-px w-8 bg-gold" /> Contact
             </div>
             <h1 className="font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
-              Contact Taraon Global
+              Contact TARAON GLOBAL
             </h1>
             <p className="mt-5 text-lg text-ink/75">
               Tell us what you need and how much. You'll get a real reply, usually the
@@ -129,7 +129,7 @@ function Contact() {
               <div className="flex items-start gap-3 text-ink/80">
                 <MapPin className="mt-0.5 h-4 w-4 text-gold" />
                 <div className="leading-relaxed">
-                  Taraon Global<br />
+                  TARAON GLOBAL<br />
                   A-210, Signature-2<br />
                   Sarkhej Sanand Cross Road<br />
                   Ahmedabad-382210, Gujarat
@@ -225,7 +225,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3 text-sm font-medium text-forest-deep hover:border-gold hover:bg-gold/10"
               >
-                <MessageCircle className="h-4 w-4" /> Chat with Taraon Global on WhatsApp
+                <MessageCircle className="h-4 w-4" /> Chat with TARAON GLOBAL on WhatsApp
               </a>
             </div>
           </form>
@@ -236,7 +236,7 @@ function Contact() {
         <SectionHeading eyebrow="Find us" title="Sarkhej Sanand Cross Road, Ahmedabad" />
         <div className="mt-8 overflow-hidden rounded-lg border border-border shadow-md">
           <iframe
-            title="Taraon Global on Google Maps"
+            title="TARAON GLOBAL on Google Maps"
             src="https://www.google.com/maps?q=Sarkhej+Sanand+Cross+Road+Ahmedabad+382210&output=embed"
             className="h-[420px] w-full"
             loading="lazy"

@@ -7,15 +7,15 @@ import { SpecTable } from "@/components/site/SpecTable";
 export const Route = createFileRoute("/applications")({
   head: () => ({
     meta: [
-      { title: "Potassium Humate Uses in Agriculture | Taraon Global" },
+      { title: "Potassium Humate Uses in Agriculture | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "How potassium humate works in soil, drip irrigation, fertigation, foliar spray, and fertilizer blending. Practical guide from Taraon Global.",
+          "How potassium humate works in soil, drip irrigation, fertigation, foliar spray, and fertilizer blending. Practical guide from TARAON GLOBAL.",
       },
       {
         property: "og:title",
-        content: "Potassium Humate Uses in Agriculture | Taraon Global",
+        content: "Potassium Humate Uses in Agriculture | TARAON GLOBAL",
       },
       {
         property: "og:description",
@@ -119,7 +119,7 @@ function Applications() {
       <CTABand
         title="Not sure which product suits your crop and system?"
         subtitle="Tell us the crop, system, and area. We'll point you to the right pack size and dose."
-        primaryLabel="Talk to Taraon Global"
+        primaryLabel="Talk to TARAON GLOBAL"
       />
     </>
   );

@@ -18,13 +18,13 @@ import { CountUp } from "@/components/site/CountUp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Potassium Humate Fertilizer Supplier in India | Taraon Global" },
+      { title: "Potassium Humate Fertilizer Supplier in India | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Taraon Global makes potassium humate shiny flakes for farmers and dealers. Packs from 1 kg to 50 kg. Based in Ahmedabad, ships across India.",
+          "TARAON GLOBAL makes potassium humate shiny flakes for farmers and dealers. Packs from 1 kg to 50 kg. Based in Ahmedabad, ships across India.",
       },
-      { property: "og:title", content: "Potassium Humate Fertilizer Supplier in India | Taraon Global" },
+      { property: "og:title", content: "Potassium Humate Fertilizer Supplier in India | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
@@ -55,7 +55,7 @@ function Home() {
               Potassium Humate That Actually Dissolves the Way It Should
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-              Taraon Global makes potassium humate shiny flakes from natural leonardite.
+              TARAON GLOBAL makes potassium humate shiny flakes from natural leonardite.
               Rich in humic acid, fulvic acid, and potassium. Built for soil that needs to
               work harder.
             </p>
