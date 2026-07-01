@@ -12,6 +12,8 @@ import { Menu, X, Phone } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
+import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
@@ -161,13 +163,14 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-cream/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span
-            className="grid h-9 w-9 place-items-center rounded-sm bg-forest-deep font-display text-lg text-cream"
-            aria-hidden
-          >
-            T
-          </span>
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <img
+            src={logoGreen.url}
+            alt="Taraon Global"
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-sm object-contain"
+          />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
               Taraon Global
@@ -177,6 +180,7 @@ function Header() {
             </span>
           </span>
         </Link>
+
 
         <nav className="hidden items-center gap-7 lg:flex">
           {NAV.slice(0, 1).concat(NAV.slice(3)).map((item) => (
@@ -267,10 +271,14 @@ function Footer() {
     <footer className="mt-24 border-t border-border bg-forest-deep text-cream/85">
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-sm bg-gold font-display text-lg text-forest-deep">
-              T
-            </span>
+          <div className="flex items-center gap-2.5">
+            <img
+              src={logoDark.url}
+              alt="Taraon Global"
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-sm object-contain"
+            />
             <span className="font-display text-lg text-cream">Taraon Global</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/70">
