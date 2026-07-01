@@ -56,11 +56,25 @@ export const Route = createFileRoute("/")({
         content:
           "Trading company supplying potassium humate shiny flakes. Farmers use it. Dealers stock it. Distributors move it in bulk.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://taraonglobal.lovable.app/" },
       { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: HOME_FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Home,
