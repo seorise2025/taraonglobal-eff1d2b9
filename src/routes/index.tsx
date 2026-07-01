@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Manufacturer of potassium humate shiny flakes. Farmers use it. Dealers stock it. Distributors move it in bulk.",
+          "Trusted supplier of potassium humate shiny flakes. Farmers use it. Dealers stock it. Distributors move it in bulk.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
@@ -129,7 +129,7 @@ function Home() {
         <SectionHeading
           eyebrow="Our range"
           title="Two Products. One Standard."
-          intro="We don't make twenty products with small differences. We make two, and we make them right."
+          intro="We don't stock twenty products with small differences. We stand behind two, and we supply them right."
         />
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">

@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "TARAON GLOBAL manufactures potassium humate shiny flakes for farmers, dealers and fertilizer companies. Based in Ahmedabad, ships across India.",
+          "TARAON GLOBAL is an Ahmedabad based trading company supplying potassium humate shiny flakes to farmers, dealers and fertilizer companies across India.",
       },
       { name: "author", content: "TARAON GLOBAL" },
       { property: "og:site_name", content: "TARAON GLOBAL" },
@@ -132,7 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           areaServed: "IN",
           description:
-            "Manufacturer and supplier of potassium humate shiny flakes for agriculture. Serving farmers, dealers, distributors and fertilizer companies across Gujarat and India.",
+            "Trading company supplying potassium humate shiny flakes for agriculture. Serving farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
         }),
       },
     ],
