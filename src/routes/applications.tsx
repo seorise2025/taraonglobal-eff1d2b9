@@ -169,6 +169,16 @@ function Applications() {
 
       <IndiaMapCoverage />
 
+      <section className="container-page py-16">
+        <SectionHeading
+          eyebrow="FAQ"
+          title="Humic acid fertilizer uses - common questions"
+        />
+        <div className="mt-6 max-w-3xl">
+          <FAQ items={APP_FAQS} />
+        </div>
+      </section>
+
 
       <RelatedLinks
         eyebrow="See the products in use"
