@@ -7,22 +7,29 @@ import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
 
 const SPECS = [
+  { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
+  { label: "Purity", value: "98%" },
   { label: "Appearance", value: "Black shiny flakes" },
-  { label: "Humic Acid", value: "60% to 65%" },
-  { label: "Fulvic Acid", value: "5% to 15%" },
-  { label: "Potassium (K₂O)", value: "10% to 12%" },
-  { label: "Water Solubility", value: "Up to 100%" },
-  { label: "pH", value: "9 to 10" },
-  { label: "Moisture", value: "Max 15%" },
-  { label: "Packaging", value: "1 kg, 5 kg, 10 kg, 25 kg, 50 kg bags" },
+  { label: "Odour", value: "Mild earthy smell" },
+  { label: "Humic Acid", value: "55% to 60%" },
+  { label: "Fulvic Acid", value: "1% to 3%" },
+  { label: "Potassium as K₂O", value: "9% to 11%" },
+  { label: "Moisture", value: "10% to 15%" },
+  { label: "Water Solubility", value: "98%" },
+  { label: "Packing", value: "25 Kgs" },
+  {
+    label: "Source Material",
+    value: "Natural humic substances — leonardite, lignite, or oxidised brown coal",
+  },
 ];
 
 const QUICK = [
   { label: "Product Name", value: "Super Potassium Shiny Flakes 98%" },
   { label: "Brand", value: "TARAON GLOBAL" },
+  { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
   { label: "Form", value: "Black shiny flakes" },
-  { label: "Packaging", value: "1 kg, 5 kg, 10 kg, 25 kg, 50 kg" },
-  { label: "Source", value: "Natural leonardite" },
+  { label: "Packing", value: "25 Kgs" },
+  { label: "Source", value: "Leonardite / lignite / oxidised brown coal" },
   { label: "Buyer Type", value: "Farmers, dealers, distributors, bulk buyers" },
 ];
 
@@ -36,8 +43,8 @@ const FAQS = [
     a: "No. TARAON GLOBAL is a trading and supplier company based in Ahmedabad. We source from a trusted producer, verify every batch, and handle warehousing, packing and dispatch to farmers, dealers and distributors.",
   },
   {
-    q: "What pack sizes do you supply?",
-    a: "1 kg, 5 kg, 10 kg, 25 kg, and 50 kg kraft bags. The 25 kg pack is the standard for dealer and distributor supply.",
+    q: "What pack size do you supply?",
+    a: "Standard packing is 25 Kgs kraft bags — the standard pack for farmers, dealers and distributors.",
   },
   {
     q: "Do you offer dealer and distributor pricing?",
@@ -45,7 +52,7 @@ const FAQS = [
   },
   {
     q: "Can I use it in a drip system?",
-    a: "Yes. It's built for that — up to 100% water soluble. Dissolve fully before running it through your line.",
+    a: "Yes. It's 98% water soluble — built for drip irrigation, fertigation and foliar spray. Dissolve fully before running it through your line.",
   },
   {
     q: "Do you ship across India?",
@@ -60,7 +67,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
       {
         name: "description",
         content:
-          "Super Potassium Shiny Flakes 98% by TARAON GLOBAL. 60-65% humic acid, up to 100% water soluble. Packs from 1 kg to 50 kg.",
+          "Super Potassium Shiny Flakes 98% by TARAON GLOBAL. 98% purity, 55-60% humic acid, 9-11% K2O, 98% water soluble. 25 Kgs pack.",
       },
       {
         property: "og:title",
@@ -69,7 +76,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
       {
         property: "og:description",
         content:
-          "Made from natural leonardite. Dust free, up to 100% water soluble. Built for soil, drip and spray.",
+          "From natural leonardite, lignite or oxidised brown coal. 98% water soluble. Built for soil, drip, fertigation and foliar spray.",
       },
       {
         property: "og:url",
@@ -90,7 +97,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           description:
-            "Black shiny potassium humate flakes from natural leonardite. 60-65% humic acid, 5-15% fulvic acid, 10-12% K2O, up to 100% water soluble. Available in 1 kg, 5 kg, 10 kg, 25 kg, 50 kg packs.",
+            "Water soluble potassium humate shiny flakes. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 9-11% K2O, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input — not a complete NPK fertiliser.",
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
