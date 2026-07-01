@@ -11,5 +11,20 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Pre-render every public route at build so crawlers and AI tools get
+    // fully-rendered HTML without executing JavaScript.
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      failOnError: false,
+    },
+    pages: [
+      { path: "/" },
+      { path: "/about" },
+      { path: "/applications" },
+      { path: "/contact" },
+      { path: "/products/super-potassium-shiny-flakes-98" },
+      { path: "/products/super-f-humate-big-shiny-flakes" },
+    ],
   },
 });

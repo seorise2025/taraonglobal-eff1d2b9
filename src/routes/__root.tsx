@@ -125,18 +125,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["Organization", "WholesaleStore"],
-          "@id": "/#organization",
+          "@id": "https://taraonglobal.lovable.app/#organization",
           name: "TARAON GLOBAL",
           alternateName: "TARAON GLOBAL - Potassium Humate Supplier",
-          url: "/",
+          url: "https://taraonglobal.lovable.app/",
+          logo: "https://taraonglobal.lovable.app/favicon.ico",
           telephone: "+91-6359193666",
           foundingDate: "2020",
           founder: {
             "@type": "Person",
-            "@id": "/#rajesh-kumar-trivedi",
+            "@id": "https://taraonglobal.lovable.app/#rajesh-kumar-trivedi",
             name: "Rajesh Kumar Trivedi",
             jobTitle: "Founder & Managing Partner",
-            worksFor: { "@id": "/#organization" },
+            worksFor: { "@id": "https://taraonglobal.lovable.app/#organization" },
             knowsAbout: [
               "Potassium humate",
               "Humic acid",
@@ -147,7 +148,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             description:
               "Rajesh Kumar Trivedi has over 20 years of hands-on experience in the humate and agri-inputs industry, personally overseeing sourcing, batch verification and dealer relationships at TARAON GLOBAL.",
           },
-          employee: { "@id": "/#rajesh-kumar-trivedi" },
+          employee: { "@id": "https://taraonglobal.lovable.app/#rajesh-kumar-trivedi" },
           knowsAbout: [
             "Potassium humate",
             "Humic acid",
@@ -177,6 +178,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           description:
             "Trading and supplier company dealing in potassium humate shiny flakes for agriculture. Sources from a trusted producer and supplies farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://taraonglobal.lovable.app/#website",
+          url: "https://taraonglobal.lovable.app/",
+          name: "TARAON GLOBAL",
+          publisher: { "@id": "https://taraonglobal.lovable.app/#organization" },
+          inLanguage: "en-IN",
         }),
       },
     ],

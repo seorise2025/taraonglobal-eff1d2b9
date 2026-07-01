@@ -5,6 +5,30 @@ import { CTABand } from "@/components/site/CTABand";
 import { SpecTable } from "@/components/site/SpecTable";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { FAQ } from "@/components/site/FAQ";
+
+const APP_FAQS = [
+  {
+    q: "What are the main humic acid fertilizer uses in agriculture?",
+    a: "Humic acid fertilizer is used to improve soil structure, increase water and nutrient holding capacity, support root growth and boost microbial activity. Potassium humate shiny flakes deliver those benefits through soil application, drip irrigation, fertigation, foliar spray and NPK blending.",
+  },
+  {
+    q: "How is potassium humate used in drip irrigation and fertigation?",
+    a: "Dissolve the shiny flakes fully in a stock tank, then dose through your drip or fertigation line at the rate your agronomist recommends. The 98% water solubility keeps emitters clear and lets the humate reach the root zone with every irrigation cycle.",
+  },
+  {
+    q: "What is the potassium humate dose per acre?",
+    a: "Typical field use ranges from about 2 to 5 kg per acre per season, split across soil, drip or foliar applications. Exact dose depends on crop, soil test and stage — share your crop and system with our team for a specific recommendation.",
+  },
+  {
+    q: "Can potassium humate be blended with NPK fertilizers?",
+    a: "Yes. Fertilizer companies routinely blend the flakes into NPK and organic input lines. It mixes clean, does not clump, and helps improve the efficiency of the applied NPK.",
+  },
+  {
+    q: "Is potassium humate suitable for organic and regenerative farming?",
+    a: "Potassium humate is derived from natural leonardite, lignite or oxidised brown coal and fits well into regenerative and low-input systems focused on soil health. It is a soil conditioner and plant growth support input, not a complete NPK fertiliser.",
+  },
+];
 
 export const Route = createFileRoute("/applications")({
   head: () => ({
@@ -24,10 +48,10 @@ export const Route = createFileRoute("/applications")({
         content:
           "Where potassium humate fits in real farming - soil, drip, fertigation, foliar, and NPK blending.",
       },
-      { property: "og:url", content: "/applications" },
+      { property: "og:url", content: "https://taraonglobal.lovable.app/applications" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/applications" }],
+    links: [{ rel: "canonical", href: "https://taraonglobal.lovable.app/applications" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -35,9 +59,21 @@ export const Route = createFileRoute("/applications")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Applications", item: "/applications" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Applications", item: "https://taraonglobal.lovable.app/applications" },
           ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: APP_FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
         }),
       },
     ],
@@ -132,6 +168,16 @@ function Applications() {
       </section>
 
       <IndiaMapCoverage />
+
+      <section className="container-page py-16">
+        <SectionHeading
+          eyebrow="FAQ"
+          title="Humic acid fertilizer uses - common questions"
+        />
+        <div className="mt-6 max-w-3xl">
+          <FAQ items={APP_FAQS} />
+        </div>
+      </section>
 
 
       <RelatedLinks

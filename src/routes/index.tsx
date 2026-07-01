@@ -15,6 +15,31 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
+import { FAQ } from "@/components/site/FAQ";
+
+
+const HOME_FAQS = [
+  {
+    q: "What is potassium humate and what is it used for?",
+    a: "Potassium humate is a soil conditioner and plant growth support input made from natural humic substances (leonardite, lignite or oxidised brown coal) reacted with potassium hydroxide. Farmers, dealers and fertilizer companies use it to improve soil structure, root growth, nutrient uptake and fertiliser efficiency across field crops, vegetables, fruit and plantation crops.",
+  },
+  {
+    q: "What is the price of potassium humate shiny flakes in India?",
+    a: "TARAON GLOBAL supplies potassium humate shiny flakes in a standard 25 Kgs pack with bulk and dealer pricing on request. Rates depend on quantity, destination and current stock. Call Rajesh Kumar Trivedi on +91 63591 93666 or send your quantity through the contact page for a same-day quote.",
+  },
+  {
+    q: "What is the 25 kg price and pack details?",
+    a: "Everything ships in the same 25 Kgs kraft bag - the standard pack for farmers, dealers and distributors. Batch numbers are printed on every bag and a current-batch COA is available on request. Quotations for 25 kg, half-tonne, tonne and container quantities are available.",
+  },
+  {
+    q: "What are the main humic acid fertilizer uses?",
+    a: "Humic acid fertilizer is used in soil application, drip irrigation, fertigation, foliar spray and NPK blending. It helps soil hold water and nutrients so the plant can actually use what you are feeding it, and supports microbial activity around the root zone.",
+  },
+  {
+    q: "Do you supply potassium humate across India?",
+    a: "Yes. We dispatch from our Ahmedabad warehouse to buyers across Gujarat and every Indian state and union territory. Dealer, distributor and fertilizer-company orders are handled from the same location.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,11 +56,25 @@ export const Route = createFileRoute("/")({
         content:
           "Trading company supplying potassium humate shiny flakes. Farmers use it. Dealers stock it. Distributors move it in bulk.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://taraonglobal.lovable.app/" },
       { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: HOME_FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Home,
@@ -272,6 +311,16 @@ function Home() {
               <p className="text-ink/85">{t}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="container-page py-16">
+        <SectionHeading
+          eyebrow="FAQ"
+          title="Potassium humate price, pack and use questions"
+        />
+        <div className="mt-6 max-w-3xl">
+          <FAQ items={HOME_FAQS} />
         </div>
       </section>
 
