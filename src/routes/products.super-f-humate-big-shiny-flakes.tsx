@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import productBigImg from "@/assets/product-big-flakes.jpg";
+import productBigImg from "@/assets/super-f-humate-bag-25kg.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
