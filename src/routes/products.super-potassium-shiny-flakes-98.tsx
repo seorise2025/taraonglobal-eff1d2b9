@@ -143,7 +143,7 @@ function ProductPage() {
         <div className="relative">
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
-            src={heroImg}
+            src={heroImg.url}
             alt="Super Potassium Shiny Flakes 98% — glossy black potassium humate flakes"
             width={1600}
             height={1200}
