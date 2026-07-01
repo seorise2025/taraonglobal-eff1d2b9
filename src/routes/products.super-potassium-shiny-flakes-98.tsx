@@ -319,6 +319,27 @@ function ProductPage() {
         </div>
       </section>
 
+
+      <RelatedLinks
+        items={[
+          {
+            to: "/products/super-f-humate-big-shiny-flakes",
+            title: "Super F Humate Big Shiny Flakes",
+            desc: "Same potassium humate, bigger flake, dealer and blender pack.",
+          },
+          {
+            to: "/applications",
+            title: "Potassium humate uses in agriculture",
+            desc: "Soil, drip irrigation, fertigation, foliar spray and NPK blending.",
+          },
+          {
+            to: "/about",
+            title: "About TARAON GLOBAL",
+            desc: "Ahmedabad based supplier led by Rajesh Kumar Trivedi.",
+          },
+        ]}
+      />
+
       <CTABand
         title="Want a quote for your quantity?"
         subtitle="Call Rajesh Kumar Trivedi on +91 63591 93666, or message on WhatsApp."
