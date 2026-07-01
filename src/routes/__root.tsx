@@ -322,6 +322,8 @@ function Footer() {
               alt="TARAON GLOBAL"
               width={44}
               height={44}
+              loading="lazy"
+              decoding="async"
               className="h-11 w-11 rounded-sm object-contain"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
