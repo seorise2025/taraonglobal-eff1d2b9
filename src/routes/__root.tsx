@@ -393,7 +393,18 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-cream/10 py-5 text-center text-xs text-cream/60">
-        © {new Date().getFullYear()} TARAON GLOBAL. All rights reserved.
+        <p>© {new Date().getFullYear()} TARAON GLOBAL. All rights reserved.</p>
+        <p className="mt-1.5 text-cream/40">
+          Built for growth by{" "}
+          <a
+            href="https://www.seorise.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-cream/60 hover:text-gold hover:underline"
+          >
+            SEO Rise
+          </a>
+        </p>
       </div>
     </footer>
   );
