@@ -300,11 +300,14 @@ function Home() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
           <div className="relative order-2 md:order-1">
             <img
-              src={fieldImg}
+              src={fieldImgFallback}
+              srcSet={fieldImg}
+              sizes="(min-width: 768px) 55vw, 100vw"
               alt="Deep plant roots in fertile soil under a crop row"
               width={1600}
               height={1000}
               loading="lazy"
+              decoding="async"
               className="aspect-[16/10] w-full rounded-lg object-cover shadow-xl"
             />
           </div>
