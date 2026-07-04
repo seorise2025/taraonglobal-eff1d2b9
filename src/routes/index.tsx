@@ -8,9 +8,13 @@ import {
   BadgeCheck,
   MapPin,
 } from "lucide-react";
-import heroImg from "@/assets/hero-flakes.jpg";
-import productBigImg from "@/assets/product-big-flakes.jpg";
-import fieldImg from "@/assets/applications-field.jpg";
+import heroImg from "@/assets/hero-flakes.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroImgFallback from "@/assets/hero-flakes.jpg?w=960&format=webp";
+import productBigImg from "@/assets/product-big-flakes.jpg?w=640;960&format=webp&as=srcset";
+import productBigImgFallback from "@/assets/product-big-flakes.jpg?w=640&format=webp";
+import heroFlakes640 from "@/assets/hero-flakes.jpg?w=640&format=webp";
+import fieldImg from "@/assets/applications-field.jpg?w=640;960;1280&format=webp&as=srcset";
+import fieldImgFallback from "@/assets/applications-field.jpg?w=960&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
