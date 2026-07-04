@@ -8,9 +8,13 @@ import {
   BadgeCheck,
   MapPin,
 } from "lucide-react";
-import heroImg from "@/assets/hero-flakes.jpg";
-import productBigImg from "@/assets/product-big-flakes.jpg";
-import fieldImg from "@/assets/applications-field.jpg";
+import heroImg from "@/assets/hero-flakes.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroImgFallback from "@/assets/hero-flakes.jpg?w=960&format=webp";
+import productBigImg from "@/assets/product-big-flakes.jpg?w=640;960&format=webp&as=srcset";
+import productBigImgFallback from "@/assets/product-big-flakes.jpg?w=640&format=webp";
+import heroFlakes640 from "@/assets/hero-flakes.jpg?w=640&format=webp";
+import fieldImg from "@/assets/applications-field.jpg?w=640;960;1280&format=webp&as=srcset";
+import fieldImgFallback from "@/assets/applications-field.jpg?w=960&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
@@ -60,7 +64,14 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
     ],
     links: [
-      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroFlakes640,
+        imagesrcset: heroImg,
+        imagesizes: "(min-width: 1024px) 42vw, 100vw",
+        fetchpriority: "high",
+      } as unknown as Record<string, string>,
     ],
     scripts: [
       {
@@ -159,7 +170,9 @@ function Home() {
             {/* RIGHT — Framed visual + data card */}
             <div className="relative min-h-[380px] overflow-hidden bg-forest-deep lg:col-span-5 lg:min-h-0">
               <img
-                src={heroImg}
+                src={heroImgFallback}
+                srcSet={heroImg}
+                sizes="(min-width: 1024px) 42vw, 100vw"
                 alt="Black shiny potassium humate flakes in warm golden light"
                 width={1200}
                 height={1600}
@@ -225,13 +238,17 @@ function Home() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <ProductCard
-            image={heroImg}
+            image={heroImgFallback}
+            srcSet={heroImg}
+            sizes="(min-width: 768px) 48vw, 100vw"
             name="Super Potassium Shiny Flakes 98%"
             desc="Black shiny flakes. 98% purity, 55 to 60% humic acid. Built for soil, drip, fertigation and foliar spray."
             to="/products/super-potassium-shiny-flakes-98"
           />
           <ProductCard
-            image={productBigImg}
+            image={productBigImgFallback}
+            srcSet={productBigImg}
+            sizes="(min-width: 768px) 48vw, 100vw"
             name="Super F Humate Big Shiny Flakes"
             desc="Same strength, bigger flake. Made for dealers who move stock fast."
             to="/products/super-f-humate-big-shiny-flakes"
@@ -283,11 +300,14 @@ function Home() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
           <div className="relative order-2 md:order-1">
             <img
-              src={fieldImg}
+              src={fieldImgFallback}
+              srcSet={fieldImg}
+              sizes="(min-width: 768px) 55vw, 100vw"
               alt="Deep plant roots in fertile soil under a crop row"
               width={1600}
               height={1000}
               loading="lazy"
+              decoding="async"
               className="aspect-[16/10] w-full rounded-lg object-cover shadow-xl"
             />
           </div>
@@ -372,11 +392,15 @@ function Home() {
 
 function ProductCard({
   image,
+  srcSet,
+  sizes,
   name,
   desc,
   to,
 }: {
   image: string;
+  srcSet?: string;
+  sizes?: string;
   name: string;
   desc: string;
   to: string;
@@ -389,8 +413,13 @@ function ProductCard({
       <div className="aspect-[5/3] overflow-hidden">
         <img
           src={image}
+          srcSet={srcSet}
+          sizes={sizes}
           alt={name}
+          width={960}
+          height={576}
           loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>

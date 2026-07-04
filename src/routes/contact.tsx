@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import { Phone, MapPin, MessageCircle, Loader2 } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Loader2, Mail } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -141,6 +141,12 @@ function Contact() {
                 className="flex items-center gap-3 text-forest-deep hover:text-gold"
               >
                 <Phone className="h-4 w-4" /> +91 63591 93666
+              </a>
+              <a
+                href="mailto:info@taraonglobal.com"
+                className="flex items-center gap-3 text-forest-deep hover:text-gold"
+              >
+                <Mail className="h-4 w-4" /> info@taraonglobal.com
               </a>
               <a
                 href="https://wa.me/916359193666"

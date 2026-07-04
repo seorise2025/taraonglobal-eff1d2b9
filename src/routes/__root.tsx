@@ -7,8 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -169,9 +169,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             { "@type": "State", name: "Gujarat" },
           ],
           sameAs: ["https://wa.me/916359193666"],
+          email: "info@taraonglobal.com",
           contactPoint: {
             "@type": "ContactPoint",
             telephone: "+91-6359193666",
+            email: "info@taraonglobal.com",
             contactType: "sales",
             areaServed: "IN",
             availableLanguage: ["en", "hi", "gu"],
@@ -216,6 +218,50 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+
+  // Lock body scroll while open + return focus + ESC to close
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const trigger = toggleRef.current;
+    // Move focus into the panel
+    const t = window.setTimeout(() => firstLinkRef.current?.focus(), 0);
+
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !panelRef.current) return;
+      const focusables = panelRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+      window.clearTimeout(t);
+      trigger?.focus();
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-cream/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between gap-4">
@@ -289,7 +335,8 @@ function Header() {
         </div>
 
         <button
-          className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary lg:hidden"
+          ref={toggleRef}
+          className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -300,14 +347,22 @@ function Header() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-border bg-cream lg:hidden">
+        <div
+          id="mobile-nav"
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Main navigation"
+          className="border-t border-border bg-cream lg:hidden"
+        >
           <div className="container-page flex flex-col gap-1 py-4">
-            {NAV.map((item) => (
+            {NAV.map((item, i) => (
               <Link
                 key={item.to}
                 to={item.to}
+                ref={i === 0 ? firstLinkRef : undefined}
                 onClick={() => setOpen(false)}
-                className="rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary"
+                className="rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 {item.label}
               </Link>
@@ -315,7 +370,7 @@ function Header() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream"
+              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >
               Request Bulk Price
             </Link>
@@ -384,6 +439,11 @@ function Footer() {
             <li>
               <a href="tel:+916359193666" className="hover:text-gold">
                 +91 63591 93666
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@taraonglobal.com" className="inline-flex items-center gap-2 hover:text-gold">
+                <Mail className="h-3.5 w-3.5" aria-hidden="true" /> info@taraonglobal.com
               </a>
             </li>
             <li className="pt-1 leading-relaxed">
