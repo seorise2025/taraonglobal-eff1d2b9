@@ -333,7 +333,8 @@ function Header() {
         </div>
 
         <button
-          className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary lg:hidden"
+          ref={toggleRef}
+          className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -344,14 +345,22 @@ function Header() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-border bg-cream lg:hidden">
+        <div
+          id="mobile-nav"
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Main navigation"
+          className="border-t border-border bg-cream lg:hidden"
+        >
           <div className="container-page flex flex-col gap-1 py-4">
-            {NAV.map((item) => (
+            {NAV.map((item, i) => (
               <Link
                 key={item.to}
                 to={item.to}
+                ref={i === 0 ? firstLinkRef : undefined}
                 onClick={() => setOpen(false)}
-                className="rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary"
+                className="rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 {item.label}
               </Link>
@@ -359,7 +368,7 @@ function Header() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream"
+              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >
               Request Bulk Price
             </Link>
