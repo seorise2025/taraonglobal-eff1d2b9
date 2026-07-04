@@ -441,6 +441,11 @@ function Footer() {
                 +91 63591 93666
               </a>
             </li>
+            <li>
+              <a href="mailto:info@taraonglobal.com" className="inline-flex items-center gap-2 hover:text-gold">
+                <Mail className="h-3.5 w-3.5" aria-hidden="true" /> info@taraonglobal.com
+              </a>
+            </li>
             <li className="pt-1 leading-relaxed">
               A-210, Signature-2<br />
               Sarkhej Sanand Cross Road<br />
