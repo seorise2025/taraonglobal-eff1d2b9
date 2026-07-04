@@ -289,23 +289,25 @@ function Header() {
         </div>
 
         <button
-          className="lg:hidden"
+          className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary lg:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border bg-cream lg:hidden">
+        <div id="mobile-nav" className="border-t border-border bg-cream lg:hidden">
           <div className="container-page flex flex-col gap-1 py-4">
             {NAV.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="rounded-sm px-2 py-2 text-sm font-medium text-forest-deep hover:bg-secondary"
+                className="rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary"
               >
                 {item.label}
               </Link>
@@ -313,7 +315,7 @@ function Header() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream"
+              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream"
             >
               Request Bulk Price
             </Link>
