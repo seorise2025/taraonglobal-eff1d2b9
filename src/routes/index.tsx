@@ -64,7 +64,14 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
     ],
     links: [
-      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroFlakes640,
+        imagesrcset: heroImg,
+        imagesizes: "(min-width: 1024px) 42vw, 100vw",
+        fetchpriority: "high",
+      } as unknown as Record<string, string>,
     ],
     scripts: [
       {
