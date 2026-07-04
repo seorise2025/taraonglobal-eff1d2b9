@@ -216,6 +216,50 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+
+  // Lock body scroll while open + return focus + ESC to close
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const trigger = toggleRef.current;
+    // Move focus into the panel
+    const t = window.setTimeout(() => firstLinkRef.current?.focus(), 0);
+
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !panelRef.current) return;
+      const focusables = panelRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+      window.clearTimeout(t);
+      trigger?.focus();
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-cream/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between gap-4">
