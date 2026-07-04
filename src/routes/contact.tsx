@@ -143,6 +143,12 @@ function Contact() {
                 <Phone className="h-4 w-4" /> +91 63591 93666
               </a>
               <a
+                href="mailto:info@taraonglobal.com"
+                className="flex items-center gap-3 text-forest-deep hover:text-gold"
+              >
+                <Mail className="h-4 w-4" /> info@taraonglobal.com
+              </a>
+              <a
                 href="https://wa.me/916359193666"
                 target="_blank"
                 rel="noopener noreferrer"
