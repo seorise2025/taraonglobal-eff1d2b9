@@ -170,7 +170,9 @@ function Home() {
             {/* RIGHT — Framed visual + data card */}
             <div className="relative min-h-[380px] overflow-hidden bg-forest-deep lg:col-span-5 lg:min-h-0">
               <img
-                src={heroImg}
+                src={heroImgFallback}
+                srcSet={heroImg}
+                sizes="(min-width: 1024px) 42vw, 100vw"
                 alt="Black shiny potassium humate flakes in warm golden light"
                 width={1200}
                 height={1600}
