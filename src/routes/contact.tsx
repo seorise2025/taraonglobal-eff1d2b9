@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import { Phone, MapPin, MessageCircle, Loader2 } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Loader2, Mail } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
