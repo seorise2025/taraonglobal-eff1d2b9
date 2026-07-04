@@ -83,75 +83,113 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — framed grid + data overlay */}
       <section className="relative overflow-hidden">
-        <div className="container-page grid gap-10 py-14 md:grid-cols-[1.05fr_1fr] md:items-center md:py-24">
+        <div className="container-page py-8 md:py-14">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-1 border border-forest-deep/10 bg-card/50 lg:grid-cols-12"
           >
-            <div className="mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-              <span className="h-px w-8 bg-gold" /> Since day one, one product done right
-            </div>
-            <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl md:text-[3.8rem]">
-              Potassium Humate That Actually Dissolves the Way It Should
-            </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-              TARAON GLOBAL is an{" "}
-              <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
-                Ahmedabad based trading company
-              </Link>{" "}
-              supplying 98% potassium humate shiny flakes derived from natural
-              leonardite, lignite or oxidised brown coal. Rich in humic acid,
-              fulvic acid and potassium. Built for soil that needs to work harder.
-            </p>
-            <p className="mt-3 text-ink/60">
-              Farmers use it in{" "}
-              <Link to="/applications" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
-                drip irrigation and fertigation
-              </Link>
-              . Dealers stock it. Distributors move it in bulk across India.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
-              >
-                Request Bulk Price
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <a
-                href="https://wa.me/916359193666"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep transition-colors hover:border-gold hover:text-forest hover:bg-gold/10"
-              >
-                <MessageCircle className="h-4 w-4" /> Talk on WhatsApp
-              </a>
-            </div>
-          </motion.div>
+            {/* LEFT — Headline column */}
+            <div className="flex flex-col justify-between border-b border-forest-deep/10 p-6 sm:p-10 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-14">
+              <div>
+                <div className="mb-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+                  <span className="h-px w-8 bg-gold" /> Since day one, one product done right
+                </div>
+                <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl lg:text-[4.25rem]">
+                  Potassium Humate That Actually{" "}
+                  <span className="italic font-normal text-gold">Dissolves</span>{" "}
+                  the Way It Should
+                </h1>
+                <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
+                  TARAON GLOBAL is an{" "}
+                  <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
+                    Ahmedabad based trading company
+                  </Link>{" "}
+                  supplying 98% potassium humate shiny flakes derived from natural
+                  leonardite, lignite or oxidised brown coal. Rich in humic acid,
+                  fulvic acid and potassium. Built for soil that needs to work harder.
+                </p>
+                <p className="mt-3 max-w-xl text-ink/60">
+                  Farmers use it in{" "}
+                  <Link to="/applications" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
+                    drip irrigation and fertigation
+                  </Link>
+                  . Dealers stock it. Distributors move it in bulk across India.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link
+                    to="/contact"
+                    className="group inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
+                  >
+                    Request Bulk Price
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                  <a
+                    href="https://wa.me/916359193666"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep transition-colors hover:border-gold hover:text-forest hover:bg-gold/10"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Talk on WhatsApp
+                  </a>
+                </div>
+              </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="relative"
-          >
-            <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
-            <img
-              src={heroImg}
-              alt="Black shiny potassium humate flakes in warm golden light"
-              width={1600}
-              height={1200}
-              fetchPriority="high"
-              decoding="async"
-              className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl"
-            />
-            <div className="absolute -bottom-6 -left-6 hidden rounded-sm border border-gold/40 bg-cream px-5 py-3 shadow-lg sm:block">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-ink/50">Humic acid</div>
-              <div className="font-display text-2xl text-forest-deep">
-                <CountUp to={60} suffix="%" />
+              {/* Spec strip */}
+              <div className="mt-14 grid grid-cols-2 gap-6 border-t border-forest-deep/10 pt-6 sm:grid-cols-4">
+                {[
+                  { k: "98%", v: "Water soluble" },
+                  { k: "55-60%", v: "Humic acid" },
+                  { k: "25 Kg", v: "Standard pack" },
+                  { k: "India", v: "Wide supply" },
+                ].map((s) => (
+                  <div key={s.v}>
+                    <div className="font-display text-2xl text-forest-deep">{s.k}</div>
+                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/55">
+                      {s.v}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT — Framed visual + data card */}
+            <div className="relative min-h-[380px] overflow-hidden bg-forest-deep lg:col-span-5 lg:min-h-0">
+              <img
+                src={heroImg}
+                alt="Black shiny potassium humate flakes in warm golden light"
+                width={1200}
+                height={1600}
+                fetchPriority="high"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-luminosity"
+              />
+              {/* Gold frame */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-6 border border-gold/30"
+              />
+              {/* Data overlay card */}
+              <div className="absolute bottom-0 right-0 max-w-[16rem] border-l border-t border-forest-deep/10 bg-cream p-5 sm:p-6">
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-deep">
+                    Batch tested
+                  </span>
+                </div>
+                <div className="my-3 h-px w-16 bg-forest-deep/15" />
+                <div className="text-[10px] uppercase tracking-[0.18em] text-ink/50">
+                  Humic acid
+                </div>
+                <div className="font-display text-3xl leading-none text-forest-deep">
+                  <CountUp to={60} suffix="%" />
+                </div>
+                <p className="mt-3 text-[11px] leading-snug text-ink/60">
+                  Premium leonardite-sourced flakes, numbered and COA-backed.
+                </p>
               </div>
             </div>
           </motion.div>
@@ -159,7 +197,7 @@ function Home() {
       </section>
 
       {/* TRUST BAR */}
-      <section className="border-y border-border bg-card">
+      <section className="border-y border-border bg-card" aria-label="Product guarantees">
         <div className="container-page grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Package, label: "25 Kgs standard pack" },
@@ -168,8 +206,8 @@ function Home() {
             { icon: MapPin, label: "Ahmedabad based, India wide supply" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-sm bg-secondary text-forest-deep">
-                <Icon className="h-5 w-5" />
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-secondary text-forest-deep">
+                <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <span className="text-sm font-medium text-forest-deep">{label}</span>
             </div>
