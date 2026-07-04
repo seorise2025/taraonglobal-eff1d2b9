@@ -169,9 +169,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             { "@type": "State", name: "Gujarat" },
           ],
           sameAs: ["https://wa.me/916359193666"],
+          email: "info@taraonglobal.com",
           contactPoint: {
             "@type": "ContactPoint",
             telephone: "+91-6359193666",
+            email: "info@taraonglobal.com",
             contactType: "sales",
             areaServed: "IN",
             availableLanguage: ["en", "hi", "gu"],
