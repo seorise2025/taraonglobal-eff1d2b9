@@ -392,11 +392,15 @@ function Home() {
 
 function ProductCard({
   image,
+  srcSet,
+  sizes,
   name,
   desc,
   to,
 }: {
   image: string;
+  srcSet?: string;
+  sizes?: string;
   name: string;
   desc: string;
   to: string;
@@ -409,8 +413,13 @@ function ProductCard({
       <div className="aspect-[5/3] overflow-hidden">
         <img
           src={image}
+          srcSet={srcSet}
+          sizes={sizes}
           alt={name}
+          width={960}
+          height={576}
           loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
