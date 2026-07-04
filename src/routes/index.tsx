@@ -238,13 +238,17 @@ function Home() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <ProductCard
-            image={heroImg}
+            image={heroImgFallback}
+            srcSet={heroImg}
+            sizes="(min-width: 768px) 48vw, 100vw"
             name="Super Potassium Shiny Flakes 98%"
             desc="Black shiny flakes. 98% purity, 55 to 60% humic acid. Built for soil, drip, fertigation and foliar spray."
             to="/products/super-potassium-shiny-flakes-98"
           />
           <ProductCard
-            image={productBigImg}
+            image={productBigImgFallback}
+            srcSet={productBigImg}
+            sizes="(min-width: 768px) 48vw, 100vw"
             name="Super F Humate Big Shiny Flakes"
             desc="Same strength, bigger flake. Made for dealers who move stock fast."
             to="/products/super-f-humate-big-shiny-flakes"
