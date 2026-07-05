@@ -11,6 +11,9 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
 import appCss from "../styles.css?url";
+import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import frauncesLatinWoff2 from "@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url";
+
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
