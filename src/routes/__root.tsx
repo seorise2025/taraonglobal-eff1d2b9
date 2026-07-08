@@ -16,6 +16,7 @@ import frauncesLatinWoff2 from "@fontsource-variable/fraunces/files/fraunces-lat
 
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
+import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
