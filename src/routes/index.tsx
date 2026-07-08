@@ -178,7 +178,7 @@ function Home() {
                 height={1600}
                 fetchPriority="high"
                 decoding="async"
-                className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-luminosity"
+                className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-luminosity dark:opacity-90 dark:mix-blend-normal"
               />
               {/* Gold frame */}
               <div
