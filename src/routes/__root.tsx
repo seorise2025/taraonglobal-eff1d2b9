@@ -289,7 +289,7 @@ function Header() {
             height={44}
             decoding="async"
             fetchPriority="high"
-            className="h-11 w-11 rounded-sm object-contain"
+            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
