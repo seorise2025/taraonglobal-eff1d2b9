@@ -16,6 +16,7 @@ import frauncesLatinWoff2 from "@fontsource-variable/fraunces/files/fraunces-lat
 
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
+import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
@@ -289,7 +290,15 @@ function Header() {
             height={44}
             decoding="async"
             fetchPriority="high"
-            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
+            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:hidden"
+          />
+          <img
+            src={logoDark.url}
+            alt="TARAON GLOBAL"
+            width={44}
+            height={44}
+            decoding="async"
+            className="hidden h-11 w-11 rounded-sm object-contain dark:block"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
@@ -408,13 +417,22 @@ function Footer() {
         <div>
           <div className="flex items-center gap-2.5">
             <img
+              src={logoDark.url}
+              alt="TARAON GLOBAL"
+              width={44}
+              height={44}
+              loading="lazy"
+              decoding="async"
+              className="h-11 w-11 rounded-sm object-contain dark:hidden"
+            />
+            <img
               src={logoGreen.url}
               alt="TARAON GLOBAL"
               width={44}
               height={44}
               loading="lazy"
               decoding="async"
-              className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
+              className="hidden h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:block"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
