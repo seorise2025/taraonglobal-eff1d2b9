@@ -18,6 +18,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const NAV = [
   { to: "/", label: "Home" },
