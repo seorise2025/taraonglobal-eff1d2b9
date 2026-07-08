@@ -414,7 +414,7 @@ function Footer() {
               height={44}
               loading="lazy"
               decoding="async"
-              className="h-11 w-11 rounded-sm object-contain"
+              className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
