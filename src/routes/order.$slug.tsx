@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
 import { Loader2, MessageCircle, Mail, ArrowRight } from "lucide-react";
@@ -53,7 +53,6 @@ export const Route = createFileRoute("/order/$slug")({
 function OrderPage() {
   const { slug } = Route.useParams();
   const product = PRODUCTS[slug as ProductKey];
-  const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [placed, setPlaced] = useState<null | { order_number: string; waHref: string; mailHref: string }>(null);
 
