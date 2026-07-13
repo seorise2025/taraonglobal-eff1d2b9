@@ -189,11 +189,18 @@ function ProductPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/contact"
+              to="/order/$slug"
+              params={{ slug: "super-potassium-shiny-flakes-98" }}
               className="group inline-flex items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
             >
-              Request Price
+              Place Order
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep hover:border-gold hover:bg-gold/10"
+            >
+              Request Price
             </Link>
             <a
               href="https://wa.me/916359193666"
@@ -201,9 +208,10 @@ function ProductPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep hover:border-gold hover:bg-gold/10"
             >
-              <MessageCircle className="h-4 w-4" /> Talk on WhatsApp
+              <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
           </div>
+
         </div>
         <div className="relative">
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
