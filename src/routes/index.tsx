@@ -244,6 +244,7 @@ function Home() {
             name="Super Potassium Shiny Flakes 98%"
             desc="Black shiny flakes. 98% purity, 55 to 60% humic acid. Built for soil, drip, fertigation and foliar spray."
             to="/products/super-potassium-shiny-flakes-98"
+            orderSlug="super-potassium-shiny-flakes-98"
           />
           <ProductCard
             image={productBigImgFallback}
@@ -252,7 +253,9 @@ function Home() {
             name="Super F Humate Big Shiny Flakes"
             desc="Same strength, bigger flake. Made for dealers who move stock fast."
             to="/products/super-f-humate-big-shiny-flakes"
+            orderSlug="super-f-humate-big-shiny-flakes"
           />
+
         </div>
       </section>
 
@@ -397,6 +400,7 @@ function ProductCard({
   name,
   desc,
   to,
+  orderSlug,
 }: {
   image: string;
   srcSet?: string;
@@ -404,13 +408,11 @@ function ProductCard({
   name: string;
   desc: string;
   to: string;
+  orderSlug: "super-potassium-shiny-flakes-98" | "super-f-humate-big-shiny-flakes";
 }) {
   return (
-    <Link
-      to={to}
-      className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl"
-    >
-      <div className="aspect-[5/3] overflow-hidden">
+    <article className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl">
+      <Link to={to} className="block aspect-[5/3] overflow-hidden">
         <img
           src={image}
           srcSet={srcSet}
@@ -422,14 +424,29 @@ function ProductCard({
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-      </div>
+      </Link>
       <div className="p-6">
-        <h3 className="font-display text-2xl text-forest-deep">{name}</h3>
+        <h3 className="font-display text-2xl text-forest-deep">
+          <Link to={to} className="hover:text-gold">{name}</Link>
+        </h3>
         <p className="mt-2 text-ink/70">{desc}</p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-forest transition-colors group-hover:text-gold">
-          See the product <ArrowRight className="h-4 w-4" />
-        </span>
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          <Link
+            to="/order/$slug"
+            params={{ slug: orderSlug }}
+            className="inline-flex items-center gap-2 rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
+          >
+            Place Order <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to={to}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-forest transition-colors hover:text-gold"
+          >
+            See the product <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
-    </Link>
+    </article>
   );
 }
+
