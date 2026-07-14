@@ -65,17 +65,17 @@ const FAQS = [
 export const Route = createFileRoute("/products/vigora")({
   head: () => ({
     meta: [
-      { title: "Vigora Plant Biostimulant, Yield Enhancer | TARAON GLOBAL" },
+      { title: "Vigora, A Strong Bio Stimulant | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Vigora is a 99% pure, 100% water soluble powder plant biostimulant for Indian crops. Improves flowering, root development, fruit set and yield. Foliar dose 0.5 to 1 gram per litre.",
+          "Vigora is a 99% pure, fully water soluble powder biostimulant. Stronger roots, better flowering and cleaner yield. Supplied in 25 Kgs bags by TARAON GLOBAL.",
       },
-      { property: "og:title", content: "Vigora Plant Biostimulant | TARAON GLOBAL" },
+      { property: "og:title", content: "Vigora, A Strong Bio Stimulant | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "Powder biostimulant, 100% water soluble, for soybean, cotton, wheat, tomato, grapes, banana and more. Supports growth, flowering and yield.",
+          "99% pure water soluble powder biostimulant for Indian crops. Foliar dose 0.5 to 1 gram per litre. 25 Kgs bags.",
       },
       { property: "og:url", content: "https://taraonglobal.lovable.app/products/vigora" },
       { property: "og:type", content: "product" },
