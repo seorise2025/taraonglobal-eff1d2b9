@@ -4,7 +4,7 @@ import {
   ArrowRight,
   MessageCircle,
   Mail,
-  MapPin,
+  
   Phone,
   Handshake,
   Users,
