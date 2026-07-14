@@ -18,7 +18,7 @@ import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcse
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { CTABand } from "@/components/site/CTABand";
+
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { FAQ } from "@/components/site/FAQ";
