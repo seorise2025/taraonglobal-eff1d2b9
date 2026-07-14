@@ -6,7 +6,7 @@ import { trackEmail, trackPhone, trackWhatsApp } from "@/lib/analytics";
 export function CTABand({
   title,
   subtitle,
-  primaryLabel = "Request Bulk Price",
+  primaryLabel = "Request Current Price",
 }: {
   title: string;
   subtitle?: string;
