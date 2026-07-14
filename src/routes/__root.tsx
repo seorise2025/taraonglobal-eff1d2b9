@@ -16,13 +16,11 @@ import frauncesLatinWoff2 from "@fontsource-variable/fraunces/files/fraunces-lat
 
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
-import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { ThemeToggle } from "@/components/site/ThemeToggle";
 
-const NAV = [
-  { to: "/", label: "Home" },
+const NAV_PRIMARY = [{ to: "/", label: "Home" }] as const;
+const NAV_SECONDARY = [
   { to: "/applications", label: "Applications" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
@@ -31,7 +29,7 @@ const NAV = [
 const PRODUCT_NAV = [
   { to: "/products/super-potassium-shiny-flakes-98", label: "Super Potassium Shiny Flakes 98%" },
   { to: "/products/super-f-humate-big-shiny-flakes", label: "Super F Humate Big Shiny Flakes" },
-  { to: "/products/glycine", label: "Glycine (Amino Acid)" },
+  { to: "/products/glycine", label: "Glycine 99%" },
   { to: "/products/vigora", label: "Vigora Plant Biostimulant" },
 ] as const;
 
