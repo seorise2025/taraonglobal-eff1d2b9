@@ -448,30 +448,19 @@ function Home() {
                 onClick={() => trackWhatsApp(undefined, "home_close")}
                 className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-sm"
               >
-                WhatsApp Sales <MessageCircle className="h-4 w-4" />
+                WhatsApp <MessageCircle className="h-4 w-4" />
               </a>
               <a
                 href={buildEmailHref("general")}
                 onClick={() => trackEmail(undefined, "home_close")}
                 className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm border border-forest-deep px-6 py-4 text-sm font-semibold text-forest-deep hover:bg-forest-deep hover:text-cream"
               >
-                Email for Quote <Mail className="h-4 w-4" />
-              </a>
-              <a
-                href="tel:+916359193666"
-                className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-forest-deep/80 hover:text-forest-deep"
-              >
-                <Phone className="h-4 w-4" /> +91 63591 93666, Rajesh Kumar Trivedi
+                Email <Mail className="h-4 w-4" />
               </a>
             </div>
           </div>
         </div>
       </section>
-
-      <CTABand
-        title="Ready to Order or Just Have Questions?"
-        subtitle="Send your product name, quantity, and city. You get a direct reply from the sales team."
-      />
     </>
   );
 }
