@@ -332,17 +332,17 @@ function Header() {
               Products
             </button>
             <div className="invisible absolute right-0 top-full w-72 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              <Link
-                to="/products/super-potassium-shiny-flakes-98"
-                className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary"
-              >
+              <Link to="/products/super-potassium-shiny-flakes-98" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
                 Super Potassium Shiny Flakes 98%
               </Link>
-              <Link
-                to="/products/super-f-humate-big-shiny-flakes"
-                className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary"
-              >
+              <Link to="/products/super-f-humate-big-shiny-flakes" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
                 Super F Humate Big Shiny Flakes
+              </Link>
+              <Link to="/products/glycine" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
+                Glycine (Amino Acid)
+              </Link>
+              <Link to="/products/vigora" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
+                Vigora Plant Biostimulant
               </Link>
             </div>
           </div>
@@ -449,19 +449,23 @@ function Footer() {
           <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Products</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link
-                to="/products/super-potassium-shiny-flakes-98"
-                className="hover:text-gold"
-              >
+              <Link to="/products/super-potassium-shiny-flakes-98" className="hover:text-gold">
                 Super Potassium Shiny Flakes 98%
               </Link>
             </li>
             <li>
-              <Link
-                to="/products/super-f-humate-big-shiny-flakes"
-                className="hover:text-gold"
-              >
+              <Link to="/products/super-f-humate-big-shiny-flakes" className="hover:text-gold">
                 Super F Humate Big Shiny Flakes
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/glycine" className="hover:text-gold">
+                Glycine (Amino Acid)
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/vigora" className="hover:text-gold">
+                Vigora Plant Biostimulant
               </Link>
             </li>
           </ul>
