@@ -67,11 +67,11 @@ export const Route = createFileRoute("/products/glycine")({
         content:
           "Glycine 99% bulk amino acid. Fertilizer synergist, natural metal chelator, food and pharma grade options. 25 Kgs pack.",
       },
-      { property: "og:url", content: "https://taraonglobal.lovable.app/products/glycine" },
+      { property: "og:url", content: "https://taraonglobal.com/products/glycine" },
       { property: "og:type", content: "product" },
     ],
     links: [
-      { rel: "canonical", href: "https://taraonglobal.lovable.app/products/glycine" },
+      { rel: "canonical", href: "https://taraonglobal.com/products/glycine" },
     ],
     scripts: [
       {
@@ -79,12 +79,12 @@ export const Route = createFileRoute("/products/glycine")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          "@id": "https://taraonglobal.lovable.app/products/glycine#product",
+          "@id": "https://taraonglobal.com/products/glycine#product",
           name: "Glycine (High-Quality Amino Acid)",
           sku: "TG-GLY-99",
           mpn: "TG-GLY-99",
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
-          image: [`https://taraonglobal.lovable.app${productImg.url}`],
+          image: [`https://taraonglobal.com${productImg.url}`],
           category: "Amino Acid",
           description:
             "Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid used in food, medicine, agriculture, pesticides, feed and daily chemical industries. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/products/glycine")({
           ],
           offers: {
             "@type": "Offer",
-            url: "https://taraonglobal.lovable.app/products/glycine",
+            url: "https://taraonglobal.com/products/glycine",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
             priceCurrency: "INR",
@@ -111,9 +111,9 @@ export const Route = createFileRoute("/products/glycine")({
             eligibleQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "BG", unitText: "25 Kg bag" },
             seller: {
               "@type": "Organization",
-              "@id": "https://taraonglobal.lovable.app/#organization",
+              "@id": "https://taraonglobal.com/#organization",
               name: "TARAON GLOBAL",
-              url: "https://taraonglobal.lovable.app/",
+              url: "https://taraonglobal.com/",
             },
           },
         }),
@@ -136,9 +136,9 @@ export const Route = createFileRoute("/products/glycine")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.lovable.app/#products" },
-            { "@type": "ListItem", position: 3, name: "Glycine", item: "https://taraonglobal.lovable.app/products/glycine" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.com/" },
+            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.com/#products" },
+            { "@type": "ListItem", position: 3, name: "Glycine", item: "https://taraonglobal.com/products/glycine" },
           ],
         }),
       },

@@ -14,4 +14,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://taraonglobal.lovable.app/sitemap.xml
+Sitemap: https://taraonglobal.com/sitemap.xml

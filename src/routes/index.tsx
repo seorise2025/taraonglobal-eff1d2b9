@@ -54,7 +54,7 @@ const HOME_FAQS = [
   },
 ];
 
-const CANONICAL = "https://taraonglobal.lovable.app/";
+const CANONICAL = "https://taraonglobal.com/";
 
 export const Route = createFileRoute("/")({
   head: () => ({

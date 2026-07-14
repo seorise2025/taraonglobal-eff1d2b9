@@ -83,12 +83,12 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
       },
       {
         property: "og:url",
-        content: "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98",
+        content: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98",
       },
       { property: "og:type", content: "product" },
     ],
     links: [
-      { rel: "canonical", href: "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98" },
+      { rel: "canonical", href: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98" },
     ],
     scripts: [
       {
@@ -96,7 +96,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          "@id": "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98#product",
+          "@id": "https://taraonglobal.com/products/super-potassium-shiny-flakes-98#product",
           name: "Super Potassium Shiny Flakes 98%",
           sku: "TG-SPSF-98",
           mpn: "TG-SPSF-98",
@@ -106,7 +106,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           },
           category: "Potassium Humate Fertilizer",
           image: [
-            "https://taraonglobal.lovable.app/og-super-potassium-98.jpg",
+            "https://taraonglobal.com/og-super-potassium-98.jpg",
           ],
           description:
             "Water soluble potassium humate shiny flakes. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input - not a complete NPK fertiliser.",
@@ -121,7 +121,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           ],
           offers: {
             "@type": "Offer",
-            url: "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98",
+            url: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98",
             availability: "https://schema.org/InStock",
             priceCurrency: "INR",
             priceSpecification: {
@@ -130,7 +130,7 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
               valueAddedTaxIncluded: false,
               description: "Bulk and dealer pricing on request",
             },
-            seller: { "@id": "https://taraonglobal.lovable.app/#organization" },
+            seller: { "@id": "https://taraonglobal.com/#organization" },
           },
         }),
       },
@@ -152,13 +152,13 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.lovable.app/#products" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.com/" },
+            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.com/#products" },
             {
               "@type": "ListItem",
               position: 3,
               name: "Super Potassium Shiny Flakes 98%",
-              item: "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98",
+              item: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98",
             },
           ],
         }),

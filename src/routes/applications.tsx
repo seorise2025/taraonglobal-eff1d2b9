@@ -48,10 +48,10 @@ export const Route = createFileRoute("/applications")({
         content:
           "Where potassium humate fits in real farming - soil, drip, fertigation, foliar, and NPK blending.",
       },
-      { property: "og:url", content: "https://taraonglobal.lovable.app/applications" },
+      { property: "og:url", content: "https://taraonglobal.com/applications" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://taraonglobal.lovable.app/applications" }],
+    links: [{ rel: "canonical", href: "https://taraonglobal.com/applications" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -59,8 +59,8 @@ export const Route = createFileRoute("/applications")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Applications", item: "https://taraonglobal.lovable.app/applications" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.com/" },
+            { "@type": "ListItem", position: 2, name: "Applications", item: "https://taraonglobal.com/applications" },
           ],
         }),
       },
