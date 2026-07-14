@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Mail } from "lucide-react";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
+import { trackEmail, trackLead, trackWhatsApp } from "@/lib/analytics";
 
 type ProductKey =
   | "super-potassium-shiny-flakes-98"
