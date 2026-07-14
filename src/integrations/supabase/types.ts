@@ -16,48 +16,105 @@ export type Database = {
     Tables: {
       enquiries: {
         Row: {
+          admin_notes: string | null
           buyer_type: string | null
           city: string | null
           company: string | null
+          consent: boolean
           created_at: string
           email: string | null
+          expected_order_date: string | null
+          follow_up_date: string | null
+          gst_number: string | null
           id: string
+          ip_address: string | null
           message: string | null
+          monthly_requirement: string | null
           name: string
           phone: string
+          pincode: string | null
           product_needed: string | null
           quantity: string | null
+          reference_number: string
+          referrer: string | null
+          source_page: string | null
           state: string | null
+          status: string
+          updated_at: string
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
           whatsapp: string | null
         }
         Insert: {
+          admin_notes?: string | null
           buyer_type?: string | null
           city?: string | null
           company?: string | null
+          consent?: boolean
           created_at?: string
           email?: string | null
+          expected_order_date?: string | null
+          follow_up_date?: string | null
+          gst_number?: string | null
           id?: string
+          ip_address?: string | null
           message?: string | null
+          monthly_requirement?: string | null
           name: string
           phone: string
+          pincode?: string | null
           product_needed?: string | null
           quantity?: string | null
+          reference_number?: string
+          referrer?: string | null
+          source_page?: string | null
           state?: string | null
+          status?: string
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           whatsapp?: string | null
         }
         Update: {
+          admin_notes?: string | null
           buyer_type?: string | null
           city?: string | null
           company?: string | null
+          consent?: boolean
           created_at?: string
           email?: string | null
+          expected_order_date?: string | null
+          follow_up_date?: string | null
+          gst_number?: string | null
           id?: string
+          ip_address?: string | null
           message?: string | null
+          monthly_requirement?: string | null
           name?: string
           phone?: string
+          pincode?: string | null
           product_needed?: string | null
           quantity?: string | null
+          reference_number?: string
+          referrer?: string | null
+          source_page?: string | null
           state?: string | null
+          status?: string
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           whatsapp?: string | null
         }
         Relationships: []
@@ -65,66 +122,138 @@ export type Database = {
       orders: {
         Row: {
           admin_notes: string | null
+          bags: number | null
           buyer_type: string | null
           city: string | null
           company: string | null
+          consent: boolean
           created_at: string
           customer_name: string
           email: string | null
+          follow_up_date: string | null
+          gst_number: string | null
           id: string
+          ip_address: string | null
           notes: string | null
           order_number: string
           phone: string
+          pincode: string | null
+          po_reference: string | null
           product_name: string
           product_slug: string
           quantity: number
+          referrer: string | null
+          required_delivery_date: string | null
+          source_page: string | null
           state: string | null
-          status: Database["public"]["Enums"]["order_status"]
+          status: string
           unit: string
           updated_at: string
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
           whatsapp: string | null
         }
         Insert: {
           admin_notes?: string | null
+          bags?: number | null
           buyer_type?: string | null
           city?: string | null
           company?: string | null
+          consent?: boolean
           created_at?: string
           customer_name: string
           email?: string | null
+          follow_up_date?: string | null
+          gst_number?: string | null
           id?: string
+          ip_address?: string | null
           notes?: string | null
           order_number?: string
           phone: string
+          pincode?: string | null
+          po_reference?: string | null
           product_name: string
           product_slug: string
           quantity: number
+          referrer?: string | null
+          required_delivery_date?: string | null
+          source_page?: string | null
           state?: string | null
-          status?: Database["public"]["Enums"]["order_status"]
+          status?: string
           unit?: string
           updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           whatsapp?: string | null
         }
         Update: {
           admin_notes?: string | null
+          bags?: number | null
           buyer_type?: string | null
           city?: string | null
           company?: string | null
+          consent?: boolean
           created_at?: string
           customer_name?: string
           email?: string | null
+          follow_up_date?: string | null
+          gst_number?: string | null
           id?: string
+          ip_address?: string | null
           notes?: string | null
           order_number?: string
           phone?: string
+          pincode?: string | null
+          po_reference?: string | null
           product_name?: string
           product_slug?: string
           quantity?: number
+          referrer?: string | null
+          required_delivery_date?: string | null
+          source_page?: string | null
           state?: string | null
-          status?: Database["public"]["Enums"]["order_status"]
+          status?: string
           unit?: string
           updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           whatsapp?: string | null
+        }
+        Relationships: []
+      }
+      submission_log: {
+        Row: {
+          content_hash: string | null
+          created_at: string
+          form_type: string
+          id: string
+          ip_address: string
+        }
+        Insert: {
+          content_hash?: string | null
+          created_at?: string
+          form_type: string
+          id?: string
+          ip_address: string
+        }
+        Update: {
+          content_hash?: string | null
+          created_at?: string
+          form_type?: string
+          id?: string
+          ip_address?: string
         }
         Relationships: []
       }
@@ -164,12 +293,6 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "user"
-      order_status:
-        | "new"
-        | "confirmed"
-        | "dispatched"
-        | "delivered"
-        | "cancelled"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -298,13 +421,6 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "user"],
-      order_status: [
-        "new",
-        "confirmed",
-        "dispatched",
-        "delivered",
-        "cancelled",
-      ],
     },
   },
 } as const
