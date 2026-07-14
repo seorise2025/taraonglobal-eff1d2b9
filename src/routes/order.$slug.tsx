@@ -8,15 +8,24 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { PRODUCTS, ADMIN_WHATSAPP, ADMIN_EMAIL, type ProductKey } from "@/lib/products";
 
 const orderSchema = z.object({
-  customer_name: z.string().trim().min(1).max(120),
-  phone: z.string().trim().min(5).max(30),
+  customer_name: z.string().trim().min(2, "Please enter your full name").max(120),
+  phone: z
+    .string()
+    .trim()
+    .min(7, "Enter a valid phone number")
+    .max(30)
+    .regex(/^[+\d][\d\s\-()]{6,}$/, "Phone can only contain digits, spaces, +, -, ()"),
   whatsapp: z.string().trim().max(30).optional().or(z.literal("")),
-  email: z.string().trim().email().max(255).optional().or(z.literal("")),
+  email: z.string().trim().email("Enter a valid email").max(255).optional().or(z.literal("")),
   company: z.string().trim().max(120).optional().or(z.literal("")),
   city: z.string().trim().max(80).optional().or(z.literal("")),
   state: z.string().trim().max(80).optional().or(z.literal("")),
   buyer_type: z.string().trim().max(60).optional().or(z.literal("")),
-  quantity: z.coerce.number().positive().max(100000),
+  quantity: z.coerce
+    .number({ invalid_type_error: "Enter a valid quantity" })
+    .int("Quantity must be a whole number of bags")
+    .positive("Quantity must be at least 1")
+    .max(100000, "Quantity too large"),
   notes: z.string().trim().max(2000).optional().or(z.literal("")),
 });
 
