@@ -10,7 +10,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * TARAON GLOBAL — Earthy Premium palette
+ * TARAON GLOBAL , Earthy Premium palette
  * Deep forest green + warm gold on cream cream.
  */
 
@@ -177,6 +177,14 @@
     letter-spacing: -0.02em;
     color: var(--color-forest-deep);
   }
+}
+
+/* Gold text on cream background lacks contrast at the brand hue.
+   In light mode, force any `.text-gold` to a darker, richer gold that
+   passes WCAG AA on our cream surface. Backgrounds (bg-gold) untouched. */
+:root:not(.dark) .text-gold,
+:root:not(.dark) .hover\:text-gold:hover {
+  color: oklch(0.52 0.14 74);
 }
 
 @utility container-page {
