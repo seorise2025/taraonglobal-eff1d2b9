@@ -26,27 +26,39 @@ const CROPS = [
 const FAQS = [
   {
     q: "What is Vigora?",
-    a: "Vigora is a concentrated powder plant biostimulant designed for Indian farming conditions. It is 99% pure and 100% water soluble. It supports overall plant health, better flowering, stronger root development and higher yield quality.",
+    a: "Vigora is a 99% pure powder biostimulant, fully water soluble. It feeds the crop at key growth stages so plants build stronger roots, better flowering and a cleaner yield.",
   },
   {
-    q: "Which crops is Vigora suitable for?",
-    a: "Vigora works across a wide range of crops including soybean, groundnut, cotton, rice, wheat, maize, tomato, chilli, grapes, pomegranate, banana and mango, among many others.",
+    q: "What is the recommended dose?",
+    a: "Foliar spray: 0.5 to 1 gram per litre of water. That is about 7.5 to 15 grams in a standard 15 litre knapsack tank. Start at the lower end for young crops and vegetables, and use the higher end for field crops during flowering.",
   },
   {
-    q: "How do I apply Vigora?",
-    a: "Dissolve in water and use as a foliar spray at 0.5 to 1 gram per litre of water. For a standard 15 litre knapsack sprayer that works out to roughly 7.5 to 15 grams per tank. Best applied during active growth stages and before or during flowering, preferably in the early morning or late evening.",
+    q: "How often should Vigora be sprayed?",
+    a: "Two to three sprays per crop cycle work well for most crops. Time them at active vegetative growth, at bud or flower initiation, and again at fruit or grain filling. Keep at least 10 to 15 days between sprays.",
   },
   {
-    q: "When is the best time to spray?",
-    a: "Early morning or late evening, during active vegetative growth and before or during flowering. Avoid spraying in strong midday sun.",
+    q: "Can Vigora be mixed with other inputs?",
+    a: "Yes, Vigora mixes with most common water soluble fertilizers, micronutrients and neem based sprays. Avoid tank mixing with strong alkaline products, Bordeaux mixture, or copper and sulphur fungicides. When in doubt, do a small jar test before spraying the full tank.",
   },
   {
     q: "Is Vigora a fertilizer?",
-    a: "No. Vigora is a plant biostimulant. It supports plant growth, flowering, fruit set and vigor. It is meant to complement your regular fertilizer schedule, not replace it.",
+    a: "No. Vigora is a biostimulant. It works alongside your regular fertilizer plan to help the plant use nutrients better, not to replace them.",
+  },
+  {
+    q: "Which crops is Vigora suitable for?",
+    a: "Field crops like soybean, groundnut, cotton, rice, wheat and maize, vegetables like tomato and chilli, and fruit and plantation crops like grapes, pomegranate, banana and mango. It fits most Indian farming systems.",
+  },
+  {
+    q: "How should Vigora be stored?",
+    a: "Store the bag in a cool, dry place away from direct sunlight, moisture and children. Keep the bag sealed after use so the powder stays dry and free flowing. Shelf life is 24 months from the date of packing when stored correctly.",
+  },
+  {
+    q: "What size does Vigora come in?",
+    a: "Standard packing is a 25 Kgs bag. Bulk pricing for dealers and distributors is available on request.",
   },
   {
     q: "Does TARAON GLOBAL supply Vigora in bulk?",
-    a: "Yes. Bulk dealer and distributor pricing is available on request. Call Rajesh Kumar Trivedi on +91 63591 93666 or send an enquiry.",
+    a: "Yes. For bulk pricing and dispatch, call Rajesh Kumar Trivedi on +91 63591 93666 or send an enquiry through the contact form.",
   },
 ];
 
