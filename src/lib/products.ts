@@ -29,8 +29,8 @@ export const PRODUCTS: Record<
   vigora: {
     slug: "vigora",
     name: "Vigora Plant Biostimulant",
-    unit: "bottles",
-    pack: "1 Litre",
+    unit: "bags",
+    pack: "25 Kgs",
   },
 };
 
