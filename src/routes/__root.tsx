@@ -304,29 +304,21 @@ function Header() {
             height={44}
             decoding="async"
             fetchPriority="high"
-            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:hidden"
-          />
-          <img
-            src={logoDark.url}
-            alt="TARAON GLOBAL"
-            width={44}
-            height={44}
-            decoding="async"
-            className="hidden h-11 w-11 rounded-sm object-contain dark:block"
+            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
               TARAON GLOBAL
             </span>
             <span className="text-[10px] uppercase tracking-[0.18em] text-gold">
-              Potassium Humate
+              Agri-input Supply
             </span>
           </span>
         </Link>
 
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {NAV.map((item) => (
+          {NAV_PRIMARY.map((item) => (
             <Link
               key={item.to}
               to={item.to}
@@ -341,7 +333,7 @@ function Header() {
             <button className="text-sm font-medium text-forest-deep/80 transition-colors hover:text-forest-deep">
               Products
             </button>
-            <div className="invisible absolute right-0 top-full w-72 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full w-72 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
               {PRODUCT_NAV.map((item) => (
                 <Link key={item.to} to={item.to} className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
                   {item.label}
@@ -349,6 +341,16 @@ function Header() {
               ))}
             </div>
           </div>
+          {NAV_SECONDARY.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="text-sm font-medium text-forest-deep/80 transition-colors hover:text-forest-deep"
+              activeProps={{ className: "text-forest-deep" }}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -358,17 +360,22 @@ function Header() {
           >
             <Phone className="h-3.5 w-3.5" /> +91 63591 93666
           </a>
-          <ThemeToggle />
           <Link
             to="/contact"
             className="inline-flex items-center rounded-sm bg-forest-deep px-4 py-2 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
           >
-            Request Bulk Price
+            Request Current Price
           </Link>
         </div>
 
         <div className="flex items-center gap-1 lg:hidden">
-          <ThemeToggle />
+          <a
+            href="tel:+916359193666"
+            aria-label="Call TARAON GLOBAL"
+            className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary"
+          >
+            <Phone className="h-5 w-5" aria-hidden="true" />
+          </a>
           <button
             ref={toggleRef}
             className="grid h-11 w-11 place-items-center rounded-sm text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -392,7 +399,7 @@ function Header() {
           className="border-t border-border bg-cream lg:hidden"
         >
           <div className="container-page flex flex-col gap-1 py-4">
-            {NAV.map((item, i) => (
+            {NAV_PRIMARY.map((item, i) => (
               <Link
                 key={item.to}
                 to={item.to}
@@ -418,12 +425,24 @@ function Header() {
                 </Link>
               ))}
             </div>
+            <div className="mt-3 border-t border-border pt-3">
+              {NAV_SECONDARY.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >
-              Request Bulk Price
+              Request Current Price
             </Link>
           </div>
         </div>
