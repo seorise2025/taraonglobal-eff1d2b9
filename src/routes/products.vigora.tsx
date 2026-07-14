@@ -247,7 +247,9 @@ function ProductPage() {
         items={[
           { to: "/products/glycine", title: "Glycine (Amino Acid)", desc: "99% purity amino acid, fertilizer synergist and chelator." },
           { to: "/products/super-potassium-shiny-flakes-98", title: "Super Potassium Shiny Flakes 98%", desc: "Flagship potassium humate for soil and drip." },
+          { to: "/products/super-f-humate-big-shiny-flakes", title: "Super F Humate Big Shiny Flakes", desc: "Big flake grade for dealers and blenders." },
           { to: "/applications", title: "How our inputs fit in the field", desc: "Fertigation, foliar spray, blending and soil support." },
+          { to: "/contact", title: "Request Vigora bulk price", desc: "Same-day pricing on WhatsApp or email." },
         ]}
       />
 
