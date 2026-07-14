@@ -157,10 +157,10 @@ function ProductPage() {
             Vigora, Yield and Growth Enhancer
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            A concentrated liquid biostimulant built for Indian farming conditions. Vigora supports overall plant health, better flowering, stronger roots and higher yield quality across a wide range of crops.
+            A concentrated powder biostimulant built for Indian farming conditions. 99% pure and 100% water soluble. Vigora supports overall plant health, better flowering, stronger roots and higher yield quality across a wide range of crops.
           </p>
           <p className="mt-3 text-ink/70">
-            Use as a foliar spray at 0.5 to 1 ml per litre of water. For a 15 litre knapsack tank, that works out to roughly 7.5 to 15 ml. Best applied during active growth and before or during flowering, in the early morning or late evening.
+            Dissolve in water and use as a foliar spray at 0.5 to 1 gram per litre. For a 15 litre knapsack tank, that works out to roughly 7.5 to 15 grams. Best applied during active growth and before or during flowering, in the early morning or late evening.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
