@@ -198,7 +198,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             availableLanguage: ["en", "hi", "gu"],
           },
           description:
-            "Trading and supplier company dealing in potassium humate shiny flakes for agriculture. Sources from a trusted producer and supplies farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
+            "Trading and supplier company dealing in potassium humate shiny flakes, glycine amino acid and Vigora plant biostimulant for agriculture. Sources from trusted producers and supplies farmers, dealers, distributors and fertilizer companies across Gujarat and India. Led by Rajesh Kumar Trivedi with over 20 years of industry experience.",
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "TARAON GLOBAL Product Range",
+            itemListElement: [
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Super Potassium Shiny Flakes 98%", url: "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Super F Humate Big Shiny Flakes", url: "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Glycine (High-Quality Amino Acid)", url: "https://taraonglobal.lovable.app/products/glycine" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Vigora Plant Biostimulant", url: "https://taraonglobal.lovable.app/products/vigora" } },
+            ],
+          },
         }),
       },
       {

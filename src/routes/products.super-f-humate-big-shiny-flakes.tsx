@@ -336,7 +336,17 @@ function ProductPage() {
           {
             to: "/products/super-potassium-shiny-flakes-98",
             title: "Super Potassium Shiny Flakes 98%",
-            desc: "Standard flake grade - drip friendly, farmer and dealer pack.",
+            desc: "Standard flake grade, drip friendly, farmer and dealer pack.",
+          },
+          {
+            to: "/products/glycine",
+            title: "Glycine (Amino Acid)",
+            desc: "99% purity L-Glycine, blends well with humates in formulations.",
+          },
+          {
+            to: "/products/vigora",
+            title: "Vigora Plant Biostimulant",
+            desc: "Concentrated liquid yield enhancer for Indian crops.",
           },
           {
             to: "/applications",
@@ -345,7 +355,7 @@ function ProductPage() {
           },
           {
             to: "/contact",
-            title: "Request dealer & bulk pricing",
+            title: "Request dealer and bulk pricing",
             desc: "Send quantity and destination for a same-day 25 Kgs quote.",
           },
         ]}
