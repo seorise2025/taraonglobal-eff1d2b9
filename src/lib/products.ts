@@ -1,6 +1,8 @@
 export type ProductKey =
   | "super-potassium-shiny-flakes-98"
-  | "super-f-humate-big-shiny-flakes";
+  | "super-f-humate-big-shiny-flakes"
+  | "glycine"
+  | "vigora";
 
 export const PRODUCTS: Record<
   ProductKey,
@@ -17,6 +19,18 @@ export const PRODUCTS: Record<
     name: "Super F Humate Big Shiny Flakes",
     unit: "bags",
     pack: "25 Kgs",
+  },
+  glycine: {
+    slug: "glycine",
+    name: "Glycine (High-Quality Amino Acid)",
+    unit: "bags",
+    pack: "25 Kgs",
+  },
+  vigora: {
+    slug: "vigora",
+    name: "Vigora Plant Biostimulant",
+    unit: "bottles",
+    pack: "1 Litre",
   },
 };
 
