@@ -3,6 +3,7 @@ import productImg from "@/assets/vigora-bio-stimulant.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
+import { ProductDisclaimer } from "@/components/site/ProductDisclaimer";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { InquiryCTA } from "@/components/site/InquiryCTA";
@@ -251,6 +252,8 @@ function ProductPage() {
           { to: "/contact", title: "Request Vigora bulk price", desc: "Same-day pricing on WhatsApp or email." },
         ]}
       />
+
+      <ProductDisclaimer />
 
       <CTABand
         title="Want Vigora for your dealer network or farm?"

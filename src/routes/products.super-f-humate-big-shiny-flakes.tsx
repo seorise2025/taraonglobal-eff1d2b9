@@ -3,6 +3,7 @@ import productBigImg from "@/assets/super-f-humate-bag.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
+import { ProductDisclaimer } from "@/components/site/ProductDisclaimer";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { InquiryCTA } from "@/components/site/InquiryCTA";
@@ -337,6 +338,8 @@ function ProductPage() {
           },
         ]}
       />
+
+      <ProductDisclaimer />
 
       <CTABand
         title="Looking for bulk stock?"
