@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, useCallback } from "react";
-import { Loader2, MessageCircle, Mail, LogOut, RefreshCw } from "lucide-react";
+import { Loader2, MessageCircle, Mail, LogOut, RefreshCw, Download } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { ADMIN_EMAIL } from "@/lib/products";
@@ -77,6 +77,36 @@ function AdminPage() {
     navigate({ to: "/auth" });
   }
 
+  function downloadCsv() {
+    if (!orders || orders.length === 0) {
+      toast.error("No orders to export");
+      return;
+    }
+    const rows = filter === "all" ? orders : orders.filter((o) => o.status === filter);
+    const cols: (keyof OrderRow)[] = [
+      "order_number", "created_at", "status", "product_slug", "product_name",
+      "quantity", "unit", "customer_name", "phone", "whatsapp", "email",
+      "company", "city", "state", "buyer_type", "notes", "admin_notes", "id",
+    ];
+    const esc = (v: unknown) => {
+      if (v === null || v === undefined) return "";
+      const s = String(v).replace(/"/g, '""');
+      return /[",\n\r]/.test(s) ? `"${s}"` : s;
+    };
+    const csv = [cols.join(","), ...rows.map((r) => cols.map((c) => esc(r[c])).join(","))].join("\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    const ts = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
+    a.href = url;
+    a.download = `taraon-orders-${filter}-${ts}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast.success(`Exported ${rows.length} orders`);
+  }
+
   if (isAdmin === null) {
     return (
       <div className="container-page py-20 text-center">
@@ -114,6 +144,7 @@ function AdminPage() {
             {STATUSES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
           <button onClick={load} className="inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm"><RefreshCw className="h-4 w-4" /> Refresh</button>
+          <button onClick={downloadCsv} className="inline-flex items-center gap-2 rounded-sm bg-forest-deep px-3 py-2 text-sm font-medium text-cream hover:bg-gold hover:text-forest-deep"><Download className="h-4 w-4" /> Export CSV</button>
           <button onClick={signOut} className="inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm"><LogOut className="h-4 w-4" /> Sign out</button>
         </div>
       </div>
