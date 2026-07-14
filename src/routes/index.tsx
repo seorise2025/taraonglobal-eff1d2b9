@@ -241,6 +241,51 @@ function Home() {
         </div>
       </section>
 
+      {/* WHAT SETS US APART */}
+      <section className="container-page py-20" aria-labelledby="what-sets-us-apart">
+        <SectionHeading
+          eyebrow="What sets us apart"
+          title="Four things buyers get on every order"
+          intro="Simple commitments that decide whether a supplier is worth calling back. These are ours."
+        />
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: Handshake,
+              t: "Direct dealing, no middle layers",
+              d: "You speak to the sales leadership, not a call centre. Price, packing, and dispatch answers come from the person who owns the order.",
+            },
+            {
+              icon: BadgeCheck,
+              t: "Batch tested product supply",
+              d: "Every consignment ships with clear batch identity. Current batch COA is shared on request before you confirm the order.",
+            },
+            {
+              icon: Package,
+              t: "25 Kgs standard packing",
+              d: "Uniform 25 Kg bags across every product line. Easier to count, easier to store, easier to move at the dealer or farm end.",
+            },
+            {
+              icon: MapPin,
+              t: "Ahmedabad to India wide dispatch",
+              d: "Dispatched from our Ahmedabad base to every Indian state and union territory, with tracking and delivery updates.",
+            },
+          ].map(({ icon: Icon, t, d }) => (
+            <article
+              key={t}
+              className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-gold/60"
+            >
+              <span className="grid h-11 w-11 place-items-center rounded-sm bg-secondary text-forest-deep transition-colors group-hover:bg-gold">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <h3 className="mt-4 font-display text-lg text-forest-deep">{t}</h3>
+              <p className="mt-2 text-sm text-ink/75">{d}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* POSITIONING: The sourcing problem we solve */}
       <section className="container-page py-20">
         <div className="mx-auto max-w-3xl text-center">
