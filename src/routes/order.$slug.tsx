@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { PRODUCTS, ADMIN_WHATSAPP, ADMIN_EMAIL, type ProductKey } from "@/lib/products";
+import { trackOrder } from "@/lib/analytics";
 
 const orderSchema = z.object({
   customer_name: z.string().trim().min(2, "Please enter your full name").max(120),
