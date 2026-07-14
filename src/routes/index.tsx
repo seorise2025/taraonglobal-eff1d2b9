@@ -188,7 +188,7 @@ function Home() {
                 src={heroImgFallback}
                 srcSet={heroImg}
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                alt="TARAON GLOBAL Ahmedabad sourcing desk for bulk agri inputs across India"
+                alt="TARAON GLOBAL Ahmedabad warehouse and dispatch desk serving bulk agri buyers across India"
                 width={1200}
                 height={1600}
                 fetchPriority="high"
