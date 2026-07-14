@@ -23,6 +23,8 @@ import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { FAQ } from "@/components/site/FAQ";
+import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
+import { trackEmail, trackWhatsApp } from "@/lib/analytics";
 
 
 const HOME_FAQS = [
