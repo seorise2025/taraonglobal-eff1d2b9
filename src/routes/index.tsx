@@ -76,7 +76,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroFlakes640,
-        imagesrcset: heroImg,
+        imagesrcset: heroWebp,
         imagesizes: "(min-width: 1024px) 42vw, 100vw",
         fetchpriority: "high",
       } as unknown as Record<string, string>,
