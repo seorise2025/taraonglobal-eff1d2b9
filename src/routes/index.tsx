@@ -107,287 +107,186 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="container-page py-8 md:py-14">
+      {/* HERO, editorial */}
+      <section className="relative overflow-hidden border-b border-forest-deep/10">
+        <div className="container-page grid gap-10 py-12 md:py-20 lg:grid-cols-12 lg:gap-14">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 border border-forest-deep/10 bg-card/50 lg:grid-cols-12"
+            className="lg:col-span-7"
           >
-            {/* LEFT */}
-            <div className="flex flex-col justify-between border-b border-forest-deep/10 p-6 sm:p-10 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-14">
-              <div>
-                <div className="mb-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-                  <span className="h-px w-8 bg-gold" /> An Ahmedabad based agri input trading company
-                </div>
-                <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl lg:text-[4.25rem]">
-                  The Sourcing Desk Serious{" "}
-                  <span className="italic font-normal text-gold">Agri Buyers</span>{" "}
-                  Rely On
-                </h1>
-                <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
-                  TARAON GLOBAL is a trading company based in{" "}
-                  <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
-                    Ahmedabad, Gujarat
-                  </Link>
-                  , led by Rajesh Kumar Trivedi with over 20 years in the agri input trade. One responsive team, one point of contact, and one set of standards for every enquiry.
-                </p>
-                <p className="mt-3 max-w-xl text-ink/60">
-                  Buyers come to us when they want straight answers on price, packing, and dispatch instead of chasing scattered suppliers.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Link
-                    to="/contact"
-                    className="group inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-gold hover:text-forest-deep"
-                  >
-                    Request Bulk Price
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
-                  <a
-                    href={buildWaHref("general")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackWhatsApp(undefined, "home_hero")}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
-                  >
-                    <MessageCircle className="h-4 w-4" /> WhatsApp Sales
-                  </a>
-                  <a
-                    href={buildEmailHref("general")}
-                    onClick={() => trackEmail(undefined, "home_hero")}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
-                  >
-                    <Mail className="h-4 w-4" /> Email for Quote
-                  </a>
-                </div>
-              </div>
-
-              {/* Trust strip */}
-              <div className="mt-14 grid grid-cols-2 gap-6 border-t border-forest-deep/10 pt-6 sm:grid-cols-4">
-                {[
-                  { k: "20+ yrs", v: "Trade experience" },
-                  { k: "1 desk", v: "Single point of contact" },
-                  { k: "25 Kg", v: "Standard packing" },
-                  { k: "India", v: "Wide dispatch" },
-                ].map((s) => (
-                  <div key={s.v}>
-                    <div className="font-display text-2xl text-forest-deep">{s.k}</div>
-                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/55">
-                      {s.v}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-forest-deep/10 bg-forest-deep/5 px-3 py-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
+              </span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-deep">
+                Replies within business hours
+              </span>
             </div>
 
-            {/* RIGHT visual */}
-            <div className="relative min-h-[380px] overflow-hidden bg-forest-deep lg:col-span-5 lg:min-h-0">
+            <h1 className="font-display text-[2.6rem] font-semibold leading-[1.05] text-forest-deep sm:text-6xl lg:text-[4.25rem]">
+              Precision{" "}
+              <span className="italic font-normal text-gold">Sourcing</span> for
+              agri inputs.
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/80">
+              TARAON GLOBAL is an{" "}
+              <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
+                Ahmedabad based
+              </Link>{" "}
+              trading desk for potassium humate, Glycine, and Vigora plant biostimulant. One responsive team led by Rajesh Kumar Trivedi, 20+ years in the trade.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                to="/contact"
+                className="group inline-flex min-h-12 items-center justify-between gap-4 rounded-sm bg-forest-deep px-6 py-4 text-sm font-semibold text-cream transition-colors hover:bg-gold hover:text-forest-deep sm:justify-start"
+              >
+                Request Bulk Price
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <a
+                href={buildWaHref("general")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsApp(undefined, "home_hero")}
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
+              >
+                <MessageCircle className="h-4 w-4" /> WhatsApp Sales
+              </a>
+              <a
+                href={buildEmailHref("general")}
+                onClick={() => trackEmail(undefined, "home_hero")}
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-4 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
+              >
+                <Mail className="h-4 w-4" /> Email for Quote
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right visual, editorial frame */}
+          <div className="relative lg:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden bg-forest-deep">
               <img
                 src={heroImgFallback}
                 srcSet={heroImg}
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                alt="Young crop rows at golden hour on rich soil, representing TARAON GLOBAL's supply of soil conditioners to farms across India"
+                alt="Young crop rows at golden hour on rich soil, representing TARAON GLOBAL's supply across India"
                 width={1200}
-                height={1600}
+                height={1500}
                 fetchPriority="high"
                 decoding="async"
-                className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-luminosity dark:opacity-90 dark:mix-blend-normal"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-6 border border-gold/30"
-              />
-              <div className="absolute bottom-0 right-0 max-w-[16rem] border-l border-t border-forest-deep/10 bg-cream p-5 sm:p-6">
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-deep">
-                    Direct sales
-                  </span>
-                </div>
-                <div className="my-3 h-px w-16 bg-forest-deep/15" />
-                <div className="text-[10px] uppercase tracking-[0.18em] text-ink/50">
-                  Reply time
-                </div>
-                <div className="font-display text-3xl leading-none text-forest-deep">
-                  <CountUp to={24} suffix=" hrs" />
-                </div>
-                <p className="mt-3 text-[11px] leading-snug text-ink/60">
-                  Enquiries handled by the leadership team, not a call queue.
-                </p>
+              <div aria-hidden="true" className="pointer-events-none absolute inset-4 border border-gold/40" />
+            </div>
+            <div className="absolute -bottom-6 left-6 right-6 border border-forest-deep/10 bg-cream p-5 shadow-sm sm:left-auto sm:right-6 sm:max-w-[15rem]">
+              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+                Reply time
               </div>
+              <div className="mt-1 font-display text-4xl leading-none text-forest-deep">
+                <CountUp to={24} suffix=" hrs" />
+              </div>
+              <p className="mt-2 text-[11px] leading-snug text-ink/60">
+                Handled by leadership, not a call queue.
+              </p>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* TRUST BAR */}
-      <section className="border-y border-border bg-card" aria-label="How we operate">
-        <div className="container-page grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: Handshake, label: "Direct dealing, no middle layers" },
-            { icon: BadgeCheck, label: "Batch tested product supply" },
-            { icon: Package, label: "25 Kgs standard packing" },
-            { icon: MapPin, label: "Ahmedabad to India wide dispatch" },
-          ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-secondary text-forest-deep">
-                <Icon className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="text-sm font-medium text-forest-deep">{label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* WHAT SETS US APART */}
-      <section className="container-page py-20" aria-labelledby="what-sets-us-apart">
-        <SectionHeading
-          eyebrow="What sets us apart"
-          title="Four things buyers get on every order"
-          intro="Simple commitments that decide whether a supplier is worth calling back. These are ours."
-        />
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: Handshake,
-              t: "Direct dealing, no middle layers",
-              d: "You speak to the sales leadership, not a call centre. Price, packing, and dispatch answers come from the person who owns the order.",
-            },
-            {
-              icon: BadgeCheck,
-              t: "Batch tested product supply",
-              d: "Every consignment ships with clear batch identity. Current batch COA is shared on request before you confirm the order.",
-            },
-            {
-              icon: Package,
-              t: "25 Kgs standard packing",
-              d: "Uniform 25 Kg bags across every product line. Easier to count, easier to store, easier to move at the dealer or farm end.",
-            },
-            {
-              icon: MapPin,
-              t: "Ahmedabad to India wide dispatch",
-              d: "Dispatched from our Ahmedabad base to every Indian state and union territory, with tracking and delivery updates.",
-            },
-          ].map(({ icon: Icon, t, d }) => (
-            <article
-              key={t}
-              className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-gold/60"
-            >
-              <span className="grid h-11 w-11 place-items-center rounded-sm bg-secondary text-forest-deep transition-colors group-hover:bg-gold">
-                <Icon className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <h3 className="mt-4 font-display text-lg text-forest-deep">{t}</h3>
-              <p className="mt-2 text-sm text-ink/75">{d}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* POSITIONING: The sourcing problem we solve */}
-      <section className="container-page py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            Why a sourcing desk
           </div>
-          <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
-            Buying agri inputs shouldn't feel like a scavenger hunt
-          </h2>
-          <p className="mt-5 text-ink/75">
-            Most bulk buyers waste weeks pinging five suppliers, comparing inconsistent specs, and still not knowing what will land on the truck. TARAON GLOBAL removes that friction.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              n: "01",
-              t: "Scattered suppliers, no accountability",
-              d: "Different offers, different specs, different packing standards. We consolidate the sourcing so one team is answerable for the delivered product.",
-            },
-            {
-              n: "02",
-              t: "Unclear specifications before order",
-              d: "You get the actual spec sheet, batch identity, and pack detail up front. No surprises at the warehouse.",
-            },
-            {
-              n: "03",
-              t: "Slow, routed responses",
-              d: "Enquiries land with the leadership team. Price, availability, and dispatch confirmation come back the same day in most cases.",
-            },
-          ].map((item) => (
-            <div
-              key={item.n}
-              className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-gold/60"
-            >
-              <div className="font-display text-3xl text-gold">{item.n}</div>
-              <h3 className="mt-3 font-display text-xl text-forest-deep">{item.t}</h3>
-              <p className="mt-2 text-sm text-ink/75">{item.d}</p>
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section className="bg-forest-deep py-20 text-cream">
-        <div className="container-page">
-          <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-            <span className="h-px w-8 bg-gold" /> How we work
+      {/* TRUST MATRIX, deep green typographic band */}
+      <section className="bg-forest-deep text-cream" aria-label="How we operate">
+        <div className="container-page py-4">
+          <div className="grid grid-cols-2 divide-x divide-y divide-cream/10 border-y border-cream/10 md:grid-cols-4 md:divide-y-0">
+            {[
+              { k: "Direct", v: "Dealing, no middle layers" },
+              { k: "Tested", v: "Batch verified supply" },
+              { k: "25 Kg", v: "Standard packing" },
+              { k: "India", v: "Wide dispatch from Ahmedabad" },
+            ].map((s, i) => (
+              <div key={s.k} className={`p-8 text-center ${i < 2 ? "border-b border-cream/10 md:border-b-0" : ""}`}>
+                <div className="font-display text-3xl italic text-gold">{s.k}</div>
+                <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.22em] text-cream/70">
+                  {s.v}
+                </div>
+              </div>
+            ))}
           </div>
-          <h2 className="font-display text-4xl leading-tight text-cream">
-            From enquiry to dispatch, in four clean steps
-          </h2>
-          <p className="mt-4 max-w-2xl text-cream/70">
-            No lengthy onboarding, no chasing. The process is deliberately short because buyers want stock moving, not paperwork stacking.
-          </p>
+        </div>
+      </section>
 
-          <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {/* PROBLEM FRAMING, editorial with gold rules */}
+      <section className="container-page py-20 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              The sourcing gap
+            </div>
+            <h2 className="font-display text-4xl italic leading-tight text-forest-deep sm:text-5xl">
+              Fragmented supply lists cost buyers time and margin.
+            </h2>
+            <p className="mt-6 text-ink/75">
+              Most bulk buyers waste weeks pinging five suppliers, comparing inconsistent specs, and still not knowing what will land on the truck. TARAON GLOBAL removes that friction with a single accountable desk in Ahmedabad.
+            </p>
+          </div>
+          <div className="space-y-8 lg:col-span-7 lg:pt-4">
             {[
               {
-                icon: FileText,
-                t: "Send your enquiry",
-                d: "Share the product, quantity, and delivery city by WhatsApp, phone, form, or email.",
+                t: "Inconsistent specifications?",
+                d: "You get the actual spec sheet, batch identity, and pack detail before you commit. Current batch COA on request.",
               },
               {
-                icon: ClipboardCheck,
-                t: "Get spec and price",
-                d: "You receive the current spec sheet, packing detail, and a firm quotation from the sales team.",
+                t: "Slow, routed responses?",
+                d: "Enquiries land with the leadership team. Price, availability, and dispatch confirmation come back the same day in most cases.",
               },
               {
-                icon: BadgeCheck,
-                t: "Confirm with COA",
-                d: "Batch identity and current batch COA are shared on request before you commit to the order.",
+                t: "Logistics uncertainty?",
+                d: "Dispatched from our Ahmedabad base to every Indian state and union territory, with tracking and delivery updates end to end.",
               },
-              {
-                icon: Truck,
-                t: "Dispatch and update",
-                d: "Order is dispatched from the Ahmedabad warehouse with tracking and delivery updates end to end.",
-              },
-            ].map(({ icon: Icon, t, d }, i) => (
-              <li
-                key={t}
-                className="relative rounded-lg border border-cream/10 bg-forest/40 p-6"
-              >
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-sm bg-gold text-forest-deep">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
-                    Step 0{i + 1}
-                  </span>
-                </div>
-                <h3 className="font-display text-lg text-cream">{t}</h3>
-                <p className="mt-2 text-sm text-cream/75">{d}</p>
+            ].map((item) => (
+              <div key={item.t} className="border-l-2 border-gold pl-5">
+                <h3 className="font-display text-xl text-forest-deep">{item.t}</h3>
+                <p className="mt-2 text-sm text-ink/70">{item.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE WORK, subtle band with numbered rhythm */}
+      <section className="bg-forest-deep/[0.04] py-20 lg:py-24">
+        <div className="container-page">
+          <div className="max-w-2xl">
+            <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              How we work
+            </div>
+            <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
+              From enquiry to dispatch, four clean steps.
+            </h2>
+          </div>
+          <ol className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { t: "Requirement", d: "Share product, quantity, and delivery city by WhatsApp, phone, form, or email." },
+              { t: "Batch quote", d: "Current spec sheet, packing detail, and a firm quotation from the sales team." },
+              { t: "Confirm with COA", d: "Batch identity and current batch COA on request before you commit to the order." },
+              { t: "Dispatch and update", d: "Order dispatched from the Ahmedabad warehouse with tracking and delivery updates." },
+            ].map((s, i) => (
+              <li key={s.t} className="border-t border-forest-deep/15 pt-6">
+                <div className="font-display text-3xl italic text-gold">0{i + 1}</div>
+                <h3 className="mt-3 font-display text-lg text-forest-deep">{s.t}</h3>
+                <p className="mt-2 text-sm text-ink/70">{s.d}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* BUYER TYPES WE SERVE */}
-      <section className="container-page py-20">
+      {/* BUYER SEGMENTS */}
+      <section className="container-page py-20 lg:py-24">
         <SectionHeading
           eyebrow="Who we serve"
           title="Built around how bulk buyers actually work"
@@ -396,40 +295,16 @@ function Home() {
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            {
-              icon: Sprout,
-              t: "Farmer groups and FPOs",
-              d: "Consolidated humate and biostimulant supply for cluster demand and seasonal purchases.",
-            },
-            {
-              icon: Warehouse,
-              t: "Dealers and stockists",
-              d: "Regular refills with consistent packing and predictable dispatch windows.",
-            },
-            {
-              icon: Users,
-              t: "Distributors",
-              d: "State and regional distributors sourcing multiple lines from one accountable desk.",
-            },
-            {
-              icon: Factory,
-              t: "Fertiliser formulators",
-              d: "Blending grade humate and Glycine with batch identity for formulation consistency.",
-            },
-            {
-              icon: Ship,
-              t: "Exporters and re-packers",
-              d: "Bulk supply for onward export markets with standard 25 Kgs packing and documentation.",
-            },
-            {
-              icon: Handshake,
-              t: "Trading partners",
-              d: "Long term supply arrangements built on repeat orders and transparent pricing.",
-            },
+            { icon: Sprout, t: "Farmer groups and FPOs", d: "Consolidated humate and biostimulant supply for cluster demand and seasonal purchases." },
+            { icon: Warehouse, t: "Dealers and stockists", d: "Regular refills with consistent packing and predictable dispatch windows." },
+            { icon: Users, t: "Distributors", d: "State and regional distributors sourcing multiple lines from one accountable desk." },
+            { icon: Factory, t: "Fertiliser formulators", d: "Blending grade humate and Glycine with batch identity for formulation consistency." },
+            { icon: Ship, t: "Exporters and re-packers", d: "Bulk supply for onward export markets with standard 25 Kgs packing and documentation." },
+            { icon: Handshake, t: "Trading partners", d: "Long term supply arrangements built on repeat orders and transparent pricing." },
           ].map(({ icon: Icon, t, d }) => (
             <article
               key={t}
-              className="rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg"
+              className="border-t border-forest-deep/15 pt-6 transition-colors hover:border-gold"
             >
               <span className="grid h-10 w-10 place-items-center rounded-sm bg-secondary text-forest-deep">
                 <Icon className="h-5 w-5" aria-hidden="true" />
@@ -441,156 +316,158 @@ function Home() {
         </div>
       </section>
 
-      {/* LEADERSHIP / EEAT */}
-      <section className="container-page pb-20">
-        <div className="grid gap-10 rounded-lg border border-border bg-card p-8 md:grid-cols-[1fr_1.4fr] md:items-center md:p-12">
-          <div>
-            <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-              Led by the founder
+      {/* FOUNDER, pull quote */}
+      <section className="container-page pb-20 lg:pb-24">
+        <div className="grid gap-10 border-y border-forest-deep/15 py-14 md:grid-cols-12 md:gap-14 md:py-20">
+          <div className="relative md:col-span-8">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-1 -top-8 select-none font-display text-8xl italic leading-none text-gold/25"
+            >
+              &ldquo;
             </div>
-            <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
-              Rajesh Kumar Trivedi
-            </h2>
-            <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-forest">
-              Founder, TARAON GLOBAL
+            <p className="font-display text-2xl italic leading-snug text-forest-deep sm:text-3xl">
+              Two decades in agri inputs taught me one thing. Trust is the only ingredient that cannot be synthesized. Buyers stay because the 100th bag lands exactly like the first.
             </p>
-            <p className="mt-4 text-ink/75">
-              Over 20 years in the agri input trade across sourcing, quality, and buyer relationships. Sales enquiries come to him directly, which is why buyers get straight commercial answers instead of layered responses.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="tel:+916359193666"
-                className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-5 py-3 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
-              >
-                <Phone className="h-4 w-4 text-gold" /> +91 63591 93666
-              </a>
-              <Link
-                to="/about"
-                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-forest hover:text-gold"
-              >
-                Read the company story <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="grid h-12 w-12 place-items-center rounded-full bg-forest-deep font-display text-cream">
+                RT
+              </div>
+              <div>
+                <p className="font-semibold text-forest-deep">Rajesh Kumar Trivedi</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/60">
+                  Founder, TARAON GLOBAL. 20+ years experience
+                </p>
+              </div>
             </div>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {[
-              { k: "20+ years", v: "Agri input trade experience" },
-              { k: "Direct sales", v: "Handled by leadership" },
-              { k: "Ahmedabad", v: "Base of operations" },
-              { k: "India wide", v: "Buyer network" },
-            ].map((s) => (
-              <li key={s.v} className="rounded-sm border border-border bg-background p-4">
-                <div className="font-display text-xl text-forest-deep">{s.k}</div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/60">
-                  {s.v}
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className="md:col-span-4 md:border-l md:border-forest-deep/15 md:pl-10">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              Direct line
+            </div>
+            <a
+              href="tel:+916359193666"
+              className="mt-3 flex items-center gap-2 font-display text-2xl text-forest-deep hover:text-gold"
+            >
+              <Phone className="h-5 w-5 text-gold" /> +91 63591 93666
+            </a>
+            <p className="mt-4 text-sm text-ink/70">
+              Sales enquiries handled by leadership. Straight answers on price, packing, and dispatch.
+            </p>
+            <Link
+              to="/about"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold"
+            >
+              Read the company story <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* PRODUCT RANGE AT A GLANCE (links only) */}
+      {/* PRODUCT RANGE, text links only */}
       <section className="container-page pb-20">
-        <div className="rounded-lg border border-border bg-card p-8 sm:p-10">
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-                What the desk supplies
-              </div>
-              <h2 className="font-display text-2xl text-forest-deep sm:text-3xl">
-                A focused range, full details on each product page
-              </h2>
+        <div className="grid gap-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              What the desk supplies
             </div>
+            <h2 className="font-display text-3xl italic text-forest-deep">
+              A focused range.
+            </h2>
+            <p className="mt-3 text-sm text-ink/70">
+              Full specifications, packing, and order buttons live on each product page.
+            </p>
             <Link
               to="/applications"
-              className="inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold"
             >
               See applications <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="divide-y divide-forest-deep/10 md:col-span-8">
             {[
               { name: "Super Potassium Shiny Flakes 98%", to: "/products/super-potassium-shiny-flakes-98" as const },
               { name: "Super F Humate Big Shiny Flakes", to: "/products/super-f-humate-big-shiny-flakes" as const },
               { name: "Glycine", to: "/products/glycine" as const },
               { name: "Vigora Plant Biostimulant", to: "/products/vigora" as const },
-            ].map((p) => (
+            ].map((p, i) => (
               <li key={p.to}>
                 <Link
                   to={p.to}
-                  className="flex items-center justify-between gap-3 rounded-sm border border-border bg-background px-4 py-3 text-sm font-medium text-forest-deep transition-colors hover:border-gold hover:text-gold"
+                  className="group flex items-center justify-between gap-4 py-5 text-forest-deep hover:text-gold"
                 >
-                  <span>{p.name}</span>
-                  <ArrowRight className="h-4 w-4 text-gold" />
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-display text-sm italic text-gold">0{i + 1}</span>
+                    <span className="font-display text-lg sm:text-xl">{p.name}</span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-1" />
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm text-ink/60">
-            Specifications, packing, pricing context, and order buttons live on each product page.
-          </p>
         </div>
       </section>
 
       {/* INDIA MAP */}
       <IndiaMapCoverage />
 
-      {/* SALES SECTION */}
-      <section className="container-page py-20">
-        <div className="mx-auto max-w-3xl rounded-lg border border-border bg-card p-8 text-center sm:p-12">
-          <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            Direct sales support
-          </div>
-          <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
-            Need Price, Packing, or Dispatch Details?
-          </h2>
-          <p className="mt-4 text-ink/75">
-            Send the product name, quantity, and delivery location. You get a direct reply from the sales team, not an automated answer.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-semibold text-cream hover:bg-gold hover:text-forest-deep"
-            >
-              Request Bulk Price <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a
-              href={buildWaHref("general")}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackWhatsApp(undefined, "home_sales")}
-              className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5"
-            >
-              <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
-            </a>
-            <a
-              href={buildEmailHref("general")}
-              onClick={() => trackEmail(undefined, "home_sales")}
-              className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
-            >
-              <Mail className="h-4 w-4" /> Email Your Requirement
-            </a>
-          </div>
-          <p className="mt-6 inline-flex items-center justify-center gap-2 text-sm text-ink/70">
-            <Phone className="h-4 w-4 text-gold" />
-            Call Rajesh Kumar Trivedi at{" "}
-            <a href="tel:+916359193666" className="font-semibold text-forest-deep hover:text-gold">
-              +91 63591 93666
-            </a>{" "}
-            for direct sales support
-          </p>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="container-page py-16">
+      <section className="container-page py-20">
         <SectionHeading
           eyebrow="FAQ"
           title="Common Buyer Questions"
         />
         <div className="mt-6 max-w-3xl">
           <FAQ items={HOME_FAQS} />
+        </div>
+      </section>
+
+      {/* CLOSING CTA BAND, gold */}
+      <section className="bg-gold text-forest-deep">
+        <div className="container-page py-16 lg:py-20">
+          <div className="grid gap-10 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-7">
+              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-forest-deep/70">
+                Direct sales support
+              </div>
+              <h2 className="font-display text-4xl leading-tight sm:text-5xl">
+                Ready to secure your next batch?
+              </h2>
+              <p className="mt-4 max-w-lg text-forest-deep/80">
+                Send the product name, quantity, and delivery location. You get a direct reply from the sales team, no automated response, no middle layer.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 md:col-span-5">
+              <Link
+                to="/contact"
+                className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm bg-forest-deep px-6 py-4 text-sm font-semibold text-cream transition-transform hover:scale-[1.01]"
+              >
+                Request Bulk Price <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href={buildWaHref("general")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsApp(undefined, "home_close")}
+                className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-sm"
+              >
+                WhatsApp Sales <MessageCircle className="h-4 w-4" />
+              </a>
+              <a
+                href={buildEmailHref("general")}
+                onClick={() => trackEmail(undefined, "home_close")}
+                className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm border border-forest-deep px-6 py-4 text-sm font-semibold text-forest-deep hover:bg-forest-deep hover:text-cream"
+              >
+                Email for Quote <Mail className="h-4 w-4" />
+              </a>
+              <a
+                href="tel:+916359193666"
+                className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-forest-deep/80 hover:text-forest-deep"
+              >
+                <Phone className="h-4 w-4" /> +91 63591 93666, Rajesh Kumar Trivedi
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -601,3 +478,4 @@ function Home() {
     </>
   );
 }
+
