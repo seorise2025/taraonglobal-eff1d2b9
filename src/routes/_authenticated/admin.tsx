@@ -144,6 +144,7 @@ function AdminPage() {
             {STATUSES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
           <button onClick={load} className="inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm"><RefreshCw className="h-4 w-4" /> Refresh</button>
+          <button onClick={downloadCsv} className="inline-flex items-center gap-2 rounded-sm bg-forest-deep px-3 py-2 text-sm font-medium text-cream hover:bg-gold hover:text-forest-deep"><Download className="h-4 w-4" /> Export CSV</button>
           <button onClick={signOut} className="inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm"><LogOut className="h-4 w-4" /> Sign out</button>
         </div>
       </div>
