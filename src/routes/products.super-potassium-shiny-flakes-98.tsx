@@ -352,6 +352,16 @@ function ProductPage() {
             desc: "Same potassium humate, bigger flake, dealer and blender pack.",
           },
           {
+            to: "/products/glycine",
+            title: "Glycine (Amino Acid)",
+            desc: "99% purity L-Glycine, fertilizer synergist and natural chelator.",
+          },
+          {
+            to: "/products/vigora",
+            title: "Vigora Plant Biostimulant",
+            desc: "Concentrated liquid biostimulant for flowering, roots and yield.",
+          },
+          {
             to: "/applications",
             title: "Potassium humate uses in agriculture",
             desc: "Soil, drip irrigation, fertigation, foliar spray and NPK blending.",
@@ -360,6 +370,11 @@ function ProductPage() {
             to: "/about",
             title: "About TARAON GLOBAL",
             desc: "Ahmedabad based supplier led by Rajesh Kumar Trivedi.",
+          },
+          {
+            to: "/contact",
+            title: "Request bulk price",
+            desc: "Send quantity and destination for a same-day 25 Kgs quote.",
           },
         ]}
       />

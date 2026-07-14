@@ -279,21 +279,11 @@ function Contact() {
         eyebrow="While you're here"
         title="Explore the range"
         items={[
-          {
-            to: "/products/super-potassium-shiny-flakes-98",
-            title: "Super Potassium Shiny Flakes 98%",
-            desc: "Flagship potassium humate - drip, fertigation and foliar ready.",
-          },
-          {
-            to: "/products/super-f-humate-big-shiny-flakes",
-            title: "Super F Humate Big Shiny Flakes",
-            desc: "Big flake grade for dealers, distributors and blenders.",
-          },
-          {
-            to: "/applications",
-            title: "Potassium humate uses in agriculture",
-            desc: "How the flakes fit soil, drip, fertigation and NPK blends.",
-          },
+          { to: "/products/super-potassium-shiny-flakes-98", title: "Super Potassium Shiny Flakes 98%", desc: "Flagship potassium humate, drip, fertigation and foliar ready." },
+          { to: "/products/super-f-humate-big-shiny-flakes", title: "Super F Humate Big Shiny Flakes", desc: "Big flake grade for dealers, distributors and blenders." },
+          { to: "/products/glycine", title: "Glycine (Amino Acid)", desc: "Bulk L-Glycine 99% purity for agri, food and industry." },
+          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Liquid yield and flowering booster for Indian crops." },
+          { to: "/applications", title: "Potassium humate uses in agriculture", desc: "How the flakes fit soil, drip, fertigation and NPK blends." },
         ]}
       />
     </>
