@@ -8,13 +8,13 @@ import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 const SPECS = [
-  { label: "Product Type", value: "Concentrated liquid plant biostimulant" },
-  { label: "Form", value: "Liquid concentrate" },
-  { label: "Dose (foliar)", value: "0.5 to 1 ml per litre of water" },
-  { label: "Knapsack sprayer (15 L)", value: "7.5 to 15 ml per tank" },
+  { label: "Product Type", value: "Concentrated powder plant biostimulant" },
+  { label: "Form", value: "99% pure powder, 100% water soluble" },
+  { label: "Dose (foliar)", value: "0.5 to 1 gram per litre of water" },
+  { label: "Knapsack sprayer (15 L)", value: "7.5 to 15 grams per tank" },
   { label: "Best application time", value: "Active growth, before and during flowering" },
   { label: "Best time of day", value: "Early morning or late evening" },
-  { label: "Packing", value: "1 Litre bottle (other sizes on request)" },
+  { label: "Packing", value: "25 Kgs bag" },
   { label: "Buyer Type", value: "Farmers, dealers, distributors" },
 ];
 
@@ -26,7 +26,7 @@ const CROPS = [
 const FAQS = [
   {
     q: "What is Vigora?",
-    a: "Vigora is a concentrated liquid plant biostimulant designed for Indian farming conditions. It supports overall plant health, better flowering, stronger root development and higher yield quality.",
+    a: "Vigora is a concentrated powder plant biostimulant designed for Indian farming conditions. It is 99% pure and 100% water soluble. It supports overall plant health, better flowering, stronger root development and higher yield quality.",
   },
   {
     q: "Which crops is Vigora suitable for?",
@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: "How do I apply Vigora?",
-    a: "Use as a foliar spray at 0.5 to 1 ml per litre of water. For a standard 15 litre knapsack sprayer that works out to roughly 7.5 to 15 ml per tank. Best applied during active growth stages and before or during flowering, preferably in the early morning or late evening.",
+    a: "Dissolve in water and use as a foliar spray at 0.5 to 1 gram per litre of water. For a standard 15 litre knapsack sprayer that works out to roughly 7.5 to 15 grams per tank. Best applied during active growth stages and before or during flowering, preferably in the early morning or late evening.",
   },
   {
     q: "When is the best time to spray?",
@@ -57,13 +57,13 @@ export const Route = createFileRoute("/products/vigora")({
       {
         name: "description",
         content:
-          "Vigora is a concentrated liquid plant biostimulant for Indian crops. Improves flowering, root development, fruit set and yield. Foliar dose 0.5 to 1 ml per litre.",
+          "Vigora is a 99% pure, 100% water soluble powder plant biostimulant for Indian crops. Improves flowering, root development, fruit set and yield. Foliar dose 0.5 to 1 gram per litre.",
       },
       { property: "og:title", content: "Vigora Plant Biostimulant | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "Concentrated liquid biostimulant for soybean, cotton, wheat, tomato, grapes, banana and more. Supports growth, flowering and yield.",
+          "Powder biostimulant, 100% water soluble, for soybean, cotton, wheat, tomato, grapes, banana and more. Supports growth, flowering and yield.",
       },
       { property: "og:url", content: "https://taraonglobal.lovable.app/products/vigora" },
       { property: "og:type", content: "product" },
@@ -79,18 +79,19 @@ export const Route = createFileRoute("/products/vigora")({
           "@type": "Product",
           "@id": "https://taraonglobal.lovable.app/products/vigora#product",
           name: "Vigora Plant Biostimulant",
-          sku: "TG-VIG-1L",
-          mpn: "TG-VIG-1L",
+          sku: "TG-VIG-25",
+          mpn: "TG-VIG-25",
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           image: [`https://taraonglobal.lovable.app${productImg.url}`],
           category: "Plant Biostimulant",
           description:
-            "Concentrated liquid plant biostimulant and yield enhancer for Indian farming conditions. Supports plant health, flowering, root development, fruit set and yield quality. Foliar dose 0.5 to 1 ml per litre of water, roughly 7.5 to 15 ml per 15 litre knapsack tank. Best applied during active growth stages and before or during flowering, in early morning or late evening.",
+            "Concentrated powder plant biostimulant and yield enhancer for Indian farming conditions. 99% pure, 100% water soluble. Supports plant health, flowering, root development, fruit set and yield quality. Foliar dose 0.5 to 1 gram per litre of water, roughly 7.5 to 15 grams per 15 litre knapsack tank. Best applied during active growth stages and before or during flowering, in early morning or late evening.",
           additionalProperty: [
-            { "@type": "PropertyValue", name: "Form", value: "Liquid concentrate" },
-            { "@type": "PropertyValue", name: "Foliar Dose", value: "0.5-1 ml/litre" },
-            { "@type": "PropertyValue", name: "Knapsack Dose (15 L)", value: "7.5-15 ml/tank" },
-            { "@type": "PropertyValue", name: "Pack Size", value: "1 Litre" },
+            { "@type": "PropertyValue", name: "Form", value: "Powder, 100% water soluble" },
+            { "@type": "PropertyValue", name: "Purity", value: "99%" },
+            { "@type": "PropertyValue", name: "Foliar Dose", value: "0.5-1 g/litre" },
+            { "@type": "PropertyValue", name: "Knapsack Dose (15 L)", value: "7.5-15 g/tank" },
+            { "@type": "PropertyValue", name: "Pack Size", value: "25 Kgs" },
           ],
           offers: {
             "@type": "Offer",
@@ -105,7 +106,7 @@ export const Route = createFileRoute("/products/vigora")({
               valueAddedTaxIncluded: false,
               description: "Farmer, dealer and distributor pricing on request",
             },
-            eligibleQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "LTR", unitText: "1 Litre bottle" },
+            eligibleQuantity: { "@type": "QuantitativeValue", value: 25, unitCode: "KGM", unitText: "25 Kgs bag" },
             seller: {
               "@type": "Organization",
               "@id": "https://taraonglobal.lovable.app/#organization",
@@ -156,10 +157,10 @@ function ProductPage() {
             Vigora, Yield and Growth Enhancer
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            A concentrated liquid biostimulant built for Indian farming conditions. Vigora supports overall plant health, better flowering, stronger roots and higher yield quality across a wide range of crops.
+            A concentrated powder biostimulant built for Indian farming conditions. 99% pure and 100% water soluble. Vigora supports overall plant health, better flowering, stronger roots and higher yield quality across a wide range of crops.
           </p>
           <p className="mt-3 text-ink/70">
-            Use as a foliar spray at 0.5 to 1 ml per litre of water. For a 15 litre knapsack tank, that works out to roughly 7.5 to 15 ml. Best applied during active growth and before or during flowering, in the early morning or late evening.
+            Dissolve in water and use as a foliar spray at 0.5 to 1 gram per litre. For a 15 litre knapsack tank, that works out to roughly 7.5 to 15 grams. Best applied during active growth and before or during flowering, in the early morning or late evening.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -190,7 +191,7 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={productImg.url}
-            alt="Vigora liquid plant biostimulant and yield enhancer for Indian crops, cotton, wheat, rice and vegetables, supplied by TARAON GLOBAL"
+            alt="Vigora 99% pure water soluble powder plant biostimulant and yield enhancer for Indian crops, cotton, wheat, rice and vegetables, 25 Kgs bag supplied by TARAON GLOBAL"
             width={1024}
             height={1024}
             fetchPriority="high"

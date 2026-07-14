@@ -185,8 +185,8 @@ function About() {
         items={[
           { to: "/products/super-potassium-shiny-flakes-98", title: "Super Potassium Shiny Flakes 98%", desc: "Flagship potassium humate flakes for farmers and dealers." },
           { to: "/products/super-f-humate-big-shiny-flakes", title: "Super F Humate Big Shiny Flakes", desc: "Big flake grade built for bulk buyers and blenders." },
-          { to: "/products/glycine", title: "Glycine (Amino Acid)", desc: "99% purity L-Glycine, bulk supply for agri and industry." },
-          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Concentrated liquid biostimulant for Indian crops." },
+          { to: "/products/glycine", title: "Glycine (Amino Acid)", desc: "99% purity Glycine, bulk supply for agri and industry." },
+          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Water soluble powder biostimulant for Indian crops." },
           { to: "/applications", title: "How the products are used", desc: "Soil, drip, fertigation, foliar and NPK blending in the field." },
           { to: "/contact", title: "Talk to Rajesh", desc: "WhatsApp, call or email for pricing and dispatch." },
         ]}

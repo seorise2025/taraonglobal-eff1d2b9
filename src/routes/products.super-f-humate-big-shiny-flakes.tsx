@@ -341,12 +341,12 @@ function ProductPage() {
           {
             to: "/products/glycine",
             title: "Glycine (Amino Acid)",
-            desc: "99% purity L-Glycine, blends well with humates in formulations.",
+            desc: "99% purity Glycine, blends well with humates in formulations.",
           },
           {
             to: "/products/vigora",
             title: "Vigora Plant Biostimulant",
-            desc: "Concentrated liquid yield enhancer for Indian crops.",
+            desc: "Water soluble powder yield enhancer for Indian crops.",
           },
           {
             to: "/applications",

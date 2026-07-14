@@ -262,7 +262,7 @@ function Home() {
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Glycine (High-Quality Amino Acid)"
             imageAlt="Glycine 99% purity white crystalline amino acid powder in a petri dish, TARAON GLOBAL bulk supply"
-            desc="99% purity L-Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
+            desc="99% purity Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
             to="/products/glycine"
             orderSlug="glycine"
           />
@@ -270,8 +270,8 @@ function Home() {
             image={vigoraImg.url}
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Vigora Plant Biostimulant"
-            imageAlt="Vigora concentrated liquid plant biostimulant bottle for Indian crops by TARAON GLOBAL"
-            desc="Concentrated liquid biostimulant. Better flowering, stronger roots, higher yield quality across Indian crops."
+            imageAlt="Vigora 99% pure water soluble powder plant biostimulant for Indian crops by TARAON GLOBAL"
+            desc="Water soluble powder biostimulant, 99% pure. Better flowering, stronger roots, higher yield quality across Indian crops."
             to="/products/vigora"
             orderSlug="vigora"
           />
