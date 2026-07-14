@@ -19,6 +19,7 @@ import logoGreen from "@/assets/taraon-logo-green.png.asset.json";
 import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { LegalTrigger } from "@/components/site/LegalModals";
 
 const NAV_PRIMARY = [{ to: "/", label: "Home" }] as const;
 const NAV_SECONDARY = [
@@ -453,8 +454,8 @@ function Header() {
 function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-forest-deep text-cream/85">
-      <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
-        <div>
+      <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5">
+        <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5">
             <img
               src={logoDark.url}
@@ -467,70 +468,58 @@ function Footer() {
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-cream/70">
-            TARAON GLOBAL is an Ahmedabad-based agri-input trading company supplying
-            potassium humate, Glycine and plant biostimulants to bulk buyers across India.
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
+            TARAON GLOBAL is an Ahmedabad-based trading company supplying
+            selected potassium humate products, Glycine and plant biostimulants
+            to professional and bulk buyers across India.
           </p>
         </div>
         <div>
           <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Products</h4>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="/products/super-potassium-shiny-flakes-98" className="hover:text-gold">
-                Super Potassium Shiny Flakes 98%
-              </Link>
-            </li>
-            <li>
-              <Link to="/products/super-f-humate-big-shiny-flakes" className="hover:text-gold">
-                Super F Humate Big Shiny Flakes
-              </Link>
-            </li>
-            <li>
-              <Link to="/products/glycine" className="hover:text-gold">
-                Glycine (Amino Acid)
-              </Link>
-            </li>
-            <li>
-              <Link to="/products/vigora" className="hover:text-gold">
-                Vigora Plant Biostimulant
-              </Link>
-            </li>
+            <li><Link to="/products/super-potassium-shiny-flakes-98" className="hover:text-gold">Super Potassium Shiny Flakes 98%</Link></li>
+            <li><Link to="/products/super-f-humate-big-shiny-flakes" className="hover:text-gold">Super F Humate Big Shiny Flakes</Link></li>
+            <li><Link to="/products/glycine" className="hover:text-gold">Glycine 99%</Link></li>
+            <li><Link to="/products/vigora" className="hover:text-gold">Vigora Plant Biostimulant</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-gold">About TARAON GLOBAL</Link></li>
+            <li><Link to="/about" className="hover:text-gold">About</Link></li>
             <li><Link to="/applications" className="hover:text-gold">Applications</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
+            <li><Link to="/contact" className="hover:text-gold">Request Current Price</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Get in touch</h4>
+          <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Contact</h4>
           <ul className="space-y-2 text-sm text-cream/80">
             <li>Rajesh Kumar Trivedi</li>
-            <li>
-              <a href="tel:+916359193666" className="hover:text-gold">
-                +91 63591 93666
-              </a>
-            </li>
-            <li>
-              <a href="mailto:info@taraonglobal.com" className="inline-flex items-center gap-2 hover:text-gold">
-                <Mail className="h-3.5 w-3.5" aria-hidden="true" /> info@taraonglobal.com
-              </a>
-            </li>
+            <li><a href="tel:+916359193666" className="hover:text-gold">+91 63591 93666</a></li>
+            <li><a href="mailto:info@taraonglobal.com" className="inline-flex items-center gap-2 hover:text-gold"><Mail className="h-3.5 w-3.5" aria-hidden="true" /> info@taraonglobal.com</a></li>
             <li className="pt-1 leading-relaxed">
               A-210, Signature-2<br />
               Sarkhej Sanand Cross Road<br />
-              Ahmedabad-382210, Gujarat, India
+              Ahmedabad 382210<br />
+              Gujarat, India
             </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="mb-3 text-xs uppercase tracking-[0.18em] text-gold">Legal</h4>
+          <ul className="space-y-2 text-sm">
+            <li><LegalTrigger modal="privacy">Privacy Notice</LegalTrigger></li>
+            <li><LegalTrigger modal="terms">Website Terms</LegalTrigger></li>
+            <li><LegalTrigger modal="enquiry">Enquiry and Order Terms</LegalTrigger></li>
+            <li><LegalTrigger modal="product">Product Information Disclaimer</LegalTrigger></li>
           </ul>
         </div>
       </div>
       <div className="border-t border-cream/10 py-5 text-center text-xs text-cream/60">
         <p>© {new Date().getFullYear()} TARAON GLOBAL. All rights reserved.</p>
         <p className="mt-1.5 text-cream/40">
-          Built for growth by{" "}
+          Website strategy and growth support by{" "}
           <a
             href="https://www.seorise.io"
             target="_blank"
