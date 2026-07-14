@@ -14,16 +14,16 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const today = new Date().toISOString().slice(0, 10);
+        const CONTENT_UPDATED = "2026-07-14";
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
-          { path: "/products/super-potassium-shiny-flakes-98", changefreq: "monthly", priority: "0.9", lastmod: today },
-          { path: "/products/super-f-humate-big-shiny-flakes", changefreq: "monthly", priority: "0.9", lastmod: today },
-          { path: "/products/glycine", changefreq: "monthly", priority: "0.9", lastmod: today },
-          { path: "/products/vigora", changefreq: "monthly", priority: "0.9", lastmod: today },
-          { path: "/applications", changefreq: "monthly", priority: "0.8", lastmod: today },
-          { path: "/about", changefreq: "monthly", priority: "0.7", lastmod: today },
-          { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: today },
+          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: CONTENT_UPDATED },
+          { path: "/products/super-potassium-shiny-flakes-98", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
+          { path: "/products/super-f-humate-big-shiny-flakes", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
+          { path: "/products/glycine", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
+          { path: "/products/vigora", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
+          { path: "/applications", changefreq: "monthly", priority: "0.8", lastmod: CONTENT_UPDATED },
+          { path: "/about", changefreq: "monthly", priority: "0.7", lastmod: CONTENT_UPDATED },
+          { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: CONTENT_UPDATED },
         ];
 
         const urls = entries
