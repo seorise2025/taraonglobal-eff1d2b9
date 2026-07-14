@@ -109,6 +109,7 @@ function Contact() {
       toast.error("Couldn't send. Try WhatsApp or call us directly.");
       return;
     }
+    trackFormSubmit("contact_form", parsed.data.product || undefined);
     toast.success("Enquiry sent. We'll reply the same day.");
     setForm(emptyForm);
   }
