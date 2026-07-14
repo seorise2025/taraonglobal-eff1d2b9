@@ -169,10 +169,10 @@ function ProductPage() {
             Vigora, A Strong Bio Stimulant
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            A 99% pure powder biostimulant, fully water soluble. Vigora feeds the plant during key growth stages so flowering is stronger, roots go deeper and the final yield holds better quality.
+            Vigora is a 99% pure powder biostimulant. It dissolves fully in water and goes straight to work on the plant, building deeper roots, cleaner flowering and better filled produce.
           </p>
           <p className="mt-3 text-ink/70">
-            Mix in water and spray on the crop. Standard foliar dose is 0.5 to 1 gram per litre, or 7.5 to 15 grams in a 15 litre knapsack tank. Spray in the early morning or late evening, during active growth and around flowering.
+            Foliar dose is 0.5 to 1 gram per litre of water, or 7.5 to 15 grams in a 15 litre knapsack tank. Spray during active growth and around flowering, in the early morning or late evening.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
