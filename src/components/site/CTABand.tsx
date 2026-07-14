@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Mail } from "lucide-react";
+import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
 
 export function CTABand({
   title,
@@ -17,7 +18,7 @@ export function CTABand({
         <div className="relative grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
           <div>
             <div className="mb-3 text-xs uppercase tracking-[0.22em] text-gold">
-              Let's talk
+              Talk to sales
             </div>
             <h3 className="font-display text-3xl leading-tight text-cream sm:text-4xl">
               {title}
@@ -26,20 +27,26 @@ export function CTABand({
               <p className="mt-3 max-w-xl text-cream/75">{subtitle}</p>
             ) : null}
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-col md:items-end">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap md:flex-col md:items-end">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-3 text-sm font-medium text-forest-deep transition-colors hover:bg-cream"
+              className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-3 text-sm font-semibold text-forest-deep transition-colors hover:bg-cream"
             >
               {primaryLabel}
             </Link>
             <a
-              href="https://wa.me/916359193666"
+              href={buildWaHref("general")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-cream/30 px-5 py-3 text-sm font-medium text-cream transition-colors hover:border-gold hover:text-gold"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.02]"
             >
-              <MessageCircle className="h-4 w-4" /> Talk on WhatsApp
+              <MessageCircle className="h-4 w-4" /> WhatsApp
+            </a>
+            <a
+              href={buildEmailHref("general")}
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-cream/30 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+            >
+              <Mail className="h-4 w-4" /> Email Us
             </a>
             <a
               href="tel:+916359193666"
