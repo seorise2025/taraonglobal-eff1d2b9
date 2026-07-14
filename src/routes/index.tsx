@@ -19,9 +19,9 @@ import {
   Sprout,
   Ship,
 } from "lucide-react";
-import heroImg from "@/assets/about-warehouse.jpg?w=640;960;1280&format=webp&as=srcset";
-import heroImgFallback from "@/assets/about-warehouse.jpg?w=960&format=webp";
-import heroFlakes640 from "@/assets/about-warehouse.jpg?w=640&format=webp";
+import heroImg from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
+import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
@@ -188,7 +188,7 @@ function Home() {
                 src={heroImgFallback}
                 srcSet={heroImg}
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                alt="TARAON GLOBAL Ahmedabad warehouse and dispatch desk serving bulk agri buyers across India"
+                alt="Young crop rows at golden hour on rich soil, representing TARAON GLOBAL's supply of soil conditioners to farms across India"
                 width={1200}
                 height={1600}
                 fetchPriority="high"
