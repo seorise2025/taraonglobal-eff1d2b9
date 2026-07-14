@@ -83,6 +83,7 @@ export const Route = createFileRoute("/products/glycine")({
           sku: "TG-GLY-99",
           mpn: "TG-GLY-99",
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
+          image: [`https://taraonglobal.lovable.app${productImg.url}`],
           category: "Amino Acid",
           description:
             "L-Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid used in food, medicine, agriculture, pesticides, feed and daily chemical industries. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
