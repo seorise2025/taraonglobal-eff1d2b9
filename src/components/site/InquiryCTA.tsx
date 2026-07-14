@@ -27,6 +27,7 @@ export function InquiryCTA({
         <Link
           to="/order/$slug"
           params={{ slug: product }}
+          onClick={() => trackLead("order_cta_click", { channel: "order", product, location: "inquiry_cta" })}
           className="group inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-gold hover:text-forest-deep"
         >
           Place Order
@@ -35,6 +36,7 @@ export function InquiryCTA({
       ) : null}
       <Link
         to="/contact"
+        onClick={() => trackLead("bulk_price_click", { channel: "form", product, location: "inquiry_cta" })}
         className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
       >
         Request Bulk Price
@@ -43,12 +45,14 @@ export function InquiryCTA({
         href={waHref}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsApp(product, "inquiry_cta")}
         className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
       >
         <MessageCircle className="h-4 w-4" /> WhatsApp
       </a>
       <a
         href={emailHref}
+        onClick={() => trackEmail(product, "inquiry_cta")}
         className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
       >
         <Mail className="h-4 w-4" /> Email Us
