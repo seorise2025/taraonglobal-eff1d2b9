@@ -26,7 +26,7 @@ const CROPS = [
 const FAQS = [
   {
     q: "What is Vigora?",
-    a: "Vigora is a concentrated liquid plant biostimulant designed for Indian farming conditions. It supports overall plant health, better flowering, stronger root development and higher yield quality.",
+    a: "Vigora is a concentrated powder plant biostimulant designed for Indian farming conditions. It is 99% pure and 100% water soluble. It supports overall plant health, better flowering, stronger root development and higher yield quality.",
   },
   {
     q: "Which crops is Vigora suitable for?",
@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: "How do I apply Vigora?",
-    a: "Use as a foliar spray at 0.5 to 1 ml per litre of water. For a standard 15 litre knapsack sprayer that works out to roughly 7.5 to 15 ml per tank. Best applied during active growth stages and before or during flowering, preferably in the early morning or late evening.",
+    a: "Dissolve in water and use as a foliar spray at 0.5 to 1 gram per litre of water. For a standard 15 litre knapsack sprayer that works out to roughly 7.5 to 15 grams per tank. Best applied during active growth stages and before or during flowering, preferably in the early morning or late evening.",
   },
   {
     q: "When is the best time to spray?",
