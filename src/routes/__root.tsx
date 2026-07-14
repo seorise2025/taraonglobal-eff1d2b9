@@ -538,8 +538,14 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-forest-deep focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-cream focus:outline-none focus:ring-2 focus:ring-gold"
+      >
+        Skip to main content
+      </a>
       <Header />
-      <main>
+      <main id="main-content">
         <Outlet />
       </main>
       <Footer />
