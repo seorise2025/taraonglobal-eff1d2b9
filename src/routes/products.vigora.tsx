@@ -26,44 +26,56 @@ const CROPS = [
 const FAQS = [
   {
     q: "What is Vigora?",
-    a: "Vigora is a concentrated powder plant biostimulant designed for Indian farming conditions. It is 99% pure and 100% water soluble. It supports overall plant health, better flowering, stronger root development and higher yield quality.",
+    a: "Vigora is a 99% pure powder biostimulant, fully water soluble. It feeds the crop at key growth stages so plants build stronger roots, better flowering and a cleaner yield.",
   },
   {
-    q: "Which crops is Vigora suitable for?",
-    a: "Vigora works across a wide range of crops including soybean, groundnut, cotton, rice, wheat, maize, tomato, chilli, grapes, pomegranate, banana and mango, among many others.",
+    q: "What is the recommended dose?",
+    a: "Foliar spray: 0.5 to 1 gram per litre of water. That is about 7.5 to 15 grams in a standard 15 litre knapsack tank. Start at the lower end for young crops and vegetables, and use the higher end for field crops during flowering.",
   },
   {
-    q: "How do I apply Vigora?",
-    a: "Dissolve in water and use as a foliar spray at 0.5 to 1 gram per litre of water. For a standard 15 litre knapsack sprayer that works out to roughly 7.5 to 15 grams per tank. Best applied during active growth stages and before or during flowering, preferably in the early morning or late evening.",
+    q: "How often should Vigora be sprayed?",
+    a: "Two to three sprays per crop cycle work well for most crops. Time them at active vegetative growth, at bud or flower initiation, and again at fruit or grain filling. Keep at least 10 to 15 days between sprays.",
   },
   {
-    q: "When is the best time to spray?",
-    a: "Early morning or late evening, during active vegetative growth and before or during flowering. Avoid spraying in strong midday sun.",
+    q: "Can Vigora be mixed with other inputs?",
+    a: "Yes, Vigora mixes with most common water soluble fertilizers, micronutrients and neem based sprays. Avoid tank mixing with strong alkaline products, Bordeaux mixture, or copper and sulphur fungicides. When in doubt, do a small jar test before spraying the full tank.",
   },
   {
     q: "Is Vigora a fertilizer?",
-    a: "No. Vigora is a plant biostimulant. It supports plant growth, flowering, fruit set and vigor. It is meant to complement your regular fertilizer schedule, not replace it.",
+    a: "No. Vigora is a biostimulant. It works alongside your regular fertilizer plan to help the plant use nutrients better, not to replace them.",
+  },
+  {
+    q: "Which crops is Vigora suitable for?",
+    a: "Field crops like soybean, groundnut, cotton, rice, wheat and maize, vegetables like tomato and chilli, and fruit and plantation crops like grapes, pomegranate, banana and mango. It fits most Indian farming systems.",
+  },
+  {
+    q: "How should Vigora be stored?",
+    a: "Store the bag in a cool, dry place away from direct sunlight, moisture and children. Keep the bag sealed after use so the powder stays dry and free flowing. Shelf life is 24 months from the date of packing when stored correctly.",
+  },
+  {
+    q: "What size does Vigora come in?",
+    a: "Standard packing is a 25 Kgs bag. Bulk pricing for dealers and distributors is available on request.",
   },
   {
     q: "Does TARAON GLOBAL supply Vigora in bulk?",
-    a: "Yes. Bulk dealer and distributor pricing is available on request. Call Rajesh Kumar Trivedi on +91 63591 93666 or send an enquiry.",
+    a: "Yes. For bulk pricing and dispatch, call Rajesh Kumar Trivedi on +91 63591 93666 or send an enquiry through the contact form.",
   },
 ];
 
 export const Route = createFileRoute("/products/vigora")({
   head: () => ({
     meta: [
-      { title: "Vigora Plant Biostimulant, Yield Enhancer | TARAON GLOBAL" },
+      { title: "Vigora, A Strong Bio Stimulant | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Vigora is a 99% pure, 100% water soluble powder plant biostimulant for Indian crops. Improves flowering, root development, fruit set and yield. Foliar dose 0.5 to 1 gram per litre.",
+          "Vigora is a 99% pure, fully water soluble powder biostimulant. Stronger roots, better flowering and cleaner yield. Supplied in 25 Kgs bags by TARAON GLOBAL.",
       },
-      { property: "og:title", content: "Vigora Plant Biostimulant | TARAON GLOBAL" },
+      { property: "og:title", content: "Vigora, A Strong Bio Stimulant | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "Powder biostimulant, 100% water soluble, for soybean, cotton, wheat, tomato, grapes, banana and more. Supports growth, flowering and yield.",
+          "99% pure water soluble powder biostimulant for Indian crops. Foliar dose 0.5 to 1 gram per litre. 25 Kgs bags.",
       },
       { property: "og:url", content: "https://taraonglobal.lovable.app/products/vigora" },
       { property: "og:type", content: "product" },
@@ -157,10 +169,10 @@ function ProductPage() {
             Vigora, A Strong Bio Stimulant
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            A 99% pure powder biostimulant, fully water soluble. Vigora feeds the plant during key growth stages so flowering is stronger, roots go deeper and the final yield holds better quality.
+            Vigora is a 99% pure powder biostimulant. It dissolves fully in water and goes straight to work on the plant, building deeper roots, cleaner flowering and better filled produce.
           </p>
           <p className="mt-3 text-ink/70">
-            Mix in water and spray on the crop. Standard foliar dose is 0.5 to 1 gram per litre, or 7.5 to 15 grams in a 15 litre knapsack tank. Spray in the early morning or late evening, during active growth and around flowering.
+            Foliar dose is 0.5 to 1 gram per litre of water, or 7.5 to 15 grams in a 15 litre knapsack tank. Spray during active growth and around flowering, in the early morning or late evening.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -202,15 +214,15 @@ function ProductPage() {
       </section>
 
       <section className="container-page py-8">
-        <SectionHeading eyebrow="How it helps" title="Growth, flowering, yield" />
+        <SectionHeading eyebrow="Why farmers use it" title="What Vigora does in the field" />
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            ["Vegetative growth", "Supports healthier vegetative development from early stages."],
-            ["Flowering & fruit set", "Better flowering, stronger fruit set, more even development."],
-            ["Root development", "Encourages stronger root systems that hold up under stress."],
-            ["Yield quality", "Improves overall vigor and quality of harvest."],
-            ["Wide crop range", "Field crops, vegetables, fruit and plantation crops."],
-            ["Easy to use", "Standard foliar spray with a simple dose per litre."],
+            ["Deeper roots", "Builds a stronger root system so the crop stays firm and takes up water and nutrients better."],
+            ["Stronger flowering", "More flowers open together and hold on the plant, which improves fruit and pod set."],
+            ["Better yield quality", "Fills grain, pods and fruit more evenly for a cleaner harvest with better market grade."],
+            ["Stress recovery", "Helps the plant push through heat, transplant shock and short dry spells."],
+            ["Fits any crop plan", "Works across field crops, vegetables, fruits and plantation crops without changing the schedule."],
+            ["Simple to use", "Fully water soluble powder. Weigh, mix and spray with a standard knapsack."],
           ].map(([t, d]) => (
             <div key={t} className="rounded-lg border border-border bg-card p-6">
               <div className="font-display text-lg text-forest-deep">{t}</div>
