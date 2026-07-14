@@ -9,12 +9,19 @@ import {
   BadgeCheck,
   MapPin,
   Phone,
+  FileText,
+  ClipboardCheck,
+  Truck,
+  Handshake,
+  Users,
+  Warehouse,
+  Factory,
+  Sprout,
+  Ship,
 } from "lucide-react";
 import heroImg from "@/assets/hero-flakes.jpg?w=640;960;1280&format=webp&as=srcset";
 import heroImgFallback from "@/assets/hero-flakes.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/hero-flakes.jpg?w=640&format=webp";
-import fieldImg from "@/assets/applications-field.jpg?w=640;960;1280&format=webp&as=srcset";
-import fieldImgFallback from "@/assets/applications-field.jpg?w=960&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
@@ -26,24 +33,24 @@ import { trackEmail, trackWhatsApp } from "@/lib/analytics";
 
 const HOME_FAQS = [
   {
-    q: "What is potassium humate used for?",
-    a: "Potassium humate is commonly used to support soil condition, nutrient use efficiency, root development, and crop management across application methods such as soil use, drip irrigation, fertigation, and foliar spray. Farmers, dealers, distributors, and fertiliser blenders use it as a dependable soil conditioning input.",
+    q: "What kind of company is TARAON GLOBAL?",
+    a: "TARAON GLOBAL is an Ahmedabad based agri input trading company. We source and supply potassium humate flakes, Glycine, and Vigora plant biostimulant to farmers, dealers, distributors, formulators, and bulk buyers across India. We are a trading business, not a manufacturer.",
   },
   {
-    q: "Do you supply only potassium humate?",
-    a: "No. Potassium humate is the lead product line, but TARAON GLOBAL also supplies selected products such as Glycine and Vigora plant biostimulant as part of a focused trading range for buyers who prefer sourcing multiple agri inputs from one responsive team.",
+    q: "Who runs the business?",
+    a: "The company is led by Rajesh Kumar Trivedi, who has over 20 years of hands on experience in this industry. Sales enquiries are handled directly by the leadership, which is why buyers get straight answers on price, packing, and dispatch instead of routed responses.",
+  },
+  {
+    q: "Why should a buyer use a sourcing desk instead of chasing suppliers individually?",
+    a: "One point of contact, one set of standards, and one line of accountability. Instead of comparing scattered offers and inconsistent packing, buyers get a consolidated quote, batch tested product, and coordinated dispatch from a single Ahmedabad based team.",
   },
   {
     q: "Do you supply across India?",
-    a: "Yes. TARAON GLOBAL dispatches from Ahmedabad, Gujarat to buyers across every Indian state and union territory. Orders from farmer groups, dealers, distributors, and formulation buyers are handled from the same location.",
+    a: "Yes. TARAON GLOBAL dispatches from Ahmedabad, Gujarat to buyers in every Indian state and union territory. Farmer groups, dealers, distributors, and formulation buyers are handled from the same location.",
   },
   {
-    q: "How can I request price and packing details?",
-    a: "Send your product name, quantity, and delivery city by WhatsApp, phone, contact form, or email. You get a direct reply from the sales team with price, packing, and dispatch details, not an automated response.",
-  },
-  {
-    q: "What is the standard pack size?",
-    a: "Every product ships in a standard 25 Kgs pack with batch numbers printed on every bag. Current batch COA is available on request. Quotations for 25 Kg, half tonne, tonne and container quantities are available.",
+    q: "How do I get a price?",
+    a: "Send your product name, quantity, and delivery city by WhatsApp, phone, contact form, or email. You get a direct reply from the sales team with current price, packing options, and dispatch timelines.",
   },
 ];
 
@@ -52,18 +59,18 @@ const CANONICAL = "https://taraonglobal.lovable.app/";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TARAON GLOBAL | Potassium Humate and Agri Input Supplier in India" },
+      { title: "TARAON GLOBAL | Ahmedabad Sourcing Desk for Bulk Agri Inputs in India" },
       {
         name: "description",
         content:
-          "Ahmedabad based trading company supplying potassium humate flakes, Glycine, and plant biostimulants with clear specs, standard 25 Kgs packing, and bulk supply across India.",
+          "TARAON GLOBAL is an Ahmedabad based agri input trading company led by Rajesh Kumar Trivedi. One sourcing desk for potassium humate, Glycine, and biostimulants, supplied across India.",
       },
-      { name: "keywords", content: "potassium humate supplier India, potassium humate flakes Ahmedabad, humic acid fertilizer supplier, agri input trading company, glycine supplier India, plant biostimulant powder, bulk humate 25 kg" },
-      { property: "og:title", content: "TARAON GLOBAL | Potassium Humate and Agri Input Supplier in India" },
+      { name: "keywords", content: "agri input sourcing India, potassium humate supplier Ahmedabad, bulk agri input trading company, humate biostimulant supplier India, Rajesh Kumar Trivedi TARAON GLOBAL, humate exporter India" },
+      { property: "og:title", content: "TARAON GLOBAL | Ahmedabad Sourcing Desk for Bulk Agri Inputs in India" },
       {
         property: "og:description",
         content:
-          "Ahmedabad based trading company supplying potassium humate, Glycine, and plant biostimulants. Clear specs, 25 Kgs packing, India wide dispatch.",
+          "One responsive Ahmedabad based sourcing desk for potassium humate, Glycine, and plant biostimulants. Batch tested supply, 25 Kgs packing, India wide dispatch.",
       },
       { property: "og:url", content: CANONICAL },
       { property: "og:type", content: "website" },
@@ -113,21 +120,22 @@ function Home() {
             <div className="flex flex-col justify-between border-b border-forest-deep/10 p-6 sm:p-10 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-14">
               <div>
                 <div className="mb-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-                  <span className="h-px w-8 bg-gold" /> Ahmedabad based agri input trading company
+                  <span className="h-px w-8 bg-gold" /> An Ahmedabad based agri input trading company
                 </div>
                 <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl lg:text-[4.25rem]">
-                  Potassium Humate Led Supply for India's{" "}
-                  <span className="italic font-normal text-gold">Agri Trade</span>
+                  The Sourcing Desk Serious{" "}
+                  <span className="italic font-normal text-gold">Agri Buyers</span>{" "}
+                  Rely On
                 </h1>
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
                   TARAON GLOBAL is a trading company based in{" "}
                   <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
                     Ahmedabad, Gujarat
                   </Link>
-                  , supplying potassium humate flakes and selected agri input products for farmers, dealers, distributors, and bulk buyers across India.
+                  , led by Rajesh Kumar Trivedi with over 20 years in the agri input trade. One responsive team, one point of contact, and one set of standards for every enquiry.
                 </p>
                 <p className="mt-3 max-w-xl text-ink/60">
-                  We focus on clear specifications, practical packing, and direct response when you need price, dispatch, or product details.
+                  Buyers come to us when they want straight answers on price, packing, and dispatch instead of chasing scattered suppliers.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
@@ -159,9 +167,9 @@ function Home() {
               {/* Trust strip */}
               <div className="mt-14 grid grid-cols-2 gap-6 border-t border-forest-deep/10 pt-6 sm:grid-cols-4">
                 {[
-                  { k: "98%", v: "Water soluble" },
-                  { k: "25 Kg", v: "Standard pack" },
-                  { k: "Batch", v: "Tested supply" },
+                  { k: "20+ yrs", v: "Trade experience" },
+                  { k: "1 desk", v: "Single point of contact" },
+                  { k: "25 Kg", v: "Standard packing" },
                   { k: "India", v: "Wide dispatch" },
                 ].map((s) => (
                   <div key={s.v}>
@@ -180,7 +188,7 @@ function Home() {
                 src={heroImgFallback}
                 srcSet={heroImg}
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                alt="Black shiny potassium humate flakes supplied by TARAON GLOBAL Ahmedabad"
+                alt="TARAON GLOBAL Ahmedabad sourcing desk for bulk agri inputs across India"
                 width={1200}
                 height={1600}
                 fetchPriority="high"
@@ -195,18 +203,18 @@ function Home() {
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-forest-deep">
-                    Batch tested
+                    Direct sales
                   </span>
                 </div>
                 <div className="my-3 h-px w-16 bg-forest-deep/15" />
                 <div className="text-[10px] uppercase tracking-[0.18em] text-ink/50">
-                  Humic acid
+                  Reply time
                 </div>
                 <div className="font-display text-3xl leading-none text-forest-deep">
-                  <CountUp to={60} suffix="%" />
+                  <CountUp to={24} suffix=" hrs" />
                 </div>
                 <p className="mt-3 text-[11px] leading-snug text-ink/60">
-                  Standard 25 Kgs pack, batch numbered, COA on request.
+                  Enquiries handled by the leadership team, not a call queue.
                 </p>
               </div>
             </div>
@@ -215,12 +223,12 @@ function Home() {
       </section>
 
       {/* TRUST BAR */}
-      <section className="border-y border-border bg-card" aria-label="Supply guarantees">
+      <section className="border-y border-border bg-card" aria-label="How we operate">
         <div className="container-page grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Droplets, label: "98% water soluble" },
-            { icon: Package, label: "25 Kgs standard pack" },
-            { icon: BadgeCheck, label: "Batch tested supply" },
+            { icon: Handshake, label: "Direct dealing, no middle layers" },
+            { icon: BadgeCheck, label: "Batch tested product supply" },
+            { icon: Package, label: "25 Kgs standard packing" },
             { icon: MapPin, label: "Ahmedabad to India wide dispatch" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3">
@@ -233,34 +241,220 @@ function Home() {
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="container-page py-16">
+      {/* POSITIONING: The sourcing problem we solve */}
+      <section className="container-page py-20">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            A focused product range, supplied with clarity
+            Why a sourcing desk
           </div>
           <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
-            Built for buyers who want dependable quality and straight answers
+            Buying agri inputs shouldn't feel like a scavenger hunt
           </h2>
           <p className="mt-5 text-ink/75">
-            We are not a giant catalog company trying to sell everything. TARAON GLOBAL supplies a focused range of products where buyers need dependable quality, straightforward specifications, and clear communication before ordering.
+            Most bulk buyers waste weeks pinging five suppliers, comparing inconsistent specs, and still not knowing what will land on the truck. TARAON GLOBAL removes that friction.
           </p>
-          <p className="mt-3 text-ink/60">
-            Potassium humate is our lead product line, supported by selected products such as Glycine and Vigora plant biostimulant for buyers who want practical sourcing from one responsive team.
-          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              n: "01",
+              t: "Scattered suppliers, no accountability",
+              d: "Different offers, different specs, different packing standards. We consolidate the sourcing so one team is answerable for the delivered product.",
+            },
+            {
+              n: "02",
+              t: "Unclear specifications before order",
+              d: "You get the actual spec sheet, batch identity, and pack detail up front. No surprises at the warehouse.",
+            },
+            {
+              n: "03",
+              t: "Slow, routed responses",
+              d: "Enquiries land with the leadership team. Price, availability, and dispatch confirmation come back the same day in most cases.",
+            },
+          ].map((item) => (
+            <div
+              key={item.n}
+              className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-gold/60"
+            >
+              <div className="font-display text-3xl text-gold">{item.n}</div>
+              <h3 className="mt-3 font-display text-xl text-forest-deep">{item.t}</h3>
+              <p className="mt-2 text-sm text-ink/75">{item.d}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* PRODUCT RANGE AT A GLANCE (links only, full details on product pages) */}
+      {/* HOW WE WORK */}
+      <section className="bg-forest-deep py-20 text-cream">
+        <div className="container-page">
+          <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-8 bg-gold" /> How we work
+          </div>
+          <h2 className="font-display text-4xl leading-tight text-cream">
+            From enquiry to dispatch, in four clean steps
+          </h2>
+          <p className="mt-4 max-w-2xl text-cream/70">
+            No lengthy onboarding, no chasing. The process is deliberately short because buyers want stock moving, not paperwork stacking.
+          </p>
+
+          <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: FileText,
+                t: "Send your enquiry",
+                d: "Share the product, quantity, and delivery city by WhatsApp, phone, form, or email.",
+              },
+              {
+                icon: ClipboardCheck,
+                t: "Get spec and price",
+                d: "You receive the current spec sheet, packing detail, and a firm quotation from the sales team.",
+              },
+              {
+                icon: BadgeCheck,
+                t: "Confirm with COA",
+                d: "Batch identity and current batch COA are shared on request before you commit to the order.",
+              },
+              {
+                icon: Truck,
+                t: "Dispatch and update",
+                d: "Order is dispatched from the Ahmedabad warehouse with tracking and delivery updates end to end.",
+              },
+            ].map(({ icon: Icon, t, d }, i) => (
+              <li
+                key={t}
+                className="relative rounded-lg border border-cream/10 bg-forest/40 p-6"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-sm bg-gold text-forest-deep">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+                    Step 0{i + 1}
+                  </span>
+                </div>
+                <h3 className="font-display text-lg text-cream">{t}</h3>
+                <p className="mt-2 text-sm text-cream/75">{d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* BUYER TYPES WE SERVE */}
+      <section className="container-page py-20">
+        <SectionHeading
+          eyebrow="Who we serve"
+          title="Built around how bulk buyers actually work"
+          intro="Every buyer has a different sourcing rhythm. The desk adapts to yours, whether you buy monthly, seasonally, or in container loads."
+        />
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: Sprout,
+              t: "Farmer groups and FPOs",
+              d: "Consolidated humate and biostimulant supply for cluster demand and seasonal purchases.",
+            },
+            {
+              icon: Warehouse,
+              t: "Dealers and stockists",
+              d: "Regular refills with consistent packing and predictable dispatch windows.",
+            },
+            {
+              icon: Users,
+              t: "Distributors",
+              d: "State and regional distributors sourcing multiple lines from one accountable desk.",
+            },
+            {
+              icon: Factory,
+              t: "Fertiliser formulators",
+              d: "Blending grade humate and Glycine with batch identity for formulation consistency.",
+            },
+            {
+              icon: Ship,
+              t: "Exporters and re-packers",
+              d: "Bulk supply for onward export markets with standard 25 Kgs packing and documentation.",
+            },
+            {
+              icon: Handshake,
+              t: "Trading partners",
+              d: "Long term supply arrangements built on repeat orders and transparent pricing.",
+            },
+          ].map(({ icon: Icon, t, d }) => (
+            <article
+              key={t}
+              className="rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg"
+            >
+              <span className="grid h-10 w-10 place-items-center rounded-sm bg-secondary text-forest-deep">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <h3 className="mt-4 font-display text-xl text-forest-deep">{t}</h3>
+              <p className="mt-2 text-sm text-ink/75">{d}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* LEADERSHIP / EEAT */}
+      <section className="container-page pb-20">
+        <div className="grid gap-10 rounded-lg border border-border bg-card p-8 md:grid-cols-[1fr_1.4fr] md:items-center md:p-12">
+          <div>
+            <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              Led by the founder
+            </div>
+            <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
+              Rajesh Kumar Trivedi
+            </h2>
+            <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-forest">
+              Founder, TARAON GLOBAL
+            </p>
+            <p className="mt-4 text-ink/75">
+              Over 20 years in the agri input trade across sourcing, quality, and buyer relationships. Sales enquiries come to him directly, which is why buyers get straight commercial answers instead of layered responses.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="tel:+916359193666"
+                className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-5 py-3 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
+              >
+                <Phone className="h-4 w-4 text-gold" /> +91 63591 93666
+              </a>
+              <Link
+                to="/about"
+                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-forest hover:text-gold"
+              >
+                Read the company story <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {[
+              { k: "20+ years", v: "Agri input trade experience" },
+              { k: "Direct sales", v: "Handled by leadership" },
+              { k: "Ahmedabad", v: "Base of operations" },
+              { k: "India wide", v: "Buyer network" },
+            ].map((s) => (
+              <li key={s.v} className="rounded-sm border border-border bg-background p-4">
+                <div className="font-display text-xl text-forest-deep">{s.k}</div>
+                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/60">
+                  {s.v}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* PRODUCT RANGE AT A GLANCE (links only) */}
       <section className="container-page pb-20">
         <div className="rounded-lg border border-border bg-card p-8 sm:p-10">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
               <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-                Product range at a glance
+                What the desk supplies
               </div>
               <h2 className="font-display text-2xl text-forest-deep sm:text-3xl">
-                Four focused agri input lines
+                A focused range, full details on each product page
               </h2>
             </div>
             <Link
@@ -289,95 +483,8 @@ function Home() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-ink/60">
-            Full specifications, packing, and order buttons live on each product page.
+            Specifications, packing, pricing context, and order buttons live on each product page.
           </p>
-        </div>
-      </section>
-
-
-      {/* WHY BUYERS CHOOSE US */}
-      <section className="bg-forest-deep py-20 text-cream">
-        <div className="container-page grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
-          <div>
-            <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-              <span className="h-px w-8 bg-gold" /> Why buyers work with us
-            </div>
-            <h2 className="font-display text-4xl leading-tight text-cream">
-              Straight Answers, Standard Packs, Repeat Supply
-            </h2>
-            <p className="mt-5 text-cream/80">
-              Our business is built around practical movement of stock, quick response, and repeat supply confidence rather than sales talk.
-            </p>
-            <p className="mt-3 text-cream/60">
-              The company is led by Rajesh Kumar Trivedi, with over 20 years of experience in this industry. One person answers the phone, and the answer is the same one you get by email.
-            </p>
-          </div>
-          <ul className="grid gap-3">
-            {[
-              "Clear specifications before order, so you know what you are buying",
-              "Batch tested product supply for better confidence",
-              "Standard 25 Kgs packing built for practical bulk movement",
-              "Direct communication on price, packing, and dispatch",
-              "Ahmedabad based supply with India wide buyer support",
-            ].map((b) => (
-              <li
-                key={b}
-                className="flex items-start gap-3 rounded-sm border border-cream/10 bg-forest/40 px-5 py-4"
-              >
-                <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-gold" />
-                <span className="text-cream/90">{b}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* APPLICATIONS */}
-      <section className="container-page py-20">
-        <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
-          <div className="relative order-2 md:order-1">
-            <img
-              src={fieldImgFallback}
-              srcSet={fieldImg}
-              sizes="(min-width: 768px) 55vw, 100vw"
-              alt="Potassium humate application in Indian farm field, drip irrigation and foliar use"
-              width={1600}
-              height={1000}
-              loading="lazy"
-              decoding="async"
-              className="aspect-[16/10] w-full rounded-lg object-cover shadow-xl"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <SectionHeading
-              eyebrow="Where our lead products fit"
-              title="Clean Solubility, Consistent Handling"
-              intro="Our potassium humate products are commonly supplied for practical farm and blending use cases where clean solubility and consistent handling matter."
-            />
-            <dl className="mt-8 grid gap-5">
-              {[
-                ["Soil Application", "Mix in before or during the season."],
-                ["Drip Irrigation", "Dissolves fast without clogging."],
-                ["Fertigation", "Fits into your existing nutrient schedule."],
-                ["Foliar Spray", "Use as advised for your crop stage."],
-                ["Fertiliser Blending", "Blends clean with NPK and organic inputs."],
-              ].map(([t, d]) => (
-                <div
-                  key={t}
-                  className="flex gap-4 border-b border-border pb-4 last:border-0"
-                >
-                  <dt className="w-36 flex-none font-display text-forest-deep">{t}</dt>
-                  <dd className="text-ink/75">{d}</dd>
-                </div>
-              ))}
-            </dl>
-            <Link
-              to="/applications"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold"
-            >
-              See all applications <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -449,4 +556,3 @@ function Home() {
     </>
   );
 }
-
