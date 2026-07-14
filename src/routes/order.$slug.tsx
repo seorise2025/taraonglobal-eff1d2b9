@@ -7,27 +7,40 @@ import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { PRODUCTS, ADMIN_WHATSAPP, ADMIN_EMAIL, type ProductKey } from "@/lib/products";
 import { trackOrder } from "@/lib/analytics";
+import { checkRateLimit, getSubmissionContext, hashPayload } from "@/lib/rate-limit";
 
-const orderSchema = z.object({
+const BUYER_TYPE_OPTIONS = [
+  "Dealer",
+  "Stockist",
+  "Distributor",
+  "Fertiliser company",
+  "Formulator",
+  "Farmer group or FPO",
+  "Exporter",
+  "Industrial buyer",
+  "Individual farmer",
+  "Other",
+];
+
+const schema = z.object({
   customer_name: z.string().trim().min(2, "Please enter your full name").max(120),
-  phone: z
-    .string()
-    .trim()
-    .min(7, "Enter a valid phone number")
-    .max(30)
-    .regex(/^[+\d][\d\s\-()]{6,}$/, "Phone can only contain digits, spaces, +, -, ()"),
+  phone: z.string().trim().min(7, "Enter a valid phone number").max(30)
+    .regex(/^[+\d][\d\s\-()]{6,}$/, "Enter a valid phone number"),
+  bags: z.coerce.number().int().positive("Number of bags is required").max(100000),
+  quantity_estimate: z.string().trim().min(1, "Total estimated quantity is required").max(80),
+  company: z.string().trim().min(1, "Company name is required").max(120),
+  city: z.string().trim().min(1, "City is required").max(80),
+  state: z.string().trim().min(1, "State is required").max(80),
+  pincode: z.string().trim().min(1, "Pincode is required").max(16),
+  buyer_type: z.string().min(1, "Buyer type is required"),
+  consent: z.literal(true, { errorMap: () => ({ message: "Please tick the consent box to continue" }) }),
   whatsapp: z.string().trim().max(30).optional().or(z.literal("")),
   email: z.string().trim().email("Enter a valid email").max(255).optional().or(z.literal("")),
-  company: z.string().trim().max(120).optional().or(z.literal("")),
-  city: z.string().trim().max(80).optional().or(z.literal("")),
-  state: z.string().trim().max(80).optional().or(z.literal("")),
-  buyer_type: z.string().trim().max(60).optional().or(z.literal("")),
-  quantity: z.coerce
-    .number({ invalid_type_error: "Enter a valid quantity" })
-    .int("Quantity must be a whole number of bags")
-    .positive("Quantity must be at least 1")
-    .max(100000, "Quantity too large"),
+  gst_number: z.string().trim().max(30).optional().or(z.literal("")),
+  required_delivery_date: z.string().optional().or(z.literal("")),
+  po_reference: z.string().trim().max(80).optional().or(z.literal("")),
   notes: z.string().trim().max(2000).optional().or(z.literal("")),
+  website: z.string().max(0).optional().or(z.literal("")), // honeypot
 });
 
 export const Route = createFileRoute("/order/$slug")({
@@ -36,11 +49,11 @@ export const Route = createFileRoute("/order/$slug")({
   },
   head: ({ params }) => {
     const p = PRODUCTS[params.slug as ProductKey];
-    const title = p ? `Place Order for ${p.name} | TARAON GLOBAL` : "Place Order | TARAON GLOBAL";
+    const title = p ? `Submit Bulk Order Requirement, ${p.name} | TARAON GLOBAL` : "Submit Bulk Order Requirement | TARAON GLOBAL";
     return {
       meta: [
         { title },
-        { name: "description", content: `Order ${p?.name ?? "potassium humate"} in 25 Kgs packs. TARAON GLOBAL confirms every order on WhatsApp and email.` },
+        { name: "description", content: `Share your bulk requirement for ${p?.name ?? "the product"}. TARAON GLOBAL will confirm price, availability and dispatch separately.` },
         { name: "robots", content: "noindex, follow" },
       ],
     };
@@ -64,104 +77,86 @@ function OrderPage() {
   const { slug } = Route.useParams();
   const product = PRODUCTS[slug as ProductKey];
   const [submitting, setSubmitting] = useState(false);
-  const [placed, setPlaced] = useState<null | {
-    order_number: string;
-    id: string;
-    waHref: string;
-    mailHref: string;
-    details: Record<string, string>;
-  }>(null);
-  const [fallback, setFallback] = useState<null | { waHref: string; message: string }>(null);
-
-  function buildFallback(d: z.infer<typeof orderSchema>) {
-    const msg =
-      `Hi TARAON GLOBAL, I could not submit the order form. Please take my order:\n\n` +
-      `Product: ${product.name}\n` +
-      `Quantity: ${d.quantity} ${product.unit} (${product.pack} pack)\n` +
-      `Name: ${d.customer_name}\n` +
-      `Phone: ${d.phone}` +
-      (d.email ? `\nEmail: ${d.email}` : "") +
-      (d.company ? `\nCompany: ${d.company}` : "") +
-      (d.city || d.state ? `\nLocation: ${[d.city, d.state].filter(Boolean).join(", ")}` : "") +
-      (d.buyer_type ? `\nBuyer type: ${d.buyer_type}` : "") +
-      (d.notes ? `\nNotes: ${d.notes}` : "");
-    return { message: msg, waHref: `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(msg)}` };
-  }
+  const [placed, setPlaced] = useState<null | { reference: string; waHref: string; mailHref: string }>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const raw = Object.fromEntries(form.entries());
-    const parsed = orderSchema.safeParse(raw);
+    const consent = raw.consent === "on";
+    const parsed = schema.safeParse({ ...raw, consent });
     if (!parsed.success) {
       toast.error(parsed.error.issues[0]?.message ?? "Please check the form");
       return;
     }
+    if (parsed.data.website) {
+      setPlaced({ reference: "SILENT", waHref: "#", mailHref: "#" });
+      return;
+    }
     setSubmitting(true);
     const d = parsed.data;
+    const context = getSubmissionContext();
+    const hash = await hashPayload(`${d.customer_name}|${d.phone}|${product.slug}|${d.bags}`);
+    const rl = await checkRateLimit("order", hash);
+    if (!rl.ok) {
+      setSubmitting(false);
+      toast.error(
+        rl.reason === "duplicate"
+          ? "This looks like a duplicate submission. Our team will get back to you."
+          : "Too many submissions from this device. Please try again later or contact us directly.",
+      );
+      return;
+    }
     const { data, error } = await supabase
       .from("orders")
       .insert({
         product_slug: product.slug,
         product_name: product.name,
-        quantity: d.quantity,
-        unit: product.unit,
+        quantity: d.bags,
+        unit: "bags",
+        bags: d.bags,
         customer_name: d.customer_name,
         phone: d.phone,
         whatsapp: d.whatsapp || null,
         email: d.email || null,
-        company: d.company || null,
-        city: d.city || null,
-        state: d.state || null,
-        buyer_type: d.buyer_type || null,
+        company: d.company,
+        city: d.city,
+        state: d.state,
+        pincode: d.pincode,
+        buyer_type: d.buyer_type,
+        gst_number: d.gst_number || null,
+        po_reference: d.po_reference || null,
+        required_delivery_date: d.required_delivery_date || null,
         notes: d.notes || null,
+        consent: true,
+        ...context,
       })
       .select("id, order_number")
       .single();
     setSubmitting(false);
     if (error || !data) {
-      const fb = buildFallback(d);
-      setFallback(fb);
-      toast.error("Order submission failed. Use the WhatsApp link below to send it directly.", {
-        action: { label: "Open WhatsApp", onClick: () => window.open(fb.waHref, "_blank", "noopener,noreferrer") },
-        duration: 10000,
-      });
-      window.open(fb.waHref, "_blank", "noopener,noreferrer");
+      toast.error("We could not submit your requirement. Please try again or contact TARAON GLOBAL by phone or WhatsApp.");
       return;
     }
     const summary =
-      `*New Order for TARAON GLOBAL*\n` +
-      `Order #: ${data.order_number}\n` +
+      `Bulk requirement, TARAON GLOBAL\n` +
+      `Ref: ${data.order_number}\n` +
       `Product: ${product.name}\n` +
-      `Quantity: ${d.quantity} ${product.unit} (${product.pack} pack)\n` +
-      `Name: ${d.customer_name}\n` +
-      (d.company ? `Company: ${d.company}\n` : "") +
+      `Bags: ${d.bags} (25 Kg)\n` +
+      `Total qty: ${d.quantity_estimate}\n` +
+      `Name: ${d.customer_name} (${d.company})\n` +
       `Phone: ${d.phone}\n` +
       (d.email ? `Email: ${d.email}\n` : "") +
-      (d.city || d.state ? `Location: ${[d.city, d.state].filter(Boolean).join(", ")}\n` : "") +
-      (d.buyer_type ? `Buyer type: ${d.buyer_type}\n` : "") +
+      `Location: ${d.city}, ${d.state} ${d.pincode}\n` +
+      `Buyer type: ${d.buyer_type}\n` +
+      (d.gst_number ? `GST: ${d.gst_number}\n` : "") +
+      (d.required_delivery_date ? `Required by: ${d.required_delivery_date}\n` : "") +
+      (d.po_reference ? `PO ref: ${d.po_reference}\n` : "") +
       (d.notes ? `Notes: ${d.notes}\n` : "");
     const waHref = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(summary)}`;
-    const mailHref =
-      `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(`New Order ${data.order_number} - ${product.name}`)}` +
-      `&body=${encodeURIComponent(summary)}`;
-    const details: Record<string, string> = {
-      Product: product.name,
-      Quantity: `${d.quantity} ${product.unit} (${product.pack} pack)`,
-      Name: d.customer_name,
-      Phone: d.phone,
-    };
-    if (d.whatsapp) details.WhatsApp = d.whatsapp;
-    if (d.email) details.Email = d.email;
-    if (d.company) details.Company = d.company;
-    if (d.city || d.state) details.Location = [d.city, d.state].filter(Boolean).join(", ");
-    if (d.buyer_type) details["Buyer type"] = d.buyer_type;
-    if (d.notes) details.Notes = d.notes;
-    setPlaced({ order_number: data.order_number, id: data.id, waHref, mailHref, details });
-    setFallback(null);
-    trackOrder(product.slug, data.order_number, Number(d.quantity) || undefined);
-    window.open(waHref, "_blank", "noopener,noreferrer");
-    toast.success(`Order ${data.order_number} saved`);
+    const mailHref = `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(`Bulk requirement ${data.order_number}, ${product.name}`)}&body=${encodeURIComponent(summary)}`;
+    trackOrder(product.slug, data.order_number, d.bags);
+    setPlaced({ reference: data.order_number, waHref, mailHref });
   }
 
   if (placed) {
@@ -170,31 +165,36 @@ function OrderPage() {
         <div className="mx-auto max-w-xl rounded-lg border border-border bg-card p-8">
           <div className="text-center">
             <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gold/20 text-forest-deep font-display text-lg">✓</div>
-            <h1 className="mt-4 font-display text-3xl text-forest-deep">Order placed</h1>
-            <p className="mt-2 text-ink/70">
-              Order ID: <span className="font-semibold text-forest-deep">{placed.order_number}</span>
+            <h1 className="mt-4 font-display text-3xl text-forest-deep">Requirement Submitted</h1>
+            {placed.reference !== "SILENT" ? (
+              <p className="mt-3 text-ink/80">
+                Your requirement has been saved with reference number{" "}
+                <span className="font-semibold text-forest-deep">{placed.reference}</span>.
+                It is not yet a confirmed order.
+              </p>
+            ) : null}
+            <p className="mt-2 text-sm text-ink/70">
+              The TARAON GLOBAL sales team will contact you to confirm price,
+              availability, taxes, freight, payment terms and dispatch.
             </p>
-            <p className="mt-1 text-xs text-ink/50">Reference: {placed.id}</p>
           </div>
-          <dl className="mt-6 grid gap-x-6 gap-y-2 rounded border border-border bg-secondary/40 p-4 text-sm sm:grid-cols-2">
-            {Object.entries(placed.details).map(([k, v]) => (
-              <div key={k} className="flex gap-2">
-                <dt className="font-medium text-forest-deep">{k}:</dt>
-                <dd className="text-ink/80 break-words">{v}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="mt-6 text-center text-sm text-ink/70">A WhatsApp draft has opened. Tap send so we get it. You can also email it.</p>
-          <div className="mt-4 flex flex-wrap justify-center gap-3">
-            <a href={placed.waHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-5 py-3 text-sm font-medium text-white">
-              <MessageCircle className="h-4 w-4" /> Send on WhatsApp
-            </a>
-            <a href={placed.mailHref} className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/30 px-5 py-3 text-sm font-medium text-forest-deep">
-              <Mail className="h-4 w-4" /> Email order
-            </a>
-          </div>
+          {placed.reference !== "SILENT" ? (
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <a href={placed.waHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-5 py-3 text-sm font-medium text-white">
+                <MessageCircle className="h-4 w-4" /> Continue on WhatsApp
+              </a>
+              <a href={placed.mailHref} className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/30 px-5 py-3 text-sm font-medium text-forest-deep hover:border-gold hover:bg-gold/10">
+                <Mail className="h-4 w-4" /> Email Requirement
+              </a>
+            </div>
+          ) : null}
           <div className="mt-6 text-center">
-            <Link to="/" className="text-sm text-ink/60 underline">Back to home</Link>
+            <a
+              href={`/products/${product.slug}`}
+              className="text-sm text-ink/60 underline"
+            >
+              Return to Product Page
+            </a>
           </div>
         </div>
       </section>
@@ -204,86 +204,79 @@ function OrderPage() {
   return (
     <section className="container-page py-14">
       <div className="mx-auto max-w-2xl">
-        <SectionHeading eyebrow="Place order" title={product.name} />
-        <p className="mt-2 text-ink/70">
-          Pack size: <strong>{product.pack}</strong>. Fill this in and we will confirm price, dispatch and payment on WhatsApp.
-        </p>
+        <SectionHeading eyebrow="Bulk requirement" title="Submit Bulk Order Requirement" />
+        <div className="mt-4 rounded border border-border bg-secondary/40 p-4 text-sm text-ink/75">
+          <p className="font-medium text-forest-deep">Product: {product.name}</p>
+          <p className="mt-2">
+            Complete this form to share your intended product and quantity. This
+            is not a final order confirmation and no online payment will be
+            collected. TARAON GLOBAL will confirm the current price, GST,
+            freight, availability, payment terms and estimated dispatch date
+            before accepting the order.
+          </p>
+        </div>
 
         <form onSubmit={handleSubmit} noValidate className="mt-8 grid gap-4">
-          <input type="hidden" name="product" value={product.slug} />
-          <Field
-            label="Quantity (number of 25 Kg bags)"
-            name="quantity"
-            type="number"
-            inputMode="numeric"
-            min={1}
-            max={100000}
-            step={1}
-            required
-          />
-          <Field label="Full name" name="customer_name" required minLength={2} maxLength={120} autoComplete="name" />
+          {/* honeypot */}
+          <div className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+            <label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
+          </div>
+
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field
-              label="Phone"
-              name="phone"
-              type="tel"
-              required
-              inputMode="tel"
-              autoComplete="tel"
-              minLength={7}
-              maxLength={30}
-              pattern="[+\d][\d\s\-()]{6,}"
-              title="Digits only, may start with +. Spaces, -, () allowed."
-            />
+            <Field label="Number of bags (25 Kg) *" name="bags" type="number" inputMode="numeric" min={1} max={100000} step={1} required />
+            <Field label="Total estimated quantity *" name="quantity_estimate" required placeholder="Example: 5 tons, 500 kg" maxLength={80} />
+          </div>
+          <Field label="Full name *" name="customer_name" required minLength={2} maxLength={120} autoComplete="name" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Phone *" name="phone" type="tel" required inputMode="tel" autoComplete="tel" minLength={7} maxLength={30} />
             <Field label="WhatsApp (if different)" name="whatsapp" type="tel" inputMode="tel" maxLength={30} />
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Email" name="email" type="email" maxLength={255} autoComplete="email" />
-            <Field label="Company (optional)" name="company" maxLength={120} autoComplete="organization" />
+            <Field label="Company name *" name="company" required maxLength={120} autoComplete="organization" />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Field label="City *" name="city" required maxLength={80} autoComplete="address-level2" />
+            <Field label="State *" name="state" required maxLength={80} autoComplete="address-level1" />
+            <Field label="Pincode *" name="pincode" required maxLength={16} />
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="City" name="city" maxLength={80} autoComplete="address-level2" />
-            <Field label="State" name="state" maxLength={80} autoComplete="address-level1" />
+            <div>
+              <label className="mb-1 block text-sm font-medium text-forest-deep">Buyer type *</label>
+              <select name="buyer_type" required className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm">
+                <option value="">Select</option>
+                {BUYER_TYPE_OPTIONS.map((o) => <option key={o}>{o}</option>)}
+              </select>
+            </div>
+            <Field label="GST number" name="gst_number" maxLength={30} />
           </div>
-          <div>
-            <label className="mb-1 block text-sm font-medium text-forest-deep">Buyer type</label>
-            <select name="buyer_type" className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm">
-              <option value="">Select</option>
-              <option>Farmer</option>
-              <option>Dealer / Distributor</option>
-              <option>Fertilizer Company</option>
-              <option>Exporter</option>
-              <option>Other</option>
-            </select>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Required delivery date" name="required_delivery_date" type="date" />
+            <Field label="Purchase order reference" name="po_reference" maxLength={80} />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-forest-deep">Notes</label>
-            <textarea name="notes" rows={3} maxLength={2000} className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm" placeholder="Delivery timeline, special requirements..." />
+            <textarea name="notes" rows={3} maxLength={2000} className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm" />
           </div>
+          <label className="flex cursor-pointer items-start gap-3 rounded border border-border bg-secondary/40 p-3 text-sm text-ink/80">
+            <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 accent-forest-deep" required />
+            <span>
+              I agree that TARAON GLOBAL may contact me by phone, WhatsApp or
+              email regarding this requirement.
+            </span>
+          </label>
           <button
             type="submit"
             disabled={submitting}
             className="group mt-2 inline-flex items-center justify-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep disabled:opacity-60"
           >
             {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
-            Place order
+            Submit Requirement for Confirmation
           </button>
-          {fallback && (
-            <div className="rounded border border-gold/60 bg-gold/10 p-4 text-sm text-forest-deep">
-              <p className="font-medium">We could not save your order just now.</p>
-              <p className="mt-1 text-ink/80">Use the WhatsApp link below to send the same details to Rajesh directly. We will confirm as soon as we receive it.</p>
-              <a
-                href={fallback.waHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-4 py-2 text-xs font-medium text-white"
-              >
-                <MessageCircle className="h-4 w-4" /> Send on WhatsApp
-              </a>
-            </div>
-          )}
           <p className="text-xs text-ink/60">
-            By placing an order you agree we may contact you on the phone, WhatsApp or email you provided. No payment is taken online. TARAON GLOBAL will confirm price and dispatch before shipment.
+            Submitting this form does not create a confirmed purchase order.
+            Product availability and commercial terms will be confirmed
+            separately.
           </p>
         </form>
       </div>
