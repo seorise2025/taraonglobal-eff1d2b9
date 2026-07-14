@@ -464,22 +464,13 @@ function Footer() {
               height={44}
               loading="lazy"
               decoding="async"
-              className="h-11 w-11 rounded-sm object-contain dark:hidden"
-            />
-            <img
-              src={logoGreen.url}
-              alt="TARAON GLOBAL"
-              width={44}
-              height={44}
-              loading="lazy"
-              decoding="async"
-              className="hidden h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:block"
+              className="h-11 w-11 rounded-sm object-contain"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-cream/70">
-            TARAON GLOBAL is an Ahmedabad based trading company supplying potassium
-            humate shiny flakes across Gujarat and India.
+            TARAON GLOBAL is an Ahmedabad-based agri-input trading company supplying
+            potassium humate, Glycine and plant biostimulants to bulk buyers across India.
           </p>
         </div>
         <div>
