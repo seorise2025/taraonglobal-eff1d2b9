@@ -214,15 +214,15 @@ function ProductPage() {
       </section>
 
       <section className="container-page py-8">
-        <SectionHeading eyebrow="How it helps" title="Growth, flowering, yield" />
+        <SectionHeading eyebrow="Why farmers use it" title="What Vigora does in the field" />
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            ["Vegetative growth", "Supports healthier vegetative development from early stages."],
-            ["Flowering & fruit set", "Better flowering, stronger fruit set, more even development."],
-            ["Root development", "Encourages stronger root systems that hold up under stress."],
-            ["Yield quality", "Improves overall vigor and quality of harvest."],
-            ["Wide crop range", "Field crops, vegetables, fruit and plantation crops."],
-            ["Easy to use", "Standard foliar spray with a simple dose per litre."],
+            ["Deeper roots", "Builds a stronger root system so the crop stays firm and takes up water and nutrients better."],
+            ["Stronger flowering", "More flowers open together and hold on the plant, which improves fruit and pod set."],
+            ["Better yield quality", "Fills grain, pods and fruit more evenly for a cleaner harvest with better market grade."],
+            ["Stress recovery", "Helps the plant push through heat, transplant shock and short dry spells."],
+            ["Fits any crop plan", "Works across field crops, vegetables, fruits and plantation crops without changing the schedule."],
+            ["Simple to use", "Fully water soluble powder. Weigh, mix and spray with a standard knapsack."],
           ].map(([t, d]) => (
             <div key={t} className="rounded-lg border border-border bg-card p-6">
               <div className="font-display text-lg text-forest-deep">{t}</div>
