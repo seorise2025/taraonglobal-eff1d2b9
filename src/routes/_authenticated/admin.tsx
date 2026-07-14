@@ -160,7 +160,7 @@ function AdminPage() {
           const waNumber = (o.whatsapp || o.phone).replace(/\D/g, "");
           const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
           const mailHref = o.email
-            ? `mailto:${o.email}?subject=${encodeURIComponent(`Order ${o.order_number} , ${o.status}`)}&body=${encodeURIComponent(msg)}`
+            ? `mailto:${o.email}?subject=${encodeURIComponent(`Order ${o.order_number} status: ${o.status}`)}&body=${encodeURIComponent(msg)}`
             : null;
           return (
             <article key={o.id} className="rounded-lg border border-border bg-card p-5">

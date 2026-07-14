@@ -35,7 +35,7 @@ export const Route = createFileRoute("/order/$slug")({
   },
   head: ({ params }) => {
     const p = PRODUCTS[params.slug as ProductKey];
-    const title = p ? `Place Order , ${p.name} | TARAON GLOBAL` : "Place Order | TARAON GLOBAL";
+    const title = p ? `Place Order for ${p.name} | TARAON GLOBAL` : "Place Order | TARAON GLOBAL";
     return {
       meta: [
         { title },
@@ -129,7 +129,7 @@ function OrderPage() {
       return;
     }
     const summary =
-      `*New Order , TARAON GLOBAL*\n` +
+      `*New Order for TARAON GLOBAL*\n` +
       `Order #: ${data.order_number}\n` +
       `Product: ${product.name}\n` +
       `Quantity: ${d.quantity} ${product.unit} (${product.pack} pack)\n` +
