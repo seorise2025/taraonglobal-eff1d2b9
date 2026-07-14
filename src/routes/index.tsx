@@ -19,9 +19,9 @@ import {
   Sprout,
   Ship,
 } from "lucide-react";
-import heroImg from "@/assets/hero-flakes.jpg?w=640;960;1280&format=webp&as=srcset";
-import heroImgFallback from "@/assets/hero-flakes.jpg?w=960&format=webp";
-import heroFlakes640 from "@/assets/hero-flakes.jpg?w=640&format=webp";
+import heroImg from "@/assets/about-warehouse.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroImgFallback from "@/assets/about-warehouse.jpg?w=960&format=webp";
+import heroFlakes640 from "@/assets/about-warehouse.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
