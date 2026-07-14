@@ -217,7 +217,7 @@ function ProductPage() {
             height={1200}
             fetchPriority="high"
             decoding="async"
-            className="aspect-[4/3] w-full rounded-lg object-contain bg-cream shadow-2xl"
+            className="aspect-[4/3] w-full rounded-lg object-contain bg-background p-3 shadow-xl border border-border/60"
           />
         </div>
       </section>
