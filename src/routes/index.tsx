@@ -13,7 +13,8 @@ import {
   Sprout,
   Ship,
 } from "lucide-react";
-import heroImg from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroWebp from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcset";
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -75,7 +76,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroFlakes640,
-        imagesrcset: heroImg,
+        imagesrcset: heroWebp,
         imagesizes: "(min-width: 1024px) 42vw, 100vw",
         fetchpriority: "high",
       } as unknown as Record<string, string>,
@@ -164,17 +165,19 @@ function Home() {
           {/* Right visual, editorial frame */}
           <div className="relative lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-forest-deep">
-              <img
-                src={heroImgFallback}
-                srcSet={heroImg}
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                alt="Young crop rows at golden hour on rich soil, representing TARAON GLOBAL's supply across India"
-                width={1200}
-                height={1500}
-                fetchPriority="high"
-                decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              <picture>
+                <source type="image/avif" srcSet={heroAvif} sizes="(min-width: 1024px) 42vw, 100vw" />
+                <source type="image/webp" srcSet={heroWebp} sizes="(min-width: 1024px) 42vw, 100vw" />
+                <img
+                  src={heroImgFallback}
+                  alt="Young crop rows at golden hour on rich soil, representing TARAON GLOBAL's supply across India"
+                  width={1200}
+                  height={1500}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </picture>
               <div aria-hidden="true" className="pointer-events-none absolute inset-4 border border-gold/40" />
             </div>
             <div className="absolute -bottom-6 left-6 right-6 border border-forest-deep/10 bg-cream p-5 shadow-sm sm:left-auto sm:right-6 sm:max-w-[15rem]">

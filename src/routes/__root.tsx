@@ -233,6 +233,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+function RumBoot() {
+  useEffect(() => {
+    // Load in idle time so it never blocks LCP
+    const run = () => {
+      import("../lib/rum").then((m) => m.startRUM()).catch(() => {});
+    };
+    if (typeof (window as unknown as { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback === "function") {
+      (window as unknown as { requestIdleCallback: (cb: () => void) => number }).requestIdleCallback(run);
+    } else {
+      window.setTimeout(run, 1500);
+    }
+  }, []);
+  return null;
+}
+
 function RootShell({ children }: { children: ReactNode }) {
   const gtmId = import.meta.env.VITE_GTM_ID as string | undefined;
   const ga4Id = import.meta.env.VITE_GA4_ID as string | undefined;
@@ -278,6 +293,7 @@ function RootShell({ children }: { children: ReactNode }) {
             />
           </noscript>
         ) : null}
+        <RumBoot />
         {children}
         <Scripts />
       </body>
