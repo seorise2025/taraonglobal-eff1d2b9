@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { trackFormSubmit } from "@/lib/analytics";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -109,6 +110,7 @@ function Contact() {
       toast.error("Couldn't send. Try WhatsApp or call us directly.");
       return;
     }
+    trackFormSubmit("contact_form", parsed.data.product_needed || undefined);
     toast.success("Enquiry sent. We'll reply the same day.");
     setForm(emptyForm);
   }

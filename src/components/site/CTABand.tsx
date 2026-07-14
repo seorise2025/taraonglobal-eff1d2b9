@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail } from "lucide-react";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
+import { trackEmail, trackPhone, trackWhatsApp } from "@/lib/analytics";
 
 export function CTABand({
   title,
@@ -38,18 +39,21 @@ export function CTABand({
               href={buildWaHref("general")}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsApp(undefined, "cta_band")}
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.02]"
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
             <a
               href={buildEmailHref("general")}
+              onClick={() => trackEmail(undefined, "cta_band")}
               className="inline-flex items-center justify-center gap-2 rounded-sm border border-cream/30 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
             >
               <Mail className="h-4 w-4" /> Email Us
             </a>
             <a
               href="tel:+916359193666"
+              onClick={() => trackPhone("cta_band")}
               className="inline-flex items-center justify-center gap-2 text-sm text-cream/80 hover:text-gold"
             >
               <Phone className="h-3.5 w-3.5" /> +91 63591 93666

@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { PRODUCTS, ADMIN_WHATSAPP, ADMIN_EMAIL, type ProductKey } from "@/lib/products";
+import { trackOrder } from "@/lib/analytics";
 
 const orderSchema = z.object({
   customer_name: z.string().trim().min(2, "Please enter your full name").max(120),
@@ -158,6 +159,7 @@ function OrderPage() {
     if (d.notes) details.Notes = d.notes;
     setPlaced({ order_number: data.order_number, id: data.id, waHref, mailHref, details });
     setFallback(null);
+    trackOrder(product.slug, data.order_number, Number(d.quantity) || undefined);
     window.open(waHref, "_blank", "noopener,noreferrer");
     toast.success(`Order ${data.order_number} saved`);
   }
