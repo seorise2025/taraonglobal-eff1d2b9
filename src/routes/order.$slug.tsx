@@ -207,20 +207,41 @@ function OrderPage() {
           Pack size: <strong>{product.pack}</strong>. Fill this in and we will confirm price, dispatch and payment on WhatsApp.
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-8 grid gap-4">
-          <Field label="Quantity (number of 25 Kg bags)" name="quantity" type="number" min={1} required />
-          <Field label="Full name" name="customer_name" required />
+        <form onSubmit={handleSubmit} noValidate className="mt-8 grid gap-4">
+          <input type="hidden" name="product" value={product.slug} />
+          <Field
+            label="Quantity (number of 25 Kg bags)"
+            name="quantity"
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={100000}
+            step={1}
+            required
+          />
+          <Field label="Full name" name="customer_name" required minLength={2} maxLength={120} autoComplete="name" />
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Phone" name="phone" type="tel" required />
-            <Field label="WhatsApp (if different)" name="whatsapp" type="tel" />
+            <Field
+              label="Phone"
+              name="phone"
+              type="tel"
+              required
+              inputMode="tel"
+              autoComplete="tel"
+              minLength={7}
+              maxLength={30}
+              pattern="[+\d][\d\s\-()]{6,}"
+              title="Digits only, may start with +. Spaces, -, () allowed."
+            />
+            <Field label="WhatsApp (if different)" name="whatsapp" type="tel" inputMode="tel" maxLength={30} />
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Email" name="email" type="email" />
-            <Field label="Company (optional)" name="company" />
+            <Field label="Email" name="email" type="email" maxLength={255} autoComplete="email" />
+            <Field label="Company (optional)" name="company" maxLength={120} autoComplete="organization" />
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="City" name="city" />
-            <Field label="State" name="state" />
+            <Field label="City" name="city" maxLength={80} autoComplete="address-level2" />
+            <Field label="State" name="state" maxLength={80} autoComplete="address-level1" />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-forest-deep">Buyer type</label>
@@ -235,7 +256,7 @@ function OrderPage() {
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-forest-deep">Notes</label>
-            <textarea name="notes" rows={3} className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm" placeholder="Delivery timeline, special requirements..." />
+            <textarea name="notes" rows={3} maxLength={2000} className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm" placeholder="Delivery timeline, special requirements..." />
           </div>
           <button
             type="submit"
@@ -245,6 +266,20 @@ function OrderPage() {
             {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
             Place order
           </button>
+          {fallback && (
+            <div className="rounded border border-gold/60 bg-gold/10 p-4 text-sm text-forest-deep">
+              <p className="font-medium">We could not save your order just now.</p>
+              <p className="mt-1 text-ink/80">Use the WhatsApp link below to send the same details to Rajesh directly. We will confirm as soon as we receive it.</p>
+              <a
+                href={fallback.waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-4 py-2 text-xs font-medium text-white"
+              >
+                <MessageCircle className="h-4 w-4" /> Send on WhatsApp
+              </a>
+            </div>
+          )}
           <p className="text-xs text-ink/60">
             By placing an order you agree we may contact you on the phone, WhatsApp or email you provided. No payment is taken online. TARAON GLOBAL will confirm price and dispatch before shipment.
           </p>
