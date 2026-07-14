@@ -26,6 +26,8 @@ export default defineConfig({
       { path: "/contact" },
       { path: "/products/super-potassium-shiny-flakes-98" },
       { path: "/products/super-f-humate-big-shiny-flakes" },
+      { path: "/products/glycine" },
+      { path: "/products/vigora" },
     ],
   },
   vite: {
