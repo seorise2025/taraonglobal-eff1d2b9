@@ -119,10 +119,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: logoGreen.url, type: "image/png", media: "(prefers-color-scheme: light)" },
-      { rel: "icon", href: logoDark.url, type: "image/png", media: "(prefers-color-scheme: dark)" },
-      { rel: "apple-touch-icon", href: logoGreen.url, media: "(prefers-color-scheme: light)" },
-      { rel: "apple-touch-icon", href: logoDark.url, media: "(prefers-color-scheme: dark)" },
+      { rel: "icon", href: logoGreen.url, type: "image/png" },
+      { rel: "apple-touch-icon", href: logoGreen.url },
       { rel: "shortcut icon", href: logoGreen.url, type: "image/png" },
       {
         rel: "preload",
