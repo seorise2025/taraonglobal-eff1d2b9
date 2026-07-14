@@ -150,14 +150,14 @@ function Home() {
                 onClick={() => trackWhatsApp(undefined, "home_hero")}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp Sales
+                <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
               <a
                 href={buildEmailHref("general")}
                 onClick={() => trackEmail(undefined, "home_hero")}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-4 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
               >
-                <Mail className="h-4 w-4" /> Email for Quote
+                <Mail className="h-4 w-4" /> Email
               </a>
             </div>
           </motion.div>
