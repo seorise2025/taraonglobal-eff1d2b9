@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail } from "lucide-react";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
+import { trackEmail, trackPhone, trackWhatsApp } from "@/lib/analytics";
 
 export function CTABand({
   title,
