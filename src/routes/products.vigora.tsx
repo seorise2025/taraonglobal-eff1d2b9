@@ -191,7 +191,7 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={productImg.url}
-            alt="Vigora liquid plant biostimulant and yield enhancer for Indian crops, cotton, wheat, rice and vegetables, supplied by TARAON GLOBAL"
+            alt="Vigora 99% pure water soluble powder plant biostimulant and yield enhancer for Indian crops, cotton, wheat, rice and vegetables, 25 Kgs bag supplied by TARAON GLOBAL"
             width={1024}
             height={1024}
             fetchPriority="high"
