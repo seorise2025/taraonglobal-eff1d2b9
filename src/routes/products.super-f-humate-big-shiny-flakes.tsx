@@ -346,7 +346,7 @@ function ProductPage() {
           {
             to: "/products/vigora",
             title: "Vigora Plant Biostimulant",
-            desc: "Concentrated liquid yield enhancer for Indian crops.",
+            desc: "Water soluble powder yield enhancer for Indian crops.",
           },
           {
             to: "/applications",

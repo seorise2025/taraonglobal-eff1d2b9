@@ -281,7 +281,7 @@ function ProductPage() {
 
       <RelatedLinks
         items={[
-          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Concentrated liquid biostimulant for yield and flowering." },
+          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Water soluble powder biostimulant for yield and flowering." },
           { to: "/products/super-potassium-shiny-flakes-98", title: "Super Potassium Shiny Flakes 98%", desc: "Flagship potassium humate for soil, drip and blending." },
           { to: "/products/super-f-humate-big-shiny-flakes", title: "Super F Humate Big Shiny Flakes", desc: "Big flake grade for dealers and blenders." },
           { to: "/applications", title: "How our inputs fit in the field", desc: "Fertigation, foliar spray, blending and soil support." },

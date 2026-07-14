@@ -359,7 +359,7 @@ function ProductPage() {
           {
             to: "/products/vigora",
             title: "Vigora Plant Biostimulant",
-            desc: "Concentrated liquid biostimulant for flowering, roots and yield.",
+            desc: "Water soluble powder biostimulant for flowering, roots and yield.",
           },
           {
             to: "/applications",
