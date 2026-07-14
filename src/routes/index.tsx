@@ -111,15 +111,6 @@ function Home() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-forest-deep/10 bg-forest-deep/5 px-3 py-1.5">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
-              </span>
-              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-deep">
-                Replies within business hours
-              </span>
-            </div>
 
             <h1 className="font-display text-[2.6rem] font-semibold leading-[1.05] text-forest-deep sm:text-6xl lg:text-[4.25rem]">
               Precision{" "}
