@@ -12,13 +12,9 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-flakes.jpg?w=640;960;1280&format=webp&as=srcset";
 import heroImgFallback from "@/assets/hero-flakes.jpg?w=960&format=webp";
-import productBigImg from "@/assets/product-big-flakes.jpg?w=640;960&format=webp&as=srcset";
-import productBigImgFallback from "@/assets/product-big-flakes.jpg?w=640&format=webp";
 import heroFlakes640 from "@/assets/hero-flakes.jpg?w=640&format=webp";
 import fieldImg from "@/assets/applications-field.jpg?w=640;960;1280&format=webp&as=srcset";
 import fieldImgFallback from "@/assets/applications-field.jpg?w=960&format=webp";
-import glycineImg from "@/assets/glycine-pack.jpg.asset.json";
-import vigoraImg from "@/assets/vigora-bio-stimulant.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
@@ -255,53 +251,49 @@ function Home() {
         </div>
       </section>
 
-      {/* PRODUCT RANGE */}
+      {/* PRODUCT RANGE AT A GLANCE (links only, full details on product pages) */}
       <section className="container-page pb-20">
-        <SectionHeading
-          eyebrow="Products we supply"
-          title="High Demand Agri Inputs for Bulk Trade"
-          intro="Our range is built around agri input products for bulk trade, field use, blending, and distribution. Clear specs, 25 Kgs packing, direct ordering from TARAON GLOBAL."
-        />
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <ProductCard
-            image={heroImgFallback}
-            srcSet={heroImg}
-            sizes="(min-width: 768px) 48vw, 100vw"
-            name="Super Potassium Shiny Flakes 98%"
-            desc="Black shiny potassium humate flakes with 98% water solubility and 55 to 60% humic acid. Suitable for soil application, drip irrigation, fertigation, foliar spray, and fertiliser blending."
-            to="/products/super-potassium-shiny-flakes-98"
-            orderSlug="super-potassium-shiny-flakes-98"
-          />
-          <ProductCard
-            image={productBigImgFallback}
-            srcSet={productBigImg}
-            sizes="(min-width: 768px) 48vw, 100vw"
-            name="Super F Humate Big Shiny Flakes"
-            desc="A larger flake humate option with the same core humate strength in a different physical form. Built for regular stock movement and bulk trading."
-            to="/products/super-f-humate-big-shiny-flakes"
-            orderSlug="super-f-humate-big-shiny-flakes"
-          />
-          <ProductCard
-            image={glycineImg.url}
-            sizes="(min-width: 768px) 48vw, 100vw"
-            name="Glycine"
-            imageAlt="High purity Glycine bulk supply by TARAON GLOBAL"
-            desc="High purity Glycine supplied for multiple industries including agriculture, food, pharma, and daily chemical use. A useful adjacent product for buyers sourcing across categories."
-            to="/products/glycine"
-            orderSlug="glycine"
-          />
-          <ProductCard
-            image={vigoraImg.url}
-            sizes="(min-width: 768px) 48vw, 100vw"
-            name="Vigora Plant Biostimulant"
-            imageAlt="Vigora water soluble powder plant biostimulant 25 Kgs bag by TARAON GLOBAL"
-            desc="Water soluble plant biostimulant powder supplied for crop support where buyers want better flowering, root strength, and overall crop quality."
-            to="/products/vigora"
-            orderSlug="vigora"
-          />
+        <div className="rounded-lg border border-border bg-card p-8 sm:p-10">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+                Product range at a glance
+              </div>
+              <h2 className="font-display text-2xl text-forest-deep sm:text-3xl">
+                Four focused agri input lines
+              </h2>
+            </div>
+            <Link
+              to="/applications"
+              className="inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-gold"
+            >
+              See applications <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {[
+              { name: "Super Potassium Shiny Flakes 98%", to: "/products/super-potassium-shiny-flakes-98" as const },
+              { name: "Super F Humate Big Shiny Flakes", to: "/products/super-f-humate-big-shiny-flakes" as const },
+              { name: "Glycine", to: "/products/glycine" as const },
+              { name: "Vigora Plant Biostimulant", to: "/products/vigora" as const },
+            ].map((p) => (
+              <li key={p.to}>
+                <Link
+                  to={p.to}
+                  className="flex items-center justify-between gap-3 rounded-sm border border-border bg-background px-4 py-3 text-sm font-medium text-forest-deep transition-colors hover:border-gold hover:text-gold"
+                >
+                  <span>{p.name}</span>
+                  <ArrowRight className="h-4 w-4 text-gold" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm text-ink/60">
+            Full specifications, packing, and order buttons live on each product page.
+          </p>
         </div>
       </section>
+
 
       {/* WHY BUYERS CHOOSE US */}
       <section className="bg-forest-deep py-20 text-cream">
@@ -458,61 +450,3 @@ function Home() {
   );
 }
 
-function ProductCard({
-  image,
-  srcSet,
-  sizes,
-  name,
-  imageAlt,
-  desc,
-  to,
-  orderSlug,
-}: {
-  image: string;
-  srcSet?: string;
-  sizes?: string;
-  name: string;
-  imageAlt?: string;
-  desc: string;
-  to: string;
-  orderSlug: "super-potassium-shiny-flakes-98" | "super-f-humate-big-shiny-flakes" | "glycine" | "vigora";
-}) {
-  return (
-    <article className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl">
-      <Link to={to} className="block aspect-[5/3] overflow-hidden">
-        <img
-          src={image}
-          srcSet={srcSet}
-          sizes={sizes}
-          alt={imageAlt ?? name}
-          width={960}
-          height={576}
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-      </Link>
-      <div className="p-6">
-        <h3 className="font-display text-2xl text-forest-deep">
-          <Link to={to} className="hover:text-gold">{name}</Link>
-        </h3>
-        <p className="mt-2 text-ink/70">{desc}</p>
-        <div className="mt-5 flex flex-wrap items-center gap-3">
-          <Link
-            to="/order/$slug"
-            params={{ slug: orderSlug }}
-            className="inline-flex items-center gap-2 rounded-sm bg-forest-deep px-4 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
-          >
-            Place Order <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to={to}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-forest transition-colors hover:text-gold"
-          >
-            See the product <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-}
