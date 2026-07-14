@@ -22,6 +22,7 @@ import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes
 import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -89,6 +90,12 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const LovableEmailQueueProcessRoute =
+  LovableEmailQueueProcessRouteImport.update({
+    id: '/lovable/email/queue/process',
+    path: '/lovable/email/queue/process',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByFullPath {
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -117,6 +125,7 @@ export interface FileRoutesByTo {
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -133,6 +142,7 @@ export interface FileRoutesById {
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -149,6 +159,7 @@ export interface FileRouteTypes {
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
+    | '/lovable/email/queue/process'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -163,6 +174,7 @@ export interface FileRouteTypes {
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
+    | '/lovable/email/queue/process'
   id:
     | '__root__'
     | '/'
@@ -178,6 +190,7 @@ export interface FileRouteTypes {
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
+    | '/lovable/email/queue/process'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -193,6 +206,7 @@ export interface RootRouteChildren {
   ProductsSuperFHumateBigShinyFlakesRoute: typeof ProductsSuperFHumateBigShinyFlakesRoute
   ProductsSuperPotassiumShinyFlakes98Route: typeof ProductsSuperPotassiumShinyFlakes98Route
   ProductsVigoraRoute: typeof ProductsVigoraRoute
+  LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -288,6 +302,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/lovable/email/queue/process': {
+      id: '/lovable/email/queue/process'
+      path: '/lovable/email/queue/process'
+      fullPath: '/lovable/email/queue/process'
+      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -317,6 +338,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsSuperPotassiumShinyFlakes98Route:
     ProductsSuperPotassiumShinyFlakes98Route,
   ProductsVigoraRoute: ProductsVigoraRoute,
+  LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
