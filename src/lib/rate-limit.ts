@@ -66,7 +66,18 @@ export async function hashPayload(input: string): Promise<string> {
   }
 }
 
-export function getSubmissionContext() {
+export type SubmissionContext = {
+  source_page: string | null;
+  referrer: string | null;
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_content: string | null;
+  utm_term: string | null;
+  user_agent: string | null;
+};
+
+export function getSubmissionContext(): SubmissionContext {
   if (typeof window === "undefined") {
     return {
       source_page: null,

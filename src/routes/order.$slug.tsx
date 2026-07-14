@@ -189,15 +189,12 @@ function OrderPage() {
             </div>
           ) : null}
           <div className="mt-6 text-center">
-            <Link
-              to="/products/$slug" as any
-              // fallback link back to product
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              params={{ slug: product.slug } as any}
+            <a
+              href={`/products/${product.slug}`}
               className="text-sm text-ink/60 underline"
             >
               Return to Product Page
-            </Link>
+            </a>
           </div>
         </div>
       </section>
