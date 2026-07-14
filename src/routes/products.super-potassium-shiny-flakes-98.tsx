@@ -354,7 +354,7 @@ function ProductPage() {
           {
             to: "/products/glycine",
             title: "Glycine (Amino Acid)",
-            desc: "99% purity L-Glycine, fertilizer synergist and natural chelator.",
+            desc: "99% purity Glycine, fertilizer synergist and natural chelator.",
           },
           {
             to: "/products/vigora",

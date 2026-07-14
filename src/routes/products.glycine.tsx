@@ -8,7 +8,7 @@ import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 const SPECS = [
-  { label: "Product Type", value: "L-Glycine, high-purity amino acid" },
+  { label: "Product Type", value: "Glycine, high-purity amino acid" },
   { label: "Purity", value: "99%" },
   { label: "Appearance", value: "White crystalline powder / granules" },
   { label: "Chloride", value: "0.25%" },
@@ -30,8 +30,8 @@ const QUICK = [
 
 const FAQS = [
   {
-    q: "What is L-Glycine used for?",
-    a: "L-Glycine is a bulk amino acid used in food, medicine, feed, pesticides, daily chemicals and agriculture. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
+    q: "What is Glycine used for?",
+    a: "Glycine is a bulk amino acid used in food, medicine, feed, pesticides, daily chemicals and agriculture. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
   },
   {
     q: "Where does TARAON GLOBAL source Glycine from?",
@@ -58,13 +58,13 @@ export const Route = createFileRoute("/products/glycine")({
       {
         name: "description",
         content:
-          "L-Glycine 99% purity from TARAON GLOBAL. Bulk amino acid for agriculture, food, pharma, feed and daily chemical industries. Supplied in 25 Kgs packs from Ahmedabad.",
+          "Glycine 99% purity from TARAON GLOBAL. Bulk amino acid for agriculture, food, pharma, feed and daily chemical industries. Supplied in 25 Kgs packs from Ahmedabad.",
       },
       { property: "og:title", content: "Glycine (High-Quality Amino Acid) | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "L-Glycine 99% bulk amino acid. Fertilizer synergist, natural metal chelator, food and pharma grade options. 25 Kgs pack.",
+          "Glycine 99% bulk amino acid. Fertilizer synergist, natural metal chelator, food and pharma grade options. 25 Kgs pack.",
       },
       { property: "og:url", content: "https://taraonglobal.lovable.app/products/glycine" },
       { property: "og:type", content: "product" },
@@ -86,7 +86,7 @@ export const Route = createFileRoute("/products/glycine")({
           image: [`https://taraonglobal.lovable.app${productImg.url}`],
           category: "Amino Acid",
           description:
-            "L-Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid used in food, medicine, agriculture, pesticides, feed and daily chemical industries. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
+            "Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid used in food, medicine, agriculture, pesticides, feed and daily chemical industries. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
           additionalProperty: [
             { "@type": "PropertyValue", name: "Purity", value: "99%" },
             { "@type": "PropertyValue", name: "Chloride", value: "0.25%" },
@@ -158,10 +158,10 @@ function ProductPage() {
             Glycine, High-Quality Amino Acid
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            L-Glycine is a simple, versatile organic compound that has become a bulk raw material in food, medicine and agriculture. Widely used in pesticides, feed and daily chemical industries.
+            Glycine is a simple, versatile organic compound that has become a bulk raw material in food, medicine and agriculture. Widely used in pesticides, feed and daily chemical industries.
           </p>
           <p className="mt-3 text-ink/70">
-            In the field, L-Glycine has a unique effect on crop photosynthesis, supports plant growth, improves sugar content and works as a natural metal chelator. It is a highly effective fertilizer synergist, usually blended with folic acid and other monomer amino acids to build formulas.
+            In the field, Glycine has a unique effect on crop photosynthesis, supports plant growth, improves sugar content and works as a natural metal chelator. It is a highly effective fertilizer synergist, usually blended with folic acid and other monomer amino acids to build formulas.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

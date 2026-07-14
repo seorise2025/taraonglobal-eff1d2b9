@@ -262,7 +262,7 @@ function Home() {
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Glycine (High-Quality Amino Acid)"
             imageAlt="Glycine 99% purity white crystalline amino acid powder in a petri dish, TARAON GLOBAL bulk supply"
-            desc="99% purity L-Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
+            desc="99% purity Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
             to="/products/glycine"
             orderSlug="glycine"
           />

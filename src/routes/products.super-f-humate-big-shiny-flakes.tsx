@@ -341,7 +341,7 @@ function ProductPage() {
           {
             to: "/products/glycine",
             title: "Glycine (Amino Acid)",
-            desc: "99% purity L-Glycine, blends well with humates in formulations.",
+            desc: "99% purity Glycine, blends well with humates in formulations.",
           },
           {
             to: "/products/vigora",
