@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
-import { trackEmail, trackPhone, trackWhatsApp } from "@/lib/analytics";
+import { trackEmail, trackWhatsApp } from "@/lib/analytics";
 
 export function CTABand({
   title,
   subtitle,
-  primaryLabel = "Request Current Price",
+  primaryLabel = "Request Bulk Price",
 }: {
   title: string;
   subtitle?: string;
@@ -49,14 +49,7 @@ export function CTABand({
               onClick={() => trackEmail(undefined, "cta_band")}
               className="inline-flex items-center justify-center gap-2 rounded-sm border border-cream/30 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
             >
-              <Mail className="h-4 w-4" /> Email Us
-            </a>
-            <a
-              href="tel:+916359193666"
-              onClick={() => trackPhone("cta_band")}
-              className="inline-flex items-center justify-center gap-2 text-sm text-cream/80 hover:text-gold"
-            >
-              <Phone className="h-3.5 w-3.5" /> +91 63591 93666
+              <Mail className="h-4 w-4" /> Email
             </a>
           </div>
         </div>
