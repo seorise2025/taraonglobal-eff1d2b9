@@ -230,12 +230,12 @@ function Home() {
         </div>
       </section>
 
-      {/* THE TWO PRODUCTS */}
+      {/* PRODUCT RANGE */}
       <section className="container-page py-20">
         <SectionHeading
           eyebrow="Our range"
-          title="Two Products. One Standard."
-          intro="We don't stock twenty products with small differences. We stand behind two, and we supply them right."
+          title="Four Products. One Standard."
+          intro="Potassium humate flakes, Glycine, and Vigora plant biostimulant. Clear specs, 25 Kgs packs where applicable, and direct ordering from TARAON GLOBAL."
         />
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">

@@ -23,11 +23,16 @@ import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const NAV = [
   { to: "/", label: "Home" },
-  { to: "/products/super-potassium-shiny-flakes-98", label: "Super Potassium 98%" },
-  { to: "/products/super-f-humate-big-shiny-flakes", label: "Super F Big Flakes" },
   { to: "/applications", label: "Applications" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
+] as const;
+
+const PRODUCT_NAV = [
+  { to: "/products/super-potassium-shiny-flakes-98", label: "Super Potassium Shiny Flakes 98%" },
+  { to: "/products/super-f-humate-big-shiny-flakes", label: "Super F Humate Big Shiny Flakes" },
+  { to: "/products/glycine", label: "Glycine (Amino Acid)" },
+  { to: "/products/vigora", label: "Vigora Plant Biostimulant" },
 ] as const;
 
 function NotFoundComponent() {
@@ -326,7 +331,7 @@ function Header() {
 
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {NAV.slice(0, 1).concat(NAV.slice(3)).map((item) => (
+          {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
@@ -342,18 +347,11 @@ function Header() {
               Products
             </button>
             <div className="invisible absolute right-0 top-full w-72 translate-y-1 rounded-md border border-border bg-card p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              <Link to="/products/super-potassium-shiny-flakes-98" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
-                Super Potassium Shiny Flakes 98%
-              </Link>
-              <Link to="/products/super-f-humate-big-shiny-flakes" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
-                Super F Humate Big Shiny Flakes
-              </Link>
-              <Link to="/products/glycine" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
-                Glycine (Amino Acid)
-              </Link>
-              <Link to="/products/vigora" className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
-                Vigora Plant Biostimulant
-              </Link>
+              {PRODUCT_NAV.map((item) => (
+                <Link key={item.to} to={item.to} className="block rounded-sm px-3 py-2 text-sm hover:bg-secondary">
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         </nav>
@@ -410,6 +408,21 @@ function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="mt-3 border-t border-border pt-3">
+              <div className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+                Products
+              </div>
+              {PRODUCT_NAV.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-sm px-3 py-3 text-sm font-medium text-forest-deep hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
