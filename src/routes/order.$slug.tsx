@@ -88,7 +88,21 @@ function OrderPage() {
       .single();
     setSubmitting(false);
     if (error || !data) {
-      toast.error("Could not place order. Please try again or WhatsApp us.");
+      const fallbackMsg =
+        `Hi TARAON GLOBAL, I could not submit the order form. Please take my enquiry:\n\n` +
+        `Product: ${product.name}\n` +
+        `Quantity: ${d.quantity} ${product.unit} (${product.pack} pack)\n` +
+        `Name: ${d.customer_name}\n` +
+        `Phone: ${d.phone}` +
+        (d.email ? `\nEmail: ${d.email}` : "") +
+        (d.city || d.state ? `\nLocation: ${[d.city, d.state].filter(Boolean).join(", ")}` : "") +
+        (d.notes ? `\nNotes: ${d.notes}` : "");
+      const fallbackWa = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(fallbackMsg)}`;
+      toast.error("Order submission failed. Opening WhatsApp so you can send it directly.", {
+        action: { label: "Open WhatsApp", onClick: () => window.open(fallbackWa, "_blank", "noopener,noreferrer") },
+        duration: 8000,
+      });
+      window.open(fallbackWa, "_blank", "noopener,noreferrer");
       return;
     }
     const summary =

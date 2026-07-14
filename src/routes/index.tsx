@@ -261,6 +261,7 @@ function Home() {
             image={glycineImg.url}
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Glycine (High-Quality Amino Acid)"
+            imageAlt="Glycine 99% purity white crystalline amino acid powder in a petri dish, TARAON GLOBAL bulk supply"
             desc="99% purity L-Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
             to="/products/glycine"
             orderSlug="glycine"
@@ -269,10 +270,12 @@ function Home() {
             image={vigoraImg.url}
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Vigora Plant Biostimulant"
+            imageAlt="Vigora concentrated liquid plant biostimulant bottle for Indian crops by TARAON GLOBAL"
             desc="Concentrated liquid biostimulant. Better flowering, stronger roots, higher yield quality across Indian crops."
             to="/products/vigora"
             orderSlug="vigora"
           />
+
         </div>
       </section>
 
@@ -415,6 +418,7 @@ function ProductCard({
   srcSet,
   sizes,
   name,
+  imageAlt,
   desc,
   to,
   orderSlug,
@@ -423,6 +427,7 @@ function ProductCard({
   srcSet?: string;
   sizes?: string;
   name: string;
+  imageAlt?: string;
   desc: string;
   to: string;
   orderSlug: "super-potassium-shiny-flakes-98" | "super-f-humate-big-shiny-flakes" | "glycine" | "vigora";
@@ -434,7 +439,7 @@ function ProductCard({
           src={image}
           srcSet={srcSet}
           sizes={sizes}
-          alt={name}
+          alt={imageAlt ?? name}
           width={960}
           height={576}
           loading="lazy"
