@@ -63,7 +63,29 @@ function OrderPage() {
   const { slug } = Route.useParams();
   const product = PRODUCTS[slug as ProductKey];
   const [submitting, setSubmitting] = useState(false);
-  const [placed, setPlaced] = useState<null | { order_number: string; waHref: string; mailHref: string }>(null);
+  const [placed, setPlaced] = useState<null | {
+    order_number: string;
+    id: string;
+    waHref: string;
+    mailHref: string;
+    details: Record<string, string>;
+  }>(null);
+  const [fallback, setFallback] = useState<null | { waHref: string; message: string }>(null);
+
+  function buildFallback(d: z.infer<typeof orderSchema>) {
+    const msg =
+      `Hi TARAON GLOBAL, I could not submit the order form. Please take my order:\n\n` +
+      `Product: ${product.name}\n` +
+      `Quantity: ${d.quantity} ${product.unit} (${product.pack} pack)\n` +
+      `Name: ${d.customer_name}\n` +
+      `Phone: ${d.phone}` +
+      (d.email ? `\nEmail: ${d.email}` : "") +
+      (d.company ? `\nCompany: ${d.company}` : "") +
+      (d.city || d.state ? `\nLocation: ${[d.city, d.state].filter(Boolean).join(", ")}` : "") +
+      (d.buyer_type ? `\nBuyer type: ${d.buyer_type}` : "") +
+      (d.notes ? `\nNotes: ${d.notes}` : "");
+    return { message: msg, waHref: `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(msg)}` };
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -93,25 +115,17 @@ function OrderPage() {
         buyer_type: d.buyer_type || null,
         notes: d.notes || null,
       })
-      .select("order_number")
+      .select("id, order_number")
       .single();
     setSubmitting(false);
     if (error || !data) {
-      const fallbackMsg =
-        `Hi TARAON GLOBAL, I could not submit the order form. Please take my enquiry:\n\n` +
-        `Product: ${product.name}\n` +
-        `Quantity: ${d.quantity} ${product.unit} (${product.pack} pack)\n` +
-        `Name: ${d.customer_name}\n` +
-        `Phone: ${d.phone}` +
-        (d.email ? `\nEmail: ${d.email}` : "") +
-        (d.city || d.state ? `\nLocation: ${[d.city, d.state].filter(Boolean).join(", ")}` : "") +
-        (d.notes ? `\nNotes: ${d.notes}` : "");
-      const fallbackWa = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(fallbackMsg)}`;
-      toast.error("Order submission failed. Opening WhatsApp so you can send it directly.", {
-        action: { label: "Open WhatsApp", onClick: () => window.open(fallbackWa, "_blank", "noopener,noreferrer") },
-        duration: 8000,
+      const fb = buildFallback(d);
+      setFallback(fb);
+      toast.error("Order submission failed. Use the WhatsApp link below to send it directly.", {
+        action: { label: "Open WhatsApp", onClick: () => window.open(fb.waHref, "_blank", "noopener,noreferrer") },
+        duration: 10000,
       });
-      window.open(fallbackWa, "_blank", "noopener,noreferrer");
+      window.open(fb.waHref, "_blank", "noopener,noreferrer");
       return;
     }
     const summary =
@@ -128,23 +142,48 @@ function OrderPage() {
       (d.notes ? `Notes: ${d.notes}\n` : "");
     const waHref = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(summary)}`;
     const mailHref =
-      `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(`New Order ${data.order_number} — ${product.name}`)}` +
+      `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(`New Order ${data.order_number} - ${product.name}`)}` +
       `&body=${encodeURIComponent(summary)}`;
-    setPlaced({ order_number: data.order_number, waHref, mailHref });
-    // Auto-open WhatsApp
+    const details: Record<string, string> = {
+      Product: product.name,
+      Quantity: `${d.quantity} ${product.unit} (${product.pack} pack)`,
+      Name: d.customer_name,
+      Phone: d.phone,
+    };
+    if (d.whatsapp) details.WhatsApp = d.whatsapp;
+    if (d.email) details.Email = d.email;
+    if (d.company) details.Company = d.company;
+    if (d.city || d.state) details.Location = [d.city, d.state].filter(Boolean).join(", ");
+    if (d.buyer_type) details["Buyer type"] = d.buyer_type;
+    if (d.notes) details.Notes = d.notes;
+    setPlaced({ order_number: data.order_number, id: data.id, waHref, mailHref, details });
+    setFallback(null);
     window.open(waHref, "_blank", "noopener,noreferrer");
-    toast.success(`Order ${data.order_number} placed`);
+    toast.success(`Order ${data.order_number} saved`);
   }
 
   if (placed) {
     return (
       <section className="container-page py-20">
-        <div className="mx-auto max-w-xl rounded-lg border border-border bg-card p-8 text-center">
-          <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gold/20 text-forest-deep font-display text-lg">✓</div>
-          <h1 className="mt-4 font-display text-3xl text-forest-deep">Order placed</h1>
-          <p className="mt-2 text-ink/70">Reference: <span className="font-semibold text-forest-deep">{placed.order_number}</span></p>
-          <p className="mt-4 text-sm text-ink/70">A WhatsApp draft has opened. Tap send so we get it. You can also email it.</p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <div className="mx-auto max-w-xl rounded-lg border border-border bg-card p-8">
+          <div className="text-center">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gold/20 text-forest-deep font-display text-lg">✓</div>
+            <h1 className="mt-4 font-display text-3xl text-forest-deep">Order placed</h1>
+            <p className="mt-2 text-ink/70">
+              Order ID: <span className="font-semibold text-forest-deep">{placed.order_number}</span>
+            </p>
+            <p className="mt-1 text-xs text-ink/50">Reference: {placed.id}</p>
+          </div>
+          <dl className="mt-6 grid gap-x-6 gap-y-2 rounded border border-border bg-secondary/40 p-4 text-sm sm:grid-cols-2">
+            {Object.entries(placed.details).map(([k, v]) => (
+              <div key={k} className="flex gap-2">
+                <dt className="font-medium text-forest-deep">{k}:</dt>
+                <dd className="text-ink/80 break-words">{v}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-6 text-center text-sm text-ink/70">A WhatsApp draft has opened. Tap send so we get it. You can also email it.</p>
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
             <a href={placed.waHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-5 py-3 text-sm font-medium text-white">
               <MessageCircle className="h-4 w-4" /> Send on WhatsApp
             </a>
@@ -152,7 +191,9 @@ function OrderPage() {
               <Mail className="h-4 w-4" /> Email order
             </a>
           </div>
-          <Link to="/" className="mt-8 inline-block text-sm text-ink/60 underline">Back to home</Link>
+          <div className="mt-6 text-center">
+            <Link to="/" className="text-sm text-ink/60 underline">Back to home</Link>
+          </div>
         </div>
       </section>
     );
