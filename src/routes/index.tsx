@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import {
   ArrowRight,
   MessageCircle,
+  Mail,
   Package,
   Droplets,
   BadgeCheck,
@@ -135,18 +136,24 @@ function Home() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     to="/contact"
-                    className="group inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
+                    className="group inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-gold hover:text-forest-deep"
                   >
                     Request Bulk Price
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                   <a
-                    href="https://wa.me/916359193666"
+                    href="https://wa.me/916359193666?text=Hi%20TARAON%20GLOBAL%2C%20please%20share%20your%20latest%20price%20list%20and%20dispatch%20time.%20My%20city%2Fstate%3A%20___."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep transition-colors hover:border-gold hover:text-forest hover:bg-gold/10"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
                   >
-                    <MessageCircle className="h-4 w-4" /> Talk on WhatsApp
+                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                  </a>
+                  <a
+                    href="mailto:info@taraonglobal.com?subject=Bulk%20enquiry%2C%20TARAON%20GLOBAL&body=Hello%20TARAON%20GLOBAL%2C%0A%0APlease%20share%20your%20latest%20price%20list%20and%20dispatch%20time.%0A%0AProduct%3A%20%0AQuantity%3A%20%0ACity%20%2F%20State%3A%20%0A%0AThanks."
+                    className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
+                  >
+                    <Mail className="h-4 w-4" /> Email Us
                   </a>
                 </div>
               </div>
