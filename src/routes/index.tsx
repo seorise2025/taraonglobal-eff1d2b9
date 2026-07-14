@@ -97,7 +97,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* HERO — framed grid + data overlay */}
+      {/* HERO , framed grid + data overlay */}
       <section className="relative overflow-hidden">
         <div className="container-page py-8 md:py-14">
           <motion.div
@@ -106,7 +106,7 @@ function Home() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-1 border border-forest-deep/10 bg-card/50 lg:grid-cols-12"
           >
-            {/* LEFT — Headline column */}
+            {/* LEFT , Headline column */}
             <div className="flex flex-col justify-between border-b border-forest-deep/10 p-6 sm:p-10 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-14">
               <div>
                 <div className="mb-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
@@ -176,7 +176,7 @@ function Home() {
               </div>
             </div>
 
-            {/* RIGHT — Framed visual + data card */}
+            {/* RIGHT , Framed visual + data card */}
             <div className="relative min-h-[380px] overflow-hidden bg-forest-deep lg:col-span-5 lg:min-h-0">
               <img
                 src={heroImgFallback}

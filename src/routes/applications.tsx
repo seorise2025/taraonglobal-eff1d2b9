@@ -18,7 +18,7 @@ const APP_FAQS = [
   },
   {
     q: "What is the potassium humate dose per acre?",
-    a: "Typical field use ranges from about 2 to 5 kg per acre per season, split across soil, drip or foliar applications. Exact dose depends on crop, soil test and stage — share your crop and system with our team for a specific recommendation.",
+    a: "Typical field use ranges from about 2 to 5 kg per acre per season, split across soil, drip or foliar applications. Exact dose depends on crop, soil test and stage , share your crop and system with our team for a specific recommendation.",
   },
   {
     q: "Can potassium humate be blended with NPK fertilizers?",

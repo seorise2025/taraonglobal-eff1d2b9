@@ -29,11 +29,11 @@ type OrderRow = {
 const STATUSES: OrderRow["status"][] = ["new", "confirmed", "dispatched", "delivered", "cancelled"];
 
 const STATUS_MESSAGE: Record<OrderRow["status"], string> = {
-  new: "Hi {name}, we have received your order {num} for {qty} bags of {product}. We will confirm shortly. — TARAON GLOBAL",
-  confirmed: "Hi {name}, your order {num} for {qty} bags of {product} is confirmed. Dispatch details will follow. — TARAON GLOBAL",
-  dispatched: "Hi {name}, your order {num} ({qty} bags of {product}) has been dispatched. — TARAON GLOBAL",
+  new: "Hi {name}, we have received your order {num} for {qty} bags of {product}. We will confirm shortly. , TARAON GLOBAL",
+  confirmed: "Hi {name}, your order {num} for {qty} bags of {product} is confirmed. Dispatch details will follow. , TARAON GLOBAL",
+  dispatched: "Hi {name}, your order {num} ({qty} bags of {product}) has been dispatched. , TARAON GLOBAL",
   delivered: "Hi {name}, your order {num} has been delivered. Thank you for choosing TARAON GLOBAL.",
-  cancelled: "Hi {name}, your order {num} has been cancelled. Please reach out if you need help. — TARAON GLOBAL",
+  cancelled: "Hi {name}, your order {num} has been cancelled. Please reach out if you need help. , TARAON GLOBAL",
 };
 
 export const Route = createFileRoute("/_authenticated/admin")({
@@ -160,7 +160,7 @@ function AdminPage() {
           const waNumber = (o.whatsapp || o.phone).replace(/\D/g, "");
           const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
           const mailHref = o.email
-            ? `mailto:${o.email}?subject=${encodeURIComponent(`Order ${o.order_number} — ${o.status}`)}&body=${encodeURIComponent(msg)}`
+            ? `mailto:${o.email}?subject=${encodeURIComponent(`Order ${o.order_number} , ${o.status}`)}&body=${encodeURIComponent(msg)}`
             : null;
           return (
             <article key={o.id} className="rounded-lg border border-border bg-card p-5">
