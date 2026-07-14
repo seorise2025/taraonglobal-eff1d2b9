@@ -8,6 +8,7 @@ import {
   Droplets,
   BadgeCheck,
   MapPin,
+  Phone,
 } from "lucide-react";
 import heroImg from "@/assets/hero-flakes.jpg?w=640;960;1280&format=webp&as=srcset";
 import heroImgFallback from "@/assets/hero-flakes.jpg?w=960&format=webp";
@@ -29,46 +30,50 @@ import { trackEmail, trackWhatsApp } from "@/lib/analytics";
 
 const HOME_FAQS = [
   {
-    q: "What is potassium humate and what is it used for?",
-    a: "Potassium humate is a soil conditioner and plant growth support input made from natural humic substances (leonardite, lignite or oxidised brown coal) reacted with potassium hydroxide. Farmers, dealers and fertilizer companies use it to improve soil structure, root growth, nutrient uptake and fertiliser efficiency across field crops, vegetables, fruit and plantation crops.",
+    q: "What is potassium humate used for?",
+    a: "Potassium humate is commonly used to support soil condition, nutrient use efficiency, root development, and crop management across application methods such as soil use, drip irrigation, fertigation, and foliar spray. Farmers, dealers, distributors, and fertiliser blenders use it as a dependable soil conditioning input.",
   },
   {
-    q: "What is the price of potassium humate shiny flakes in India?",
-    a: "TARAON GLOBAL supplies potassium humate shiny flakes in a standard 25 Kgs pack with bulk and dealer pricing on request. Rates depend on quantity, destination and current stock. Call Rajesh Kumar Trivedi on +91 63591 93666 or send your quantity through the contact page for a same-day quote.",
+    q: "Do you supply only potassium humate?",
+    a: "No. Potassium humate is the lead product line, but TARAON GLOBAL also supplies selected products such as Glycine and Vigora plant biostimulant as part of a focused trading range for buyers who prefer sourcing multiple agri inputs from one responsive team.",
   },
   {
-    q: "What is the 25 kg price and pack details?",
-    a: "Everything ships in the same 25 Kgs kraft bag - the standard pack for farmers, dealers and distributors. Batch numbers are printed on every bag and a current-batch COA is available on request. Quotations for 25 kg, half-tonne, tonne and container quantities are available.",
+    q: "Do you supply across India?",
+    a: "Yes. TARAON GLOBAL dispatches from Ahmedabad, Gujarat to buyers across every Indian state and union territory. Orders from farmer groups, dealers, distributors, and formulation buyers are handled from the same location.",
   },
   {
-    q: "What are the main humic acid fertilizer uses?",
-    a: "Humic acid fertilizer is used in soil application, drip irrigation, fertigation, foliar spray and NPK blending. It helps soil hold water and nutrients so the plant can actually use what you are feeding it, and supports microbial activity around the root zone.",
+    q: "How can I request price and packing details?",
+    a: "Send your product name, quantity, and delivery city by WhatsApp, phone, contact form, or email. You get a direct reply from the sales team with price, packing, and dispatch details, not an automated response.",
   },
   {
-    q: "Do you supply potassium humate across India?",
-    a: "Yes. We dispatch from our Ahmedabad warehouse to buyers across Gujarat and every Indian state and union territory. Dealer, distributor and fertilizer-company orders are handled from the same location.",
+    q: "What is the standard pack size?",
+    a: "Every product ships in a standard 25 Kgs pack with batch numbers printed on every bag. Current batch COA is available on request. Quotations for 25 Kg, half tonne, tonne and container quantities are available.",
   },
 ];
+
+const CANONICAL = "https://taraonglobal.lovable.app/";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Potassium Humate Fertilizer Supplier in India | TARAON GLOBAL" },
+      { title: "TARAON GLOBAL | Potassium Humate and Agri Input Supplier in India" },
       {
         name: "description",
         content:
-          "TARAON GLOBAL is an Ahmedabad based trading company supplying 98% potassium humate shiny flakes to farmers, dealers and distributors. 25 Kgs packs, shipped across India.",
+          "Ahmedabad based trading company supplying potassium humate flakes, Glycine, and plant biostimulants with clear specs, standard 25 Kgs packing, and bulk supply across India.",
       },
-      { property: "og:title", content: "Potassium Humate Fertilizer Supplier in India | TARAON GLOBAL" },
+      { name: "keywords", content: "potassium humate supplier India, potassium humate flakes Ahmedabad, humic acid fertilizer supplier, agri input trading company, glycine supplier India, plant biostimulant powder, bulk humate 25 kg" },
+      { property: "og:title", content: "TARAON GLOBAL | Potassium Humate and Agri Input Supplier in India" },
       {
         property: "og:description",
         content:
-          "Trading company supplying potassium humate shiny flakes. Farmers use it. Dealers stock it. Distributors move it in bulk.",
+          "Ahmedabad based trading company supplying potassium humate, Glycine, and plant biostimulants. Clear specs, 25 Kgs packing, India wide dispatch.",
       },
-      { property: "og:url", content: "https://taraonglobal.lovable.app/" },
+      { property: "og:url", content: CANONICAL },
       { property: "og:type", content: "website" },
     ],
     links: [
+      { rel: "canonical", href: CANONICAL },
       {
         rel: "preload",
         as: "image",
@@ -99,7 +104,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* HERO , framed grid + data overlay */}
+      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="container-page py-8 md:py-14">
           <motion.div
@@ -108,32 +113,25 @@ function Home() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-1 border border-forest-deep/10 bg-card/50 lg:grid-cols-12"
           >
-            {/* LEFT , Headline column */}
+            {/* LEFT */}
             <div className="flex flex-col justify-between border-b border-forest-deep/10 p-6 sm:p-10 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-14">
               <div>
                 <div className="mb-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-                  <span className="h-px w-8 bg-gold" /> Since day one, one product done right
+                  <span className="h-px w-8 bg-gold" /> Ahmedabad based agri input trading company
                 </div>
                 <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl lg:text-[4.25rem]">
-                  Potassium Humate That Actually{" "}
-                  <span className="italic font-normal text-gold">Dissolves</span>{" "}
-                  the Way It Should
+                  Potassium Humate Led Supply for India's{" "}
+                  <span className="italic font-normal text-gold">Agri Trade</span>
                 </h1>
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
-                  TARAON GLOBAL is an{" "}
+                  TARAON GLOBAL is a trading company based in{" "}
                   <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
-                    Ahmedabad based trading company
-                  </Link>{" "}
-                  supplying 98% potassium humate shiny flakes derived from natural
-                  leonardite, lignite or oxidised brown coal. Rich in humic acid,
-                  fulvic acid and potassium. Built for soil that needs to work harder.
+                    Ahmedabad, Gujarat
+                  </Link>
+                  , supplying potassium humate flakes and selected agri input products for farmers, dealers, distributors, and bulk buyers across India.
                 </p>
                 <p className="mt-3 max-w-xl text-ink/60">
-                  Farmers use it in{" "}
-                  <Link to="/applications" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
-                    drip irrigation and fertigation
-                  </Link>
-                  . Dealers stock it. Distributors move it in bulk across India.
+                  We focus on clear specifications, practical packing, and direct response when you need price, dispatch, or product details.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
@@ -150,25 +148,25 @@ function Home() {
                     onClick={() => trackWhatsApp(undefined, "home_hero")}
                     className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
                   >
-                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                    <MessageCircle className="h-4 w-4" /> WhatsApp Sales
                   </a>
                   <a
                     href={buildEmailHref("general")}
                     onClick={() => trackEmail(undefined, "home_hero")}
                     className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
                   >
-                    <Mail className="h-4 w-4" /> Email Us
+                    <Mail className="h-4 w-4" /> Email for Quote
                   </a>
                 </div>
               </div>
 
-              {/* Spec strip */}
+              {/* Trust strip */}
               <div className="mt-14 grid grid-cols-2 gap-6 border-t border-forest-deep/10 pt-6 sm:grid-cols-4">
                 {[
                   { k: "98%", v: "Water soluble" },
-                  { k: "55-60%", v: "Humic acid" },
                   { k: "25 Kg", v: "Standard pack" },
-                  { k: "India", v: "Wide supply" },
+                  { k: "Batch", v: "Tested supply" },
+                  { k: "India", v: "Wide dispatch" },
                 ].map((s) => (
                   <div key={s.v}>
                     <div className="font-display text-2xl text-forest-deep">{s.k}</div>
@@ -180,25 +178,23 @@ function Home() {
               </div>
             </div>
 
-            {/* RIGHT , Framed visual + data card */}
+            {/* RIGHT visual */}
             <div className="relative min-h-[380px] overflow-hidden bg-forest-deep lg:col-span-5 lg:min-h-0">
               <img
                 src={heroImgFallback}
                 srcSet={heroImg}
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                alt="Black shiny potassium humate flakes in warm golden light"
+                alt="Black shiny potassium humate flakes supplied by TARAON GLOBAL Ahmedabad"
                 width={1200}
                 height={1600}
                 fetchPriority="high"
                 decoding="async"
                 className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-luminosity dark:opacity-90 dark:mix-blend-normal"
               />
-              {/* Gold frame */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-6 border border-gold/30"
               />
-              {/* Data overlay card */}
               <div className="absolute bottom-0 right-0 max-w-[16rem] border-l border-t border-forest-deep/10 bg-cream p-5 sm:p-6">
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
@@ -214,7 +210,7 @@ function Home() {
                   <CountUp to={60} suffix="%" />
                 </div>
                 <p className="mt-3 text-[11px] leading-snug text-ink/60">
-                  Premium leonardite-sourced flakes, numbered and COA-backed.
+                  Standard 25 Kgs pack, batch numbered, COA on request.
                 </p>
               </div>
             </div>
@@ -223,13 +219,13 @@ function Home() {
       </section>
 
       {/* TRUST BAR */}
-      <section className="border-y border-border bg-card" aria-label="Product guarantees">
+      <section className="border-y border-border bg-card" aria-label="Supply guarantees">
         <div className="container-page grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: Package, label: "25 Kgs standard pack" },
             { icon: Droplets, label: "98% water soluble" },
-            { icon: BadgeCheck, label: "Batch tested, batch numbered" },
-            { icon: MapPin, label: "Ahmedabad based, India wide supply" },
+            { icon: Package, label: "25 Kgs standard pack" },
+            { icon: BadgeCheck, label: "Batch tested supply" },
+            { icon: MapPin, label: "Ahmedabad to India wide dispatch" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3">
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-secondary text-forest-deep">
@@ -241,12 +237,30 @@ function Home() {
         </div>
       </section>
 
+      {/* INTRO */}
+      <section className="container-page py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+            A focused product range, supplied with clarity
+          </div>
+          <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
+            Built for buyers who want dependable quality and straight answers
+          </h2>
+          <p className="mt-5 text-ink/75">
+            We are not a giant catalog company trying to sell everything. TARAON GLOBAL supplies a focused range of products where buyers need dependable quality, straightforward specifications, and clear communication before ordering.
+          </p>
+          <p className="mt-3 text-ink/60">
+            Potassium humate is our lead product line, supported by selected products such as Glycine and Vigora plant biostimulant for buyers who want practical sourcing from one responsive team.
+          </p>
+        </div>
+      </section>
+
       {/* PRODUCT RANGE */}
-      <section className="container-page py-20">
+      <section className="container-page pb-20">
         <SectionHeading
-          eyebrow="Our range"
-          title="Four Products. One Standard."
-          intro="Potassium humate flakes, Glycine, and Vigora plant biostimulant. Clear specs, 25 Kgs packs where applicable, and direct ordering from TARAON GLOBAL."
+          eyebrow="Products we supply"
+          title="High Demand Agri Inputs for Bulk Trade"
+          intro="Our range is built around agri input products for bulk trade, field use, blending, and distribution. Clear specs, 25 Kgs packing, direct ordering from TARAON GLOBAL."
         />
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -255,7 +269,7 @@ function Home() {
             srcSet={heroImg}
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Super Potassium Shiny Flakes 98%"
-            desc="Black shiny flakes. 98% purity, 55 to 60% humic acid. Built for soil, drip, fertigation and foliar spray."
+            desc="Black shiny potassium humate flakes with 98% water solubility and 55 to 60% humic acid. Suitable for soil application, drip irrigation, fertigation, foliar spray, and fertiliser blending."
             to="/products/super-potassium-shiny-flakes-98"
             orderSlug="super-potassium-shiny-flakes-98"
           />
@@ -264,16 +278,16 @@ function Home() {
             srcSet={productBigImg}
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Super F Humate Big Shiny Flakes"
-            desc="Same strength, bigger flake. Made for dealers who move stock fast."
+            desc="A larger flake humate option with the same core humate strength in a different physical form. Built for regular stock movement and bulk trading."
             to="/products/super-f-humate-big-shiny-flakes"
             orderSlug="super-f-humate-big-shiny-flakes"
           />
           <ProductCard
             image={glycineImg.url}
             sizes="(min-width: 768px) 48vw, 100vw"
-            name="Glycine (High-Quality Amino Acid)"
-            imageAlt="Glycine 99% purity white crystalline amino acid powder in a petri dish, TARAON GLOBAL bulk supply"
-            desc="99% purity Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
+            name="Glycine"
+            imageAlt="High purity Glycine bulk supply by TARAON GLOBAL"
+            desc="High purity Glycine supplied for multiple industries including agriculture, food, pharma, and daily chemical use. A useful adjacent product for buyers sourcing across categories."
             to="/products/glycine"
             orderSlug="glycine"
           />
@@ -281,41 +295,38 @@ function Home() {
             image={vigoraImg.url}
             sizes="(min-width: 768px) 48vw, 100vw"
             name="Vigora Plant Biostimulant"
-            imageAlt="Vigora 99% pure water soluble powder plant biostimulant for Indian crops by TARAON GLOBAL"
-            desc="Water soluble powder biostimulant, 99% pure. Better flowering, stronger roots, higher yield quality across Indian crops."
+            imageAlt="Vigora water soluble powder plant biostimulant 25 Kgs bag by TARAON GLOBAL"
+            desc="Water soluble plant biostimulant powder supplied for crop support where buyers want better flowering, root strength, and overall crop quality."
             to="/products/vigora"
             orderSlug="vigora"
           />
-
         </div>
       </section>
 
-      {/* WHY HUMATE */}
+      {/* WHY BUYERS CHOOSE US */}
       <section className="bg-forest-deep py-20 text-cream">
         <div className="container-page grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
           <div>
             <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-              <span className="h-px w-8 bg-gold" /> Why humate, why now
+              <span className="h-px w-8 bg-gold" /> Why buyers work with us
             </div>
             <h2 className="font-display text-4xl leading-tight text-cream">
-              Soil Gets Tired Too
+              Straight Answers, Standard Packs, Repeat Supply
             </h2>
             <p className="mt-5 text-cream/80">
-              Years of chemical fertilizer without a break leaves soil weaker. It holds
-              less water. It feeds roots less. Humic acid brings some of that back.
+              Our business is built around practical movement of stock, quick response, and repeat supply confidence rather than sales talk.
             </p>
             <p className="mt-3 text-cream/60">
-              This is not a magic fix. It is a proven input that fertilizer formulators
-              and farmers have used for years. We just make it well.
+              The company is led by Rajesh Kumar Trivedi, with over 20 years of experience in this industry. One person answers the phone, and the answer is the same one you get by email.
             </p>
           </div>
           <ul className="grid gap-3">
             {[
-              "Better soil structure",
-              "Roots that go deeper",
-              "Fertilizer that actually gets used, not wasted",
-              "More microbe activity in the soil",
-              "Crops that hold up under stress",
+              "Clear specifications before order, so you know what you are buying",
+              "Batch tested product supply for better confidence",
+              "Standard 25 Kgs packing built for practical bulk movement",
+              "Direct communication on price, packing, and dispatch",
+              "Ahmedabad based supply with India wide buyer support",
             ].map((b) => (
               <li
                 key={b}
@@ -329,7 +340,7 @@ function Home() {
         </div>
       </section>
 
-      {/* WHERE IT WORKS */}
+      {/* APPLICATIONS */}
       <section className="container-page py-20">
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
           <div className="relative order-2 md:order-1">
@@ -337,7 +348,7 @@ function Home() {
               src={fieldImgFallback}
               srcSet={fieldImg}
               sizes="(min-width: 768px) 55vw, 100vw"
-              alt="Deep plant roots in fertile soil under a crop row"
+              alt="Potassium humate application in Indian farm field, drip irrigation and foliar use"
               width={1600}
               height={1000}
               loading="lazy"
@@ -347,16 +358,17 @@ function Home() {
           </div>
           <div className="order-1 md:order-2">
             <SectionHeading
-              eyebrow="Where it works"
-              title="From the Field to the Drip Line"
+              eyebrow="Where our lead products fit"
+              title="Clean Solubility, Consistent Handling"
+              intro="Our potassium humate products are commonly supplied for practical farm and blending use cases where clean solubility and consistent handling matter."
             />
             <dl className="mt-8 grid gap-5">
               {[
-                ["Soil Application", "Mix it in before or during the season."],
-                ["Drip Irrigation", "Dissolves fast, no clogging mess."],
-                ["Fertigation", "Fits straight into your nutrient schedule."],
+                ["Soil Application", "Mix in before or during the season."],
+                ["Drip Irrigation", "Dissolves fast without clogging."],
+                ["Fertigation", "Fits into your existing nutrient schedule."],
                 ["Foliar Spray", "Use as advised for your crop stage."],
-                ["Fertilizer Blending", "Mixes clean with NPK and organic inputs."],
+                ["Fertiliser Blending", "Blends clean with NPK and organic inputs."],
               ].map(([t, d]) => (
                 <div
                   key={t}
@@ -377,39 +389,61 @@ function Home() {
         </div>
       </section>
 
-      {/* INDIA COVERAGE MAP */}
+      {/* INDIA MAP */}
       <IndiaMapCoverage />
 
-      {/* WHY BUYERS STAY */}
+      {/* SALES SECTION */}
       <section className="container-page py-20">
-        <SectionHeading
-          eyebrow="Why buyers stay"
-          title="No Guesswork on What You're Buying"
-        />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "Real spec sheet, not a marketing sheet",
-            "Batch numbers on every bag",
-            "25 Kgs standard pack, consistent batch to batch",
-            "One person answers the phone. His name is Rajesh.",
-          ].map((t, i) => (
-            <div
-              key={t}
-              className="group rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg"
+        <div className="mx-auto max-w-3xl rounded-lg border border-border bg-card p-8 text-center sm:p-12">
+          <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+            Direct sales support
+          </div>
+          <h2 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
+            Need Price, Packing, or Dispatch Details?
+          </h2>
+          <p className="mt-4 text-ink/75">
+            Send the product name, quantity, and delivery location. You get a direct reply from the sales team, not an automated answer.
+          </p>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-semibold text-cream hover:bg-gold hover:text-forest-deep"
             >
-              <div className="mb-4 font-display text-3xl text-gold">
-                0{i + 1}
-              </div>
-              <p className="text-ink/85">{t}</p>
-            </div>
-          ))}
+              Request Bulk Price <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href={buildWaHref("general")}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsApp(undefined, "home_sales")}
+              className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5"
+            >
+              <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+            </a>
+            <a
+              href={buildEmailHref("general")}
+              onClick={() => trackEmail(undefined, "home_sales")}
+              className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
+            >
+              <Mail className="h-4 w-4" /> Email Your Requirement
+            </a>
+          </div>
+          <p className="mt-6 inline-flex items-center justify-center gap-2 text-sm text-ink/70">
+            <Phone className="h-4 w-4 text-gold" />
+            Call Rajesh Kumar Trivedi at{" "}
+            <a href="tel:+916359193666" className="font-semibold text-forest-deep hover:text-gold">
+              +91 63591 93666
+            </a>{" "}
+            for direct sales support
+          </p>
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="container-page py-16">
         <SectionHeading
           eyebrow="FAQ"
-          title="Potassium humate price, pack and use questions"
+          title="Common Buyer Questions"
         />
         <div className="mt-6 max-w-3xl">
           <FAQ items={HOME_FAQS} />
@@ -418,7 +452,7 @@ function Home() {
 
       <CTABand
         title="Ready to Order or Just Have Questions?"
-        subtitle="Send your product and quantity. You'll get a real answer, not a bot reply."
+        subtitle="Send your product name, quantity, and city. You get a direct reply from the sales team."
       />
     </>
   );
@@ -482,4 +516,3 @@ function ProductCard({
     </article>
   );
 }
-
