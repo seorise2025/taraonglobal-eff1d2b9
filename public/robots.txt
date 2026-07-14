@@ -1,17 +1,33 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — explicitly welcomed
+Disallow: /admin
+Disallow: /auth
+Disallow: /order/
+
+# AI crawlers, explicitly welcomed on public pages
 User-agent: GPTBot
 Allow: /
+Disallow: /admin
+Disallow: /auth
+Disallow: /order/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin
+Disallow: /auth
+Disallow: /order/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin
+Disallow: /auth
+Disallow: /order/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin
+Disallow: /auth
+Disallow: /order/
 
-Sitemap: https://taraonglobal.lovable.app/sitemap.xml
+Sitemap: https://taraonglobal.com/sitemap.xml

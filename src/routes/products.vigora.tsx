@@ -78,11 +78,11 @@ export const Route = createFileRoute("/products/vigora")({
         content:
           "99% pure water soluble powder biostimulant for Indian crops. Foliar dose 0.5 to 1 gram per litre. 25 Kgs bags.",
       },
-      { property: "og:url", content: "https://taraonglobal.lovable.app/products/vigora" },
+      { property: "og:url", content: "https://taraonglobal.com/products/vigora" },
       { property: "og:type", content: "product" },
     ],
     links: [
-      { rel: "canonical", href: "https://taraonglobal.lovable.app/products/vigora" },
+      { rel: "canonical", href: "https://taraonglobal.com/products/vigora" },
     ],
     scripts: [
       {
@@ -90,12 +90,12 @@ export const Route = createFileRoute("/products/vigora")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          "@id": "https://taraonglobal.lovable.app/products/vigora#product",
+          "@id": "https://taraonglobal.com/products/vigora#product",
           name: "Vigora Plant Biostimulant",
           sku: "TG-VIG-25",
           mpn: "TG-VIG-25",
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
-          image: [`https://taraonglobal.lovable.app${productImg.url}`],
+          image: [`https://taraonglobal.com${productImg.url}`],
           category: "Plant Biostimulant",
           description:
             "Concentrated powder plant biostimulant and yield enhancer for Indian farming conditions. 99% pure, 100% water soluble. Supports plant health, flowering, root development, fruit set and yield quality. Foliar dose 0.5 to 1 gram per litre of water, roughly 7.5 to 15 grams per 15 litre knapsack tank. Best applied during active growth stages and before or during flowering, in early morning or late evening.",
@@ -108,7 +108,7 @@ export const Route = createFileRoute("/products/vigora")({
           ],
           offers: {
             "@type": "Offer",
-            url: "https://taraonglobal.lovable.app/products/vigora",
+            url: "https://taraonglobal.com/products/vigora",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
             priceCurrency: "INR",
@@ -122,9 +122,9 @@ export const Route = createFileRoute("/products/vigora")({
             eligibleQuantity: { "@type": "QuantitativeValue", value: 25, unitCode: "KGM", unitText: "25 Kgs bag" },
             seller: {
               "@type": "Organization",
-              "@id": "https://taraonglobal.lovable.app/#organization",
+              "@id": "https://taraonglobal.com/#organization",
               name: "TARAON GLOBAL",
-              url: "https://taraonglobal.lovable.app/",
+              url: "https://taraonglobal.com/",
             },
           },
         }),
@@ -147,9 +147,9 @@ export const Route = createFileRoute("/products/vigora")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.lovable.app/#products" },
-            { "@type": "ListItem", position: 3, name: "Vigora", item: "https://taraonglobal.lovable.app/products/vigora" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.com/" },
+            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.com/#products" },
+            { "@type": "ListItem", position: 3, name: "Vigora", item: "https://taraonglobal.com/products/vigora" },
           ],
         }),
       },

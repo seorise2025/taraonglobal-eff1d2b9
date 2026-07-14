@@ -43,10 +43,10 @@ export const Route = createFileRoute("/about")({
         content:
           "One product done properly. Led by Rajesh Kumar Trivedi from Sarkhej Sanand Cross Road, Ahmedabad.",
       },
-      { property: "og:url", content: "https://taraonglobal.lovable.app/about" },
+      { property: "og:url", content: "https://taraonglobal.com/about" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://taraonglobal.lovable.app/about" }],
+    links: [{ rel: "canonical", href: "https://taraonglobal.com/about" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -54,8 +54,8 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "About", item: "https://taraonglobal.lovable.app/about" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.com/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://taraonglobal.com/about" },
           ],
         }),
       },
@@ -65,9 +65,9 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "AboutPage",
           name: "About TARAON GLOBAL",
-          url: "https://taraonglobal.lovable.app/about",
-          mainEntity: { "@id": "https://taraonglobal.lovable.app/#organization" },
-          about: { "@id": "https://taraonglobal.lovable.app/#rajesh-kumar-trivedi" },
+          url: "https://taraonglobal.com/about",
+          mainEntity: { "@id": "https://taraonglobal.com/#organization" },
+          about: { "@id": "https://taraonglobal.com/#rajesh-kumar-trivedi" },
         }),
       },
       {

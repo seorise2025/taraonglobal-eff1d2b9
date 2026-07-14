@@ -146,19 +146,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["Organization", "WholesaleStore"],
-          "@id": "https://taraonglobal.lovable.app/#organization",
+          "@id": "https://taraonglobal.com/#organization",
           name: "TARAON GLOBAL",
           alternateName: "TARAON GLOBAL - Potassium Humate Supplier",
-          url: "https://taraonglobal.lovable.app/",
-          logo: "https://taraonglobal.lovable.app/favicon.ico",
+          url: "https://taraonglobal.com/",
+          logo: "https://taraonglobal.com/favicon.ico",
           telephone: "+91-6359193666",
           foundingDate: "2020",
           founder: {
             "@type": "Person",
-            "@id": "https://taraonglobal.lovable.app/#rajesh-kumar-trivedi",
+            "@id": "https://taraonglobal.com/#rajesh-kumar-trivedi",
             name: "Rajesh Kumar Trivedi",
             jobTitle: "Founder & Managing Partner",
-            worksFor: { "@id": "https://taraonglobal.lovable.app/#organization" },
+            worksFor: { "@id": "https://taraonglobal.com/#organization" },
             knowsAbout: [
               "Potassium humate",
               "Humic acid",
@@ -169,7 +169,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             description:
               "Rajesh Kumar Trivedi has over 20 years of hands-on experience in the humate and agri-inputs industry, personally overseeing sourcing, batch verification and dealer relationships at TARAON GLOBAL.",
           },
-          employee: { "@id": "https://taraonglobal.lovable.app/#rajesh-kumar-trivedi" },
+          employee: { "@id": "https://taraonglobal.com/#rajesh-kumar-trivedi" },
           knowsAbout: [
             "Potassium humate",
             "Humic acid",
@@ -205,10 +205,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "@type": "OfferCatalog",
             name: "TARAON GLOBAL Product Range",
             itemListElement: [
-              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Super Potassium Shiny Flakes 98%", url: "https://taraonglobal.lovable.app/products/super-potassium-shiny-flakes-98" } },
-              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Super F Humate Big Shiny Flakes", url: "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes" } },
-              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Glycine (High-Quality Amino Acid)", url: "https://taraonglobal.lovable.app/products/glycine" } },
-              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Vigora Plant Biostimulant", url: "https://taraonglobal.lovable.app/products/vigora" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Super Potassium Shiny Flakes 98%", url: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Super F Humate Big Shiny Flakes", url: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Glycine (High-Quality Amino Acid)", url: "https://taraonglobal.com/products/glycine" } },
+              { "@type": "Offer", itemOffered: { "@type": "Product", name: "Vigora Plant Biostimulant", url: "https://taraonglobal.com/products/vigora" } },
             ],
           },
         }),
@@ -218,10 +218,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "@id": "https://taraonglobal.lovable.app/#website",
-          url: "https://taraonglobal.lovable.app/",
+          "@id": "https://taraonglobal.com/#website",
+          url: "https://taraonglobal.com/",
           name: "TARAON GLOBAL",
-          publisher: { "@id": "https://taraonglobal.lovable.app/#organization" },
+          publisher: { "@id": "https://taraonglobal.com/#organization" },
           inLanguage: "en-IN",
         }),
       },
@@ -234,12 +234,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const gtmId = import.meta.env.VITE_GTM_ID as string | undefined;
+  const ga4Id = import.meta.env.VITE_GA4_ID as string | undefined;
+  const clarityId = import.meta.env.VITE_CLARITY_ID as string | undefined;
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        {gtmId ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`,
+            }}
+          />
+        ) : null}
+        {!gtmId && ga4Id ? (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ga4Id}',{anonymize_ip:true});`,
+              }}
+            />
+          </>
+        ) : null}
+        {clarityId ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${clarityId}");`,
+            }}
+          />
+        ) : null}
       </head>
       <body>
+        {gtmId ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        ) : null}
         {children}
         <Scripts />
       </body>
@@ -538,8 +576,14 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-forest-deep focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-cream focus:outline-none focus:ring-2 focus:ring-gold"
+      >
+        Skip to main content
+      </a>
       <Header />
-      <main>
+      <main id="main-content">
         <Outlet />
       </main>
       <Footer />

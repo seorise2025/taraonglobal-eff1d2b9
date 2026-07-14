@@ -10,7 +10,7 @@ import { trackFormSubmit } from "@/lib/analytics";
 import { checkRateLimit, getSubmissionContext, hashPayload } from "@/lib/rate-limit";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
 
-const SITE = "https://taraonglobal.lovable.app";
+const SITE = "https://taraonglobal.com";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

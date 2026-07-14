@@ -86,12 +86,12 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
       },
       {
         property: "og:url",
-        content: "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes",
+        content: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes",
       },
       { property: "og:type", content: "product" },
     ],
     links: [
-      { rel: "canonical", href: "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes" },
+      { rel: "canonical", href: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes" },
     ],
     scripts: [
       {
@@ -99,14 +99,14 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          "@id": "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes#product",
+          "@id": "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes#product",
           name: "Super F Humate Big Shiny Flakes",
           sku: "TG-SFHB-98",
           mpn: "TG-SFHB-98",
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
           image: [
-            "https://taraonglobal.lovable.app/og-super-f-humate-big.jpg",
+            "https://taraonglobal.com/og-super-f-humate-big.jpg",
           ],
           description:
             "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input - not a complete NPK fertiliser.",
@@ -121,7 +121,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           ],
           offers: {
             "@type": "Offer",
-            url: "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes",
+            url: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes",
             availability: "https://schema.org/InStock",
             priceCurrency: "INR",
             priceSpecification: {
@@ -130,7 +130,7 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
               valueAddedTaxIncluded: false,
               description: "Bulk and dealer pricing on request",
             },
-            seller: { "@id": "https://taraonglobal.lovable.app/#organization" },
+            seller: { "@id": "https://taraonglobal.com/#organization" },
           },
         }),
       },
@@ -152,13 +152,13 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.lovable.app/" },
-            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.lovable.app/#products" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://taraonglobal.com/" },
+            { "@type": "ListItem", position: 2, name: "Products", item: "https://taraonglobal.com/#products" },
             {
               "@type": "ListItem",
               position: 3,
               name: "Super F Humate Big Shiny Flakes",
-              item: "https://taraonglobal.lovable.app/products/super-f-humate-big-shiny-flakes",
+              item: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes",
             },
           ],
         }),
