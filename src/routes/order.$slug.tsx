@@ -159,6 +159,7 @@ function OrderPage() {
     if (d.notes) details.Notes = d.notes;
     setPlaced({ order_number: data.order_number, id: data.id, waHref, mailHref, details });
     setFallback(null);
+    trackOrder(product.slug, data.order_number, Number(d.quantity) || undefined);
     window.open(waHref, "_blank", "noopener,noreferrer");
     toast.success(`Order ${data.order_number} saved`);
   }
