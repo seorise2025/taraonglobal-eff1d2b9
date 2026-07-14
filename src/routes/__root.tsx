@@ -278,6 +278,7 @@ function RootShell({ children }: { children: ReactNode }) {
             />
           </noscript>
         ) : null}
+        <RumBoot />
         {children}
         <Scripts />
       </body>
