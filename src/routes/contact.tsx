@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { trackFormSubmit } from "@/lib/analytics";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
