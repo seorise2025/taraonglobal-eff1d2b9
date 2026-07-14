@@ -18,7 +18,7 @@ import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcse
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { CTABand } from "@/components/site/CTABand";
+
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { FAQ } from "@/components/site/FAQ";
@@ -150,14 +150,14 @@ function Home() {
                 onClick={() => trackWhatsApp(undefined, "home_hero")}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-sm ring-1 ring-black/5 transition-transform hover:scale-[1.02]"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp Sales
+                <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
               <a
                 href={buildEmailHref("general")}
                 onClick={() => trackEmail(undefined, "home_hero")}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-4 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
               >
-                <Mail className="h-4 w-4" /> Email for Quote
+                <Mail className="h-4 w-4" /> Email
               </a>
             </div>
           </motion.div>
@@ -448,30 +448,19 @@ function Home() {
                 onClick={() => trackWhatsApp(undefined, "home_close")}
                 className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm bg-[#25D366] px-6 py-4 text-sm font-semibold text-white shadow-sm"
               >
-                WhatsApp Sales <MessageCircle className="h-4 w-4" />
+                WhatsApp <MessageCircle className="h-4 w-4" />
               </a>
               <a
                 href={buildEmailHref("general")}
                 onClick={() => trackEmail(undefined, "home_close")}
                 className="inline-flex min-h-12 items-center justify-between gap-4 rounded-sm border border-forest-deep px-6 py-4 text-sm font-semibold text-forest-deep hover:bg-forest-deep hover:text-cream"
               >
-                Email for Quote <Mail className="h-4 w-4" />
-              </a>
-              <a
-                href="tel:+916359193666"
-                className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-forest-deep/80 hover:text-forest-deep"
-              >
-                <Phone className="h-4 w-4" /> +91 63591 93666, Rajesh Kumar Trivedi
+                Email <Mail className="h-4 w-4" />
               </a>
             </div>
           </div>
         </div>
       </section>
-
-      <CTABand
-        title="Ready to Order or Just Have Questions?"
-        subtitle="Send your product name, quantity, and city. You get a direct reply from the sales team."
-      />
     </>
   );
 }
