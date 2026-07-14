@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/super-potassium-98-bag.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { InquiryCTA } from "@/components/site/InquiryCTA";
 
 const SPECS = [
   { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
@@ -187,30 +187,7 @@ function ProductPage() {
             acid, 3-5% K₂O and pH 9-10. A soil conditioner and plant growth support input -
             not a complete NPK fertiliser.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/order/$slug"
-              params={{ slug: "super-potassium-shiny-flakes-98" }}
-              className="group inline-flex items-center gap-2 rounded-sm bg-forest-deep px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
-            >
-              Place Order
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep hover:border-gold hover:bg-gold/10"
-            >
-              Request Price
-            </Link>
-            <a
-              href="https://wa.me/916359193666"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm border border-forest-deep/25 px-6 py-3.5 text-sm font-medium text-forest-deep hover:border-gold hover:bg-gold/10"
-            >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
-            </a>
-          </div>
+          <InquiryCTA product="super-potassium-shiny-flakes-98" className="mt-8" />
 
         </div>
         <div className="relative">

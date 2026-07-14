@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle } from "lucide-react";
 import productImg from "@/assets/glycine-pack.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SpecTable } from "@/components/site/SpecTable";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
+import { InquiryCTA } from "@/components/site/InquiryCTA";
 
 const SPECS = [
   { label: "Product Type", value: "Glycine, high-purity amino acid" },
