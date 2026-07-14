@@ -132,14 +132,14 @@ function AdminPage() {
   }, [tab]);
 
   async function updateOrder(id: string, patch: Record<string, unknown>) {
-    const { error } = await supabase.from("orders").update(patch).eq("id", id);
+    const { error } = await supabase.from("orders").update(patch as never).eq("id", id);
     if (error) return toast.error(error.message);
     setOrders((prev) => prev?.map((o) => (o.id === id ? { ...o, ...(patch as Partial<OrderRow>) } : o)) ?? null);
     toast.success("Updated");
   }
 
   async function updateEnquiry(id: string, patch: Record<string, unknown>) {
-    const { error } = await supabase.from("enquiries").update(patch).eq("id", id);
+    const { error } = await supabase.from("enquiries").update(patch as never).eq("id", id);
     if (error) return toast.error(error.message);
     setEnquiries((prev) => prev?.map((e) => (e.id === id ? { ...e, ...(patch as Partial<EnquiryRow>) } : e)) ?? null);
     toast.success("Updated");
