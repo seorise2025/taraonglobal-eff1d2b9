@@ -183,7 +183,7 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={productImg.url}
-            alt="Glycine 99% amino acid crystalline powder with TARAON GLOBAL branding"
+            alt="Glycine 99% purity food and feed grade white crystalline amino acid powder, bulk 25 Kg supply by TARAON GLOBAL India"
             width={1200}
             height={1500}
             fetchPriority="high"
