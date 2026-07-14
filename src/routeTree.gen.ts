@@ -16,8 +16,10 @@ import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsVigoraRouteImport } from './routes/products.vigora'
 import { Route as ProductsSuperPotassiumShinyFlakes98RouteImport } from './routes/products.super-potassium-shiny-flakes-98'
 import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes/products.super-f-humate-big-shiny-flakes'
+import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 
@@ -55,6 +57,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsVigoraRoute = ProductsVigoraRouteImport.update({
+  id: '/products/vigora',
+  path: '/products/vigora',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsSuperPotassiumShinyFlakes98Route =
   ProductsSuperPotassiumShinyFlakes98RouteImport.update({
     id: '/products/super-potassium-shiny-flakes-98',
@@ -67,6 +74,11 @@ const ProductsSuperFHumateBigShinyFlakesRoute =
     path: '/products/super-f-humate-big-shiny-flakes',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProductsGlycineRoute = ProductsGlycineRouteImport.update({
+  id: '/products/glycine',
+  path: '/products/glycine',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrderSlugRoute = OrderSlugRouteImport.update({
   id: '/order/$slug',
   path: '/order/$slug',
@@ -87,8 +99,10 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
+  '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
+  '/products/vigora': typeof ProductsVigoraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -99,8 +113,10 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
+  '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
+  '/products/vigora': typeof ProductsVigoraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -113,8 +129,10 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
+  '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
+  '/products/vigora': typeof ProductsVigoraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -127,8 +145,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin'
     | '/order/$slug'
+    | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
+    | '/products/vigora'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -139,8 +159,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin'
     | '/order/$slug'
+    | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
+    | '/products/vigora'
   id:
     | '__root__'
     | '/'
@@ -152,8 +174,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/_authenticated/admin'
     | '/order/$slug'
+    | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
+    | '/products/vigora'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -165,8 +189,10 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   OrderSlugRoute: typeof OrderSlugRoute
+  ProductsGlycineRoute: typeof ProductsGlycineRoute
   ProductsSuperFHumateBigShinyFlakesRoute: typeof ProductsSuperFHumateBigShinyFlakesRoute
   ProductsSuperPotassiumShinyFlakes98Route: typeof ProductsSuperPotassiumShinyFlakes98Route
+  ProductsVigoraRoute: typeof ProductsVigoraRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -220,6 +246,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/vigora': {
+      id: '/products/vigora'
+      path: '/products/vigora'
+      fullPath: '/products/vigora'
+      preLoaderRoute: typeof ProductsVigoraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/super-potassium-shiny-flakes-98': {
       id: '/products/super-potassium-shiny-flakes-98'
       path: '/products/super-potassium-shiny-flakes-98'
@@ -232,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/products/super-f-humate-big-shiny-flakes'
       fullPath: '/products/super-f-humate-big-shiny-flakes'
       preLoaderRoute: typeof ProductsSuperFHumateBigShinyFlakesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/glycine': {
+      id: '/products/glycine'
+      path: '/products/glycine'
+      fullPath: '/products/glycine'
+      preLoaderRoute: typeof ProductsGlycineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/order/$slug': {
@@ -271,10 +311,12 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   OrderSlugRoute: OrderSlugRoute,
+  ProductsGlycineRoute: ProductsGlycineRoute,
   ProductsSuperFHumateBigShinyFlakesRoute:
     ProductsSuperFHumateBigShinyFlakesRoute,
   ProductsSuperPotassiumShinyFlakes98Route:
     ProductsSuperPotassiumShinyFlakes98Route,
+  ProductsVigoraRoute: ProductsVigoraRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -15,6 +15,8 @@ import productBigImgFallback from "@/assets/product-big-flakes.jpg?w=640&format=
 import heroFlakes640 from "@/assets/hero-flakes.jpg?w=640&format=webp";
 import fieldImg from "@/assets/applications-field.jpg?w=640;960;1280&format=webp&as=srcset";
 import fieldImgFallback from "@/assets/applications-field.jpg?w=960&format=webp";
+import glycineImg from "@/assets/glycine-pack.jpg.asset.json";
+import vigoraImg from "@/assets/vigora-bottle.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { CountUp } from "@/components/site/CountUp";
@@ -255,7 +257,22 @@ function Home() {
             to="/products/super-f-humate-big-shiny-flakes"
             orderSlug="super-f-humate-big-shiny-flakes"
           />
-
+          <ProductCard
+            image={glycineImg.url}
+            sizes="(min-width: 768px) 48vw, 100vw"
+            name="Glycine (High-Quality Amino Acid)"
+            desc="99% purity L-Glycine. Bulk amino acid for agriculture, food, pharma and daily chemical industries."
+            to="/products/glycine"
+            orderSlug="glycine"
+          />
+          <ProductCard
+            image={vigoraImg.url}
+            sizes="(min-width: 768px) 48vw, 100vw"
+            name="Vigora Plant Biostimulant"
+            desc="Concentrated liquid biostimulant. Better flowering, stronger roots, higher yield quality across Indian crops."
+            to="/products/vigora"
+            orderSlug="vigora"
+          />
         </div>
       </section>
 
@@ -408,7 +425,7 @@ function ProductCard({
   name: string;
   desc: string;
   to: string;
-  orderSlug: "super-potassium-shiny-flakes-98" | "super-f-humate-big-shiny-flakes";
+  orderSlug: "super-potassium-shiny-flakes-98" | "super-f-humate-big-shiny-flakes" | "glycine" | "vigora";
 }) {
   return (
     <article className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl">
