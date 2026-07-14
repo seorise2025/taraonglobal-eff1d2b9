@@ -5,7 +5,7 @@ import {
   MessageCircle,
   Mail,
   Package,
-  Droplets,
+  Droplets: _Droplets,
   BadgeCheck,
   MapPin,
   Phone,
