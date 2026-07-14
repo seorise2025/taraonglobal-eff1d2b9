@@ -1,15 +1,24 @@
 import { MessageCircle } from "lucide-react";
 
+const MSG =
+  "Hi TARAON GLOBAL, please share your latest price list, packing and dispatch time. My city/state: ___.";
+
 export function WhatsAppFab() {
+  const href = `https://wa.me/916359193666?text=${encodeURIComponent(MSG)}`;
   return (
     <a
-      href="https://wa.me/916359193666?text=Hi%20Taraon%20Global%2C%20I%27d%20like%20a%20quote%20for%20potassium%20humate."
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with TARAON GLOBAL on WhatsApp"
-      className="pulse-wa fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+      className="pulse-wa group fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] pl-3 pr-4 py-2.5 text-white shadow-2xl ring-2 ring-gold/70 transition-transform hover:scale-105"
     >
-      <MessageCircle className="h-6 w-6" />
+      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
+        <MessageCircle className="h-5 w-5" />
+      </span>
+      <span className="hidden text-sm font-semibold tracking-wide sm:inline">
+        Chat on WhatsApp
+      </span>
     </a>
   );
 }
