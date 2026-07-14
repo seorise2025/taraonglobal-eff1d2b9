@@ -8,13 +8,13 @@ import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
 
 const SPECS = [
-  { label: "Product Type", value: "Concentrated liquid plant biostimulant" },
-  { label: "Form", value: "Liquid concentrate" },
-  { label: "Dose (foliar)", value: "0.5 to 1 ml per litre of water" },
-  { label: "Knapsack sprayer (15 L)", value: "7.5 to 15 ml per tank" },
+  { label: "Product Type", value: "Concentrated powder plant biostimulant" },
+  { label: "Form", value: "99% pure powder, 100% water soluble" },
+  { label: "Dose (foliar)", value: "0.5 to 1 gram per litre of water" },
+  { label: "Knapsack sprayer (15 L)", value: "7.5 to 15 grams per tank" },
   { label: "Best application time", value: "Active growth, before and during flowering" },
   { label: "Best time of day", value: "Early morning or late evening" },
-  { label: "Packing", value: "1 Litre bottle (other sizes on request)" },
+  { label: "Packing", value: "25 Kgs bag" },
   { label: "Buyer Type", value: "Farmers, dealers, distributors" },
 ];
 
