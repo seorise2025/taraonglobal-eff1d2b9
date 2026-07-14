@@ -13,7 +13,8 @@ import {
   Sprout,
   Ship,
 } from "lucide-react";
-import heroImg from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroWebp from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcset";
+import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcset";
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
