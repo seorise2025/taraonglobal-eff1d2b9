@@ -428,6 +428,7 @@ function Header() {
           >
             <Phone className="h-3.5 w-3.5" /> +91 63591 93666
           </a>
+          <ThemeToggle />
           <Link
             to="/contact"
             className="inline-flex items-center rounded-sm bg-forest-deep px-4 py-2 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
@@ -437,6 +438,7 @@ function Header() {
         </div>
 
         <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
           <a
             href="tel:+916359193666"
             aria-label="Call TARAON GLOBAL"
