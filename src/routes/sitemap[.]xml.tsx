@@ -14,7 +14,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const CONTENT_UPDATED = "2026-07-14";
+        const CONTENT_UPDATED = "2026-07-15";
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0", lastmod: CONTENT_UPDATED },
           { path: "/products/super-potassium-shiny-flakes-98", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
