@@ -24,11 +24,16 @@ import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes
 import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
 import { Route as GuidesPotassiumHumateDosageCottonGroundnutRouteImport } from './routes/guides.potassium-humate-dosage-cotton-groundnut'
+import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as DotwellKnownOauthProtectedResourceRouteImport } from './routes/[.]well-known.oauth-protected-resource'
 import { Route as DotwellKnownOauthAuthorizationServerRouteImport } from './routes/[.]well-known.oauth-authorization-server'
 import { Route as DotwellKnownApiCatalogRouteImport } from './routes/[.]well-known.api-catalog'
+import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicNotifyAdminRouteImport } from './routes/api/public/notify-admin'
 import { Route as DotwellKnownAgentSkillsIndexDotjsonRouteImport } from './routes/[.]well-known.agent-skills.index[.]json'
+import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
@@ -110,6 +115,11 @@ const GuidesPotassiumHumateDosageCottonGroundnutRoute =
     path: '/guides/potassium-humate-dosage-cotton-groundnut',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
+  id: '/email/unsubscribe',
+  path: '/email/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -132,10 +142,32 @@ const DotwellKnownApiCatalogRoute = DotwellKnownApiCatalogRouteImport.update({
   path: '/.well-known/api-catalog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
+  id: '/lovable/email/suppression',
+  path: '/lovable/email/suppression',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicNotifyAdminRoute = ApiPublicNotifyAdminRouteImport.update({
+  id: '/api/public/notify-admin',
+  path: '/api/public/notify-admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DotwellKnownAgentSkillsIndexDotjsonRoute =
   DotwellKnownAgentSkillsIndexDotjsonRouteImport.update({
     id: '/.well-known/agent-skills/index.json',
     path: '/.well-known/agent-skills/index.json',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailTransactionalSendRoute =
+  LovableEmailTransactionalSendRouteImport.update({
+    id: '/lovable/email/transactional/send',
+    path: '/lovable/email/transactional/send',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailTransactionalPreviewRoute =
+  LovableEmailTransactionalPreviewRouteImport.update({
+    id: '/lovable/email/transactional/preview',
+    path: '/lovable/email/transactional/preview',
     getParentRoute: () => rootRouteImport,
   } as any)
 const LovableEmailQueueProcessRoute =
@@ -168,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRoute
   '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
@@ -175,9 +208,13 @@ export interface FileRoutesByFullPath {
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
   '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  '/api/public/notify-admin': typeof ApiPublicNotifyAdminRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -192,6 +229,7 @@ export interface FileRoutesByTo {
   '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRoute
   '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
@@ -199,9 +237,13 @@ export interface FileRoutesByTo {
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
   '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  '/api/public/notify-admin': typeof ApiPublicNotifyAdminRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -218,6 +260,7 @@ export interface FileRoutesById {
   '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRoute
   '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
@@ -225,9 +268,13 @@ export interface FileRoutesById {
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
   '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  '/api/public/notify-admin': typeof ApiPublicNotifyAdminRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -244,6 +291,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-authorization-server'
     | '/.well-known/oauth-protected-resource'
     | '/admin'
+    | '/email/unsubscribe'
     | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
     | '/products/glycine'
@@ -251,9 +299,13 @@ export interface FileRouteTypes {
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
     | '/.well-known/agent-skills/index.json'
+    | '/api/public/notify-admin'
+    | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
     | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -268,6 +320,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-authorization-server'
     | '/.well-known/oauth-protected-resource'
     | '/admin'
+    | '/email/unsubscribe'
     | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
     | '/products/glycine'
@@ -275,9 +328,13 @@ export interface FileRouteTypes {
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
     | '/.well-known/agent-skills/index.json'
+    | '/api/public/notify-admin'
+    | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
     | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   id:
     | '__root__'
     | '/'
@@ -293,6 +350,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-authorization-server'
     | '/.well-known/oauth-protected-resource'
     | '/_authenticated/admin'
+    | '/email/unsubscribe'
     | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
     | '/products/glycine'
@@ -300,9 +358,13 @@ export interface FileRouteTypes {
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
     | '/.well-known/agent-skills/index.json'
+    | '/api/public/notify-admin'
+    | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
     | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -318,6 +380,7 @@ export interface RootRouteChildren {
   DotwellKnownApiCatalogRoute: typeof DotwellKnownApiCatalogRoute
   DotwellKnownOauthAuthorizationServerRoute: typeof DotwellKnownOauthAuthorizationServerRoute
   DotwellKnownOauthProtectedResourceRoute: typeof DotwellKnownOauthProtectedResourceRoute
+  EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   GuidesPotassiumHumateDosageCottonGroundnutRoute: typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   OrderSlugRoute: typeof OrderSlugRoute
   ProductsGlycineRoute: typeof ProductsGlycineRoute
@@ -325,9 +388,13 @@ export interface RootRouteChildren {
   ProductsSuperPotassiumShinyFlakes98Route: typeof ProductsSuperPotassiumShinyFlakes98Route
   ProductsVigoraRoute: typeof ProductsVigoraRoute
   DotwellKnownAgentSkillsIndexDotjsonRoute: typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  ApiPublicNotifyAdminRoute: typeof ApiPublicNotifyAdminRoute
+  LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
+  LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
+  LovableEmailTransactionalSendRoute: typeof LovableEmailTransactionalSendRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -437,6 +504,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesPotassiumHumateDosageCottonGroundnutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/email/unsubscribe': {
+      id: '/email/unsubscribe'
+      path: '/email/unsubscribe'
+      fullPath: '/email/unsubscribe'
+      preLoaderRoute: typeof EmailUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
       path: '/admin'
@@ -465,11 +539,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DotwellKnownApiCatalogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/suppression': {
+      id: '/lovable/email/suppression'
+      path: '/lovable/email/suppression'
+      fullPath: '/lovable/email/suppression'
+      preLoaderRoute: typeof LovableEmailSuppressionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/notify-admin': {
+      id: '/api/public/notify-admin'
+      path: '/api/public/notify-admin'
+      fullPath: '/api/public/notify-admin'
+      preLoaderRoute: typeof ApiPublicNotifyAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.well-known/agent-skills/index.json': {
       id: '/.well-known/agent-skills/index.json'
       path: '/.well-known/agent-skills/index.json'
       fullPath: '/.well-known/agent-skills/index.json'
       preLoaderRoute: typeof DotwellKnownAgentSkillsIndexDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/send': {
+      id: '/lovable/email/transactional/send'
+      path: '/lovable/email/transactional/send'
+      fullPath: '/lovable/email/transactional/send'
+      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/queue/process': {
@@ -522,6 +624,7 @@ const rootRouteChildren: RootRouteChildren = {
     DotwellKnownOauthAuthorizationServerRoute,
   DotwellKnownOauthProtectedResourceRoute:
     DotwellKnownOauthProtectedResourceRoute,
+  EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   GuidesPotassiumHumateDosageCottonGroundnutRoute:
     GuidesPotassiumHumateDosageCottonGroundnutRoute,
   OrderSlugRoute: OrderSlugRoute,
@@ -533,9 +636,13 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsVigoraRoute: ProductsVigoraRoute,
   DotwellKnownAgentSkillsIndexDotjsonRoute:
     DotwellKnownAgentSkillsIndexDotjsonRoute,
+  ApiPublicNotifyAdminRoute: ApiPublicNotifyAdminRoute,
+  LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
+  LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
+  LovableEmailTransactionalSendRoute: LovableEmailTransactionalSendRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
