@@ -56,7 +56,7 @@ const container = { padding: '20px 25px' }
 const h1 = {
   fontSize: '22px',
   fontWeight: 'bold' as const,
-  color: '#000000',
+  color: '#0F3D2E',
   margin: '0 0 20px',
 }
 const text = {
@@ -65,9 +65,9 @@ const text = {
   lineHeight: '1.5',
   margin: '0 0 25px',
 }
-const link = { color: 'inherit', textDecoration: 'underline' }
+const link = { color: '#0F3D2E', textDecoration: 'underline', fontWeight: 600 as const }
 const button = {
-  backgroundColor: '#000000',
+  backgroundColor: '#0F3D2E',
   color: '#ffffff',
   fontSize: '14px',
   borderRadius: '8px',
