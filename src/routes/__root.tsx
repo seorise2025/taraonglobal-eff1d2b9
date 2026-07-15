@@ -534,7 +534,16 @@ function Footer() {
               height={44}
               loading="lazy"
               decoding="async"
-              className="h-11 w-11 rounded-sm object-contain"
+              className="h-11 w-11 rounded-sm object-contain dark:hidden"
+            />
+            <img
+              src={logoGreen.url}
+              alt="TARAON GLOBAL"
+              width={44}
+              height={44}
+              loading="lazy"
+              decoding="async"
+              className="hidden h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:block"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
