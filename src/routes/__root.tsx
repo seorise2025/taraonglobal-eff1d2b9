@@ -20,6 +20,7 @@ import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { LegalTrigger } from "@/components/site/LegalModals";
+import { ThemeToggle, useThemeInit } from "@/components/site/ThemeToggle";
 
 const NAV_PRIMARY = [{ to: "/", label: "Home" }] as const;
 const NAV_SECONDARY = [
