@@ -112,6 +112,58 @@ const FIT = [
   { label: "Fertilizer blending", value: "Strong" },
 ];
 
+const BY_PRODUCT: Array<{
+  slug: string;
+  name: string;
+  tag: string;
+  uses: string[];
+}> = [
+  {
+    slug: "super-potassium-shiny-flakes-98",
+    name: "Super Potassium Shiny Flakes 98%",
+    tag: "Potassium humate, 98% water soluble",
+    uses: [
+      "Soil application before or during crop stage",
+      "Drip irrigation and fertigation, clean dissolve",
+      "Foliar spray at agronomist recommended dose",
+      "NPK and organic fertilizer blending",
+    ],
+  },
+  {
+    slug: "super-f-humate-big-shiny-flakes",
+    name: "Super F Humate Big Shiny Flakes",
+    tag: "Big flake grade for dealers and blenders",
+    uses: [
+      "Dealer and distributor repacking",
+      "Fertilizer plant blending lines",
+      "Soil conditioning programs",
+      "Bulk supply to formulators",
+    ],
+  },
+  {
+    slug: "glycine",
+    name: "Glycine 99%",
+    tag: "Bulk amino acid, fertilizer synergist",
+    uses: [
+      "Fertilizer formulation as a natural chelator",
+      "Blending with folic acid and other amino acids",
+      "Food, pharma and feed grade raw material",
+      "Daily chemical and industrial use",
+    ],
+  },
+  {
+    slug: "vigora",
+    name: "Vigora Plant Biostimulant",
+    tag: "Powder biostimulant, 0.5 to 1 gram dose",
+    uses: [
+      "Yield enhancer on cotton, wheat, rice and vegetables",
+      "Flowering and fruit setting support",
+      "Foliar spray at recommended crop stage",
+      "Tank mix with routine spray schedule",
+    ],
+  },
+];
+
 function Applications() {
   return (
     <>
@@ -122,12 +174,12 @@ function Applications() {
               <span className="h-px w-8 bg-gold" /> Applications
             </div>
             <h1 className="font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
-              Potassium Humate Uses in Agriculture
+              Product Applications Across Indian Agriculture
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-ink/75">
-              Potassium humate does one basic job well. It helps soil hold nutrients and
-              water so your plants can actually use what you're feeding them. Here's how
-              that plays out in the field.
+              Four products, one supply desk. Potassium humate for soil and drip, big
+              flake humate for dealers, Glycine as a bulk amino acid, and Vigora as a
+              powder biostimulant. Here is where each one fits in the field.
             </p>
           </div>
           <img
@@ -141,8 +193,9 @@ function Applications() {
         </div>
       </section>
 
-      <section className="container-page pb-10">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <section className="container-page pb-4">
+        <SectionHeading eyebrow="Potassium humate" title="How the flakes work in the field" />
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {USES.map((u, i) => (
             <div
               key={u.title}
@@ -157,6 +210,37 @@ function Applications() {
           ))}
         </div>
       </section>
+
+      <section className="container-page py-16">
+        <SectionHeading eyebrow="By product" title="Applications across the full range" />
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {BY_PRODUCT.map((p) => (
+            <div
+              key={p.slug}
+              className="rounded-lg border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg"
+            >
+              <div className="text-xs uppercase tracking-[0.18em] text-gold">{p.tag}</div>
+              <h3 className="mt-2 font-display text-xl text-forest-deep">{p.name}</h3>
+              <ul className="mt-4 space-y-2">
+                {p.uses.map((u) => (
+                  <li key={u} className="flex items-start gap-3 text-ink/80">
+                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-gold" />
+                    <span>{u}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to={"/products/$slug" as never}
+                params={{ slug: p.slug } as never}
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest-deep hover:text-gold"
+              >
+                View product details <span aria-hidden>→</span>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       <section className="bg-card border-y border-border py-16">
         <div className="container-page">
