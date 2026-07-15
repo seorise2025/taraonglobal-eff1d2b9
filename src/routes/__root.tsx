@@ -615,6 +615,7 @@ function Footer() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useThemeInit();
   return (
     <QueryClientProvider client={queryClient}>
       <a
