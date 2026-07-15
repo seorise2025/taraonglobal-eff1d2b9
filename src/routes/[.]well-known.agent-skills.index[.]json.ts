@@ -5,7 +5,7 @@ const BASE = "https://taraonglobal.com";
 
 // Agent Skills Discovery RFC v0.2.0
 // https://github.com/cloudflare/agent-skills-discovery-rfc
-export const Route = createFileRoute("/.well-known/agent-skills/index")({
+export const Route = createFileRoute("/.well-known/agent-skills/index.json")({
   server: {
     handlers: {
       GET: async () => {
