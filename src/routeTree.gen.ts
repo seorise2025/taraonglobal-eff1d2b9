@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AuthDotmdRouteImport } from './routes/auth[.]md'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as AboutRouteImport } from './routes/about'
@@ -24,6 +25,8 @@ import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
 import { Route as GuidesPotassiumHumateDosageCottonGroundnutRouteImport } from './routes/guides.potassium-humate-dosage-cotton-groundnut'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as DotwellKnownOauthProtectedResourceRouteImport } from './routes/[.]well-known.oauth-protected-resource'
+import { Route as DotwellKnownOauthAuthorizationServerRouteImport } from './routes/[.]well-known.oauth-authorization-server'
 import { Route as DotwellKnownApiCatalogRouteImport } from './routes/[.]well-known.api-catalog'
 import { Route as DotwellKnownAgentSkillsIndexDotjsonRouteImport } from './routes/[.]well-known.agent-skills.index[.]json'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -41,6 +44,11 @@ const ImageSitemapDotxmlRoute = ImageSitemapDotxmlRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthDotmdRoute = AuthDotmdRouteImport.update({
+  id: '/auth.md',
+  path: '/auth.md',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -105,6 +113,18 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const DotwellKnownOauthProtectedResourceRoute =
+  DotwellKnownOauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DotwellKnownOauthAuthorizationServerRoute =
+  DotwellKnownOauthAuthorizationServerRouteImport.update({
+    id: '/.well-known/oauth-authorization-server',
+    path: '/.well-known/oauth-authorization-server',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DotwellKnownApiCatalogRoute = DotwellKnownApiCatalogRouteImport.update({
   id: '/.well-known/api-catalog',
   path: '/.well-known/api-catalog',
@@ -128,10 +148,13 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/applications': typeof ApplicationsRoute
   '/auth': typeof AuthRoute
+  '/auth.md': typeof AuthDotmdRoute
   '/contact': typeof ContactRoute
   '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
+  '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRoute
+  '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
@@ -147,10 +170,13 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/applications': typeof ApplicationsRoute
   '/auth': typeof AuthRoute
+  '/auth.md': typeof AuthDotmdRoute
   '/contact': typeof ContactRoute
   '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
+  '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRoute
+  '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
@@ -168,10 +194,13 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/applications': typeof ApplicationsRoute
   '/auth': typeof AuthRoute
+  '/auth.md': typeof AuthDotmdRoute
   '/contact': typeof ContactRoute
   '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
+  '/.well-known/oauth-authorization-server': typeof DotwellKnownOauthAuthorizationServerRoute
+  '/.well-known/oauth-protected-resource': typeof DotwellKnownOauthProtectedResourceRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
@@ -189,10 +218,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/applications'
     | '/auth'
+    | '/auth.md'
     | '/contact'
     | '/image-sitemap.xml'
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
+    | '/.well-known/oauth-authorization-server'
+    | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
@@ -208,10 +240,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/applications'
     | '/auth'
+    | '/auth.md'
     | '/contact'
     | '/image-sitemap.xml'
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
+    | '/.well-known/oauth-authorization-server'
+    | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
@@ -228,10 +263,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/applications'
     | '/auth'
+    | '/auth.md'
     | '/contact'
     | '/image-sitemap.xml'
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
+    | '/.well-known/oauth-authorization-server'
+    | '/.well-known/oauth-protected-resource'
     | '/_authenticated/admin'
     | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
@@ -249,10 +287,13 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApplicationsRoute: typeof ApplicationsRoute
   AuthRoute: typeof AuthRoute
+  AuthDotmdRoute: typeof AuthDotmdRoute
   ContactRoute: typeof ContactRoute
   ImageSitemapDotxmlRoute: typeof ImageSitemapDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   DotwellKnownApiCatalogRoute: typeof DotwellKnownApiCatalogRoute
+  DotwellKnownOauthAuthorizationServerRoute: typeof DotwellKnownOauthAuthorizationServerRoute
+  DotwellKnownOauthProtectedResourceRoute: typeof DotwellKnownOauthProtectedResourceRoute
   GuidesPotassiumHumateDosageCottonGroundnutRoute: typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   OrderSlugRoute: typeof OrderSlugRoute
   ProductsGlycineRoute: typeof ProductsGlycineRoute
@@ -284,6 +325,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth.md': {
+      id: '/auth.md'
+      path: '/auth.md'
+      fullPath: '/auth.md'
+      preLoaderRoute: typeof AuthDotmdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -370,6 +418,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof DotwellKnownOauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/oauth-authorization-server': {
+      id: '/.well-known/oauth-authorization-server'
+      path: '/.well-known/oauth-authorization-server'
+      fullPath: '/.well-known/oauth-authorization-server'
+      preLoaderRoute: typeof DotwellKnownOauthAuthorizationServerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.well-known/api-catalog': {
       id: '/.well-known/api-catalog'
       path: '/.well-known/api-catalog'
@@ -411,10 +473,15 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApplicationsRoute: ApplicationsRoute,
   AuthRoute: AuthRoute,
+  AuthDotmdRoute: AuthDotmdRoute,
   ContactRoute: ContactRoute,
   ImageSitemapDotxmlRoute: ImageSitemapDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   DotwellKnownApiCatalogRoute: DotwellKnownApiCatalogRoute,
+  DotwellKnownOauthAuthorizationServerRoute:
+    DotwellKnownOauthAuthorizationServerRoute,
+  DotwellKnownOauthProtectedResourceRoute:
+    DotwellKnownOauthProtectedResourceRoute,
   GuidesPotassiumHumateDosageCottonGroundnutRoute:
     GuidesPotassiumHumateDosageCottonGroundnutRoute,
   OrderSlugRoute: OrderSlugRoute,
