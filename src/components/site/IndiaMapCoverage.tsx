@@ -196,7 +196,7 @@ export function IndiaMapCoverage() {
                   Supply route
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <span className="inline-block h-3 w-3 rounded-sm bg-forest-deep" />
+                  <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: "oklch(0.35 0.06 155)" }} />
                   Delivered state / UT
                 </span>
               </div>
