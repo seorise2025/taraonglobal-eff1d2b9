@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ImageSitemapDotxmlRouteImport } from './routes/image-sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ApplicationsRouteImport } from './routes/applications'
@@ -29,6 +30,11 @@ import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/e
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageSitemapDotxmlRoute = ImageSitemapDotxmlRouteImport.update({
+  id: '/image-sitemap.xml',
+  path: '/image-sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -116,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/applications': typeof ApplicationsRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/applications': typeof ApplicationsRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
@@ -152,6 +160,7 @@ export interface FileRoutesById {
   '/applications': typeof ApplicationsRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/image-sitemap.xml': typeof ImageSitemapDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/applications'
     | '/auth'
     | '/contact'
+    | '/image-sitemap.xml'
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
     | '/admin'
@@ -188,6 +198,7 @@ export interface FileRouteTypes {
     | '/applications'
     | '/auth'
     | '/contact'
+    | '/image-sitemap.xml'
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
     | '/admin'
@@ -206,6 +217,7 @@ export interface FileRouteTypes {
     | '/applications'
     | '/auth'
     | '/contact'
+    | '/image-sitemap.xml'
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
     | '/_authenticated/admin'
@@ -225,6 +237,7 @@ export interface RootRouteChildren {
   ApplicationsRoute: typeof ApplicationsRoute
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
+  ImageSitemapDotxmlRoute: typeof ImageSitemapDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   DotwellKnownApiCatalogRoute: typeof DotwellKnownApiCatalogRoute
   OrderSlugRoute: typeof OrderSlugRoute
@@ -243,6 +256,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-sitemap.xml': {
+      id: '/image-sitemap.xml'
+      path: '/image-sitemap.xml'
+      fullPath: '/image-sitemap.xml'
+      preLoaderRoute: typeof ImageSitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -371,6 +391,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApplicationsRoute: ApplicationsRoute,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
+  ImageSitemapDotxmlRoute: ImageSitemapDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   DotwellKnownApiCatalogRoute: DotwellKnownApiCatalogRoute,
   OrderSlugRoute: OrderSlugRoute,
