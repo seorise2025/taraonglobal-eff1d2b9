@@ -22,6 +22,7 @@ import { Route as ProductsSuperPotassiumShinyFlakes98RouteImport } from './route
 import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes/products.super-f-humate-big-shiny-flakes'
 import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
+import { Route as GuidesPotassiumHumateDosageCottonGroundnutRouteImport } from './routes/guides.potassium-humate-dosage-cotton-groundnut'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as DotwellKnownApiCatalogRouteImport } from './routes/[.]well-known.api-catalog'
 import { Route as DotwellKnownAgentSkillsIndexDotjsonRouteImport } from './routes/[.]well-known.agent-skills.index[.]json'
@@ -93,6 +94,12 @@ const OrderSlugRoute = OrderSlugRouteImport.update({
   path: '/order/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesPotassiumHumateDosageCottonGroundnutRoute =
+  GuidesPotassiumHumateDosageCottonGroundnutRouteImport.update({
+    id: '/guides/potassium-humate-dosage-cotton-groundnut',
+    path: '/guides/potassium-humate-dosage-cotton-groundnut',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -126,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
@@ -144,6 +152,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
+  '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
@@ -164,6 +173,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/guides/potassium-humate-dosage-cotton-groundnut': typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
@@ -184,6 +194,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
     | '/admin'
+    | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
     | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
@@ -202,6 +213,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
     | '/admin'
+    | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
     | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
@@ -221,6 +233,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/.well-known/api-catalog'
     | '/_authenticated/admin'
+    | '/guides/potassium-humate-dosage-cotton-groundnut'
     | '/order/$slug'
     | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
@@ -240,6 +253,7 @@ export interface RootRouteChildren {
   ImageSitemapDotxmlRoute: typeof ImageSitemapDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   DotwellKnownApiCatalogRoute: typeof DotwellKnownApiCatalogRoute
+  GuidesPotassiumHumateDosageCottonGroundnutRoute: typeof GuidesPotassiumHumateDosageCottonGroundnutRoute
   OrderSlugRoute: typeof OrderSlugRoute
   ProductsGlycineRoute: typeof ProductsGlycineRoute
   ProductsSuperFHumateBigShinyFlakesRoute: typeof ProductsSuperFHumateBigShinyFlakesRoute
@@ -342,6 +356,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrderSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/potassium-humate-dosage-cotton-groundnut': {
+      id: '/guides/potassium-humate-dosage-cotton-groundnut'
+      path: '/guides/potassium-humate-dosage-cotton-groundnut'
+      fullPath: '/guides/potassium-humate-dosage-cotton-groundnut'
+      preLoaderRoute: typeof GuidesPotassiumHumateDosageCottonGroundnutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
       path: '/admin'
@@ -394,6 +415,8 @@ const rootRouteChildren: RootRouteChildren = {
   ImageSitemapDotxmlRoute: ImageSitemapDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   DotwellKnownApiCatalogRoute: DotwellKnownApiCatalogRoute,
+  GuidesPotassiumHumateDosageCottonGroundnutRoute:
+    GuidesPotassiumHumateDosageCottonGroundnutRoute,
   OrderSlugRoute: OrderSlugRoute,
   ProductsGlycineRoute: ProductsGlycineRoute,
   ProductsSuperFHumateBigShinyFlakesRoute:

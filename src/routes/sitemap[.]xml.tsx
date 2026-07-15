@@ -22,6 +22,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/products/glycine", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
           { path: "/products/vigora", changefreq: "monthly", priority: "0.9", lastmod: CONTENT_UPDATED },
           { path: "/applications", changefreq: "monthly", priority: "0.8", lastmod: CONTENT_UPDATED },
+          { path: "/guides/potassium-humate-dosage-cotton-groundnut", changefreq: "monthly", priority: "0.8", lastmod: CONTENT_UPDATED },
           { path: "/about", changefreq: "monthly", priority: "0.7", lastmod: CONTENT_UPDATED },
           { path: "/contact", changefreq: "monthly", priority: "0.7", lastmod: CONTENT_UPDATED },
         ];
