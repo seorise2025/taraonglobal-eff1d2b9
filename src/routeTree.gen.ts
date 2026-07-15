@@ -22,6 +22,7 @@ import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes
 import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as DotwellKnownApiCatalogRouteImport } from './routes/[.]well-known.api-catalog'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -90,6 +91,11 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const DotwellKnownApiCatalogRoute = DotwellKnownApiCatalogRouteImport.update({
+  id: '/.well-known/api-catalog',
+  path: '/.well-known/api-catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailQueueProcessRoute =
   LovableEmailQueueProcessRouteImport.update({
     id: '/lovable/email/queue/process',
@@ -104,6 +110,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/sitemap.xml'
+    | '/.well-known/api-catalog'
     | '/admin'
     | '/order/$slug'
     | '/products/glycine'
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/sitemap.xml'
+    | '/.well-known/api-catalog'
     | '/admin'
     | '/order/$slug'
     | '/products/glycine'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/sitemap.xml'
+    | '/.well-known/api-catalog'
     | '/_authenticated/admin'
     | '/order/$slug'
     | '/products/glycine'
@@ -201,6 +213,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  DotwellKnownApiCatalogRoute: typeof DotwellKnownApiCatalogRoute
   OrderSlugRoute: typeof OrderSlugRoute
   ProductsGlycineRoute: typeof ProductsGlycineRoute
   ProductsSuperFHumateBigShinyFlakesRoute: typeof ProductsSuperFHumateBigShinyFlakesRoute
@@ -302,6 +315,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/.well-known/api-catalog': {
+      id: '/.well-known/api-catalog'
+      path: '/.well-known/api-catalog'
+      fullPath: '/.well-known/api-catalog'
+      preLoaderRoute: typeof DotwellKnownApiCatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/queue/process': {
       id: '/lovable/email/queue/process'
       path: '/lovable/email/queue/process'
@@ -331,6 +351,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  DotwellKnownApiCatalogRoute: DotwellKnownApiCatalogRoute,
   OrderSlugRoute: OrderSlugRoute,
   ProductsGlycineRoute: ProductsGlycineRoute,
   ProductsSuperFHumateBigShinyFlakesRoute:
