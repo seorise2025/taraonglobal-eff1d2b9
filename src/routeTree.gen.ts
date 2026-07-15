@@ -22,6 +22,8 @@ import { Route as ProductsSuperFHumateBigShinyFlakesRouteImport } from './routes
 import { Route as ProductsGlycineRouteImport } from './routes/products.glycine'
 import { Route as OrderSlugRouteImport } from './routes/order.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as DotwellKnownApiCatalogRouteImport } from './routes/[.]well-known.api-catalog'
+import { Route as DotwellKnownAgentSkillsIndexDotjsonRouteImport } from './routes/[.]well-known.agent-skills.index[.]json'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -90,6 +92,17 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const DotwellKnownApiCatalogRoute = DotwellKnownApiCatalogRouteImport.update({
+  id: '/.well-known/api-catalog',
+  path: '/.well-known/api-catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DotwellKnownAgentSkillsIndexDotjsonRoute =
+  DotwellKnownAgentSkillsIndexDotjsonRouteImport.update({
+    id: '/.well-known/agent-skills/index.json',
+    path: '/.well-known/agent-skills/index.json',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LovableEmailQueueProcessRoute =
   LovableEmailQueueProcessRouteImport.update({
     id: '/lovable/email/queue/process',
@@ -104,12 +117,14 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
+  '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRoutesByTo {
@@ -119,12 +134,14 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
+  '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRoutesById {
@@ -136,12 +153,14 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/.well-known/api-catalog': typeof DotwellKnownApiCatalogRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/order/$slug': typeof OrderSlugRoute
   '/products/glycine': typeof ProductsGlycineRoute
   '/products/super-f-humate-big-shiny-flakes': typeof ProductsSuperFHumateBigShinyFlakesRoute
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
+  '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRouteTypes {
@@ -153,12 +172,14 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/sitemap.xml'
+    | '/.well-known/api-catalog'
     | '/admin'
     | '/order/$slug'
     | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
+    | '/.well-known/agent-skills/index.json'
     | '/lovable/email/queue/process'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -168,12 +189,14 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/sitemap.xml'
+    | '/.well-known/api-catalog'
     | '/admin'
     | '/order/$slug'
     | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
+    | '/.well-known/agent-skills/index.json'
     | '/lovable/email/queue/process'
   id:
     | '__root__'
@@ -184,12 +207,14 @@ export interface FileRouteTypes {
     | '/auth'
     | '/contact'
     | '/sitemap.xml'
+    | '/.well-known/api-catalog'
     | '/_authenticated/admin'
     | '/order/$slug'
     | '/products/glycine'
     | '/products/super-f-humate-big-shiny-flakes'
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
+    | '/.well-known/agent-skills/index.json'
     | '/lovable/email/queue/process'
   fileRoutesById: FileRoutesById
 }
@@ -201,11 +226,13 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  DotwellKnownApiCatalogRoute: typeof DotwellKnownApiCatalogRoute
   OrderSlugRoute: typeof OrderSlugRoute
   ProductsGlycineRoute: typeof ProductsGlycineRoute
   ProductsSuperFHumateBigShinyFlakesRoute: typeof ProductsSuperFHumateBigShinyFlakesRoute
   ProductsSuperPotassiumShinyFlakes98Route: typeof ProductsSuperPotassiumShinyFlakes98Route
   ProductsVigoraRoute: typeof ProductsVigoraRoute
+  DotwellKnownAgentSkillsIndexDotjsonRoute: typeof DotwellKnownAgentSkillsIndexDotjsonRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
 }
 
@@ -302,6 +329,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/.well-known/api-catalog': {
+      id: '/.well-known/api-catalog'
+      path: '/.well-known/api-catalog'
+      fullPath: '/.well-known/api-catalog'
+      preLoaderRoute: typeof DotwellKnownApiCatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/agent-skills/index.json': {
+      id: '/.well-known/agent-skills/index.json'
+      path: '/.well-known/agent-skills/index.json'
+      fullPath: '/.well-known/agent-skills/index.json'
+      preLoaderRoute: typeof DotwellKnownAgentSkillsIndexDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/queue/process': {
       id: '/lovable/email/queue/process'
       path: '/lovable/email/queue/process'
@@ -331,6 +372,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  DotwellKnownApiCatalogRoute: DotwellKnownApiCatalogRoute,
   OrderSlugRoute: OrderSlugRoute,
   ProductsGlycineRoute: ProductsGlycineRoute,
   ProductsSuperFHumateBigShinyFlakesRoute:
@@ -338,6 +380,8 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsSuperPotassiumShinyFlakes98Route:
     ProductsSuperPotassiumShinyFlakes98Route,
   ProductsVigoraRoute: ProductsVigoraRoute,
+  DotwellKnownAgentSkillsIndexDotjsonRoute:
+    DotwellKnownAgentSkillsIndexDotjsonRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
 }
 export const routeTree = rootRouteImport

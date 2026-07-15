@@ -37,12 +37,34 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+const HOME_LINK_HEADER = [
+  '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+  '</llms.txt>; rel="describedby"; type="text/markdown"',
+  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+  '</.well-known/agent-skills/index.json>; rel="agent-skills"; type="application/json"',
+].join(", ");
+
+function addAgentDiscoveryHeaders(request: Request, response: Response): Response {
+  const url = new URL(request.url);
+  if (url.pathname !== "/") return response;
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("text/html")) return response;
+  const headers = new Headers(response.headers);
+  headers.append("Link", HOME_LINK_HEADER);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return addAgentDiscoveryHeaders(request, normalized);
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
