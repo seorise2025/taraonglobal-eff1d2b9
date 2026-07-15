@@ -83,7 +83,7 @@ export function IndiaMapCoverage() {
 
           <div className="relative">
             <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/20 via-transparent to-forest/15 blur-2xl" />
-            <div className="rounded-lg border border-border bg-cream p-4 shadow-xl sm:p-6">
+            <div className="map-island rounded-lg p-4 shadow-xl sm:p-6">
               <svg
                 viewBox="0 0 1000 1100"
                 role="img"
