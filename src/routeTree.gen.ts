@@ -30,6 +30,7 @@ import { Route as DotwellKnownOauthProtectedResourceRouteImport } from './routes
 import { Route as DotwellKnownOauthAuthorizationServerRouteImport } from './routes/[.]well-known.oauth-authorization-server'
 import { Route as DotwellKnownApiCatalogRouteImport } from './routes/[.]well-known.api-catalog'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicNotifyAdminRouteImport } from './routes/api/public/notify-admin'
 import { Route as DotwellKnownAgentSkillsIndexDotjsonRouteImport } from './routes/[.]well-known.agent-skills.index[.]json'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -146,6 +147,11 @@ const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicNotifyAdminRoute = ApiPublicNotifyAdminRouteImport.update({
+  id: '/api/public/notify-admin',
+  path: '/api/public/notify-admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DotwellKnownAgentSkillsIndexDotjsonRoute =
   DotwellKnownAgentSkillsIndexDotjsonRouteImport.update({
     id: '/.well-known/agent-skills/index.json',
@@ -202,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
   '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  '/api/public/notify-admin': typeof ApiPublicNotifyAdminRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -230,6 +237,7 @@ export interface FileRoutesByTo {
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
   '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  '/api/public/notify-admin': typeof ApiPublicNotifyAdminRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -260,6 +268,7 @@ export interface FileRoutesById {
   '/products/super-potassium-shiny-flakes-98': typeof ProductsSuperPotassiumShinyFlakes98Route
   '/products/vigora': typeof ProductsVigoraRoute
   '/.well-known/agent-skills/index.json': typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  '/api/public/notify-admin': typeof ApiPublicNotifyAdminRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -290,6 +299,7 @@ export interface FileRouteTypes {
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
     | '/.well-known/agent-skills/index.json'
+    | '/api/public/notify-admin'
     | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -318,6 +328,7 @@ export interface FileRouteTypes {
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
     | '/.well-known/agent-skills/index.json'
+    | '/api/public/notify-admin'
     | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -347,6 +358,7 @@ export interface FileRouteTypes {
     | '/products/super-potassium-shiny-flakes-98'
     | '/products/vigora'
     | '/.well-known/agent-skills/index.json'
+    | '/api/public/notify-admin'
     | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -376,6 +388,7 @@ export interface RootRouteChildren {
   ProductsSuperPotassiumShinyFlakes98Route: typeof ProductsSuperPotassiumShinyFlakes98Route
   ProductsVigoraRoute: typeof ProductsVigoraRoute
   DotwellKnownAgentSkillsIndexDotjsonRoute: typeof DotwellKnownAgentSkillsIndexDotjsonRoute
+  ApiPublicNotifyAdminRoute: typeof ApiPublicNotifyAdminRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
@@ -533,6 +546,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/notify-admin': {
+      id: '/api/public/notify-admin'
+      path: '/api/public/notify-admin'
+      fullPath: '/api/public/notify-admin'
+      preLoaderRoute: typeof ApiPublicNotifyAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.well-known/agent-skills/index.json': {
       id: '/.well-known/agent-skills/index.json'
       path: '/.well-known/agent-skills/index.json'
@@ -616,6 +636,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsVigoraRoute: ProductsVigoraRoute,
   DotwellKnownAgentSkillsIndexDotjsonRoute:
     DotwellKnownAgentSkillsIndexDotjsonRoute,
+  ApiPublicNotifyAdminRoute: ApiPublicNotifyAdminRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,

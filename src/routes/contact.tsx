@@ -174,6 +174,11 @@ function Contact() {
       return;
     }
     trackFormSubmit("contact_form", parsed.data.product_needed);
+    void fetch("/api/public/notify-admin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ kind: "enquiry", reference: data.reference_number }),
+    }).catch(() => {});
     setSubmitted({ reference: data.reference_number });
   }
 

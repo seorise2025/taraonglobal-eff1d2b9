@@ -156,6 +156,11 @@ function OrderPage() {
     const waHref = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(summary)}`;
     const mailHref = `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(`Bulk requirement ${data.order_number}, ${product.name}`)}&body=${encodeURIComponent(summary)}`;
     trackOrder(product.slug, data.order_number, d.bags);
+    void fetch("/api/public/notify-admin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ kind: "order", reference: data.order_number }),
+    }).catch(() => {});
     setPlaced({ reference: data.order_number, waHref, mailHref });
   }
 
