@@ -20,6 +20,7 @@ import logoDark from "@/assets/taraon-logo-dark.png.asset.json";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { LegalTrigger } from "@/components/site/LegalModals";
+import { ThemeToggle, useThemeInit } from "@/components/site/ThemeToggle";
 
 const NAV_PRIMARY = [{ to: "/", label: "Home" }] as const;
 const NAV_SECONDARY = [
@@ -256,6 +257,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('tg-theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var d=s?s==='dark':m;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
+          }}
+        />
         {gtmId ? (
           <script
             dangerouslySetInnerHTML={{
@@ -358,7 +364,15 @@ function Header() {
             height={44}
             decoding="async"
             fetchPriority="high"
-            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
+            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:hidden"
+          />
+          <img
+            src={logoDark.url}
+            alt="TARAON GLOBAL"
+            width={44}
+            height={44}
+            decoding="async"
+            className="hidden h-11 w-11 rounded-sm object-contain dark:block"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
@@ -414,6 +428,7 @@ function Header() {
           >
             <Phone className="h-3.5 w-3.5" /> +91 63591 93666
           </a>
+          <ThemeToggle />
           <Link
             to="/contact"
             className="inline-flex items-center rounded-sm bg-forest-deep px-4 py-2 text-sm font-medium text-cream transition-colors hover:bg-gold hover:text-forest-deep"
@@ -423,6 +438,7 @@ function Header() {
         </div>
 
         <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
           <a
             href="tel:+916359193666"
             aria-label="Call TARAON GLOBAL"
@@ -518,7 +534,16 @@ function Footer() {
               height={44}
               loading="lazy"
               decoding="async"
-              className="h-11 w-11 rounded-sm object-contain"
+              className="h-11 w-11 rounded-sm object-contain dark:hidden"
+            />
+            <img
+              src={logoGreen.url}
+              alt="TARAON GLOBAL"
+              width={44}
+              height={44}
+              loading="lazy"
+              decoding="async"
+              className="hidden h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:block"
             />
             <span className="font-display text-lg text-cream">TARAON GLOBAL</span>
           </div>
@@ -590,6 +615,7 @@ function Footer() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useThemeInit();
   return (
     <QueryClientProvider client={queryClient}>
       <a
