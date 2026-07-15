@@ -187,6 +187,24 @@
   color: oklch(0.52 0.14 74);
 }
 
+/* Global keyboard focus ring , visible in both themes. */
+@layer base {
+  :where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* Map island: always render on a light backdrop so the SVG state fills,
+   arcs, and legend stay readable in both light and dark modes. */
+.map-island {
+  background-color: oklch(0.965 0.018 85);
+  color: oklch(0.16 0.01 260);
+  border: 1px solid oklch(0.78 0.03 145);
+}
+.map-island .map-legend { color: oklch(0.35 0.02 155); }
+
 @utility container-page {
   width: 100%;
   max-width: 76rem;
