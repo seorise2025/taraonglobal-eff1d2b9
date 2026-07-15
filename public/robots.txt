@@ -1,34 +1,44 @@
 User-agent: *
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
+Allow: /auth.md
 
 Disallow: /admin
-Disallow: /auth
+Disallow: /auth/
+Disallow: /auth$
 Disallow: /order/
 
 # AI crawlers, explicitly welcomed on public pages
 User-agent: GPTBot
 Allow: /
+Allow: /auth.md
 Disallow: /admin
-Disallow: /auth
+Disallow: /auth/
+Disallow: /auth$
 Disallow: /order/
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /auth.md
 Disallow: /admin
-Disallow: /auth
+Disallow: /auth/
+Disallow: /auth$
 Disallow: /order/
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /auth.md
 Disallow: /admin
-Disallow: /auth
+Disallow: /auth/
+Disallow: /auth$
 Disallow: /order/
 
 User-agent: Google-Extended
 Allow: /
+Allow: /auth.md
 Disallow: /admin
-Disallow: /auth
+Disallow: /auth/
+Disallow: /auth$
 Disallow: /order/
 
 Sitemap: https://taraonglobal.com/sitemap.xml
