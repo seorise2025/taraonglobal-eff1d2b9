@@ -54,14 +54,14 @@ const CANONICAL = "https://taraonglobal.com/";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TARAON GLOBAL | Ahmedabad Sourcing Desk for Bulk Agri Inputs in India" },
+      { title: "TARAON GLOBAL | Ahmedabad Agri Input Sourcing Desk" },
       {
         name: "description",
         content:
-          "TARAON GLOBAL is an Ahmedabad based agri input trading company led by Rajesh Kumar Trivedi. One sourcing desk for potassium humate, Glycine, and biostimulants, supplied across India.",
+          "Ahmedabad based agri input sourcing desk led by Rajesh Kumar Trivedi. Potassium humate, Glycine, and biostimulants supplied across India in 25 Kg packs.",
       },
       { name: "keywords", content: "agri input sourcing India, potassium humate supplier Ahmedabad, bulk agri input trading company, humate biostimulant supplier India, Rajesh Kumar Trivedi TARAON GLOBAL, humate exporter India" },
-      { property: "og:title", content: "TARAON GLOBAL | Ahmedabad Sourcing Desk for Bulk Agri Inputs in India" },
+      { property: "og:title", content: "TARAON GLOBAL | Ahmedabad Agri Input Sourcing Desk" },
       {
         property: "og:description",
         content:
