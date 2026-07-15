@@ -186,7 +186,7 @@ export function IndiaMapCoverage() {
                 </g>
               </svg>
 
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-ink/60">
+              <div className="map-legend mt-4 flex flex-wrap items-center justify-between gap-3 text-xs">
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rounded-full bg-gold" />
                   Origin - Ahmedabad
