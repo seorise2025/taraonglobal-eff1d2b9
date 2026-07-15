@@ -364,7 +364,15 @@ function Header() {
             height={44}
             decoding="async"
             fetchPriority="high"
-            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain"
+            className="h-11 w-11 rounded-sm bg-[#F5F1E8] p-0.5 object-contain dark:hidden"
+          />
+          <img
+            src={logoDark.url}
+            alt="TARAON GLOBAL"
+            width={44}
+            height={44}
+            decoding="async"
+            className="hidden h-11 w-11 rounded-sm object-contain dark:block"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg tracking-tight text-forest-deep">
