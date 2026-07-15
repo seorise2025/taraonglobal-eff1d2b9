@@ -83,7 +83,7 @@ export function IndiaMapCoverage() {
 
           <div className="relative">
             <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/20 via-transparent to-forest/15 blur-2xl" />
-            <div className="rounded-lg border border-border bg-cream p-4 shadow-xl sm:p-6">
+            <div className="map-island rounded-lg p-4 shadow-xl sm:p-6">
               <svg
                 viewBox="0 0 1000 1100"
                 role="img"
@@ -186,7 +186,7 @@ export function IndiaMapCoverage() {
                 </g>
               </svg>
 
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-ink/60">
+              <div className="map-legend mt-4 flex flex-wrap items-center justify-between gap-3 text-xs">
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rounded-full bg-gold" />
                   Origin - Ahmedabad
@@ -196,7 +196,7 @@ export function IndiaMapCoverage() {
                   Supply route
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <span className="inline-block h-3 w-3 rounded-sm bg-forest-deep" />
+                  <span className="inline-block h-3 w-3 rounded-sm" style={{ backgroundColor: "oklch(0.35 0.06 155)" }} />
                   Delivered state / UT
                 </span>
               </div>
