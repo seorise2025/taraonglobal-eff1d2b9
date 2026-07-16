@@ -112,10 +112,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0F3D2E" },
-      { property: "og:title", content: "Bulk Agri Input Supplier India | TARAON GLOBAL" },
-      { name: "twitter:title", content: "Bulk Agri Input Supplier India | TARAON GLOBAL" },
-      { property: "og:description", content: "Ahmedabad-based agri-input trading company supplying potassium humate, Glycine and plant biostimulants to bulk buyers across India." },
-      { name: "twitter:description", content: "Ahmedabad-based agri-input trading company supplying potassium humate, Glycine and plant biostimulants to bulk buyers across India." },
+      // og:title, og:description, twitter:title and twitter:description are
+      // set per route so social cards match the page, not the site default.
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/52944d98-7caa-4c7a-95e7-c5ac66c0fd77/id-preview-e2e13192--ae029262-e42a-43c8-8c3d-149de90b9970.lovable.app-1782901346107.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/52944d98-7caa-4c7a-95e7-c5ac66c0fd77/id-preview-e2e13192--ae029262-e42a-43c8-8c3d-149de90b9970.lovable.app-1782901346107.png" },
     ],

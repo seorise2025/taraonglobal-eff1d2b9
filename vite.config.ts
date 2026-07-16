@@ -28,6 +28,7 @@ export default defineConfig({
       { path: "/products/super-f-humate-big-shiny-flakes" },
       { path: "/products/glycine" },
       { path: "/products/vigora" },
+      { path: "/guides/potassium-humate-dosage-cotton-groundnut" },
     ],
   },
   vite: {
