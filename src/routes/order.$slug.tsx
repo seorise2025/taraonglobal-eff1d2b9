@@ -138,21 +138,24 @@ function OrderPage() {
       toast.error("We could not submit your requirement. Please try again or contact TARAON GLOBAL by phone or WhatsApp.");
       return;
     }
-    const summary =
-      `Bulk requirement, TARAON GLOBAL\n` +
-      `Ref: ${data.order_number}\n` +
-      `Product: ${product.name}\n` +
-      `Bags: ${d.bags} (25 Kg)\n` +
-      `Total qty: ${d.quantity_estimate}\n` +
-      `Name: ${d.customer_name} (${d.company})\n` +
-      `Phone: ${d.phone}\n` +
-      (d.email ? `Email: ${d.email}\n` : "") +
-      `Location: ${d.city}, ${d.state} ${d.pincode}\n` +
-      `Buyer type: ${d.buyer_type}\n` +
-      (d.gst_number ? `GST: ${d.gst_number}\n` : "") +
-      (d.required_delivery_date ? `Required by: ${d.required_delivery_date}\n` : "") +
-      (d.po_reference ? `PO ref: ${d.po_reference}\n` : "") +
-      (d.notes ? `Notes: ${d.notes}\n` : "");
+    const summary = buildBulkOrderSummary({
+      reference: data.order_number,
+      product: product.name,
+      bags: d.bags,
+      quantityEstimate: d.quantity_estimate,
+      name: d.customer_name,
+      company: d.company,
+      phone: d.phone,
+      email: d.email,
+      city: d.city,
+      state: d.state,
+      pincode: d.pincode,
+      buyerType: d.buyer_type,
+      gst: d.gst_number,
+      requiredBy: d.required_delivery_date,
+      po: d.po_reference,
+      notes: d.notes,
+    });
     const waHref = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(summary)}`;
     const mailHref = `mailto:${ADMIN_EMAIL}?subject=${encodeURIComponent(`Bulk requirement ${data.order_number}, ${product.name}`)}&body=${encodeURIComponent(summary)}`;
     trackOrder(product.slug, data.order_number, d.bags);
