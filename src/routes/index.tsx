@@ -25,6 +25,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { FAQ } from "@/components/site/FAQ";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
 import { trackEmail, trackWhatsApp } from "@/lib/analytics";
 
