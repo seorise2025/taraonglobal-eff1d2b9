@@ -96,7 +96,7 @@ export const Route = createFileRoute("/products/glycine")({
           image: [`https://taraonglobal.com${productImg.url}`],
           category: "Amino Acid",
           description:
-            "Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid used in food, medicine, agriculture, pesticides, feed and daily chemical industries. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
+            "Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid supplied for agricultural and industrial formulators. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
           additionalProperty: [
             { "@type": "PropertyValue", name: "Purity", value: "99%" },
             { "@type": "PropertyValue", name: "Chloride", value: "0.25%" },
