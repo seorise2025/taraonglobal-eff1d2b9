@@ -17,7 +17,9 @@ import heroWebp from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcse
 import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcset";
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
-import rajeshPhoto from "@/assets/rajesh-kumar-trivedi.jpg.asset.json";
+import rajeshAvif from "@/assets/rajesh-kumar-trivedi.jpg?w=112;224&format=avif&as=srcset";
+import rajeshWebp from "@/assets/rajesh-kumar-trivedi.jpg?w=112;224&format=webp&as=srcset";
+import rajeshJpg from "@/assets/rajesh-kumar-trivedi.jpg?w=224&format=jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
 import { CountUp } from "@/components/site/CountUp";
