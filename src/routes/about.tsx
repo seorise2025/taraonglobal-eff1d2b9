@@ -126,7 +126,6 @@ function About() {
             </p>
           </div>
         </div>
-        <img
         <picture>
           <source type="image/avif" srcSet={warehouseAvif} sizes="(min-width: 1024px) 900px, 100vw" />
           <source type="image/webp" srcSet={warehouseWebp} sizes="(min-width: 1024px) 900px, 100vw" />
