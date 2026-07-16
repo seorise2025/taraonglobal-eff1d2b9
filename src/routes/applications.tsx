@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import fieldImg from "@/assets/applications-field.jpg";
+import fieldAvif from "@/assets/applications-field.jpg?w=640;960;1600&format=avif&as=srcset";
+import fieldWebp from "@/assets/applications-field.jpg?w=640;960;1600&format=webp&as=srcset";
+import fieldImg from "@/assets/applications-field.jpg?w=1200&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { SpecTable } from "@/components/site/SpecTable";
@@ -182,14 +184,19 @@ function Applications() {
               powder biostimulant. Here is where each one fits in the field.
             </p>
           </div>
-          <img
-            src={fieldImg}
-            alt="Cross section of soil showing deep plant roots in a crop field"
-            width={1600}
-            height={1000}
-            loading="lazy"
-            className="aspect-[16/10] w-full rounded-lg object-cover shadow-xl"
-          />
+          <picture>
+            <source type="image/avif" srcSet={fieldAvif} sizes="100vw" />
+            <source type="image/webp" srcSet={fieldWebp} sizes="100vw" />
+            <img
+              src={fieldImg}
+              alt="Cross section of soil showing deep plant roots in a crop field"
+              width={1600}
+              height={1000}
+              loading="lazy"
+              decoding="async"
+              className="aspect-[16/10] w-full rounded-lg object-cover shadow-xl"
+            />
+          </picture>
         </div>
       </section>
 

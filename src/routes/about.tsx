@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin } from "lucide-react";
-import warehouseImg from "@/assets/about-warehouse.jpg";
+import warehouseAvif from "@/assets/about-warehouse.jpg?w=640;960;1400&format=avif&as=srcset";
+import warehouseWebp from "@/assets/about-warehouse.jpg?w=640;960;1400&format=webp&as=srcset";
+import warehouseImg from "@/assets/about-warehouse.jpg?w=960&format=webp";
 import rajeshAvif from "@/assets/rajesh-kumar-trivedi.jpg?w=320;640&format=avif&as=srcset";
 import rajeshWebp from "@/assets/rajesh-kumar-trivedi.jpg?w=320;640&format=webp&as=srcset";
 import rajeshJpg from "@/assets/rajesh-kumar-trivedi.jpg?w=640&format=webp";
@@ -124,14 +126,19 @@ function About() {
             </p>
           </div>
         </div>
-        <img
-          src={warehouseImg}
-          alt="Neatly stacked bags of TARAON GLOBAL potassium humate in the Ahmedabad warehouse"
-          width={1400}
-          height={1000}
-          loading="lazy"
-          className="aspect-[7/5] w-full rounded-lg object-cover shadow-xl"
-        />
+        <picture>
+          <source type="image/avif" srcSet={warehouseAvif} sizes="(min-width: 1024px) 900px, 100vw" />
+          <source type="image/webp" srcSet={warehouseWebp} sizes="(min-width: 1024px) 900px, 100vw" />
+          <img
+            src={warehouseImg}
+            alt="Neatly stacked bags of TARAON GLOBAL potassium humate in the Ahmedabad warehouse"
+            width={1400}
+            height={1000}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[7/5] w-full rounded-lg object-cover shadow-xl"
+          />
+        </picture>
       </section>
 
       <section className="border-y border-border bg-card">
