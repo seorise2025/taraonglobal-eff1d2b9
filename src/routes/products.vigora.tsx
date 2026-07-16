@@ -19,18 +19,6 @@ const SPECS = [
   { label: "Buyer Type", value: "Farmers, dealers, distributors" },
 ];
 
-const QUICK = [
-  { label: "Product", value: "Vigora Water-Soluble Plant Biostimulant" },
-  { label: "Brand", value: "TARAON GLOBAL" },
-  { label: "Form", value: "Water soluble powder (99% water soluble content)" },
-  { label: "Packing", value: "25 Kgs kraft bag" },
-  { label: "MOQ", value: "Available on enquiry" },
-  { label: "COA", value: "Available on request" },
-  { label: "Dispatch from", value: "Ahmedabad, Gujarat" },
-  { label: "Supply coverage", value: "Across India" },
-  { label: "Suitable for", value: "Farmers, dealers, distributors, agri-input formulators" },
-  { label: "Quote", value: "Request current batch price" },
-];
 
 const CROPS = [
   "Soybean", "Groundnut", "Cotton", "Rice", "Wheat", "Maize",
