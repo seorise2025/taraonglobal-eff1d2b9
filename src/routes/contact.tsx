@@ -15,14 +15,15 @@ const SITE = "https://taraonglobal.com";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Request Bulk Agri Input Price | TARAON GLOBAL" },
+      { title: "Contact Agri Input Supplier Ahmedabad | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Contact TARAON GLOBAL for potassium humate, Glycine and plant biostimulant requirements. Share quantity and location for current pricing and availability.",
+          "Contact TARAON GLOBAL in Ahmedabad for bulk potassium humate, Glycine and biostimulant pricing, COA and dispatch across India. Share quantity and delivery location.",
       },
-      { property: "og:title", content: "Request Bulk Agri Input Price | TARAON GLOBAL" },
-      { property: "og:description", content: "Share product, quantity and delivery location. Our team will confirm current specification, price, taxes, freight and dispatch timeline." },
+      { name: "keywords", content: "contact potassium humate supplier, agri input supplier contact Ahmedabad, TARAON GLOBAL contact, bulk potassium humate price enquiry, potassium humate quote India, agri input enquiry Ahmedabad" },
+      { property: "og:title", content: "Contact Agri Input Supplier Ahmedabad | TARAON GLOBAL" },
+      { property: "og:description", content: "Ahmedabad based agri input supply desk. Share product, quantity and delivery location for current price, COA and dispatch timeline." },
       { property: "og:url", content: `${SITE}/contact` },
       { property: "og:type", content: "website" },
     ],
