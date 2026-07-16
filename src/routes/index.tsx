@@ -58,18 +58,18 @@ const CANONICAL = "https://taraonglobal.com/";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TARAON GLOBAL | Ahmedabad Agri Input Sourcing Desk" },
+      { title: "Agri Input & Potassium Humate Supplier India | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Ahmedabad based agri input sourcing desk led by Rajesh Kumar Trivedi. Potassium humate, Glycine, and biostimulants supplied across India in 25 Kg packs.",
+          "TARAON GLOBAL supplies Potassium Humate Shiny Flakes 98%, Glycine 99% and plant biostimulants in bulk from Ahmedabad, with COA-supported dispatch across India.",
       },
-      { name: "keywords", content: "agri input sourcing India, potassium humate supplier Ahmedabad, bulk agri input trading company, humate biostimulant supplier India, Rajesh Kumar Trivedi TARAON GLOBAL, humate exporter India" },
-      { property: "og:title", content: "TARAON GLOBAL | Ahmedabad Agri Input Sourcing Desk" },
+      { name: "keywords", content: "agri input supplier in India, potassium humate supplier in India, agricultural raw material supplier, fertilizer raw material supplier, bulk agri input supplier, agri input trading company, agri input supplier Ahmedabad, potassium humate supplier Ahmedabad, PAN India agri input supply" },
+      { property: "og:title", content: "Agri Input & Potassium Humate Supplier India | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "One responsive Ahmedabad based sourcing desk for potassium humate, Glycine, and plant biostimulants. Batch tested supply, 25 Kgs packing, India wide dispatch.",
+          "TARAON GLOBAL supplies Potassium Humate Shiny Flakes 98%, Glycine 99% and plant biostimulants in bulk from Ahmedabad, with COA-supported dispatch across India.",
       },
       { property: "og:url", content: CANONICAL },
       { property: "og:type", content: "website" },
@@ -160,18 +160,19 @@ function Home() {
             className="lg:col-span-7"
           >
 
-            <h1 className="font-display text-[2.6rem] font-semibold leading-[1.05] text-forest-deep sm:text-6xl lg:text-[4.25rem]">
-              Precision{" "}
-              <span className="italic font-normal text-gold">Sourcing</span> for
-              agri inputs.
+            <h1 className="font-display text-[2.4rem] font-semibold leading-[1.05] text-forest-deep sm:text-5xl lg:text-[3.75rem]">
+              Bulk Agri Input and{" "}
+              <span className="italic font-normal text-gold">Potassium Humate</span>{" "}
+              Supplier in India.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/80">
+              Precision sourcing for verified agri inputs, bulk buyers, dealers and fertilizer formulators.
               TARAON GLOBAL is an{" "}
               <Link to="/about" className="underline decoration-gold/60 underline-offset-4 hover:text-forest-deep">
                 Ahmedabad based
               </Link>{" "}
-              trading desk for potassium humate, Glycine, and Vigora plant biostimulant. One responsive team led by Rajesh Kumar Trivedi, 20+ years in the trade.
+              agri input trading company supplying Potassium Humate Shiny Flakes 98%, Glycine 99% and plant biostimulants to dealers, distributors, fertilizer formulators and bulk buyers across India. Led by Rajesh Kumar Trivedi, 20+ years in the trade. Current-batch COA available on request.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

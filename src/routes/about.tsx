@@ -33,20 +33,21 @@ const ABOUT_FAQS = [
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About TARAON GLOBAL | Potassium Humate Supplier, Ahmedabad" },
+      { title: "About TARAON GLOBAL | Agri Input Supplier Ahmedabad" },
       {
         name: "description",
         content:
-          "TARAON GLOBAL is an Ahmedabad based supplier of potassium humate shiny flakes for farmers, dealers, and distributors across Gujarat and India.",
+          "TARAON GLOBAL is an Ahmedabad based agri input trading company supplying potassium humate, Glycine and biostimulants to dealers, distributors and formulators across India.",
       },
+      { name: "keywords", content: "agri input supplier Ahmedabad, potassium humate trading company India, Rajesh Kumar Trivedi TARAON GLOBAL, agri input trading company Ahmedabad, potassium humate supplier Ahmedabad, agricultural raw material trading company" },
       {
         property: "og:title",
-        content: "About TARAON GLOBAL | Potassium Humate Supplier, Ahmedabad",
+        content: "About TARAON GLOBAL | Agri Input Supplier Ahmedabad",
       },
       {
         property: "og:description",
         content:
-          "One product done properly. Led by Rajesh Kumar Trivedi from Sarkhej Sanand Cross Road, Ahmedabad.",
+          "Ahmedabad based agri input trading desk led by Rajesh Kumar Trivedi. Verified bulk supply of potassium humate, Glycine and biostimulants across India.",
       },
       { property: "og:url", content: "https://taraonglobal.com/about" },
       { property: "og:type", content: "website" },

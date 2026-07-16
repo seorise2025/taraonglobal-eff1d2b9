@@ -27,16 +27,17 @@ const SPECS = [
 ];
 
 const QUICK = [
-  { label: "Product Name", value: "Super F Humate Big Shiny Flakes" },
+  { label: "Product", value: "Super F Humate Big Shiny Flakes" },
   { label: "Brand", value: "TARAON GLOBAL" },
-  { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
-  { label: "Form", value: "Big black shiny flakes" },
-  { label: "Packing", value: "25 Kgs" },
-  { label: "Source", value: "Leonardite / lignite / oxidised brown coal" },
-  {
-    label: "Buyer Type",
-    value: "Dealers, distributors, fertilizer companies, farmers",
-  },
+  { label: "Purity / Assay", value: "98%" },
+  { label: "Form", value: "Big black shiny flakes, low dust, water soluble" },
+  { label: "Packing", value: "25 Kgs kraft bag" },
+  { label: "MOQ", value: "Available on enquiry" },
+  { label: "COA", value: "Available on request" },
+  { label: "Dispatch from", value: "Ahmedabad, Gujarat" },
+  { label: "Supply coverage", value: "Across India" },
+  { label: "Suitable for", value: "Dealers, distributors, repackers, fertilizer formulators, blending lines" },
+  { label: "Quote", value: "Request current batch price" },
 ];
 
 const FAQS = [
@@ -69,20 +70,21 @@ const FAQS = [
 export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes")({
   head: () => ({
     meta: [
-      { title: "Super F Humate Big Shiny Flakes | TARAON GLOBAL" },
+      { title: "Big Shiny Potassium Humate Flakes Wholesale Supplier" },
       {
         name: "description",
         content:
-          "Super F Humate Big Shiny Flakes for bulk buyers and dealers. 98% purity potassium humate, 55-60% humic acid, 3-5% K₂O, pH 9-10. Supplied in 25 Kgs packs.",
+          "Bulk supply of Big Shiny Potassium Humate Flakes for dealers, distributors, repackers and fertilizer formulators, with COA and India-wide dispatch.",
       },
+      { name: "keywords", content: "big shiny potassium humate flakes, potassium humate big shiny flakes, wholesale potassium humate flakes, potassium humate for distributors, potassium humate for repacking, potassium humate for fertilizer blending, bulk humate flakes supplier, low-dust potassium humate flakes, potassium humate dealer supply" },
       {
         property: "og:title",
-        content: "Super F Humate Big Shiny Flakes | TARAON GLOBAL",
+        content: "Big Shiny Potassium Humate Flakes Wholesale Supplier",
       },
       {
         property: "og:description",
         content:
-          "Bigger flake, same strength. Made for dealers who move volume without extra handling headaches.",
+          "Large-flake, low-dust potassium humate for dealer repacking and fertilizer blending. 25 Kgs bulk supply with COA and India-wide dispatch.",
       },
       {
         property: "og:url",
@@ -177,11 +179,13 @@ function ProductPage() {
             <span className="h-px w-8 bg-gold" /> Built for volume
           </div>
           <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl">
-            Super F Humate Big Shiny Flakes
+            Big Shiny Potassium Humate Flakes for Bulk Supply
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            Same core strength as our main product, in a bigger flake. Built for dealers
-            who need volume without extra handling headaches.
+            Big Shiny Potassium Humate Flakes is a large-flake, low-dust grade of potassium humate supplied in bulk for dealer repacking, distributor stock and fertilizer blending lines. TARAON GLOBAL supplies verified batches in 25 Kgs packing from Ahmedabad, with COA on request and dispatch across India.
+          </p>
+          <p className="mt-3 text-ink/70">
+            Same 98% purity, 55 to 60% humic acid and 3 to 5% K₂O as our standard shiny flakes. The difference is flake size, low dust and easier handling for repackers, blenders and formulators moving volume.
           </p>
           <InquiryCTA product="super-f-humate-big-shiny-flakes" className="mt-8" />
 

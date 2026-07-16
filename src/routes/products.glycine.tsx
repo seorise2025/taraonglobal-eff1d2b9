@@ -20,19 +20,23 @@ const SPECS = [
 ];
 
 const QUICK = [
-  { label: "Product Name", value: "Glycine (High-Quality Amino Acid)" },
+  { label: "Product", value: "Glycine 99%" },
   { label: "Brand", value: "TARAON GLOBAL" },
-  { label: "Form", value: "White crystalline" },
-  { label: "Purity", value: "99%" },
-  { label: "Packing", value: "25 Kgs" },
-  { label: "Industries", value: "Agriculture, food, pharma, feed, daily chemical" },
-  { label: "Buyer Type", value: "Formulators, dealers, industrial buyers" },
+  { label: "Purity / Assay", value: "99%" },
+  { label: "Form", value: "White crystalline powder / granules" },
+  { label: "Packing", value: "25 Kgs kraft bag" },
+  { label: "MOQ", value: "Available on enquiry" },
+  { label: "COA", value: "Available on request" },
+  { label: "Dispatch from", value: "Ahmedabad, Gujarat" },
+  { label: "Supply coverage", value: "Across India" },
+  { label: "Suitable for", value: "Formulators, dealers, industrial buyers, agri-input companies" },
+  { label: "Quote", value: "Request current batch price" },
 ];
 
 const FAQS = [
   {
     q: "What is Glycine used for?",
-    a: "Glycine is a bulk amino acid used in food, medicine, feed, pesticides, daily chemicals and agriculture. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
+    a: "Glycine is a bulk amino acid used across agricultural inputs, industrial formulations and general chemical applications. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
   },
   {
     q: "Where does TARAON GLOBAL source Glycine from?",
@@ -40,32 +44,37 @@ const FAQS = [
   },
   {
     q: "Can Glycine be blended with other amino acids?",
-    a: "Yes. Formulators commonly blend Glycine with folic acid and other monomer amino acids to build agricultural and industrial formulas.",
+    a: "Yes. Formulators commonly blend Glycine with other monomer amino acids and chelating carriers to build agricultural and industrial formulas.",
   },
   {
     q: "Do you supply Glycine for fertilizer formulation?",
-    a: "Yes. Fertilizer companies use Glycine as a chelator and synergist. Bulk pricing and COA are available on request.",
+    a: "Yes. Agri-input formulators use Glycine as a chelator and synergist. Bulk pricing and COA are available on request.",
   },
   {
     q: "What is the standard pack size?",
     a: "25 Kgs bags, dispatched from our Ahmedabad warehouse across India.",
+  },
+  {
+    q: "Do you supply food-grade or pharmaceutical-grade Glycine?",
+    a: "The Glycine we stock is supplied as a bulk industrial and agricultural raw material with COA. Buyers requiring a specific grade should confirm their end-use and required certification at the time of enquiry.",
   },
 ];
 
 export const Route = createFileRoute("/products/glycine")({
   head: () => ({
     meta: [
-      { title: "Glycine 99% Amino Acid Supplier in India | TARAON GLOBAL" },
+      { title: "Glycine 99% Bulk Supplier in India | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Glycine 99% purity from TARAON GLOBAL. Bulk amino acid for agriculture, food, pharma, feed and daily chemical industries. Supplied in 25 Kgs packs from Ahmedabad.",
+          "Bulk Glycine 99% supplied in 25 Kgs packs for agricultural and industrial formulators, with COA on request and dispatch across India from Ahmedabad.",
       },
-      { property: "og:title", content: "Glycine (High-Quality Amino Acid) | TARAON GLOBAL" },
+      { name: "keywords", content: "glycine 99% supplier India, glycine bulk supplier, glycine amino acid supplier, glycine for fertilizer formulation, glycine chelator, glycine 25 kg pack, glycine importer India, bulk amino acid supplier India" },
+      { property: "og:title", content: "Glycine 99% Bulk Supplier in India | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "Glycine 99% bulk amino acid. Fertilizer synergist, natural metal chelator, food and pharma grade options. 25 Kgs pack.",
+          "Bulk Glycine 99% for agri and industrial formulators. 25 Kgs packing, COA on request, dispatch across India from Ahmedabad.",
       },
       { property: "og:url", content: "https://taraonglobal.com/products/glycine" },
       { property: "og:type", content: "product" },
@@ -87,7 +96,7 @@ export const Route = createFileRoute("/products/glycine")({
           image: [`https://taraonglobal.com${productImg.url}`],
           category: "Amino Acid",
           description:
-            "Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid used in food, medicine, agriculture, pesticides, feed and daily chemical industries. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
+            "Glycine 99% purity. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Bulk amino acid supplied for agricultural and industrial formulators. Supports crop photosynthesis, acts as a natural metal chelator and fertilizer synergist. Supplied in 25 Kgs packs.",
           additionalProperty: [
             { "@type": "PropertyValue", name: "Purity", value: "99%" },
             { "@type": "PropertyValue", name: "Chloride", value: "0.25%" },
@@ -156,13 +165,13 @@ function ProductPage() {
             <span className="h-px w-8 bg-gold" /> Amino acid range
           </div>
           <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl">
-            Glycine, High-Quality Amino Acid
+            Glycine 99% Bulk Supply
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            Glycine is a simple, versatile organic compound that has become a bulk raw material in food, medicine and agriculture. Widely used in pesticides, feed and daily chemical industries.
+            Glycine 99% is a bulk amino acid supplied for agricultural input formulators, chelation blends and general industrial raw material use. TARAON GLOBAL supplies verified batches in 25 Kgs packing from Ahmedabad, with COA availability and dispatch across India.
           </p>
           <p className="mt-3 text-ink/70">
-            In the field, Glycine has a unique effect on crop photosynthesis, supports plant growth, improves sugar content and works as a natural metal chelator. It is a highly effective fertilizer synergist, usually blended with folic acid and other monomer amino acids to build formulas.
+            In the field, Glycine supports crop photosynthesis, plant growth and sugar content, and works as a natural metal chelator. It is a widely used fertilizer synergist, blended with other monomer amino acids and chelating carriers to build formulas.
           </p>
           <InquiryCTA product="glycine" className="mt-8" />
         </div>
@@ -170,7 +179,7 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={productImg.url}
-            alt="Glycine 99% purity food and feed grade white crystalline amino acid powder, bulk 25 Kg supply by TARAON GLOBAL India"
+            alt="Glycine 99% white crystalline amino acid powder, bulk 25 Kg supply by TARAON GLOBAL India"
             width={1200}
             height={1500}
             fetchPriority="high"
@@ -193,10 +202,10 @@ function ProductPage() {
             <SectionHeading eyebrow="Description" title="A bulk raw material with real range" />
             <div className="mt-6 space-y-4 text-ink/80">
               <p>
-                Glycine is one of those workhorse inputs that sits behind more products than most people realise. Food, medicine, agriculture, pesticides, feed and daily chemical industries all pull from the same amino acid stream.
+                Glycine is a workhorse amino acid that sits behind a wide range of agricultural and industrial formulations. Dealers, formulators and blending lines use it as a raw material for chelation, fertilizer synergy and amino acid blends.
               </p>
               <p>
-                On the farm side, it supports photosynthesis, better plant growth and higher sugar content in crops. It also chelates metals naturally, which is why fertilizer formulators pair it with folic acid and other amino acids when they build their own blends.
+                On the farm side, it supports photosynthesis, plant growth and sugar content in crops. It also chelates metals naturally, which is why fertilizer formulators pair it with other amino acids and carriers when they build blends.
               </p>
               <p>
                 We import in bulk, batch check it, and ship 25 Kgs packs across India from Ahmedabad.
@@ -211,7 +220,7 @@ function ProductPage() {
                 "Natural metal chelator",
                 "Effective fertilizer synergist",
                 "Improves sugar content in crops",
-                "Blends well with folic acid and other amino acids",
+                "Blends well with other amino acids and carriers",
                 "Consistent 99% purity across batches",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-3">
@@ -238,9 +247,9 @@ function ProductPage() {
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["Agriculture", "Photosynthesis support, chelation, fertilizer synergy."],
-            ["Food Industry", "Bulk raw material for food-grade applications."],
-            ["Pharma & Medicine", "Amino acid ingredient for formulations."],
-            ["Feed & Daily Chemicals", "Widely used across feed and chemical lines."],
+            ["Fertilizer formulation", "Chelating carrier and synergist in amino acid blends."],
+            ["Industrial formulation", "Bulk amino acid raw material for industrial buyers."],
+            ["Dealer / distributor supply", "25 Kgs packing, COA on request, dispatched from Ahmedabad."],
           ].map(([t, d]) => (
             <div key={t} className="rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-gold/50 hover:shadow-md">
               <div className="font-display text-lg text-forest-deep">{t}</div>

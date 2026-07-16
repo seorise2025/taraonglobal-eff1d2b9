@@ -35,20 +35,21 @@ const APP_FAQS = [
 export const Route = createFileRoute("/applications")({
   head: () => ({
     meta: [
-      { title: "Potassium Humate Uses in Agriculture | TARAON GLOBAL" },
+      { title: "Potassium Humate Applications, Uses and Dosage Guide" },
       {
         name: "description",
         content:
-          "How potassium humate works in soil, drip irrigation, fertigation, foliar spray, and fertilizer blending. Practical guide from TARAON GLOBAL.",
+          "Applications of potassium humate, Glycine and Vigora biostimulant across soil, drip fertigation, foliar spray, fertilizer blending and formulation, with practical dosage guidance.",
       },
+      { name: "keywords", content: "potassium humate uses, potassium humate application, potassium humate dosage, potassium humate for fertigation, potassium humate for foliar spray, potassium humate for fertilizer blending, glycine uses in agriculture, biostimulant application guide, agri input dosage guide" },
       {
         property: "og:title",
-        content: "Potassium Humate Uses in Agriculture | TARAON GLOBAL",
+        content: "Potassium Humate Applications, Uses and Dosage Guide",
       },
       {
         property: "og:description",
         content:
-          "Where potassium humate fits in real farming - soil, drip, fertigation, foliar, and NPK blending.",
+          "How potassium humate, Glycine and Vigora fit in real Indian farming: soil, drip, fertigation, foliar, blending and formulation.",
       },
       { property: "og:url", content: "https://taraonglobal.com/applications" },
       { property: "og:type", content: "website" },
@@ -176,7 +177,7 @@ function Applications() {
               <span className="h-px w-8 bg-gold" /> Applications
             </div>
             <h1 className="font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
-              Product Applications Across Indian Agriculture
+              Potassium Humate, Glycine and Biostimulant Applications in Indian Agriculture
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-ink/75">
               Four products, one supply desk. Potassium humate for soil and drip, big
