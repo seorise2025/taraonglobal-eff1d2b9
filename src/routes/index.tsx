@@ -458,6 +458,69 @@ function Home() {
       {/* INDIA MAP */}
       <IndiaMapCoverage />
 
+      {/* ENTITY DEFINITION — AI-friendly at-a-glance fact block */}
+      <section className="border-y border-border bg-secondary/40 py-16" aria-labelledby="about-taraon-heading">
+        <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+          <div>
+            <div className="mb-3 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
+              <span className="h-px w-8 bg-gold" /> About TARAON GLOBAL
+            </div>
+            <h2 id="about-taraon-heading" className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl">
+              Ahmedabad based agri input trading and supply company
+            </h2>
+            <p className="mt-4 text-ink/75">
+              TARAON GLOBAL is a trading and supplier company based in Ahmedabad, Gujarat, India. We source Potassium Humate Shiny Flakes 98%, Super F Humate Big Shiny Flakes, Glycine 99% and Vigora plant biostimulant from trusted overseas producers, verify each batch, and supply in 25 Kgs packing to buyers across every Indian state and union territory. A current-batch Certificate of Analysis is issued on request.
+            </p>
+          </div>
+          <dl className="grid gap-x-8 gap-y-4 rounded-lg border border-border bg-card p-6 text-sm sm:grid-cols-2">
+            <div>
+              <dt className="font-medium text-forest-deep">Legal name</dt>
+              <dd className="mt-1 text-ink/75">TARAON GLOBAL</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Business type</dt>
+              <dd className="mt-1 text-ink/75">Trading and supplier company (not a manufacturer)</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Headquarters</dt>
+              <dd className="mt-1 text-ink/75">A-210, Signature-2, Sarkhej Sanand Cross Road, Ahmedabad 382210, Gujarat, India</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Led by</dt>
+              <dd className="mt-1 text-ink/75">Rajesh Kumar Trivedi, 20+ years in the humate and agri-inputs industry</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Products supplied</dt>
+              <dd className="mt-1 text-ink/75">Potassium Humate Shiny Flakes 98%, Super F Humate Big Shiny Flakes, Glycine 99%, Vigora Plant Biostimulant</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Standard packing</dt>
+              <dd className="mt-1 text-ink/75">25 Kgs kraft bags, batch numbered</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Buyer groups</dt>
+              <dd className="mt-1 text-ink/75">Farmers, dealers, distributors, fertilizer formulators, FPOs, exporters, industrial buyers</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Supply geography</dt>
+              <dd className="mt-1 text-ink/75">Dispatch from Ahmedabad to every Indian state and union territory</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">COA availability</dt>
+              <dd className="mt-1 text-ink/75">Current-batch Certificate of Analysis issued on request</dd>
+            </div>
+            <div>
+              <dt className="font-medium text-forest-deep">Contact</dt>
+              <dd className="mt-1 text-ink/75">
+                <a href="tel:+916359193666" className="underline decoration-gold/60 underline-offset-2 hover:text-forest-deep">+91 63591 93666</a>
+                <span aria-hidden="true"> · </span>
+                <a href="mailto:info@taraonglobal.com" className="underline decoration-gold/60 underline-offset-2 hover:text-forest-deep">info@taraonglobal.com</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="container-page py-20">
         <SectionHeading

@@ -42,28 +42,32 @@ const QUICK = [
 
 const FAQS = [
   {
+    q: "What is the purity and specification of the big flake grade?",
+    a: "Same 98% assay as our standard shiny flakes. Humic acid 55 to 60%, fulvic acid 1 to 3%, potassium as K2O 3 to 5%, pH 9 to 10, moisture 10 to 15%, water solubility 98%. The difference is flake size, low dust and easier handling for repackers and blenders.",
+  },
+  {
     q: "Where is Super F Humate Big Shiny Flakes sourced from?",
-    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL imports the product, verifies each batch, and supplies it under our brand from Ahmedabad.",
+    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL imports the product, verifies each batch and supplies it from Ahmedabad. We are a trading and supplier company, not a manufacturer.",
   },
   {
-    q: "Is TARAON GLOBAL the manufacturer?",
-    a: "No. TARAON GLOBAL is a trading and supplier company. We do not manufacture - we source from a trusted producer and handle quality control, packaging, and India-wide distribution.",
+    q: "What is the pack size and MOQ?",
+    a: "Standard packing is a 25 Kgs kraft bag with a printed batch number. MOQ is confirmed at the time of enquiry based on destination and current stock. Container-load and repeat-order pricing available.",
   },
   {
-    q: "What packaging is available?",
-    a: "Standard packing is 25 Kgs kraft bags - the pack format used across dealer and distributor supply.",
+    q: "Is a COA issued for every batch?",
+    a: "Yes. A current-batch Certificate of Analysis is issued on request and the batch number on the COA matches the number printed on your bag.",
   },
   {
-    q: "Do you supply dealers and distributors in bulk?",
-    a: "Yes. This grade is built for that buyer. Dealer terms, bulk pricing and repeat-order support are available on request.",
+    q: "Where does the product dispatch from and do you supply across India?",
+    a: "Dispatch is from our Ahmedabad warehouse to buyers in every Indian state and union territory. Freight and delivery timeline are quoted with the price.",
   },
   {
-    q: "Can it go into a fertilizer blend?",
-    a: "Yes. Fertilizer companies commonly blend it into NPK and organic input lines.",
+    q: "Who typically buys the big flake grade?",
+    a: "Dealers, distributors, repackers, fertilizer formulators and blending lines. The big flake size and low dust are the reason volume buyers pick this grade over standard flakes.",
   },
   {
-    q: "Do you ship outside Gujarat?",
-    a: "Yes, across India from our Ahmedabad base.",
+    q: "How do I request the current bulk price?",
+    a: "Send product name, quantity in Kgs or bags and delivery pincode by WhatsApp on +91 63591 93666, email to info@taraonglobal.com, or the contact form. Same-day reply with current price, packing and dispatch timeline in most cases.",
   },
 ];
 
@@ -107,11 +111,9 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
           mpn: "TG-SFHB-98",
           brand: { "@type": "Brand", name: "TARAON GLOBAL" },
           category: "Potassium Humate Fertilizer",
-          image: [
-            "https://taraonglobal.com/og-super-f-humate-big.jpg",
-          ],
+          image: [`https://taraonglobal.com${productBigImg.url}`],
           description:
-            "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input - not a complete NPK fertiliser.",
+            "Water soluble potassium humate shiny flakes in big flake form. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input, not a complete NPK fertiliser.",
           additionalProperty: [
             { "@type": "PropertyValue", name: "Purity", value: "98%" },
             { "@type": "PropertyValue", name: "Humic Acid", value: "55-60%" },
@@ -125,13 +127,16 @@ export const Route = createFileRoute("/products/super-f-humate-big-shiny-flakes"
             "@type": "Offer",
             url: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes",
             availability: "https://schema.org/InStock",
+            itemCondition: "https://schema.org/NewCondition",
             priceCurrency: "INR",
+            price: "0",
             priceSpecification: {
               "@type": "PriceSpecification",
               priceCurrency: "INR",
               valueAddedTaxIncluded: false,
               description: "Bulk and dealer pricing on request",
             },
+            eligibleQuantity: { "@type": "QuantitativeValue", value: 25, unitCode: "KGM", unitText: "25 Kgs bag" },
             seller: { "@id": "https://taraonglobal.com/#organization" },
           },
         }),

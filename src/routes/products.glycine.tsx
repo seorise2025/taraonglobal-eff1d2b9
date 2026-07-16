@@ -35,28 +35,36 @@ const QUICK = [
 
 const FAQS = [
   {
+    q: "What is the purity and specification of your Glycine?",
+    a: "Assay is 99%. Chloride 0.25%, loss on drying 0.18%, pH 6.2. Supplied as a white crystalline powder or granules. Every consignment ships with a batch number and a current-batch COA is issued on request.",
+  },
+  {
     q: "What is Glycine used for?",
-    a: "Glycine is a bulk amino acid used across agricultural inputs, industrial formulations and general chemical applications. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
+    a: "Glycine is a bulk amino acid used across agricultural inputs and industrial formulations. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
   },
   {
     q: "Where does TARAON GLOBAL source Glycine from?",
-    a: "We import Glycine in bulk from a trusted overseas producer, batch check it in Ahmedabad, and supply across India in 25 Kgs packs. TARAON GLOBAL is a trading and supplier company, not a manufacturer.",
+    a: "We import Glycine in bulk from a trusted overseas producer, batch check it in Ahmedabad and supply across India. TARAON GLOBAL is a trading and supplier company, not a manufacturer.",
   },
   {
-    q: "Can Glycine be blended with other amino acids?",
-    a: "Yes. Formulators commonly blend Glycine with other monomer amino acids and chelating carriers to build agricultural and industrial formulas.",
+    q: "What is the pack size and MOQ?",
+    a: "Standard packing is a 25 Kgs kraft bag. MOQ is confirmed at the time of enquiry based on end-use, destination and current stock. Container-load pricing is available for large buyers.",
   },
   {
-    q: "Do you supply Glycine for fertilizer formulation?",
-    a: "Yes. Agri-input formulators use Glycine as a chelator and synergist. Bulk pricing and COA are available on request.",
+    q: "Where is the product dispatched from and do you supply across India?",
+    a: "Dispatch is from our Ahmedabad warehouse in Gujarat to buyers in every Indian state and union territory. Freight and delivery timeline are quoted along with the price.",
   },
   {
-    q: "What is the standard pack size?",
-    a: "25 Kgs bags, dispatched from our Ahmedabad warehouse across India.",
+    q: "Who buys Glycine from TARAON GLOBAL?",
+    a: "Fertilizer formulators, agri-input companies, industrial buyers, dealers and distributors. The 25 Kgs pack format fits blending lines and repackers.",
   },
   {
     q: "Do you supply food-grade or pharmaceutical-grade Glycine?",
-    a: "The Glycine we stock is supplied as a bulk industrial and agricultural raw material with COA. Buyers requiring a specific grade should confirm their end-use and required certification at the time of enquiry.",
+    a: "The Glycine we stock is supplied as a bulk industrial and agricultural raw material with COA. Buyers requiring a specific grade should confirm end-use and required certification at the time of enquiry.",
+  },
+  {
+    q: "How do I request the current price?",
+    a: "Send quantity in Kgs or bags, end-use and delivery pincode by WhatsApp on +91 63591 93666, email to info@taraonglobal.com, or the contact form. You will get a direct reply from the sales team with current price and dispatch timeline.",
   },
 ];
 

@@ -42,28 +42,32 @@ const QUICK = [
 
 const FAQS = [
   {
+    q: "What is the purity and specification of Super Potassium Shiny Flakes 98%?",
+    a: "Assay is 98%. Humic acid 55 to 60%, fulvic acid 1 to 3%, potassium as K2O 3 to 5%, pH 9 to 10, moisture 10 to 15%, water solubility 98%. Every consignment carries a batch number and a current-batch COA is issued on request.",
+  },
+  {
     q: "Where is Super Potassium Shiny Flakes 98% sourced from?",
-    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL is the trading and supply arm - we import, quality check, batch number, and distribute across India.",
+    a: "The flakes are produced from natural leonardite by our overseas partner facility. TARAON GLOBAL is the trading and supply arm. We import, quality check, batch number, and distribute across India.",
   },
   {
-    q: "Is TARAON GLOBAL the manufacturer?",
-    a: "No. TARAON GLOBAL is a trading and supplier company based in Ahmedabad. We source from a trusted producer, verify every batch, and handle warehousing, packing and dispatch to farmers, dealers and distributors.",
+    q: "What is the pack size and what is the minimum order quantity?",
+    a: "Standard packing is a 25 Kgs kraft bag with a printed batch number. MOQ is confirmed at the time of enquiry based on destination and current stock. Dealer, distributor and container-load pricing is available on request.",
   },
   {
-    q: "What pack size do you supply?",
-    a: "Standard packing is 25 Kgs kraft bags - the standard pack for farmers, dealers and distributors.",
+    q: "Is a COA available with every batch?",
+    a: "Yes. A current-batch Certificate of Analysis is issued on request before dispatch. It carries the batch number that matches the number printed on your bag.",
   },
   {
-    q: "Do you offer dealer and distributor pricing?",
-    a: "Yes. Bulk pricing, credit terms and dealer support are available on request - call Rajesh Kumar Trivedi on +91 63591 93666.",
+    q: "Where is the product dispatched from and do you supply across India?",
+    a: "Dispatch is from our Ahmedabad warehouse in Gujarat. TARAON GLOBAL supplies to buyers in every Indian state and union territory. Freight and delivery timeline are quoted with the price.",
   },
   {
-    q: "Can I use it in a drip system?",
-    a: "Yes. It's 98% water soluble - built for drip irrigation, fertigation and foliar spray. Dissolve fully before running it through your line.",
+    q: "Who buys Super Potassium Shiny Flakes 98%?",
+    a: "Dealers, distributors, fertilizer formulators, farmer groups, FPOs, exporters and re-packers use this grade. It fits soil application, drip irrigation, fertigation, foliar spray and fertilizer blending.",
   },
   {
-    q: "Do you ship across India?",
-    a: "Yes. We dispatch from Ahmedabad to buyers across Gujarat and the rest of India.",
+    q: "How do I request the current price?",
+    a: "Send product name, quantity in Kgs or bags, and delivery pincode by WhatsApp on +91 63591 93666, email to info@taraonglobal.com, or the contact form. You get a direct reply from the sales team with current price, packing options and dispatch timeline.",
   },
 ];
 
@@ -110,11 +114,9 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
             name: "TARAON GLOBAL",
           },
           category: "Potassium Humate Fertilizer",
-          image: [
-            "https://taraonglobal.com/og-super-potassium-98.jpg",
-          ],
+          image: [`https://taraonglobal.com${heroImg.url}`],
           description:
-            "Water soluble potassium humate shiny flakes. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input - not a complete NPK fertiliser.",
+            "Water soluble potassium humate shiny flakes. 98% purity, 55-60% humic acid, 1-3% fulvic acid, 3-5% K2O, pH 9-10, 10-15% moisture, 98% water soluble. Derived from natural leonardite, lignite or oxidised brown coal. Supplied in 25 Kgs packs. Soil conditioner and plant growth support input, not a complete NPK fertiliser.",
           additionalProperty: [
             { "@type": "PropertyValue", name: "Purity", value: "98%" },
             { "@type": "PropertyValue", name: "Humic Acid", value: "55-60%" },
@@ -128,13 +130,16 @@ export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98"
             "@type": "Offer",
             url: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98",
             availability: "https://schema.org/InStock",
+            itemCondition: "https://schema.org/NewCondition",
             priceCurrency: "INR",
+            price: "0",
             priceSpecification: {
               "@type": "PriceSpecification",
               priceCurrency: "INR",
               valueAddedTaxIncluded: false,
               description: "Bulk and dealer pricing on request",
             },
+            eligibleQuantity: { "@type": "QuantitativeValue", value: 25, unitCode: "KGM", unitText: "25 Kgs bag" },
             seller: { "@id": "https://taraonglobal.com/#organization" },
           },
         }),
