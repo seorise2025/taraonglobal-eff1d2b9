@@ -20,19 +20,23 @@ const SPECS = [
 ];
 
 const QUICK = [
-  { label: "Product Name", value: "Glycine (High-Quality Amino Acid)" },
+  { label: "Product", value: "Glycine 99%" },
   { label: "Brand", value: "TARAON GLOBAL" },
-  { label: "Form", value: "White crystalline" },
-  { label: "Purity", value: "99%" },
-  { label: "Packing", value: "25 Kgs" },
-  { label: "Industries", value: "Agriculture, food, pharma, feed, daily chemical" },
-  { label: "Buyer Type", value: "Formulators, dealers, industrial buyers" },
+  { label: "Purity / Assay", value: "99%" },
+  { label: "Form", value: "White crystalline powder / granules" },
+  { label: "Packing", value: "25 Kgs kraft bag" },
+  { label: "MOQ", value: "Available on enquiry" },
+  { label: "COA", value: "Available on request" },
+  { label: "Dispatch from", value: "Ahmedabad, Gujarat" },
+  { label: "Supply coverage", value: "Across India" },
+  { label: "Suitable for", value: "Formulators, dealers, industrial buyers, agri-input companies" },
+  { label: "Quote", value: "Request current batch price" },
 ];
 
 const FAQS = [
   {
     q: "What is Glycine used for?",
-    a: "Glycine is a bulk amino acid used in food, medicine, feed, pesticides, daily chemicals and agriculture. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
+    a: "Glycine is a bulk amino acid used across agricultural inputs, industrial formulations and general chemical applications. In farming it supports crop photosynthesis, growth and sugar content, and acts as a natural metal chelator and fertilizer synergist.",
   },
   {
     q: "Where does TARAON GLOBAL source Glycine from?",
@@ -40,32 +44,37 @@ const FAQS = [
   },
   {
     q: "Can Glycine be blended with other amino acids?",
-    a: "Yes. Formulators commonly blend Glycine with folic acid and other monomer amino acids to build agricultural and industrial formulas.",
+    a: "Yes. Formulators commonly blend Glycine with other monomer amino acids and chelating carriers to build agricultural and industrial formulas.",
   },
   {
     q: "Do you supply Glycine for fertilizer formulation?",
-    a: "Yes. Fertilizer companies use Glycine as a chelator and synergist. Bulk pricing and COA are available on request.",
+    a: "Yes. Agri-input formulators use Glycine as a chelator and synergist. Bulk pricing and COA are available on request.",
   },
   {
     q: "What is the standard pack size?",
     a: "25 Kgs bags, dispatched from our Ahmedabad warehouse across India.",
+  },
+  {
+    q: "Do you supply food-grade or pharmaceutical-grade Glycine?",
+    a: "The Glycine we stock is supplied as a bulk industrial and agricultural raw material with COA. Buyers requiring a specific grade should confirm their end-use and required certification at the time of enquiry.",
   },
 ];
 
 export const Route = createFileRoute("/products/glycine")({
   head: () => ({
     meta: [
-      { title: "Glycine 99% Amino Acid Supplier in India | TARAON GLOBAL" },
+      { title: "Glycine 99% Bulk Supplier in India | TARAON GLOBAL" },
       {
         name: "description",
         content:
-          "Glycine 99% purity from TARAON GLOBAL. Bulk amino acid for agriculture, food, pharma, feed and daily chemical industries. Supplied in 25 Kgs packs from Ahmedabad.",
+          "Bulk Glycine 99% supplied in 25 Kgs packs for agricultural and industrial formulators, with COA on request and dispatch across India from Ahmedabad.",
       },
-      { property: "og:title", content: "Glycine (High-Quality Amino Acid) | TARAON GLOBAL" },
+      { name: "keywords", content: "glycine 99% supplier India, glycine bulk supplier, glycine amino acid supplier, glycine for fertilizer formulation, glycine chelator, glycine 25 kg pack, glycine importer India, bulk amino acid supplier India" },
+      { property: "og:title", content: "Glycine 99% Bulk Supplier in India | TARAON GLOBAL" },
       {
         property: "og:description",
         content:
-          "Glycine 99% bulk amino acid. Fertilizer synergist, natural metal chelator, food and pharma grade options. 25 Kgs pack.",
+          "Bulk Glycine 99% for agri and industrial formulators. 25 Kgs packing, COA on request, dispatch across India from Ahmedabad.",
       },
       { property: "og:url", content: "https://taraonglobal.com/products/glycine" },
       { property: "og:type", content: "product" },
