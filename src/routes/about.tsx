@@ -132,7 +132,15 @@ function About() {
       </section>
 
       <section className="border-y border-border bg-card">
-        <div className="container-page grid gap-10 py-16 md:grid-cols-[1fr_1.1fr] md:items-center">
+        <div className="container-page grid gap-10 py-16 md:grid-cols-[auto_1fr] md:items-center md:gap-12">
+          <img
+            src={rajeshPhoto.url}
+            alt="Rajesh Kumar Trivedi, Founder of TARAON GLOBAL"
+            width={320}
+            height={400}
+            loading="lazy"
+            className="mx-auto w-56 rounded-lg object-cover shadow-xl ring-2 ring-gold/50 md:w-72"
+          />
           <div>
             <SectionHeading eyebrow="Leadership" title="Led by Rajesh Kumar Trivedi" />
             <p className="mt-5 text-ink/75">
