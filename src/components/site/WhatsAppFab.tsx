@@ -1,11 +1,9 @@
 import { MessageCircle } from "lucide-react";
 import { trackWhatsApp } from "@/lib/analytics";
-
-const MSG =
-  "Hi TARAON GLOBAL, please share your latest price list, packing and dispatch time. My city/state: ___.";
+import { buildDefaultWaHref } from "@/lib/inquiry";
 
 export function WhatsAppFab() {
-  const href = `https://wa.me/916359193666?text=${encodeURIComponent(MSG)}`;
+  const href = buildDefaultWaHref();
   return (
     <a
       href={href}

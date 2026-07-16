@@ -4,6 +4,7 @@ import { Loader2, MessageCircle, Mail, LogOut, RefreshCw, Download, Save } from 
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { ADMIN_EMAIL } from "@/lib/products";
+import { buildOrderStatusWaMessage, buildEnquiryFollowUpMessage } from "@/lib/inquiry";
 
 type Tab = "orders" | "enquiries";
 
@@ -309,10 +310,16 @@ function OrderCard({ row, onUpdate }: { row: OrderRow; onUpdate: (p: Partial<Ord
   const [notes, setNotes] = useState(row.admin_notes ?? "");
   const [followUp, setFollowUp] = useState(row.follow_up_date ?? "");
   const waNumber = (row.whatsapp || row.phone).replace(/\D/g, "");
-  const msg = `Hi ${row.customer_name}, update on your requirement ${row.order_number} for ${row.quantity} ${row.unit} of ${row.product_name}. Current status: ${row.status.replace(/_/g, " ")}. , TARAON GLOBAL`;
+  const msg = buildOrderStatusWaMessage({
+    name: row.customer_name,
+    reference: row.order_number,
+    product: row.product_name,
+    quantity: `${row.quantity} ${row.unit}${row.bags ? ` (${row.bags} x 25 Kg bags)` : ""}`,
+    status: row.status,
+  });
   const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
   const mailHref = row.email
-    ? `mailto:${row.email}?subject=${encodeURIComponent(`Requirement ${row.order_number}: ${row.status}`)}&body=${encodeURIComponent(msg)}`
+    ? `mailto:${row.email}?subject=${encodeURIComponent(`Requirement ${row.order_number}: ${row.status.replace(/_/g, " ")}`)}&body=${encodeURIComponent(msg)}`
     : null;
 
   return (
@@ -394,7 +401,7 @@ function EnquiryCard({ row, onUpdate }: { row: EnquiryRow; onUpdate: (p: Partial
   const [notes, setNotes] = useState(row.admin_notes ?? "");
   const [followUp, setFollowUp] = useState(row.follow_up_date ?? "");
   const waNumber = (row.whatsapp || row.phone).replace(/\D/g, "");
-  const msg = `Hi ${row.name}, thanks for reaching out to TARAON GLOBAL${row.reference_number ? ` (ref ${row.reference_number})` : ""}. Following up on your enquiry.`;
+  const msg = buildEnquiryFollowUpMessage({ name: row.name, reference: row.reference_number });
   const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
   const mailHref = row.email
     ? `mailto:${row.email}?subject=${encodeURIComponent(`Your enquiry ${row.reference_number ?? ""}`.trim())}&body=${encodeURIComponent(msg)}`
