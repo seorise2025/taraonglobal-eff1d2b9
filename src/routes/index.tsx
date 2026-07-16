@@ -17,6 +17,7 @@ import heroWebp from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcse
 import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcset";
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
+import rajeshPhoto from "@/assets/rajesh-kumar-trivedi.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
 import { CountUp } from "@/components/site/CountUp";
