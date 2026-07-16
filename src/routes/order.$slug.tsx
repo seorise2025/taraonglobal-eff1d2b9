@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { PRODUCTS, ADMIN_WHATSAPP, ADMIN_EMAIL, type ProductKey } from "@/lib/products";
 import { trackOrder } from "@/lib/analytics";
 import { checkRateLimit, getSubmissionContext, hashPayload } from "@/lib/rate-limit";
+import { buildBulkOrderSummary } from "@/lib/inquiry";
 
 const BUYER_TYPE_OPTIONS = [
   "Dealer",
