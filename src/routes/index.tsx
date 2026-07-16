@@ -468,6 +468,20 @@ function Home() {
         </div>
       </section>
 
+      <RelatedLinks
+        eyebrow="Explore the catalog"
+        title="Products, applications, and dosage guides"
+        items={[
+          { to: "/products/super-potassium-shiny-flakes-98", title: "Super Potassium Shiny Flakes 98%", desc: "Flagship potassium humate, 55-60% humic, 25 Kgs pack." },
+          { to: "/products/super-f-humate-big-shiny-flakes", title: "Super F Humate Big Shiny Flakes", desc: "Big flake grade for dealers, distributors, and blenders." },
+          { to: "/products/glycine", title: "Glycine, 99% purity", desc: "Bulk amino acid for foliar synergy and chelation." },
+          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Powder biostimulant at 0.5 to 1 g dose per litre." },
+          { to: "/applications", title: "How the products are used", desc: "Soil, drip, fertigation, foliar, and NPK blending guidance." },
+          { to: "/guides/potassium-humate-dosage-cotton-groundnut", title: "Dosage guide, cotton and groundnut", desc: "Step by step application rates for Gujarat crops." },
+        ]}
+      />
+
+
       {/* CLOSING CTA BAND, gold */}
       <section className="bg-gold text-forest-deep">
         <div className="container-page py-16 lg:py-20">
