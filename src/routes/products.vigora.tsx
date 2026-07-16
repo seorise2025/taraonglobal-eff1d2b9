@@ -40,7 +40,7 @@ const CROPS = [
 const FAQS = [
   {
     q: "What is Vigora?",
-    a: "Vigora is a 99% pure powder biostimulant, fully water soluble. It feeds the crop at key growth stages so plants build stronger roots, better flowering and a cleaner yield.",
+    a: "Vigora is a water-soluble powder plant biostimulant. The 99% figure refers to water soluble content. It feeds the crop at key growth stages so plants build stronger roots, better flowering and a cleaner yield.",
   },
   {
     q: "What is the recommended dose?",
@@ -181,13 +181,13 @@ function ProductPage() {
             <span className="h-px w-8 bg-gold" /> Plant biostimulant
           </div>
           <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl">
-            Vigora, A Strong Bio Stimulant
+            Vigora Water-Soluble Plant Biostimulant
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            Vigora is a 99% pure powder biostimulant. It dissolves fully in water and goes straight to work on the plant, building deeper roots, cleaner flowering and better filled produce.
+            Vigora is a water-soluble powder plant biostimulant supplied in bulk for foliar and drip application. Used by farmers, dealers and distributors to support root development, flowering and fruit or grain filling in Indian crop conditions.
           </p>
           <p className="mt-3 text-ink/70">
-            Foliar dose is 0.5 to 1 gram per litre of water, or 7.5 to 15 grams in a 15 litre knapsack tank. Spray during active growth and around flowering, in the early morning or late evening.
+            The 99% figure refers to the water soluble content of the powder. Foliar dose is 0.5 to 1 gram per litre of water, or 7.5 to 15 grams in a 15 litre knapsack tank. Spray during active growth and around flowering, in the early morning or late evening. Supplied in 25 Kgs packing from Ahmedabad, with COA on request and dispatch across India.
           </p>
           <InquiryCTA product="vigora" className="mt-8" />
         </div>
@@ -195,7 +195,7 @@ function ProductPage() {
           <div className="absolute -inset-6 -z-10 rounded-2xl bg-gradient-to-tr from-gold/25 via-transparent to-forest/20 blur-2xl" />
           <img
             src={productImg.url}
-            alt="Vigora 99% pure water soluble powder plant biostimulant and yield enhancer for Indian crops, cotton, wheat, rice and vegetables, 25 Kgs bag supplied by TARAON GLOBAL"
+            alt="Vigora water soluble powder plant biostimulant and yield enhancer for Indian crops, cotton, wheat, rice and vegetables, 25 Kgs bag supplied by TARAON GLOBAL"
             width={1024}
             height={1024}
             fetchPriority="high"
