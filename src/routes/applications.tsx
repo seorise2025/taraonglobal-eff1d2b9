@@ -177,7 +177,7 @@ function Applications() {
               <span className="h-px w-8 bg-gold" /> Applications
             </div>
             <h1 className="font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
-              Product Applications Across Indian Agriculture
+              Potassium Humate, Glycine and Biostimulant Applications in Indian Agriculture
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-ink/75">
               Four products, one supply desk. Potassium humate for soil and drip, big
