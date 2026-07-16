@@ -25,6 +25,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CountUp } from "@/components/site/CountUp";
 import { IndiaMapCoverage } from "@/components/site/IndiaMapCoverage";
 import { FAQ } from "@/components/site/FAQ";
+import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { buildEmailHref, buildWaHref } from "@/lib/inquiry";
 import { trackEmail, trackWhatsApp } from "@/lib/analytics";
 
@@ -95,6 +96,50 @@ export const Route = createFileRoute("/")({
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "TARAON GLOBAL product catalog",
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          numberOfItems: 4,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, url: "https://taraonglobal.com/products/super-potassium-shiny-flakes-98", name: "Super Potassium Shiny Flakes 98%" },
+            { "@type": "ListItem", position: 2, url: "https://taraonglobal.com/products/super-f-humate-big-shiny-flakes", name: "Super F Humate Big Shiny Flakes" },
+            { "@type": "ListItem", position: 3, url: "https://taraonglobal.com/products/glycine", name: "Glycine" },
+            { "@type": "ListItem", position: 4, url: "https://taraonglobal.com/products/vigora", name: "Vigora Plant Biostimulant" },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": "https://taraonglobal.com/#rajesh-kumar-trivedi",
+          name: "Rajesh Kumar Trivedi",
+          jobTitle: "Founder",
+          worksFor: { "@id": "https://taraonglobal.com/#organization" },
+          telephone: "+91-63591-93666",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "A-210, Signature-2, Sarkhej Sanand Cross Road",
+            addressLocality: "Ahmedabad",
+            postalCode: "382210",
+            addressRegion: "Gujarat",
+            addressCountry: "IN",
+          },
+          knowsAbout: [
+            "Potassium humate sourcing",
+            "Humic and fulvic acid supply",
+            "Glycine bulk supply",
+            "Plant biostimulants",
+            "Agri input trading India",
+          ],
+          description: "Founder of TARAON GLOBAL with over 20 years of experience in the potassium humate and agri input trade in India.",
         }),
       },
     ],
@@ -422,6 +467,20 @@ function Home() {
           <FAQ items={HOME_FAQS} />
         </div>
       </section>
+
+      <RelatedLinks
+        eyebrow="Explore the catalog"
+        title="Products, applications, and dosage guides"
+        items={[
+          { to: "/products/super-potassium-shiny-flakes-98", title: "Super Potassium Shiny Flakes 98%", desc: "Flagship potassium humate, 55-60% humic, 25 Kgs pack." },
+          { to: "/products/super-f-humate-big-shiny-flakes", title: "Super F Humate Big Shiny Flakes", desc: "Big flake grade for dealers, distributors, and blenders." },
+          { to: "/products/glycine", title: "Glycine, 99% purity", desc: "Bulk amino acid for foliar synergy and chelation." },
+          { to: "/products/vigora", title: "Vigora Plant Biostimulant", desc: "Powder biostimulant at 0.5 to 1 g dose per litre." },
+          { to: "/applications", title: "How the products are used", desc: "Soil, drip, fertigation, foliar, and NPK blending guidance." },
+          { to: "/guides/potassium-humate-dosage-cotton-groundnut", title: "Dosage guide, cotton and groundnut", desc: "Step by step application rates for Gujarat crops." },
+        ]}
+      />
+
 
       {/* CLOSING CTA BAND, gold */}
       <section className="bg-gold text-forest-deep">
