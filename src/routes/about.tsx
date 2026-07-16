@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin } from "lucide-react";
 import warehouseImg from "@/assets/about-warehouse.jpg";
+import rajeshPhoto from "@/assets/rajesh-kumar-trivedi.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
