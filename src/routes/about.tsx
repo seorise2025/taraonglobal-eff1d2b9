@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin } from "lucide-react";
 import warehouseImg from "@/assets/about-warehouse.jpg";
+import rajeshPhoto from "@/assets/rajesh-kumar-trivedi.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
@@ -132,8 +133,16 @@ function About() {
       </section>
 
       <section className="border-y border-border bg-card">
-        <div className="container-page grid gap-10 py-16 md:grid-cols-[1fr_1.1fr] md:items-center">
-          <div>
+        <div className="container-page grid gap-10 py-16 md:grid-cols-12 md:items-center md:gap-12">
+          <img
+            src={rajeshPhoto.url}
+            alt="Rajesh Kumar Trivedi, Founder of TARAON GLOBAL"
+            width={320}
+            height={400}
+            loading="lazy"
+            className="mx-auto w-56 rounded-lg object-cover shadow-xl ring-2 ring-gold/50 md:col-span-4 md:w-full"
+          />
+          <div className="md:col-span-5">
             <SectionHeading eyebrow="Leadership" title="Led by Rajesh Kumar Trivedi" />
             <p className="mt-5 text-ink/75">
               Rajesh Kumar Trivedi runs TARAON GLOBAL out of Ahmedabad and brings over
@@ -150,11 +159,11 @@ function About() {
             </a>
           </div>
 
-          <div className="rounded-lg border border-border bg-cream p-6 sm:p-8">
+          <div className="rounded-lg border border-border bg-cream p-6 sm:p-8 md:col-span-3">
             <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold">
               <MapPin className="h-3.5 w-3.5" /> Address
             </div>
-            <div className="font-display text-xl leading-relaxed text-forest-deep">
+            <div className="font-display text-lg leading-relaxed text-forest-deep">
               TARAON GLOBAL<br />
               A-210, Signature-2<br />
               Sarkhej Sanand Cross Road<br />

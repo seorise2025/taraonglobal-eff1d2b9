@@ -17,6 +17,7 @@ import heroWebp from "@/assets/home-hero.jpg?w=640;960;1280&format=webp&as=srcse
 import heroAvif from "@/assets/home-hero.jpg?w=640;960;1280&format=avif&as=srcset";
 import heroImgFallback from "@/assets/home-hero.jpg?w=960&format=webp";
 import heroFlakes640 from "@/assets/home-hero.jpg?w=640&format=webp";
+import rajeshPhoto from "@/assets/rajesh-kumar-trivedi.jpg.asset.json";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
 import { CountUp } from "@/components/site/CountUp";
@@ -318,9 +319,14 @@ function Home() {
               Two decades in agri inputs taught me one thing. Trust is the only ingredient that cannot be synthesized. Buyers stay because the 100th bag lands exactly like the first.
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <div className="grid h-12 w-12 place-items-center rounded-full bg-forest-deep font-display text-cream">
-                RT
-              </div>
+              <img
+                src={rajeshPhoto.url}
+                alt="Rajesh Kumar Trivedi, Founder of TARAON GLOBAL"
+                width={96}
+                height={96}
+                loading="lazy"
+                className="h-14 w-14 rounded-full object-cover ring-2 ring-gold/60"
+              />
               <div>
                 <p className="font-semibold text-forest-deep">Rajesh Kumar Trivedi</p>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/60">
