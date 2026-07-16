@@ -321,14 +321,19 @@ function Home() {
               Two decades in agri inputs taught me one thing. Trust is the only ingredient that cannot be synthesized. Buyers stay because the 100th bag lands exactly like the first.
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <img
-                src={rajeshPhoto.url}
-                alt="Rajesh Kumar Trivedi, Founder of TARAON GLOBAL"
-                width={96}
-                height={96}
-                loading="lazy"
-                className="h-14 w-14 rounded-full object-cover ring-2 ring-gold/60"
-              />
+              <picture>
+                <source type="image/avif" srcSet={rajeshAvif} sizes="112px" />
+                <source type="image/webp" srcSet={rajeshWebp} sizes="112px" />
+                <img
+                  src={rajeshJpg}
+                  alt="Portrait of Rajesh Kumar Trivedi, Founder of TARAON GLOBAL, Ahmedabad based potassium humate supplier with over 20 years of experience in the agri inputs trade"
+                  width={112}
+                  height={112}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-14 w-14 rounded-full object-cover ring-2 ring-gold/60"
+                />
+              </picture>
               <div>
                 <p className="font-semibold text-forest-deep">Rajesh Kumar Trivedi</p>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink/60">
