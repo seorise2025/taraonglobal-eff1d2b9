@@ -127,13 +127,19 @@ function About() {
           </div>
         </div>
         <img
-          src={warehouseImg}
-          alt="Neatly stacked bags of TARAON GLOBAL potassium humate in the Ahmedabad warehouse"
-          width={1400}
-          height={1000}
-          loading="lazy"
-          className="aspect-[7/5] w-full rounded-lg object-cover shadow-xl"
-        />
+        <picture>
+          <source type="image/avif" srcSet={warehouseAvif} sizes="(min-width: 1024px) 900px, 100vw" />
+          <source type="image/webp" srcSet={warehouseWebp} sizes="(min-width: 1024px) 900px, 100vw" />
+          <img
+            src={warehouseImg}
+            alt="Neatly stacked bags of TARAON GLOBAL potassium humate in the Ahmedabad warehouse"
+            width={1400}
+            height={1000}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[7/5] w-full rounded-lg object-cover shadow-xl"
+          />
+        </picture>
       </section>
 
       <section className="border-y border-border bg-card">
