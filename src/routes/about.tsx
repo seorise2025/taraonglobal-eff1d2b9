@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin } from "lucide-react";
-import warehouseImg from "@/assets/about-warehouse.jpg";
+import warehouseAvif from "@/assets/about-warehouse.jpg?w=640;960;1400&format=avif&as=srcset";
+import warehouseWebp from "@/assets/about-warehouse.jpg?w=640;960;1400&format=webp&as=srcset";
+import warehouseImg from "@/assets/about-warehouse.jpg?w=960&format=webp";
 import rajeshAvif from "@/assets/rajesh-kumar-trivedi.jpg?w=320;640&format=avif&as=srcset";
 import rajeshWebp from "@/assets/rajesh-kumar-trivedi.jpg?w=320;640&format=webp&as=srcset";
 import rajeshJpg from "@/assets/rajesh-kumar-trivedi.jpg?w=640&format=webp";
