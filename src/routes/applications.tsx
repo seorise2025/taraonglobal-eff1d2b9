@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import fieldImg from "@/assets/applications-field.jpg";
+import fieldAvif from "@/assets/applications-field.jpg?w=640;960;1600&format=avif&as=srcset";
+import fieldWebp from "@/assets/applications-field.jpg?w=640;960;1600&format=webp&as=srcset";
+import fieldImg from "@/assets/applications-field.jpg?w=1200&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { SpecTable } from "@/components/site/SpecTable";
