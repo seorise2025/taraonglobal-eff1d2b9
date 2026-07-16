@@ -27,13 +27,17 @@ const SPECS = [
 ];
 
 const QUICK = [
-  { label: "Product Name", value: "Super Potassium Shiny Flakes 98%" },
+  { label: "Product", value: "Super Potassium Shiny Flakes 98%" },
   { label: "Brand", value: "TARAON GLOBAL" },
-  { label: "Product Type", value: "Water Soluble Potassium Humate Shiny Flakes" },
-  { label: "Form", value: "Black shiny flakes" },
-  { label: "Packing", value: "25 Kgs" },
-  { label: "Source", value: "Leonardite / lignite / oxidised brown coal" },
-  { label: "Buyer Type", value: "Farmers, dealers, distributors, bulk buyers" },
+  { label: "Purity / Assay", value: "98%" },
+  { label: "Form", value: "Black shiny flakes, water soluble" },
+  { label: "Packing", value: "25 Kgs kraft bag" },
+  { label: "MOQ", value: "Available on enquiry" },
+  { label: "COA", value: "Available on request" },
+  { label: "Dispatch from", value: "Ahmedabad, Gujarat" },
+  { label: "Supply coverage", value: "Across India" },
+  { label: "Suitable for", value: "Dealers, distributors, fertilizer formulators, farmers, bulk buyers" },
+  { label: "Quote", value: "Request current batch price" },
 ];
 
 const FAQS = [
@@ -66,20 +70,21 @@ const FAQS = [
 export const Route = createFileRoute("/products/super-potassium-shiny-flakes-98")({
   head: () => ({
     meta: [
-      { title: "Potassium Humate 98 Shiny Flakes | TARAON GLOBAL" },
+      { title: "Potassium Humate Shiny Flakes 98% Supplier India" },
       {
         name: "description",
         content:
-          "Super Potassium Shiny Flakes 98% by TARAON GLOBAL. 98% purity, 55-60% humic acid, 3-5% K2O, pH 9-10, 98% water soluble. 25 Kgs pack.",
+          "Buy Potassium Humate Shiny Flakes 98% in bulk with 25 kg packing, COA availability and PAN India dispatch for fertigation, soil use and fertilizer formulation.",
       },
+      { name: "keywords", content: "potassium humate shiny flakes 98%, potassium humate supplier India, potassium humate flakes supplier, super potassium humate 98%, potassium humate 98% price, bulk potassium humate flakes, water soluble potassium humate, potassium humate 25 kg packing, humic acid flakes supplier, potassium humate for fertigation, potassium humate for fertilizer formulation" },
       {
         property: "og:title",
-        content: "Super Potassium Shiny Flakes 98% | TARAON GLOBAL",
+        content: "Potassium Humate Shiny Flakes 98% Supplier India",
       },
       {
         property: "og:description",
         content:
-          "From natural leonardite, lignite or oxidised brown coal. 98% water soluble. Built for soil, drip, fertigation and foliar spray.",
+          "Bulk Potassium Humate Shiny Flakes 98% with 25 Kg packing, COA on request and dispatch across India from Ahmedabad.",
       },
       {
         property: "og:url",
@@ -177,16 +182,13 @@ function ProductPage() {
             <span className="h-px w-8 bg-gold" /> Our flagship
           </div>
           <h1 className="font-display text-4xl leading-[1.05] text-forest-deep sm:text-5xl">
-            Super Potassium Shiny Flakes 98%
+            Potassium Humate Shiny Flakes 98%
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink/75">
-            This is our main product, and it earns that spot.
+            Potassium Humate Shiny Flakes 98% is a water-soluble humic input supplied in bulk for fertilizer formulation, fertigation, soil application and agricultural distribution. TARAON GLOBAL supplies verified batches in 25 Kgs packing from Ahmedabad, with COA availability and dispatch across India.
           </p>
           <p className="mt-3 text-ink/70">
-            Water soluble potassium humate shiny flakes derived from natural
-            leonardite, lignite or oxidised brown coal. 98% purity, 55-60% humic
-            acid, 3-5% K₂O and pH 9-10. A soil conditioner and plant growth support input -
-            not a complete NPK fertiliser.
+            Sold as our flagship Super Potassium Shiny Flakes 98%. 98% purity, 55 to 60% humic acid, 3 to 5% K₂O and pH 9 to 10. Derived from natural leonardite, lignite or oxidised brown coal. A soil conditioner and plant growth support input, not a complete NPK fertiliser.
           </p>
           <InquiryCTA product="super-potassium-shiny-flakes-98" className="mt-8" />
 
