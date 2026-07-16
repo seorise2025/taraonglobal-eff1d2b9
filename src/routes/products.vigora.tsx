@@ -9,14 +9,27 @@ import { RelatedLinks } from "@/components/site/RelatedLinks";
 import { InquiryCTA } from "@/components/site/InquiryCTA";
 
 const SPECS = [
-  { label: "Product Type", value: "Concentrated powder plant biostimulant" },
-  { label: "Form", value: "99% pure powder, 100% water soluble" },
+  { label: "Product Type", value: "Concentrated water soluble powder plant biostimulant" },
+  { label: "Form", value: "100% water soluble powder (99% water soluble content)" },
   { label: "Dose (foliar)", value: "0.5 to 1 gram per litre of water" },
   { label: "Knapsack sprayer (15 L)", value: "7.5 to 15 grams per tank" },
   { label: "Best application time", value: "Active growth, before and during flowering" },
   { label: "Best time of day", value: "Early morning or late evening" },
   { label: "Packing", value: "25 Kgs bag" },
   { label: "Buyer Type", value: "Farmers, dealers, distributors" },
+];
+
+const QUICK = [
+  { label: "Product", value: "Vigora Water-Soluble Plant Biostimulant" },
+  { label: "Brand", value: "TARAON GLOBAL" },
+  { label: "Form", value: "Water soluble powder (99% water soluble content)" },
+  { label: "Packing", value: "25 Kgs kraft bag" },
+  { label: "MOQ", value: "Available on enquiry" },
+  { label: "COA", value: "Available on request" },
+  { label: "Dispatch from", value: "Ahmedabad, Gujarat" },
+  { label: "Supply coverage", value: "Across India" },
+  { label: "Suitable for", value: "Farmers, dealers, distributors, agri-input formulators" },
+  { label: "Quote", value: "Request current batch price" },
 ];
 
 const CROPS = [
@@ -66,17 +79,18 @@ const FAQS = [
 export const Route = createFileRoute("/products/vigora")({
   head: () => ({
     meta: [
-      { title: "Vigora, A Strong Bio Stimulant | TARAON GLOBAL" },
+      { title: "Vigora Water-Soluble Plant Biostimulant Supplier India" },
       {
         name: "description",
         content:
-          "Vigora is a 99% pure, fully water soluble powder biostimulant. Stronger roots, better flowering and cleaner yield. Supplied in 25 Kgs bags by TARAON GLOBAL.",
+          "Vigora is a water-soluble powder plant biostimulant supplied in 25 Kg packs for farmers, dealers and distributors, with COA on request and dispatch across India.",
       },
-      { property: "og:title", content: "Vigora, A Strong Bio Stimulant | TARAON GLOBAL" },
+      { name: "keywords", content: "plant biostimulant supplier India, water soluble plant biostimulant, bulk biostimulant powder, biostimulant for foliar spray, biostimulant for flowering, biostimulant for yield enhancement, agricultural biostimulant supplier, biostimulant dealer supply, Vigora biostimulant" },
+      { property: "og:title", content: "Vigora Water-Soluble Plant Biostimulant Supplier India" },
       {
         property: "og:description",
         content:
-          "99% pure water soluble powder biostimulant for Indian crops. Foliar dose 0.5 to 1 gram per litre. 25 Kgs bags.",
+          "Water soluble powder biostimulant for Indian crops. Foliar dose 0.5 to 1 gram per litre. 25 Kgs bags, COA on request.",
       },
       { property: "og:url", content: "https://taraonglobal.com/products/vigora" },
       { property: "og:type", content: "product" },
