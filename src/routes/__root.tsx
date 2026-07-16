@@ -149,7 +149,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "TARAON GLOBAL",
           alternateName: "TARAON GLOBAL - Potassium Humate Supplier",
           url: "https://taraonglobal.com/",
-          logo: "https://taraonglobal.com/favicon.ico",
+          logo: `https://taraonglobal.com${logoGreen.url}`,
+          image: `https://taraonglobal.com${logoGreen.url}`,
           telephone: "+91-6359193666",
           foundingDate: "2020",
           founder: {
