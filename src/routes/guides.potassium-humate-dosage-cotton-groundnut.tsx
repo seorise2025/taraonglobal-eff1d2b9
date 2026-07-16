@@ -150,10 +150,15 @@ function GuidePage() {
             Potassium Humate Dosage for Cotton and Groundnut
           </span>
         </nav>
-        <SectionHeading
-          eyebrow="Field Guide"
-          title="Potassium Humate Dosage for Cotton and Groundnut"
-        />
+        <div className="max-w-3xl">
+          <div className="mb-3 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-8 bg-gold" />
+            Field Guide
+          </div>
+          <h1 className="font-display text-3xl leading-tight text-forest-deep sm:text-4xl md:text-[2.6rem]">
+            Potassium Humate Dosage for Cotton and Groundnut
+          </h1>
+        </div>
         <p className="mt-4 max-w-3xl text-lg text-ink/75">
           A practical, farm-level guide to using potassium humate shiny flakes
           on cotton and groundnut in Indian conditions. Dosage in kg per acre,
