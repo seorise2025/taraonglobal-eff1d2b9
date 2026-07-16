@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin } from "lucide-react";
 import warehouseImg from "@/assets/about-warehouse.jpg";
-import rajeshPhoto from "@/assets/rajesh-kumar-trivedi.jpg.asset.json";
+import rajeshAvif from "@/assets/rajesh-kumar-trivedi.jpg?w=320;640&format=avif&as=srcset";
+import rajeshWebp from "@/assets/rajesh-kumar-trivedi.jpg?w=320;640&format=webp&as=srcset";
+import rajeshJpg from "@/assets/rajesh-kumar-trivedi.jpg?w=640&format=webp";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTABand } from "@/components/site/CTABand";
 import { RelatedLinks } from "@/components/site/RelatedLinks";
@@ -134,14 +136,19 @@ function About() {
 
       <section className="border-y border-border bg-card">
         <div className="container-page grid gap-10 py-16 md:grid-cols-12 md:items-center md:gap-12">
-          <img
-            src={rajeshPhoto.url}
-            alt="Rajesh Kumar Trivedi, Founder of TARAON GLOBAL"
-            width={320}
-            height={400}
-            loading="lazy"
-            className="mx-auto w-56 rounded-lg object-cover shadow-xl ring-2 ring-gold/50 md:col-span-4 md:w-full"
-          />
+          <picture className="md:col-span-4">
+            <source type="image/avif" srcSet={rajeshAvif} sizes="(min-width: 768px) 288px, 224px" />
+            <source type="image/webp" srcSet={rajeshWebp} sizes="(min-width: 768px) 288px, 224px" />
+            <img
+              src={rajeshJpg}
+              alt="Portrait of Rajesh Kumar Trivedi, Founder of TARAON GLOBAL, Ahmedabad based potassium humate supplier with over 20 years of experience in the agri inputs trade"
+              width={640}
+              height={1137}
+              loading="lazy"
+              decoding="async"
+              className="mx-auto aspect-[9/16] w-56 rounded-lg object-cover shadow-xl ring-2 ring-gold/60 md:w-full"
+            />
+          </picture>
           <div className="md:col-span-5">
             <SectionHeading eyebrow="Leadership" title="Led by Rajesh Kumar Trivedi" />
             <p className="mt-5 text-ink/75">
