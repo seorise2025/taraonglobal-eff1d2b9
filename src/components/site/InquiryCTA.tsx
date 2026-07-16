@@ -58,27 +58,24 @@ export function InquiryCTA({
         ) : null}
       </div>
       {showCoa && product !== "general" ? (
-        <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/60">
-          <FileText className="h-3.5 w-3.5 text-gold" />
-          <span>Need the current COA?</span>
+        <div className="mt-4 flex flex-wrap items-center gap-3">
           <a
             href={buildCoaWaHref(product)}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsApp(product, "coa_request")}
-            className="font-medium text-forest-deep underline underline-offset-4 hover:text-gold"
+            className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-gold bg-gold/10 px-5 py-3 text-sm font-semibold text-forest-deep transition-colors hover:bg-gold hover:text-forest-deep"
           >
-            Request on WhatsApp
+            <FileText className="h-4 w-4" /> Request current COA
           </a>
-          <span className="text-ink/30">or</span>
           <a
             href={buildCoaEmailHref(product)}
             onClick={() => trackEmail(product, "coa_request")}
-            className="inline-flex items-center gap-1 font-medium text-forest-deep underline underline-offset-4 hover:text-gold"
+            className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-forest-deep/25 px-5 py-3 text-sm font-semibold text-forest-deep hover:border-gold hover:bg-gold/10"
           >
-            <Mail className="h-3.5 w-3.5" /> Email
+            <Mail className="h-4 w-4" /> Email COA request
           </a>
-        </p>
+        </div>
       ) : null}
     </div>
   );
